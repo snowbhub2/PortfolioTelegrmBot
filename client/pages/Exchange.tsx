@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { ArrowUpDownIcon, ChevronRightIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { PortfolioManager, UserAsset } from "@/lib/portfolio";
@@ -22,7 +21,6 @@ export default function Exchange() {
   const [showFromAssets, setShowFromAssets] = useState(false);
   const [showToAssets, setShowToAssets] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
 
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
@@ -62,10 +60,12 @@ export default function Exchange() {
       // Автоматично встановлюємо перші активи якщо є
       if (allAssets.length >= 2 && !fromAsset && !toAsset) {
         setFromAsset(allAssets[0]); // USDT
-        setToAsset(allAssets[1]); // First crypto
-      } else if (allAssets.length === 1 && !fromAsset) {
+        setToAsset(allAssets[1]); // First other asset
+      } else if (allAssets.length >= 1 && !fromAsset) {
         setFromAsset(allAssets[0]);
       }
+      
+      setFromAmount("");
     }
   }, [portfolioManager, fromAsset, toAsset]);
 
@@ -108,7 +108,7 @@ export default function Exchange() {
   // Calculate exchange rate and amounts
   const toAmount = fromAmount && fromAsset && toAsset 
     ? (parseFloat(fromAmount) * fromAsset.currentPrice / toAsset.currentPrice).toFixed(6)
-    : "";
+    : "0";
 
   const handleSwapAssets = () => {
     hapticFeedback("light");
@@ -136,40 +136,28 @@ export default function Exchange() {
     setShowToAssets(false);
   };
 
-  const handleMaxAmount = () => {
-    if (fromAsset) {
-      hapticFeedback("light");
-      setFromAmount(fromAsset.quantity.toString());
-    }
-  };
-
   const handleCheckDeal = async () => {
     if (!fromAmount || parseFloat(fromAmount) <= 0) {
       hapticFeedback("medium");
-      setError("Введіть коректну кількість");
       return;
     }
 
     if (!fromAsset || !toAsset) {
       hapticFeedback("medium");
-      setError("Оберіть активи для обміну");
       return;
     }
 
     if (parseFloat(fromAmount) > fromAsset.quantity) {
       hapticFeedback("medium");
-      setError("Недостатньо коштів");
       return;
     }
 
     if (!portfolioManager) {
       hapticFeedback("medium");
-      setError("Помилка ініціалізації портфоліо");
       return;
     }
 
     setIsLoading(true);
-    setError("");
 
     try {
       let success = false;
@@ -250,18 +238,16 @@ export default function Exchange() {
           tg.HapticFeedback.impactOccurred("medium");
         }
       } else {
-        setError("Помилка при обміні активів");
         hapticFeedback("medium");
       }
     } catch (err) {
-      setError("Помилка при обміні активів");
       hapticFeedback("medium");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(6) : "0";
+  const exchangeRate = toAsset && fromAsset ? (fromAsset.currentPrice / toAsset.currentPrice).toFixed(2) : "0";
   const isValidAmount =
     fromAmount &&
     parseFloat(fromAmount) > 0 &&
@@ -275,143 +261,114 @@ export default function Exchange() {
     (asset) => asset.id !== fromAsset?.id,
   );
 
-  // Якщо немає активів, показуємо заглушку
-  if (userAssets.length < 2) {
-    return (
-      <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-4">
-        <div className="text-center">
-          <div className="text-6xl mb-4">💱</div>
-          <h2 className="text-xl font-semibold mb-2">Недостатньо активів</h2>
-          <p className="text-muted-foreground mb-4">
-            {userAssets.length === 0
-              ? "У вас немає активів для обміну. Купіть активи на сторінці Ринок."
-              : "Необхідно мати принаймні 2 активи для обміну"}
-          </p>
-          <Button onClick={() => navigate("/market")} className="mr-2">
-            Перейти до ринку
-          </Button>
-          <Button variant="outline" onClick={() => navigate("/")}>
-            Назад
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="p-4 space-y-6">
-        {/* From Asset */}
-        <Card className="p-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <div
-                className={`w-8 h-8 ${fromAsset?.id === "usd" ? "bg-green-500" : "bg-blue-500"} rounded-full flex items-center justify-center`}
-              >
-                <span className="text-white text-sm font-bold">
-                  {fromAsset?.id === "usd" ? "$" : fromAsset?.icon}
-                </span>
-              </div>
-              <span className="text-sm">Вы платите</span>
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      {/* Header */}
+      <div className="flex items-center justify-between p-4">
+        <Button 
+          variant="ghost" 
+          size="sm"
+          onClick={() => navigate("/")}
+          className="text-blue-400 text-base font-normal p-0 h-auto hover:bg-transparent"
+        >
+          ← Назад
+        </Button>
+        <div className="text-center">
+          <div className="font-medium">Гаманець ✓</div>
+          <div className="text-xs text-gray-400">міні застосунок</div>
+        </div>
+        <div className="w-8"></div>
+      </div>
+
+      <div className="flex-1 px-4 pb-4">
+        {/* From Asset - Вы платите */}
+        <div className="mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-sm font-bold">$</span>
             </div>
-            <div className="text-sm text-primary">
-              Внести • {fromAsset?.quantity.toFixed(6)} {fromAsset?.symbol}
-            </div>
+            <span className="text-white">Вы платите</span>
+            <span className="text-blue-400 text-sm ml-auto">
+              Внести • {fromAsset?.quantity.toFixed(6) || "0"} {fromAsset?.symbol || "USDT"}
+            </span>
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between mb-2">
             <input
               type="number"
               placeholder="0"
               value={fromAmount}
-              onChange={(e) => {
-                setFromAmount(e.target.value);
-                setError("");
-              }}
-              className="text-4xl font-bold bg-transparent border-0 focus:outline-none w-2/3"
+              onChange={(e) => setFromAmount(e.target.value)}
+              className="text-6xl font-light bg-transparent border-0 focus:outline-none text-white w-1/2"
+              style={{ fontSize: '4rem' }}
             />
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => setShowFromAssets(true)}
             >
-              <span className="text-2xl font-bold text-muted-foreground">
-                {fromAsset?.symbol}
+              <span className="text-4xl font-light text-gray-400">
+                {fromAsset?.symbol || "USDT"}
               </span>
-              <ChevronRightIcon className="w-5 h-5 text-muted-foreground" />
+              <ChevronRightIcon className="w-5 h-5 text-gray-400" />
             </div>
           </div>
-
-          {fromAsset && fromAsset.quantity > 0 && (
-            <div className="flex justify-end mt-2">
-              <button
-                onClick={handleMaxAmount}
-                className="text-sm text-primary"
-              >
-                Макс.
-              </button>
-            </div>
-          )}
-        </Card>
+        </div>
 
         {/* Swap Button */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mb-6">
           <Button
             variant="outline"
             size="icon"
-            className="w-12 h-12 rounded-full"
             onClick={handleSwapAssets}
+            className="w-12 h-12 rounded-full bg-blue-600 border-blue-600 hover:bg-blue-700"
             disabled={!fromAsset || !toAsset}
           >
-            <ArrowUpDownIcon className="w-5 h-5" />
+            <ArrowUpDownIcon className="w-5 h-5 text-white" />
           </Button>
         </div>
 
-        {/* To Asset */}
-        <Card className="p-4">
-          <div className="flex items-center gap-2 mb-3">
-            <div
-              className={`w-8 h-8 ${toAsset?.id === "usd" ? "bg-green-500" : "bg-purple-500"} rounded-full flex items-center justify-center`}
-            >
+        {/* To Asset - Вы получите */}
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
               <span className="text-white text-sm font-bold">
-                {toAsset?.id === "usd" ? "$" : toAsset?.icon}
+                {toAsset?.icon || "🔷"}
               </span>
             </div>
-            <span className="text-sm">Вы получите</span>
+            <span className="text-white">Вы получите</span>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="text-4xl font-bold w-2/3">{toAmount || "0"}</div>
+          <div className="flex items-center justify-between mb-2">
+            <div className="text-6xl font-light text-white w-1/2" style={{ fontSize: '4rem' }}>
+              {toAmount}
+            </div>
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => setShowToAssets(true)}
             >
-              <span className="text-2xl font-bold text-muted-foreground">
-                {toAsset?.symbol}
+              <span className="text-4xl font-light text-gray-400">
+                {toAsset?.symbol || "TON"}
               </span>
-              <ChevronRightIcon className="w-5 h-5 text-muted-foreground" />
+              <ChevronRightIcon className="w-5 h-5 text-gray-400" />
             </div>
           </div>
-        </Card>
+        </div>
+
+        {/* Spacer */}
+        <div className="flex-1"></div>
 
         {/* Exchange Rate */}
         {fromAsset && toAsset && (
-          <div className="text-center">
-            <div className="text-sm text-muted-foreground">
-              1 {toAsset.symbol} ≈ {exchangeRate} {fromAsset.symbol}
+          <div className="text-center mb-6">
+            <div className="text-gray-400">
+              ≈ 1 {toAsset.symbol} ≈ {exchangeRate} {fromAsset.symbol}
             </div>
-          </div>
-        )}
-
-        {/* Error Message */}
-        {error && (
-          <div className="text-destructive text-sm text-center p-3 bg-destructive/10 rounded-lg">
-            {error}
           </div>
         )}
 
         {/* Check Deal Button */}
         <Button
-          className="w-full py-4 text-lg font-medium"
+          className="w-full py-4 text-lg font-medium bg-gray-800 hover:bg-gray-700 text-white rounded-xl"
           disabled={!isValidAmount || isLoading}
           onClick={handleCheckDeal}
         >
@@ -421,14 +378,15 @@ export default function Exchange() {
 
       {/* From Asset Selection Modal */}
       {showFromAssets && (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-end justify-center">
-          <div className="bg-card rounded-t-lg w-full max-w-md border border-border animate-in slide-in-from-bottom-4">
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <h3 className="text-lg font-semibold">Выберите актив</h3>
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-end justify-center">
+          <div className="bg-gray-900 rounded-t-xl w-full max-w-md border-t border-gray-700 animate-in slide-in-from-bottom-4">
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <h3 className="text-lg font-semibold text-white">Выберите актив</h3>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setShowFromAssets(false)}
+                className="text-gray-400 hover:text-white"
               >
                 ×
               </Button>
@@ -437,7 +395,7 @@ export default function Exchange() {
               {availableFromAssets.map((asset) => (
                 <div
                   key={asset.id}
-                  className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-gray-800 transition-colors"
                   onClick={() => handleFromAssetSelect(asset)}
                 >
                   <div
@@ -448,8 +406,8 @@ export default function Exchange() {
                     </span>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">{asset.name}</div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="font-medium text-white">{asset.name}</div>
+                    <div className="text-sm text-gray-400">
                       {asset.quantity.toFixed(6)} {asset.symbol}
                     </div>
                   </div>
@@ -462,14 +420,15 @@ export default function Exchange() {
 
       {/* To Asset Selection Modal */}
       {showToAssets && (
-        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-end justify-center">
-          <div className="bg-card rounded-t-lg w-full max-w-md border border-border animate-in slide-in-from-bottom-4">
-            <div className="flex items-center justify-between p-4 border-b border-border">
-              <h3 className="text-lg font-semibold">Выберите актив</h3>
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-end justify-center">
+          <div className="bg-gray-900 rounded-t-xl w-full max-w-md border-t border-gray-700 animate-in slide-in-from-bottom-4">
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <h3 className="text-lg font-semibold text-white">Выберите актив</h3>
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setShowToAssets(false)}
+                className="text-gray-400 hover:text-white"
               >
                 ×
               </Button>
@@ -478,7 +437,7 @@ export default function Exchange() {
               {availableToAssets.map((asset) => (
                 <div
                   key={asset.id}
-                  className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
+                  className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-gray-800 transition-colors"
                   onClick={() => handleToAssetSelect(asset)}
                 >
                   <div
@@ -489,8 +448,8 @@ export default function Exchange() {
                     </span>
                   </div>
                   <div className="flex-1">
-                    <div className="font-medium">{asset.name}</div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="font-medium text-white">{asset.name}</div>
+                    <div className="text-sm text-gray-400">
                       {asset.quantity.toFixed(6)} {asset.symbol}
                     </div>
                   </div>
