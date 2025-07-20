@@ -8,6 +8,64 @@ import { useTelegram } from "@/hooks/useTelegram";
 import { usePriceUpdates } from "@/lib/priceService";
 import { useNavigate } from "react-router-dom";
 
+// Доступні активи для купівлі
+const availableAssets = [
+  {
+    id: "ton",
+    symbol: "TON",
+    name: "Toncoin",
+    price: 2.92,
+    change24h: -0.47,
+    icon: "🔷",
+    category: "crypto" as const,
+  },
+  {
+    id: "btc",
+    symbol: "BTC",
+    name: "Bitcoin",
+    price: 117456.06,
+    change24h: 1.15,
+    icon: "₿",
+    category: "crypto" as const,
+  },
+  {
+    id: "eth",
+    symbol: "ETH",
+    name: "Ethereum",
+    price: 2945.61,
+    change24h: -0.81,
+    icon: "Ξ",
+    category: "crypto" as const,
+  },
+  {
+    id: "aapl",
+    symbol: "AAPL",
+    name: "Apple Inc.",
+    price: 189.84,
+    change24h: 1.25,
+    icon: "🍎",
+    category: "stocks" as const,
+  },
+  {
+    id: "tsla",
+    symbol: "TSLA",
+    name: "Tesla",
+    price: 248.98,
+    change24h: -2.15,
+    icon: "🚗",
+    category: "stocks" as const,
+  },
+  {
+    id: "gold",
+    symbol: "GOLD",
+    name: "Золото",
+    price: 2650.5,
+    change24h: 0.75,
+    icon: "🥇",
+    category: "gold" as const,
+  },
+];
+
 export default function Exchange() {
   const { hapticFeedback, user, tg } = useTelegram();
   const navigate = useNavigate();
