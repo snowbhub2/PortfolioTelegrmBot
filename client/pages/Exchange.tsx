@@ -555,8 +555,8 @@ export default function Exchange() {
         <Button
           className="w-full"
           onClick={handleExchange}
-          disabled={
-            !isValidAmount || !toAsset || isLoading || userAssets.length < 2
+                    disabled={
+            !isValidAmount || !toAsset || isLoading
           }
         >
           {isLoading
