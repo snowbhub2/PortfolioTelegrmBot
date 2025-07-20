@@ -24,12 +24,20 @@ export default function Exchange() {
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
 
-    // Ініціалізація портфоліо
+      // Ініціалізація портфоліо
   useEffect(() => {
     console.log("💰 Exchange компонент завантажено");
     console.log("👤 user object:", user);
 
     const userId = user?.id?.toString() || "demo_user";
+    console.log("🆔 userId:", userId);
+
+    // Перевіряємо localStorage
+    const portfolioKey = `user_portfolio_${userId}`;
+    const savedPortfolio = localStorage.getItem(portfolioKey);
+    console.log("💾 localStorage ключ:", portfolioKey);
+    console.log("💾 збережений портфель:", savedPortfolio);
+
     const manager = new PortfolioManager(userId);
     setPortfolioManager(manager);
 
