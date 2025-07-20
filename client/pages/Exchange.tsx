@@ -247,7 +247,7 @@ export default function Exchange() {
           const usdAsset: UserAsset = {
             id: "usd",
             symbol: "USD",
-            name: "До��лары (готівка)",
+            name: "Доллары (готівка)",
             quantity: cashBalance,
             avgPrice: 1,
             currentPrice: 1,
@@ -478,6 +478,52 @@ export default function Exchange() {
                       </div>
                       <div className="text-sm">
                         ${asset.currentPrice.toFixed(2)}
+                      </div>
+                                        </div>
+                  </div>
+                ))}
+
+              {/* Ринкові активи для купівлі */}
+              {fromAsset?.id === "usd" && availableAssets
+                .filter((asset) => !userAssets.some(userAsset => userAsset.id === asset.id))
+                .map((asset) => (
+                  <div
+                    key={asset.id}
+                    className="p-3 hover:bg-muted/50 cursor-pointer border-b border-border last:border-b-0"
+                    onClick={() => {
+                      const marketAsset: UserAsset = {
+                        id: asset.id,
+                        symbol: asset.symbol,
+                        name: asset.name,
+                        quantity: 0, // Не маємо в портфелі
+                        avgPrice: asset.price,
+                        currentPrice: asset.price,
+                        icon: asset.icon,
+                        category: asset.category as UserAsset["category"],
+                      };
+                      setToAsset(marketAsset);
+                      setShowToSelect(false);
+                      hapticFeedback("light");
+                    }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                          <span className="text-white text-xs">
+                            {asset.icon}
+                          </span>
+                        </div>
+                        <div>
+                          <div className="font-medium text-sm">
+                            {asset.symbol}
+                          </div>
+                          <div className="text-xs text-muted-foreground">
+                            Купити
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-sm">
+                        ${asset.price.toFixed(2)}
                       </div>
                     </div>
                   </div>
