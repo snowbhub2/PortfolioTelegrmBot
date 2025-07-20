@@ -36,10 +36,13 @@ export default function Exchange() {
     console.log("📊 Portfolio manager створено для:", userId);
   }, [user]);
 
-  useEffect(() => {
+    useEffect(() => {
     if (portfolioManager) {
       const assets = portfolioManager.getAssets();
       const cashBalance = portfolioManager.getCashBalance();
+
+      console.log("💰 Cash balance:", cashBalance);
+      console.log("📈 User assets:", assets);
 
       // Додаємо долари тільки якщо є готівка
       const allAssets = [...assets];
@@ -55,8 +58,10 @@ export default function Exchange() {
           category: "currency",
         };
         allAssets.unshift(usdAsset); // Додаємо на початок
+        console.log("💵 USD актив додано до списку");
       }
 
+      console.log("📋 Всі активи для обміну:", allAssets);
       setUserAssets(allAssets);
       setFromAsset(null);
       setToAsset(null);
