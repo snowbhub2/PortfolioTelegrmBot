@@ -247,7 +247,7 @@ export default function Exchange() {
           const usdAsset: UserAsset = {
             id: "usd",
             symbol: "USD",
-            name: "Доллары (готівка)",
+            name: "До��лары (готівка)",
             quantity: cashBalance,
             avgPrice: 1,
             currentPrice: 1,
@@ -445,8 +445,9 @@ export default function Exchange() {
             )}
           </Card>
 
-          {showToSelect && (
+                    {showToSelect && (
             <Card className="mt-2 max-h-40 overflow-y-auto">
+              {/* Активи користувача */}
               {userAssets
                 .filter((asset) => asset.id !== fromAsset?.id)
                 .map((asset) => (
