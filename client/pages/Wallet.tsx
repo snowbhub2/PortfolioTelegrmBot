@@ -729,13 +729,7 @@ export default function Wallet() {
         onSuccess={handleBuySuccess}
       />
 
-      {/* Exchange Modal */}
-      <ExchangeModal
-        isOpen={showExchangeModal}
-        onClose={() => setShowExchangeModal(false)}
-        portfolioManager={portfolioManager}
-        onSuccess={handleBuySuccess}
-      />
+      
     </div>
   );
 }
