@@ -8,7 +8,7 @@ import { useTelegram } from "@/hooks/useTelegram";
 import { usePriceUpdates } from "@/lib/priceService";
 import { useNavigate } from "react-router-dom";
 
-// Доступ��і активи для купівлі
+// Доступні активи для купівлі
 const availableAssets = [
   {
     id: "ton",
@@ -127,10 +127,32 @@ export default function Exchange() {
         console.log("💵 USD актив додано до списку");
       }
 
-      console.log("📋 Всі активи для обміну:", allAssets);
+            console.log("📋 Всі активи для обміну:", allAssets);
       setUserAssets(allAssets);
-      setFromAsset(null);
-      setToAsset(null);
+
+      // Автоматично обираємо перший актив (долари) якщо не обрано
+      if (allAssets.length > 0 && !fromAsset) {
+        setFromAsset(allAssets[0]);
+        console.log("🎯 Автоматично обрано fromAsset:", allAssets[0]);
+      }
+
+      // Автоматично обираємо перший ринковий актив якщо маємо долари
+      if (allAssets.length > 0 && allAssets[0].id === "usd" && !toAsset) {
+        const firstMarketAsset = availableAssets[0];
+        const marketAssetForExchange: UserAsset = {
+          id: firstMarketAsset.id,
+          symbol: firstMarketAsset.symbol,
+          name: firstMarketAsset.name,
+          quantity: 0,
+          avgPrice: firstMarketAsset.price,
+          currentPrice: firstMarketAsset.price,
+          icon: firstMarketAsset.icon,
+          category: firstMarketAsset.category as UserAsset["category"],
+        };
+        setToAsset(marketAssetForExchange);
+        console.log("🎯 Автоматично обрано toAsset:", marketAssetForExchange);
+      }
+
       setFromAmount("");
       setError("");
     }
@@ -303,7 +325,7 @@ export default function Exchange() {
                   <div>
                     <div className="font-medium">{fromAsset.symbol}</div>
                     <div className="text-xs text-muted-foreground">
-                      Д��ступно: {fromAsset.quantity.toFixed(4)}
+                      Доступно: {fromAsset.quantity.toFixed(4)}
                     </div>
                   </div>
                 </div>
@@ -564,7 +586,7 @@ export default function Exchange() {
           }
         >
           {isLoading
-            ? "Обмінюємо..."
+            ? "Обмі��юємо..."
             : `Обміняти ${fromAsset?.symbol || ""} на ${toAsset?.symbol || ""}`}
         </Button>
 
