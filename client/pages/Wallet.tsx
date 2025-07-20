@@ -24,7 +24,7 @@ import {
 } from "@/lib/trendingAssets";
 import { MiniChart } from "@/components/MiniChart";
 import { BuyAssetModal } from "@/components/BuyAssetModal";
-import { ExchangeModal } from "@/components/ExchangeModal";
+
 import { usePriceUpdates } from "@/lib/priceService";
 
 // Інші доступні активи (не куплені користувачем)
@@ -110,8 +110,7 @@ export default function Wallet() {
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [selectedBuyAsset, setSelectedBuyAsset] = useState<any>(null);
 
-  // Модал обміну активів
-  const [showExchangeModal, setShowExchangeModal] = useState(false);
+  
 
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
@@ -136,7 +135,7 @@ export default function Wallet() {
     const portfolio = new PortfolioManager(userId);
     setPortfolioManager(portfolio);
 
-    // Завантаження даних портфеля
+    // Завантаження даних п��ртфеля
     updatePortfolioData(portfolio);
   }, [tg, user]);
 
@@ -423,7 +422,7 @@ export default function Wallet() {
           </div>
 
           <div className="space-y-2">
-            {/* Доллары - готівка для торгівлі */}
+            {/* До��лары - готівка для торгівлі */}
             <Card
               className="p-4 hover:bg-muted/50 transition-colors cursor-pointer border-l-4 border-l-green-500"
               onClick={() => {
@@ -449,7 +448,7 @@ export default function Wallet() {
               </div>
             </Card>
 
-            {/* Куплені актив�� користувача */}
+            {/* Куплені активи користувача */}
             {showAllAssets &&
               userAssets.map((asset) => {
                 const pnl = portfolioManager?.getAssetPnL(asset.id) || {
