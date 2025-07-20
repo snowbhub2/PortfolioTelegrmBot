@@ -299,10 +299,7 @@ export default function Exchange() {
     return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="p-4 space-y-4">
-        {/* Debug info */}
-        <div className="text-xs text-muted-foreground">
-          Debug: знайдено {userAssets.length} активів, portfolioManager: {portfolioManager ? "так" : "ні"}
-        </div>
+        
         {/* From Asset Selection */}
         <div>
           <label className="text-sm font-medium mb-2 block">Віддаєте</label>
@@ -384,7 +381,7 @@ export default function Exchange() {
         {fromAsset && (
           <div>
             <label className="text-sm font-medium mb-2 block">
-              Кількість
+              ��ількість
             </label>
             <div className="relative">
               <Input
@@ -586,7 +583,7 @@ export default function Exchange() {
           }
         >
           {isLoading
-            ? "Обмі��юємо..."
+            ? "Обмінюємо..."
             : `Обміняти ${fromAsset?.symbol || ""} на ${toAsset?.symbol || ""}`}
         </Button>
 
