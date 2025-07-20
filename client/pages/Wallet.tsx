@@ -198,8 +198,8 @@ export default function Wallet() {
       navigate("/withdraw/method");
     } else if (action === "deposit") {
       navigate("/deposit/method");
-    } else if (action === "exchange") {
-      setShowExchangeModal(true);
+        } else if (action === "exchange") {
+      navigate("/exchange");
     } else if (action === "transfer") {
       // Логіка переведення між Портфель та CFD
       navigate("/transfer");
@@ -449,7 +449,7 @@ export default function Wallet() {
               </div>
             </Card>
 
-            {/* Куплені активи користувача */}
+            {/* Куплені актив�� користувача */}
             {showAllAssets &&
               userAssets.map((asset) => {
                 const pnl = portfolioManager?.getAssetPnL(asset.id) || {
