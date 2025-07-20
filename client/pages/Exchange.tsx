@@ -197,7 +197,7 @@ export default function Exchange() {
     try {
       let success = false;
 
-      if (fromAsset.id === "usd" && toAsset.id !== "usd") {
+            if (fromAsset.id === "usd" && toAsset.id !== "usd") {
         // Купуємо актив за долари
         success = portfolioManager.buyAsset(
           toAsset.id,
