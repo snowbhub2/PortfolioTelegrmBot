@@ -24,13 +24,17 @@ export default function Exchange() {
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
 
-  // Ініціалізація портфоліо
+    // Ініціалізація портфоліо
   useEffect(() => {
-    if (user?.id) {
-      const manager = new PortfolioManager(user.id.toString());
-      setPortfolioManager(manager);
-    }
-  }, [user?.id]);
+    console.log("💰 Exchange компонент завантажено");
+    console.log("👤 user object:", user);
+
+    const userId = user?.id?.toString() || "demo_user";
+    const manager = new PortfolioManager(userId);
+    setPortfolioManager(manager);
+
+    console.log("📊 Portfolio manager створено для:", userId);
+  }, [user]);
 
   useEffect(() => {
     if (portfolioManager) {
@@ -141,7 +145,7 @@ export default function Exchange() {
           fromAsset.currentPrice,
         );
       } else if (fromAsset.id !== "usd" && toAsset.id !== "usd") {
-        // Обмін між активами: продаємо один, купуєм�� інший
+        // Обмін між активами: продаємо один, купуємо інший
         const sellSuccess = portfolioManager.sellAsset(
           fromAsset.id,
           parseFloat(fromAmount),
