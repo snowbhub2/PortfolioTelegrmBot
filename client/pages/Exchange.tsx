@@ -1,25 +1,28 @@
 import { useState, useEffect } from "react";
+import { useTelegram } from "@/hooks/useTelegram";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { ArrowUpDownIcon, ChevronLeftIcon } from "lucide-react";
-import { PortfolioManager, UserAsset } from "@/lib/portfolio";
-import { useTelegram } from "@/hooks/useTelegram";
-import { usePriceUpdates } from "@/lib/priceService";
+import { ArrowUpDownIcon, ChevronRightIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { PortfolioManager, UserAsset } from "@/lib/portfolio";
+import { usePriceUpdates } from "@/lib/priceService";
 
 export default function Exchange() {
   const { hapticFeedback, user, tg } = useTelegram();
   const navigate = useNavigate();
+
+  // Portfolio and assets state
+  const [portfolioManager, setPortfolioManager] = useState<PortfolioManager | null>(null);
+  const [userAssets, setUserAssets] = useState<UserAsset[]>([]);
+  
+  // Exchange state
   const [fromAsset, setFromAsset] = useState<UserAsset | null>(null);
   const [toAsset, setToAsset] = useState<UserAsset | null>(null);
   const [fromAmount, setFromAmount] = useState("");
-  const [userAssets, setUserAssets] = useState<UserAsset[]>([]);
+  const [showFromAssets, setShowFromAssets] = useState(false);
+  const [showToAssets, setShowToAssets] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const [showFromSelect, setShowFromSelect] = useState(false);
-  const [showToSelect, setShowToSelect] = useState(false);
-  const [portfolioManager, setPortfolioManager] = useState<PortfolioManager | null>(null);
 
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
@@ -43,33 +46,30 @@ export default function Exchange() {
       if (cashBalance > 0) {
         const usdAsset: UserAsset = {
           id: "usd",
-          symbol: "USD",
-          name: "Доллары (готівка)",
+          symbol: "USDT",
+          name: "Доллары",
           quantity: cashBalance,
           avgPrice: 1,
           currentPrice: 1,
           icon: "$",
           category: "currency",
         };
-        allAssets.unshift(usdAsset); // Додаємо на початок
+        allAssets.unshift(usdAsset);
       }
 
       setUserAssets(allAssets);
       
-      // Автоматично обираємо перші два активи для обміну
-      if (allAssets.length >= 2) {
-        setFromAsset(allAssets[0]);
-        setToAsset(allAssets[1]);
-      } else if (allAssets.length === 1) {
+      // Автоматично встановлюємо перші активи якщо є
+      if (allAssets.length >= 2 && !fromAsset && !toAsset) {
+        setFromAsset(allAssets[0]); // USDT
+        setToAsset(allAssets[1]); // First crypto
+      } else if (allAssets.length === 1 && !fromAsset) {
         setFromAsset(allAssets[0]);
       }
-      
-      setFromAmount("");
-      setError("");
     }
-  }, [portfolioManager]);
+  }, [portfolioManager, fromAsset, toAsset]);
 
-  // Налаштування Telegram кнопки назад
+  // Налаштування Telegram
   useEffect(() => {
     if (tg) {
       tg.BackButton.show();
@@ -92,23 +92,48 @@ export default function Exchange() {
           : asset;
       });
       setUserAssets(updatedAssets);
+      
+      // Оновлюємо обрані активи теж
+      if (fromAsset) {
+        const updatedFromAsset = updatedAssets.find(a => a.id === fromAsset.id);
+        if (updatedFromAsset) setFromAsset(updatedFromAsset);
+      }
+      if (toAsset) {
+        const updatedToAsset = updatedAssets.find(a => a.id === toAsset.id);
+        if (updatedToAsset) setToAsset(updatedToAsset);
+      }
     }
   }, [priceUpdates]);
 
-  const fromValue = parseFloat(fromAmount) * (fromAsset?.currentPrice || 0);
-  const toAmount = toAsset?.currentPrice ? fromValue / toAsset.currentPrice : 0;
-
-  const isValidAmount =
-    fromAsset &&
-    parseFloat(fromAmount) > 0 &&
-    parseFloat(fromAmount) <= fromAsset.quantity;
+  // Calculate exchange rate and amounts
+  const toAmount = fromAmount && fromAsset && toAsset 
+    ? (parseFloat(fromAmount) * fromAsset.currentPrice / toAsset.currentPrice).toFixed(6)
+    : "";
 
   const handleSwapAssets = () => {
     hapticFeedback("light");
-    const temp = fromAsset;
+    const tempAsset = fromAsset;
     setFromAsset(toAsset);
-    setToAsset(temp);
+    setToAsset(tempAsset);
     setFromAmount("");
+  };
+
+  const handleFromAssetSelect = (asset: UserAsset) => {
+    hapticFeedback("light");
+    if (asset.id !== toAsset?.id) {
+      setFromAsset(asset);
+      setFromAmount("");
+    }
+    setShowFromAssets(false);
+  };
+
+  const handleToAssetSelect = (asset: UserAsset) => {
+    hapticFeedback("light");
+    if (asset.id !== fromAsset?.id) {
+      setToAsset(asset);
+      setFromAmount("");
+    }
+    setShowToAssets(false);
   };
 
   const handleMaxAmount = () => {
@@ -118,9 +143,28 @@ export default function Exchange() {
     }
   };
 
-  const handleExchange = async () => {
-    if (!portfolioManager || !fromAsset || !toAsset || !isValidAmount) {
+  const handleCheckDeal = async () => {
+    if (!fromAmount || parseFloat(fromAmount) <= 0) {
       hapticFeedback("medium");
+      setError("Введіть коректну кількість");
+      return;
+    }
+
+    if (!fromAsset || !toAsset) {
+      hapticFeedback("medium");
+      setError("Оберіть активи для обміну");
+      return;
+    }
+
+    if (parseFloat(fromAmount) > fromAsset.quantity) {
+      hapticFeedback("medium");
+      setError("Недостатньо коштів");
+      return;
+    }
+
+    if (!portfolioManager) {
+      hapticFeedback("medium");
+      setError("Помилка ініціалізації портфоліо");
       return;
     }
 
@@ -129,6 +173,7 @@ export default function Exchange() {
 
     try {
       let success = false;
+      const toAmountNum = parseFloat(toAmount);
 
       if (fromAsset.id === "usd" && toAsset.id !== "usd") {
         // Купуємо актив за долари
@@ -136,7 +181,7 @@ export default function Exchange() {
           toAsset.id,
           toAsset.symbol,
           toAsset.name,
-          toAmount,
+          toAmountNum,
           toAsset.currentPrice,
           toAsset.icon,
           toAsset.category,
@@ -161,7 +206,7 @@ export default function Exchange() {
             toAsset.id,
             toAsset.symbol,
             toAsset.name,
-            toAmount,
+            toAmountNum,
             toAsset.currentPrice,
             toAsset.icon,
             toAsset.category,
@@ -171,6 +216,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
+        
         // Оновлюємо активи після успішного обміну
         const updatedAssets = portfolioManager.getAssets();
         const cashBalance = portfolioManager.getCashBalance();
@@ -179,8 +225,8 @@ export default function Exchange() {
         if (cashBalance > 0) {
           const usdAsset: UserAsset = {
             id: "usd",
-            symbol: "USD",
-            name: "Доллары (готівка)",
+            symbol: "USDT",
+            name: "Доллары",
             quantity: cashBalance,
             avgPrice: 1,
             currentPrice: 1,
@@ -192,9 +238,14 @@ export default function Exchange() {
         
         setUserAssets(allAssets);
         setFromAmount("");
-        setError("");
         
-                // Показуємо повідомлення про успіх
+        // Оновлюємо обрані активи
+        const newFromAsset = allAssets.find(a => a.id === fromAsset.id);
+        const newToAsset = allAssets.find(a => a.id === toAsset.id);
+        if (newFromAsset) setFromAsset(newFromAsset);
+        if (newToAsset) setToAsset(newToAsset);
+        
+        // Success haptic
         if (tg) {
           tg.HapticFeedback.impactOccurred("medium");
         }
@@ -210,247 +261,145 @@ export default function Exchange() {
     }
   };
 
+  const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(6) : "0";
+  const isValidAmount =
+    fromAmount &&
+    parseFloat(fromAmount) > 0 &&
+    fromAsset &&
+    parseFloat(fromAmount) <= fromAsset.quantity;
+
+  const availableFromAssets = userAssets.filter(
+    (asset) => asset.id !== toAsset?.id,
+  );
+  const availableToAssets = userAssets.filter(
+    (asset) => asset.id !== fromAsset?.id,
+  );
+
+  // Якщо немає активів, показуємо заглушку
+  if (userAssets.length < 2) {
+    return (
+      <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-4">
+        <div className="text-center">
+          <div className="text-6xl mb-4">💱</div>
+          <h2 className="text-xl font-semibold mb-2">Недостатньо активів</h2>
+          <p className="text-muted-foreground mb-4">
+            {userAssets.length === 0
+              ? "У вас немає активів для обміну. Купіть активи на сторінці Ринок."
+              : "Необхідно мати принаймні 2 активи для обміну"}
+          </p>
+          <Button onClick={() => navigate("/market")} className="mr-2">
+            Перейти до ринку
+          </Button>
+          <Button variant="outline" onClick={() => navigate("/")}>
+            Назад
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header */}
-      <div className="flex items-center justify-between p-4 border-b border-border">
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          onClick={() => navigate("/")}
-          className="flex items-center gap-2"
-        >
-          <ChevronLeftIcon className="w-5 h-5" />
-        </Button>
-        <h1 className="text-lg font-semibold">Обміняти активи</h1>
-        <div className="w-10"></div>
-      </div>
-
       <div className="p-4 space-y-6">
-        {/* From Asset Selection */}
-        <div>
-          <label className="text-sm font-medium mb-2 block text-muted-foreground">Віддаєте</label>
-          <Card
-            className={`p-4 cursor-pointer border-2 transition-colors ${
-              fromAsset ? "border-primary bg-primary/5" : "border-dashed border-muted hover:border-muted-foreground/50"
-            }`}
-            onClick={() => setShowFromSelect(!showFromSelect)}
-          >
-            {fromAsset ? (
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-10 h-10 ${fromAsset.id === "usd" ? "bg-green-500" : "bg-primary"} rounded-full flex items-center justify-center`}
-                  >
-                    <span className="text-white text-lg font-bold">
-                      {fromAsset.icon}
-                    </span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-lg">{fromAsset.symbol}</div>
-                    <div className="text-sm text-muted-foreground">
-                      Доступно: {fromAsset.quantity.toFixed(4)}
-                    </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="font-medium text-lg">
-                    ${fromAsset.currentPrice.toFixed(2)}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="text-center text-muted-foreground py-4">
-                Оберіть актив для обміну
-              </div>
-            )}
-          </Card>
-
-          {showFromSelect && (
-            <Card className="mt-2 max-h-60 overflow-y-auto">
-              {userAssets.map((asset) => (
-                <div
-                  key={asset.id}
-                  className="p-4 hover:bg-muted/50 cursor-pointer border-b border-border last:border-b-0 transition-colors"
-                  onClick={() => {
-                    setFromAsset(asset);
-                    setShowFromSelect(false);
-                    hapticFeedback("light");
-                  }}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-8 h-8 ${asset.id === "usd" ? "bg-green-500" : "bg-primary"} rounded-full flex items-center justify-center`}>
-                        <span className="text-white text-sm font-bold">
-                          {asset.icon}
-                        </span>
-                      </div>
-                      <div>
-                        <div className="font-medium">
-                          {asset.symbol}
-                        </div>
-                        <div className="text-xs text-muted-foreground">
-                          {asset.quantity.toFixed(4)}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-sm font-medium">
-                      ${asset.currentPrice.toFixed(2)}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </Card>
-          )}
-        </div>
-
-        {/* Amount Input */}
-        {fromAsset && (
-          <div>
-            <label className="text-sm font-medium mb-2 block text-muted-foreground">
-              Кількість
-            </label>
-            <div className="relative">
-              <Input
-                type="number"
-                placeholder="0.00"
-                value={fromAmount}
-                onChange={(e) => {
-                  setFromAmount(e.target.value);
-                  setError("");
-                }}
-                className="text-xl py-6 pr-20"
-                min="0"
-                max={fromAsset.quantity}
-                step="0.01"
-              />
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-lg font-medium text-muted-foreground">
-                {fromAsset.symbol}
-              </div>
-            </div>
-            <div className="flex justify-between items-center mt-2">
-              <span className="text-sm text-muted-foreground">
-                ≈ ${fromValue.toFixed(2)}
-              </span>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleMaxAmount}
-                className="text-primary p-0 h-auto hover:underline"
+        {/* From Asset */}
+        <Card className="p-4">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <div
+                className={`w-8 h-8 ${fromAsset?.id === "usd" ? "bg-green-500" : "bg-blue-500"} rounded-full flex items-center justify-center`}
               >
-                Максимум
-              </Button>
+                <span className="text-white text-sm font-bold">
+                  {fromAsset?.id === "usd" ? "$" : fromAsset?.icon}
+                </span>
+              </div>
+              <span className="text-sm">Вы платите</span>
+            </div>
+            <div className="text-sm text-primary">
+              Внести • {fromAsset?.quantity.toFixed(6)} {fromAsset?.symbol}
             </div>
           </div>
-        )}
+
+          <div className="flex items-center justify-between">
+            <input
+              type="number"
+              placeholder="0"
+              value={fromAmount}
+              onChange={(e) => {
+                setFromAmount(e.target.value);
+                setError("");
+              }}
+              className="text-4xl font-bold bg-transparent border-0 focus:outline-none w-2/3"
+            />
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setShowFromAssets(true)}
+            >
+              <span className="text-2xl font-bold text-muted-foreground">
+                {fromAsset?.symbol}
+              </span>
+              <ChevronRightIcon className="w-5 h-5 text-muted-foreground" />
+            </div>
+          </div>
+
+          {fromAsset && fromAsset.quantity > 0 && (
+            <div className="flex justify-end mt-2">
+              <button
+                onClick={handleMaxAmount}
+                className="text-sm text-primary"
+              >
+                Макс.
+              </button>
+            </div>
+          )}
+        </Card>
 
         {/* Swap Button */}
-        {fromAsset && (
-          <div className="flex justify-center">
-            <Button
-              variant="outline"
-              size="icon"
-              onClick={handleSwapAssets}
-              className="rounded-full w-12 h-12 border-2 hover:bg-primary hover:text-primary-foreground transition-colors"
-              disabled={!toAsset}
-            >
-              <ArrowUpDownIcon className="w-5 h-5" />
-            </Button>
-          </div>
-        )}
-
-        {/* To Asset Selection */}
-        <div>
-          <label className="text-sm font-medium mb-2 block text-muted-foreground">Отримуєте</label>
-          <Card
-            className={`p-4 cursor-pointer border-2 transition-colors ${
-              toAsset ? "border-primary bg-primary/5" : "border-dashed border-muted hover:border-muted-foreground/50"
-            }`}
-            onClick={() => setShowToSelect(!showToSelect)}
+        <div className="flex justify-center">
+          <Button
+            variant="outline"
+            size="icon"
+            className="w-12 h-12 rounded-full"
+            onClick={handleSwapAssets}
+            disabled={!fromAsset || !toAsset}
           >
-            {toAsset ? (
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div
-                    className={`w-10 h-10 ${toAsset.id === "usd" ? "bg-green-500" : "bg-primary"} rounded-full flex items-center justify-center`}
-                  >
-                    <span className="text-white text-lg font-bold">{toAsset.icon}</span>
-                  </div>
-                  <div>
-                    <div className="font-medium text-lg">{toAsset.symbol}</div>
-                    <div className="text-sm text-muted-foreground">
-                      Доступно: {toAsset.quantity.toFixed(4)}
-                    </div>
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="font-medium text-lg">
-                    ${toAsset.currentPrice.toFixed(2)}
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className="text-center text-muted-foreground py-4">
-                Оберіть актив для отримання
-              </div>
-            )}
-          </Card>
-
-          {showToSelect && (
-            <Card className="mt-2 max-h-60 overflow-y-auto">
-              {userAssets
-                .filter((asset) => asset.id !== fromAsset?.id)
-                .map((asset) => (
-                  <div
-                    key={asset.id}
-                    className="p-4 hover:bg-muted/50 cursor-pointer border-b border-border last:border-b-0 transition-colors"
-                    onClick={() => {
-                      setToAsset(asset);
-                      setShowToSelect(false);
-                      hapticFeedback("light");
-                    }}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 ${asset.id === "usd" ? "bg-green-500" : "bg-primary"} rounded-full flex items-center justify-center`}>
-                          <span className="text-white text-sm font-bold">
-                            {asset.icon}
-                          </span>
-                        </div>
-                        <div>
-                          <div className="font-medium">
-                            {asset.symbol}
-                          </div>
-                          <div className="text-xs text-muted-foreground">
-                            {asset.quantity.toFixed(4)}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="text-sm font-medium">
-                        ${asset.currentPrice.toFixed(2)}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </Card>
-          )}
+            <ArrowUpDownIcon className="w-5 h-5" />
+          </Button>
         </div>
 
-        {/* Result Amount */}
-        {toAsset && fromAmount && parseFloat(fromAmount) > 0 && (
-          <Card className="p-4 bg-muted/30">
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-muted-foreground font-medium">
-                Ви отримаєте:
-              </span>
-              <span className="font-bold text-lg">
-                {toAmount.toFixed(6)} {toAsset.symbol}
+        {/* To Asset */}
+        <Card className="p-4">
+          <div className="flex items-center gap-2 mb-3">
+            <div
+              className={`w-8 h-8 ${toAsset?.id === "usd" ? "bg-green-500" : "bg-purple-500"} rounded-full flex items-center justify-center`}
+            >
+              <span className="text-white text-sm font-bold">
+                {toAsset?.id === "usd" ? "$" : toAsset?.icon}
               </span>
             </div>
-            <div className="text-xs text-muted-foreground mt-1">
-              ≈ ${(toAmount * toAsset.currentPrice).toFixed(2)}
+            <span className="text-sm">Вы получите</span>
+          </div>
+
+          <div className="flex items-center justify-between">
+            <div className="text-4xl font-bold w-2/3">{toAmount || "0"}</div>
+            <div
+              className="flex items-center gap-2 cursor-pointer"
+              onClick={() => setShowToAssets(true)}
+            >
+              <span className="text-2xl font-bold text-muted-foreground">
+                {toAsset?.symbol}
+              </span>
+              <ChevronRightIcon className="w-5 h-5 text-muted-foreground" />
             </div>
-          </Card>
+          </div>
+        </Card>
+
+        {/* Exchange Rate */}
+        {fromAsset && toAsset && (
+          <div className="text-center">
+            <div className="text-sm text-muted-foreground">
+              1 {toAsset.symbol} ≈ {exchangeRate} {fromAsset.symbol}
+            </div>
+          </div>
         )}
 
         {/* Error Message */}
@@ -460,28 +409,97 @@ export default function Exchange() {
           </div>
         )}
 
-        {/* Exchange Button */}
+        {/* Check Deal Button */}
         <Button
-          className="w-full py-6 text-lg font-medium"
-          onClick={handleExchange}
-          disabled={
-            !isValidAmount || !toAsset || isLoading || userAssets.length < 2
-          }
+          className="w-full py-4 text-lg font-medium"
+          disabled={!isValidAmount || isLoading}
+          onClick={handleCheckDeal}
         >
-          {isLoading
-            ? "Обмінюємо..."
-            : `Обміняти ${fromAsset?.symbol || ""} на ${toAsset?.symbol || ""}`}
+          {isLoading ? "Обміняємо..." : "Проверить сделку"}
         </Button>
-
-        {/* Help Text */}
-        {userAssets.length < 2 && (
-          <div className="text-center text-sm text-muted-foreground p-4 bg-muted/30 rounded-lg">
-            {userAssets.length === 0
-              ? "У вас немає активів для обміну. Купіть активи на сторінці Ринок."
-              : "Необхідно мати принаймні 2 активи для обміну"}
-          </div>
-        )}
       </div>
+
+      {/* From Asset Selection Modal */}
+      {showFromAssets && (
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-end justify-center">
+          <div className="bg-card rounded-t-lg w-full max-w-md border border-border animate-in slide-in-from-bottom-4">
+            <div className="flex items-center justify-between p-4 border-b border-border">
+              <h3 className="text-lg font-semibold">Выберите актив</h3>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setShowFromAssets(false)}
+              >
+                ×
+              </Button>
+            </div>
+            <div className="p-4 space-y-2 max-h-80 overflow-y-auto">
+              {availableFromAssets.map((asset) => (
+                <div
+                  key={asset.id}
+                  className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
+                  onClick={() => handleFromAssetSelect(asset)}
+                >
+                  <div
+                    className={`w-10 h-10 ${asset.id === "usd" ? "bg-green-500" : "bg-blue-500"} rounded-full flex items-center justify-center`}
+                  >
+                    <span className="text-white text-lg font-bold">
+                      {asset.id === "usd" ? "$" : asset.icon}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-medium">{asset.name}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {asset.quantity.toFixed(6)} {asset.symbol}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* To Asset Selection Modal */}
+      {showToAssets && (
+        <div className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-end justify-center">
+          <div className="bg-card rounded-t-lg w-full max-w-md border border-border animate-in slide-in-from-bottom-4">
+            <div className="flex items-center justify-between p-4 border-b border-border">
+              <h3 className="text-lg font-semibold">Выберите актив</h3>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setShowToAssets(false)}
+              >
+                ×
+              </Button>
+            </div>
+            <div className="p-4 space-y-2 max-h-80 overflow-y-auto">
+              {availableToAssets.map((asset) => (
+                <div
+                  key={asset.id}
+                  className="flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-muted/50 transition-colors"
+                  onClick={() => handleToAssetSelect(asset)}
+                >
+                  <div
+                    className={`w-10 h-10 ${asset.id === "usd" ? "bg-green-500" : "bg-purple-500"} rounded-full flex items-center justify-center`}
+                  >
+                    <span className="text-white text-lg font-bold">
+                      {asset.id === "usd" ? "$" : asset.icon}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-medium">{asset.name}</div>
+                    <div className="text-sm text-muted-foreground">
+                      {asset.quantity.toFixed(6)} {asset.symbol}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
