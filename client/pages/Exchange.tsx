@@ -8,7 +8,7 @@ import { useTelegram } from "@/hooks/useTelegram";
 import { usePriceUpdates } from "@/lib/priceService";
 import { useNavigate } from "react-router-dom";
 
-// Доступні активи для купівлі
+// Доступ��і активи для купівлі
 const availableAssets = [
   {
     id: "ton",
@@ -274,9 +274,13 @@ export default function Exchange() {
     }
   };
 
-  return (
+    return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="p-4 space-y-4">
+        {/* Debug info */}
+        <div className="text-xs text-muted-foreground">
+          Debug: знайдено {userAssets.length} активів, portfolioManager: {portfolioManager ? "так" : "ні"}
+        </div>
         {/* From Asset Selection */}
         <div>
           <label className="text-sm font-medium mb-2 block">Віддаєте</label>
@@ -299,7 +303,7 @@ export default function Exchange() {
                   <div>
                     <div className="font-medium">{fromAsset.symbol}</div>
                     <div className="text-xs text-muted-foreground">
-                      Доступно: {fromAsset.quantity.toFixed(4)}
+                      Д��ступно: {fromAsset.quantity.toFixed(4)}
                     </div>
                   </div>
                 </div>
