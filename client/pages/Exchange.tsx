@@ -194,9 +194,9 @@ export default function Exchange() {
         setFromAmount("");
         setError("");
         
-        // Показуємо повідомлення про успіх
+                // Показуємо повідомлення про успіх
         if (tg) {
-          tg.showAlert("Обмін успішно виконано!");
+          tg.HapticFeedback.impactOccurred("medium");
         }
       } else {
         setError("Помилка при обміні активів");
@@ -477,7 +477,7 @@ export default function Exchange() {
         {userAssets.length < 2 && (
           <div className="text-center text-sm text-muted-foreground p-4 bg-muted/30 rounded-lg">
             {userAssets.length === 0
-              ? "У вас немає активів для обміну. Купіть ак��иви на сторінці Ринок."
+              ? "У вас немає активів для обміну. Купіть активи на сторінці Ринок."
               : "Необхідно мати принаймні 2 активи для обміну"}
           </div>
         )}
