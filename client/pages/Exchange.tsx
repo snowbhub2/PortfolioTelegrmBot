@@ -459,11 +459,9 @@ export default function Exchange() {
             : `Обміняти ${fromAsset?.symbol || ""} на ${toAsset?.symbol || ""}`}
         </Button>
 
-        {userAssets.length < 2 && (
+                {userAssets.length === 0 && (
           <div className="text-center text-sm text-muted-foreground">
-            {userAssets.length === 0
-              ? "У вас немає активів для обміну. Купіть активи на сторінці Ринок."
-              : "Необхідно мати принаймні 2 активи для обміну"}
+            У вас немає активів для обміну. Купіть активи на сторінці Ринок.
           </div>
         )}
       </div>
