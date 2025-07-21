@@ -45,7 +45,7 @@ export default function Settings() {
 
 
 
-  // Динамічно створюємо settingsItems з мовою користувача
+  // Динам��чно створюємо settingsItems з мовою користувача
   const settingsItems = [
     {
       icon: <BellIcon className="w-5 h-5 text-red-500" />,
@@ -90,17 +90,17 @@ export default function Settings() {
     },
     {
       icon: <MessageSquareIcon className="w-5 h-5 text-orange-500" />,
-      title: "Обратиться в поддержку",
+      title: t('settings.contactSupport'),
       hasChevron: true,
     },
     {
       icon: <HelpCircleIcon className="w-5 h-5 text-blue-400" />,
-      title: "FAQ Кошелька",
+      title: t('settings.walletFAQ'),
       hasChevron: true,
     },
     {
       icon: <LightbulbIcon className="w-5 h-5 text-yellow-500" />,
-      title: "Новости Кошелька",
+      title: t('settings.walletNews'),
       hasChevron: true,
     },
   ];
