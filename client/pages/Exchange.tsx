@@ -50,16 +50,6 @@ const cryptoAssets: MarketAsset[] = [
     icon: "🌅",
     sparkline: [150, 151, 152, 152.47],
   },
-  {
-    id: "xrp",
-    symbol: "XRP",
-    name: "XRP",
-    price: 2.45,
-    change24h: -1.85,
-    marketCap: 140000000000,
-    icon: "💎",
-    sparkline: [2.55, 2.50, 2.47, 2.45],
-  },
 ];
 
 // Акції
@@ -410,7 +400,7 @@ export default function Exchange() {
 
   const handleBalanceClick = () => {
     if (fromAsset?.id === "usd") {
-      // Тільк�� для до��арів переходимо на поповнення
+      // Тільк�� д��я до��арів переходимо на поповнення
       navigate("/deposit/method");
     }
   };
