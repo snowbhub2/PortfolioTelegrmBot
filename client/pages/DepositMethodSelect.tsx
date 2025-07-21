@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function DepositMethodSelect() {
   const { hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   useEffect(() => {
