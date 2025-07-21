@@ -83,7 +83,7 @@ const translations = {
     'notifications.disabled': 'Выкл',
     'notifications.security_notice': 'Уведомления о транзакциях и безопасности всегда будут включены.',
     'notifications.news_text': 'Все новости вы можете прочитать в канале',
-    'notifications.news_channel_link': 'Ново��ти Крипто Кошелька',
+    'notifications.news_channel_link': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
@@ -100,10 +100,10 @@ const translations = {
     
     // Wallet
     'wallet.title': 'Портфель',
-    'wallet.balance.portfolio': 'Баланс Портфе��я',
+    'wallet.balance.portfolio': 'Баланс Портфеля',
     'wallet.balance.allTime': 'за весь час',
     'wallet.actions.withdraw': 'Вывести',
-    'wallet.actions.deposit': 'Пополнить',
+    'wallet.actions.deposit': '��ополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
@@ -125,7 +125,7 @@ const translations = {
     'wallet.tabs.cfd': 'CFD',
     'wallet.settings.open': 'Открыть настройки',
     'wallet.trading.title': 'Торговля',
-    'wallet.trading.currentPrice': 'Текущая цена',
+    'wallet.trading.currentPrice': 'Те��ущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
@@ -133,7 +133,7 @@ const translations = {
 
     // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
-    'wallet.notification.withDollars': 'с долларами',
+    'wallet.notification.withDollars': 'с Nobel Portfolio',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -175,10 +175,10 @@ const translations = {
     'coin.about.currency': 'О ВАЛЮТЕ',
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
-    'coin.quantity': 'Количе��тво',
+    'coin.quantity': 'Количество',
     'coin.current_value': 'Текущая стоимость',
     'coin.btn.buy': 'Купить',
-    'coin.btn.sell': 'Продать',
+    'coin.btn.sell': 'Продат��',
     'coin.btn.deposit': 'Пополнить',
     'coin.btn.withdraw': 'Вывести',
 
@@ -246,12 +246,12 @@ const translations = {
     'withdraw.method.external.description': '��ужно указать криптоадрес',
 
     // Withdraw Asset Selection
-    'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
+    'withdraw.asset.title': 'ВЫ ВЫВ��ДИТЕ',
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
-    'withdraw.amount.buy_more': 'До��упить.',
+    'withdraw.amount.buy_more': '��о��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
@@ -268,7 +268,7 @@ const translations = {
     'withdraw.processing.recipient': '��олучатель',
     'withdraw.processing.network': 'Сеть',
     'withdraw.processing.status': 'Статус',
-    'withdraw.processing.return_to_portfolio': 'Вернуть��я к портфелю',
+    'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
     'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
     'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
 
@@ -420,7 +420,7 @@ const translations = {
     'coin.about_precious_metal': 'ПРО ДОРОГОЦІННИЙ МЕТАЛ',
     'coin.about_currency': 'ПРО ВАЛЮТУ',
     'coin.portfolio_section': 'У ПОРТФЕЛІ',
-    'coin.read_more': '��окладніше',
+    'coin.read_more': 'Докладніше',
     'coin.portfolio_empty': 'Немає активів в портфелі',
     'coin.time_period.1d': '1Д',
     'coin.time_period.7d': '7Д',
@@ -441,7 +441,7 @@ const translations = {
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
-    'coin.gold_description': 'З��лото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
+    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
     'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
