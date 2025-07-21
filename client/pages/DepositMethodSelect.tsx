@@ -55,8 +55,8 @@ export default function DepositMethodSelect() {
       <div className="p-4">
         {/* Title */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">Как вы хотите купить</h1>
-          <h2 className="text-2xl font-bold">криптовалюту</h2>
+          <h1 className="text-2xl font-bold mb-2">{t('deposit.method.title')}</h1>
+          <h2 className="text-2xl font-bold">{t('deposit.method.subtitle')}</h2>
         </div>
 
         {/* Method Options */}
@@ -80,9 +80,9 @@ export default function DepositMethodSelect() {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-lg">Банковская карта</div>
+                  <div className="font-semibold text-lg">{t('deposit.method.bank_card')}</div>
                   <div className="text-sm text-muted-foreground">
-                    Купить криптовалюту по карте
+                    {t('deposit.method.bank_card_desc')}
                   </div>
                 </div>
               </div>
