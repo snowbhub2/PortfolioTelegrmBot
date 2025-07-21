@@ -6,7 +6,7 @@ export interface UserAsset {
   id: string;
   symbol: string;
   name: string;
-  quantity: number; // Кількість акцій/інструментів
+  quantity: number; // Кількі��ть акцій/інструментів
   avgPrice: number; // Середня ціна покупки
   currentPrice: number; // Поточна ціна
   icon: string;
@@ -121,7 +121,7 @@ export class PortfolioManager {
           quantity: 0.0005,
           price: 100000,
           timestamp: new Date(Date.now() - 3600000), // 1 час назад
-          description: "Покупка 0.0005 BTC за $100000.00",
+          description: "purchase_btc_0.0005_100000",
           status: "completed",
         },
         {
@@ -143,7 +143,7 @@ export class PortfolioManager {
     );
   }
 
-  // Скинути портфель (для демо)
+  // Скинут�� портфель (для демо)
   resetPortfolio(): void {
     localStorage.removeItem(`${PORTFOLIO_KEY}_${this.portfolio.userId}`);
     this.portfolio = this.createDefaultPortfolio();
@@ -268,7 +268,7 @@ export class PortfolioManager {
 
     const totalValue = quantity * price;
 
-    // Додаємо гроші
+    // Додаємо грош��
     this.portfolio.cashBalance += totalValue;
 
     // Зменшуємо кількість активів
