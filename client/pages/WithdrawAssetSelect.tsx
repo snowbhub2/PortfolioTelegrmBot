@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Card } from "@/components/ui/card";
 import { ArrowLeftIcon, SearchIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { PortfolioManager } from "@/lib/portfolio";
 
 interface Asset {
   id: string;
@@ -27,9 +29,11 @@ const availableAssets: Asset[] = [
 ];
 
 export default function WithdrawAssetSelect() {
-  const { hapticFeedback, tg } = useTelegram();
+  const { hapticFeedback, tg, user } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+  const [realBalance, setRealBalance] = useState(0);
 
   useEffect(() => {
     if (tg) {
@@ -64,7 +68,7 @@ export default function WithdrawAssetSelect() {
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Поиск"
+            placeholder={t('common.search')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-4 py-3 bg-muted rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -74,7 +78,7 @@ export default function WithdrawAssetSelect() {
         {/* Section Title */}
         <div className="mb-4">
           <h2 className="text-sm text-muted-foreground font-medium">
-            ВЫ ВЫВОДИТЕ
+            {t('withdraw.asset.title')}
           </h2>
         </div>
 
@@ -96,7 +100,9 @@ export default function WithdrawAssetSelect() {
                     </span>
                   </div>
                   <div>
-                    <div className="font-semibold text-lg">{asset.name}</div>
+                    <div className="font-semibold text-lg">
+                      {asset.id === 'usd' ? t('withdraw.asset.dollars') : asset.name}
+                    </div>
                     <div className="text-sm text-muted-foreground">
                       {asset.balance.toLocaleString("en-US", {
                         minimumFractionDigits: asset.balance < 1 ? 6 : 0,
