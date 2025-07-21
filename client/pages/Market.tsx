@@ -173,7 +173,7 @@ export default function Market() {
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
 
-  // Топ-4 активи за зростанням
+  // Топ-4 активи ��а зростанням
   const [topAssets, setTopAssets] = useState(TRENDING_ASSETS.slice(0, 4));
 
   // Оновлення топ-активів при зміні цін
@@ -295,7 +295,7 @@ export default function Market() {
                     className={`text-base mb-2 ${isPositive ? "text-success" : "text-destructive"}`}
                   >
                     {isPositive ? "↑" : "↓"}{" "}
-                    {Math.abs(asset.change24h).toFixed(2)}% за день
+                    {Math.abs(asset.change24h).toFixed(2)}% {t('market.per_day')}
                   </div>
                   <div className="text-base font-semibold">
                     {asset.price.toLocaleString()} $
