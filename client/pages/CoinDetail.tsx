@@ -178,7 +178,7 @@ export default function CoinDetail() {
     category: "crypto",
   };
 
-  // Оновлюємо ціну з реальних даних якщо доступно
+  // Оновлює��о ціну з реальних даних якщо доступно
   if (priceUpdates[asset.id]) {
     asset = {
       ...asset,
@@ -203,7 +203,7 @@ export default function CoinDetail() {
         } else if (asset.id === "eth") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
+            description: "Ethereum — це платформа для роз��мних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
             points: [
               "Ви можете купувати, продавати або зберігати ETH в Гаманці.",
               "Ethereum є основою для багатьох DeFi проектів та NFT."
@@ -224,7 +224,7 @@ export default function CoinDetail() {
             description: "Solana — це високопродуктивний блокчейн, відомий своєю швидкістю та низькими комісіями за транзакції.",
             points: [
               "Ви можете купувати, продавати або зберігати SOL в Гаманці.",
-              "Solana підтримує ��ецентралізовані додатки та смарт-контракти."
+              "Solana підтримує децентралізовані додатки та смарт-контракти."
             ]
           };
         } else if (asset.id === "xrp") {
@@ -242,7 +242,7 @@ export default function CoinDetail() {
             description: `${asset.name} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.`,
             points: [
               `Ви можете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
-              "Криптовалюти можуть мати високу во��атильність цін."
+              "Криптовалюти можуть мати високу волатильність цін."
             ]
           };
         }
@@ -263,7 +263,7 @@ export default function CoinDetail() {
             description: "Tesla, Inc. — американська компанія, що спеціалізується на електромобілях, накопичувачах енергії та сонячних панелях.",
             points: [
               "Ви можете купувати або продавати акції TSLA через платформу.",
-              "Tesla є лідером в галу��і електромобілів та чистої енергії."
+              "Tesla є лідером в галузі електромобілів та чистої енергії."
             ]
           };
         } else if (asset.id === "msft") {
@@ -281,7 +281,7 @@ export default function CoinDetail() {
             description: "Alphabet Inc. — материнська компанія Google, провідна інтернет-компанія та розробник пошукової системи Google.",
             points: [
               "Ви можете купувати або продавати акції GOOGL через платформу.",
-              "Alphabet володіє Google, YouTube, Android та багатьма інши��и сервісами."
+              "Alphabet володіє Google, YouTube, Android та багатьма іншими сервісами."
             ]
           };
         } else {
@@ -302,7 +302,7 @@ export default function CoinDetail() {
             description: "Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.",
             points: [
               "Ви можете купувати або продавати золото через платформу.",
-              "Золото традиційно вважається 'безпечним притулком' для інвесторів."
+              "Золото традиційно вважається 'безпечним притулком' для інвес��орів."
             ]
           };
         } else if (asset.id === "silver") {
@@ -320,7 +320,7 @@ export default function CoinDetail() {
             description: "Платина — це рідкісний дорогоцінний метал з унікальними властивостями, який широко використовується в ювелірній справі та промисловості.",
             points: [
               "Ви можете купувати або продавати платину через платформу.",
-              "Платина рідше за золото та має високу стійкість до корозії."
+              "Платина рідше ��а золото та має високу стійкість до корозії."
             ]
           };
         } else {
@@ -405,7 +405,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторінку методів виводу
       navigate("/withdraw"); // припускаю що така сторінка існує
     } else {
-      // Для інших активів відкриваємо Exchange з протилежними полями
+      // Для інших активів відкр��ваємо Exchange з протилежними полями
       navigate(`/exchange?from=${asset.id}&to=usd`);
     }
   };
@@ -540,8 +540,8 @@ export default function CoinDetail() {
                 <div className="flex justify-between items-start">
                   <div>
                     <p className="font-medium">
-                      {transaction.type === 'buy' && '🟢 Покупка'}
-                      {transaction.type === 'sell' && '🔴 Продаж'}
+                      {transaction.type === 'buy' && (asset.id === 'usd' ? '🔴 Покупка активу' : '🟢 Покупка')}
+                      {transaction.type === 'sell' && (asset.id === 'usd' ? '🟢 Продаж активу' : '🔴 Продаж')}
                       {transaction.type === 'deposit' && '💵 Поповнення'}
                       {transaction.type === 'withdraw' && '💸 Виведення'}
                     </p>
@@ -554,14 +554,18 @@ export default function CoinDetail() {
                   </div>
                   <div className="text-right">
                     <p className={`font-semibold ${
-                      transaction.type === 'buy' || transaction.type === 'deposit'
-                        ? 'text-success'
-                        : 'text-destructive'
+                      // Для USD: поповнення і продажі - зелені, покупки і виведення - червоні
+                      asset.id === 'usd'
+                        ? (transaction.type === 'deposit' || transaction.type === 'sell' ? 'text-success' : 'text-destructive')
+                        : (transaction.type === 'buy' || transaction.type === 'deposit' ? 'text-success' : 'text-destructive')
                     }`}>
-                      {(transaction.type === 'buy' || transaction.type === 'deposit') ? '+' : '-'}
+                      {asset.id === 'usd'
+                        ? (transaction.type === 'deposit' || transaction.type === 'sell' ? '+' : '-')
+                        : (transaction.type === 'buy' || transaction.type === 'deposit' ? '+' : '-')
+                      }
                       ${transaction.amount.toFixed(2)}
                     </p>
-                    {transaction.quantity && (
+                    {transaction.quantity && asset.id !== 'usd' && (
                       <p className="text-sm text-muted-foreground">
                         {transaction.quantity} {asset.symbol}
                       </p>
