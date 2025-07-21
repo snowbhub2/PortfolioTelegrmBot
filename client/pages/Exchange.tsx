@@ -543,10 +543,10 @@ export default function Exchange() {
                 }
                 setError("");
               }}
-              className={`text-6xl font-bold bg-transparent border-0 focus:outline-none w-1/2 ${
+              className={`${getDynamicFontSize(fromAmount).className} font-bold bg-transparent border-0 focus:outline-none w-1/2 ${
                 isInsufficientFunds ? 'text-red-500' : 'text-foreground'
               }`}
-              style={{ fontSize: '4rem' }}
+              style={{ fontSize: getDynamicFontSize(fromAmount).fontSize }}
             />
             {/* Кнопка Макс горизонтально після інпуту */}
             {fromAsset && fromAsset.quantity > 0 && (
@@ -613,7 +613,7 @@ export default function Exchange() {
             <span className="text-foreground">{t('exchange.you_receive')}</span>
           </div>
 
-          {/* Завжди показуєм�� великі цифри */}
+          {/* Завжди ��оказуєм�� великі цифри */}
           <div className="flex items-center justify-between mb-2">
             <input
               type="number"
