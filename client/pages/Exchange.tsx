@@ -197,6 +197,25 @@ const trendingAssets: MarketAsset[] = [
 // Всі активи з Market (включаючи trending assets)
 const allMarketAssets = [...cryptoAssets, ...stockAssets, ...goldAssets, ...trendingAssets];
 
+// Функція для обчислення динамічного розміру шрифту залежно ві�� довжини тексту
+const getDynamicFontSize = (value: string): { fontSize: string, className: string } => {
+  const length = value.length;
+
+  if (length <= 3) {
+    return { fontSize: '4rem', className: 'text-6xl' };
+  } else if (length <= 5) {
+    return { fontSize: '3.5rem', className: 'text-5xl' };
+  } else if (length <= 7) {
+    return { fontSize: '3rem', className: 'text-4xl' };
+  } else if (length <= 9) {
+    return { fontSize: '2.5rem', className: 'text-3xl' };
+  } else if (length <= 11) {
+    return { fontSize: '2rem', className: 'text-2xl' };
+  } else {
+    return { fontSize: '1.5rem', className: 'text-xl' };
+  }
+};
+
 export default function Exchange() {
   const { t } = useLanguage();
   const { hapticFeedback, user, tg } = useTelegram();
@@ -246,7 +265,7 @@ export default function Exchange() {
 
       setUserAssets(allAssets);
 
-      // Перевіряємо URL параметри для автоматичного вибору активів
+      // Пер��віряємо URL параметри для автоматичного вибору активів
       const fromParam = searchParams.get('from');
       const toParam = searchParams.get('to');
 
@@ -384,7 +403,7 @@ export default function Exchange() {
       let success = false;
 
       if (fromAsset.id === "usd" && toAsset.id !== "usd") {
-        // Купуємо актив за долари
+        // Купу��мо актив за долари
         const finalToAmount = lastEditedField === 'from' ? calculatedToAmount : parseFloat(toAmount);
         success = portfolioManager.buyAsset(
           toAsset.id,
@@ -703,7 +722,7 @@ export default function Exchange() {
               }}
               className="text-primary"
             >
-              ��азад
+              ��аз��д
             </Button>
             <div className="text-center">
               <div className="font-medium text-lg">Обмен</div>
