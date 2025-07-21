@@ -62,7 +62,7 @@ export default function Settings() {
   const settingsItems = [
     {
       icon: <BellIcon className="w-5 h-5 text-red-500" />,
-      title: "Уведомления",
+      title: t('settings.notifications'),
       value: "",
       hasChevron: true,
       action: "notifications",
