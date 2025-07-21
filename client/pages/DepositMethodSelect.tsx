@@ -166,7 +166,7 @@ export default function DepositMethodSelect() {
                 <div>
                   <div className="font-semibold text-lg">Telegram Stars</div>
                   <div className="text-sm text-muted-foreground">
-                    Пополнить через Telegram Stars
+                    {t('deposit.method.telegram_stars')}
                   </div>
                 </div>
               </div>
@@ -197,9 +197,9 @@ export default function DepositMethodSelect() {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-lg">Внешний кошелёк</div>
+                  <div className="font-semibold text-lg">{t('deposit.method.external_wallet')}</div>
                   <div className="text-sm text-muted-foreground">
-                    Перевести с другого кошелька
+                    {t('deposit.method.external_wallet_desc')}
                   </div>
                 </div>
               </div>
