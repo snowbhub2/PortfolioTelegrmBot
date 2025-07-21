@@ -701,21 +701,21 @@ export default function Wallet() {
                 className="w-full bg-success text-success-foreground text-lg py-3"
                 onClick={() => handleTrade("buy")}
               >
-                КУПИТЬ {selectedTradingAsset.symbol}
+                {t('wallet.trading.buy')} {selectedTradingAsset.symbol}
               </Button>
               <Button
                 variant="outline"
                 className="w-full text-destructive border-destructive text-lg py-3"
                 onClick={() => handleTrade("sell")}
               >
-                ПРОДАТЬ {selectedTradingAsset.symbol}
+                {t('wallet.trading.sell')} {selectedTradingAsset.symbol}
               </Button>
             </div>
 
             {/* Warning */}
             <div className="p-4 pt-0">
               <div className="text-xs text-muted-foreground text-center">
-                Торговля криптовалютами связана с высокими рисками
+                {t('wallet.trading.warning')}
               </div>
             </div>
           </div>
