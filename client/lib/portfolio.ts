@@ -48,7 +48,7 @@ export class PortfolioManager {
   constructor(userId: string) {
     this.portfolio = this.loadPortfolio(userId);
 
-    // Додаємо тестові транзакції для демонстрації (тільки один раз)
+    // Додаємо тестові транзакції для дем��нстрації (тільки один раз)
     if (this.portfolio.transactions.length === 0) {
       this.addTestTransactions();
     }
@@ -113,6 +113,25 @@ export class PortfolioManager {
           description: "Початковий депозит",
           status: "completed",
         },
+        {
+          id: (Date.now() + 1).toString(),
+          type: "buy",
+          assetId: "btc",
+          amount: 50,
+          quantity: 0.0005,
+          price: 100000,
+          timestamp: new Date(Date.now() - 3600000), // 1 час назад
+          description: "Покупка 0.0005 BTC за $100000.00",
+          status: "completed",
+        },
+        {
+          id: (Date.now() + 2).toString(),
+          type: "withdraw",
+          amount: 25,
+          timestamp: new Date(Date.now() - 1800000), // 30 мин назад
+          description: "Выведение в звезды",
+          status: "processing",
+        },
       ],
     };
   }
@@ -162,7 +181,7 @@ export class PortfolioManager {
     return assetsInvested;
   }
 
-  // Розрахувати загальний P&L портфеля (тільки від торгівлі, без депозитів/виводів)
+  // Розрахувати за��альний P&L портфеля (тільки від торгівлі, без депозитів/виводів)
   getTotalPortfolioPnL(): { amount: number; percentage: number } {
     // P&L тільки від торгових операцій
     const totalInvested = this.getTotalInvestedAmount();
@@ -252,7 +271,7 @@ export class PortfolioManager {
     // Додаємо гроші
     this.portfolio.cashBalance += totalValue;
 
-    // Зменшуємо кількість ак��ивів
+    // Зменшуємо кількість активів
     asset.quantity -= quantity;
     asset.currentPrice = price;
 
