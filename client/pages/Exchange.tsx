@@ -162,7 +162,7 @@ export default function Exchange() {
       const assets = portfolioManager.getAssets();
       const cashBalance = portfolioManager.getCashBalance();
 
-      // Завжди додаємо долари до списку (навіть з балансом 0)
+      // З��вжди додаємо долари до списку (навіть з балансом 0)
       const usdAsset: UserAsset = {
         id: "usd",
         symbol: "USD",
@@ -178,13 +178,47 @@ export default function Exchange() {
 
       setUserAssets(allAssets);
 
-      // Автоматично обираємо перший актив (долари) якщо не обрано
-      if (allAssets.length > 0 && !fromAsset) {
+      // Перевіряємо URL параметри для автоматичного вибору активів
+      const fromParam = searchParams.get('from');
+      const toParam = searchParams.get('to');
+
+      if (fromParam && allAssets.length > 0) {
+        const fromAssetFromUrl = allAssets.find(asset => asset.id === fromParam);
+        if (fromAssetFromUrl && !fromAsset) {
+          setFromAsset(fromAssetFromUrl);
+        }
+      } else if (allAssets.length > 0 && !fromAsset) {
+        // Автоматично обираємо перший актив (долари) якщо не обрано
         setFromAsset(allAssets[0]);
       }
 
-      // НЕ автоматично обираємо toAsset - користувач має вибрати сам
-      
+      // Автоматично обираємо toAsset з URL параметрів
+      if (toParam) {
+        // Шукаємо серед всіх доступних активі�� (користувацьких + ринкових)
+        const allAvailable = [...allAssets, ...allMarketAssets];
+        const toAssetFromUrl = allAvailable.find(asset => asset.id === toParam);
+        if (toAssetFromUrl && !toAsset) {
+          // Конвертуємо в UserAsset формат якщо це ринковий актив
+          if (!allAssets.find(a => a.id === toAssetFromUrl.id)) {
+            const marketAsset = toAssetFromUrl as any;
+            setToAsset({
+              id: marketAsset.id,
+              symbol: marketAsset.symbol,
+              name: marketAsset.name,
+              quantity: 0,
+              avgPrice: marketAsset.price,
+              currentPrice: marketAsset.price,
+              icon: marketAsset.icon,
+              category: marketAsset.id === 'usd' ? 'currency' :
+                       ['btc', 'eth', 'ton', 'sol', 'xrp'].includes(marketAsset.id) ? 'crypto' :
+                       ['aapl', 'tsla', 'msft', 'googl'].includes(marketAsset.id) ? 'stocks' : 'gold'
+            });
+          } else {
+            setToAsset(toAssetFromUrl);
+          }
+        }
+      }
+
       setFromAmount("");
       setError("");
     }
