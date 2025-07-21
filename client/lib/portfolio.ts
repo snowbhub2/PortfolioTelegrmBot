@@ -124,6 +124,13 @@ export class PortfolioManager {
     );
   }
 
+  // Скинути портфель (для демо)
+  resetPortfolio(): void {
+    localStorage.removeItem(`${PORTFOLIO_KEY}_${this.portfolio.userId}`);
+    this.portfolio = this.createDefaultPortfolio();
+    this.savePortfolio();
+  }
+
   // Отримати баланс готівки
   getCashBalance(): number {
     return this.portfolio.cashBalance;
@@ -245,7 +252,7 @@ export class PortfolioManager {
     // Додаємо гроші
     this.portfolio.cashBalance += totalValue;
 
-    // Зменшуємо кількість активів
+    // Зменшуємо кількість ак��ивів
     asset.quantity -= quantity;
     asset.currentPrice = price;
 
