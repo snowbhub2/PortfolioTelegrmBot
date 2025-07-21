@@ -692,7 +692,7 @@ export default function Wallet() {
               <div className="text-2xl font-bold mb-2">
                 ${selectedTradingAsset.price.toLocaleString()}
               </div>
-              <div className="text-success text-sm">Текущая цена</div>
+              <div className="text-success text-sm">{t('wallet.trading.currentPrice')}</div>
             </div>
 
             {/* Trading Buttons */}
