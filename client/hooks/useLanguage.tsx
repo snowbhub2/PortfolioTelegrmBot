@@ -173,7 +173,7 @@ const translations = {
     'coin.about.stock': 'ОБ АКЦИИ',
     'coin.about.precious_metal': 'О ДРАГОЦЕННОМ МЕТАЛЛЕ',
     'coin.about.currency': 'О ВАЛЮТЕ',
-    'coin.in_portfolio': 'В ПОР��ФЕЛЕ',
+    'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
     'coin.quantity': 'Коли��ество',
     'coin.current_value': 'Текущая стоимость',
@@ -200,7 +200,7 @@ const translations = {
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
     'wallet.assets.dollars_cash': 'Доллары (наличные)',
-    'wallet.assets.for_trading': 'Для торгов��и',
+    'wallet.assets.for_trading': 'Для торговли',
     'wallet.assets.no_assets': 'Пока нет активов',
     'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
 
@@ -208,7 +208,7 @@ const translations = {
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'криптовалюту',
     'deposit.method.bank_card': 'Банковская карта',
-    'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
+    'deposit.method.bank_card_desc': 'Купить криптовалюту ���� кар��е',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
     'deposit.method.p2p_market': 'P2P Маркет',
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что в�� выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -244,6 +244,10 @@ const translations = {
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
     'withdraw.method.external.title': 'Внешний кошелёк или биржа',
     'withdraw.method.external.description': 'Нужно указать криптоадрес',
+
+    // Withdraw Asset Selection
+    'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
+    'withdraw.asset.dollars': 'Доллары',
     
     // History
     'history.title': 'Ис��ория',
@@ -275,7 +279,7 @@ const translations = {
     'history.transaction.transfer_from_cfd': 'Перевод из CFD',
     'history.transaction.default': 'Транзакция',
     'history.time.now': 'То��ько что',
-    'history.time.hours_ago': 'ч назад',
+    'history.time.hours_ago': 'ч на��ад',
     'history.time.days_ago': 'дн назад',
     'history.portfolio.total_value': 'Общая стоимость портфеля',
     'history.portfolio.cash': 'Наличные',
@@ -384,7 +388,7 @@ const translations = {
     'common.volume': 'Объём',
     'common.change': 'Изменение',
     'common.date': 'Дата',
-    'common.time': 'Время',
+    'common.time': 'Вре��я',
     'common.status': 'Статус',
     'common.type': 'Тип',
     'common.search': 'Поиск',
@@ -419,7 +423,7 @@ const translations = {
     'common.right': 'Справа',
     'common.center': 'Центр',
     'common.up': 'Вверх',
-    'common.down': 'Вниз',
+    'common.down': 'В��из',
     'common.high': 'Высокий',
     'common.low': 'Низкий',
     'common.medium': 'Средний',
