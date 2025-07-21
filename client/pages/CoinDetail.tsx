@@ -140,6 +140,17 @@ const allAssets = [
     iconBgColor: "bg-gray-300",
     category: "gold",
   },
+  // Долари
+  {
+    id: "usd",
+    symbol: "USD",
+    name: "Долар США",
+    price: 1.0,
+    change24h: 0.0,
+    icon: "💵",
+    iconBgColor: "bg-green-600",
+    category: "currency",
+  },
 ];
 
 export default function CoinDetail() {
@@ -201,7 +212,7 @@ export default function CoinDetail() {
         } else if (asset.id === "ton") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Toncoin — це криптовалюта блокчейну TON (The Open Network), який спочатку р��зроблявся командою Telegram.",
+            description: "Toncoin — це криптовалюта блокчейну TON (The Open Network), який спочатку розроблявся командою Telegram.",
             points: [
               "Ви можете купувати, продавати або зберігати TON в Гаманці.",
               "TON відомий своєю високою швидкістю транзакцій та низькими комісіями."
@@ -219,7 +230,7 @@ export default function CoinDetail() {
         } else if (asset.id === "xrp") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.",
+            description: "XRP �� це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.",
             points: [
               "Ви можете купувати, продавати або зберігати XRP в Гаманці.",
               "XRP використовується банками та фінансовими установами для швидких переказів."
@@ -240,7 +251,7 @@ export default function CoinDetail() {
         if (asset.id === "aapl") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристр��ями.",
+            description: "Apple Inc. — американ��ька багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.",
             points: [
               "Ви можете купувати або продавати акції AAPL через платформу.",
               "Apple є однією з найдорожчих компаній у світі за ринковою капіталізацією."
@@ -258,7 +269,7 @@ export default function CoinDetail() {
         } else if (asset.id === "msft") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Microsoft Corporation — американська багатонаціональна технологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
+            description: "Microsoft Corporation — ам��риканська багатонаціональна технологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
             points: [
               "Ви можете купувати або продавати акції MSFT через платформу.",
               "Microsoft є провідним постачальником хмарних сервісів Azure."
@@ -276,9 +287,9 @@ export default function CoinDetail() {
         } else {
           return {
             title: "ПРО АКЦІЮ",
-            description: `${asset.name} — це публічна компанія, акції якої торгуються на фондовому ринку.`,
+            description: `${asset.name} — це публічна компанія, акції якої торгуються н�� фондовому ринку.`,
             points: [
-              `Ви можете купувати або продавати акції ${asset.symbol} через платфо��му.`,
+              `Ви можете купувати або продавати акції ${asset.symbol} через платформу.`,
               "Ціни на акції можуть коливатися залежно від ринкових умов."
             ]
           };
