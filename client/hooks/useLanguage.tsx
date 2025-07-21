@@ -58,7 +58,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕД��МЛЕНИЯ',
+    'notifications.title': 'УВЕДОМЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -86,12 +86,12 @@ const translations = {
     'notifications.news_channel_link': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
+    'notifications.cfd_description': 'Получайте уведомления, когда вам при��одят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
-    'notifications.category.market_trends': 'УВЕДОМЛЕНИ�� ТРЕНДОВ РЫНКА',
+    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': '��орговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -191,7 +191,7 @@ const translations = {
     'exchange.back': '��азад',
     'exchange.asset.dollars': 'Доллары',
 
-    // Додаткові переклади для заверш��ння Wallet.tsx
+    // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -207,7 +207,7 @@ const translations = {
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'крипт��валюту',
-    'deposit.method.bank_card': 'Банковская карта',
+    'deposit.method.bank_card': 'Банковская кар��а',
     'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделк�� с надёжными продавцами',
@@ -250,7 +250,7 @@ const translations = {
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
-    'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
+    'withdraw.amount.insufficient_funds': 'Недоста��очно средств.',
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
@@ -351,7 +351,7 @@ const translations = {
     
     // Bonuses
     'bonuses.title': 'Бонусы',
-    'bonuses.hero.title': 'Бону��ы в Кошельке',
+    'bonuses.hero.title': 'Бону���� в Кошельке',
     'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
@@ -437,12 +437,12 @@ const translations = {
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
     'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
-    'coin.xrp_point_2': 'XRP викори��товується банками та фінансовими установами для швидких переказів.',
+    'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
     'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
-    'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
+    'coin.gold_point_1': 'Ви можете купув��ти або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
     // Exchange
@@ -630,7 +630,7 @@ const translations = {
     'wallet.actions.exchange': 'Exchange',
     'wallet.actions.transfer': 'Transfer',
     'wallet.notification.earnTitle': 'Earn up to 15% APY',
-    'wallet.notification.withDollars': 'with dollars',
+    'wallet.notification.withDollars': 'with Nobel Portfolio',
     'wallet.notification.startEarning': 'Start earning →',
     'wallet.assets.title': 'ASSETS',
     'wallet.assets.hide': 'Hide',
