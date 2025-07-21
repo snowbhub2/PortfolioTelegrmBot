@@ -93,6 +93,7 @@ const App = () => (
               <Route path="/exchange" element={<Exchange />} />
               <Route path="/transfer" element={<Transfer />} />
               <Route path="/deposit/stars" element={<DepositStars />} />
+              <Route path="/cfd" element={<CFDPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
