@@ -130,7 +130,7 @@ const allAssets = [
     iconBgColor: "bg-blue-400",
     category: "crypto",
   },
-  // Платина
+  // Пл��тина
   {
     id: "platinum",
     symbol: "PLATINUM",
@@ -300,11 +300,11 @@ export default function CoinDetail() {
       case "gold":
         if (asset.id === "gold") {
           return {
-            title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
-            description: "Золото — це дорогоц����нний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.",
+            title: t('coin.about_precious_metal'),
+            description: t('coin.gold_description'),
             points: [
-              "Ви можете купувати або продавати золото через платформу.",
-              "Золото традиційно вважаєтьс�� 'безпечним притулком' для інвесторів."
+              t('coin.gold_point_1'),
+              t('coin.gold_point_2')
             ]
           };
         } else if (asset.id === "silver") {
@@ -321,7 +321,7 @@ export default function CoinDetail() {
             title: "ПРО ДОРОГОЦІННИЙ МЕ��А��",
             description: "Платина — це ��ідкісний дорогоцінний метал з унікальними властивостями, який широко використов��ється в ювелірній справі та промисловості.",
             points: [
-              "Ви можете купувати або продавати платину через пла��форму.",
+              "Ви можете купуват�� або продавати платину через пла��форму.",
               "Платина рідше за золото та має високу стійкість до корозії."
             ]
           };
@@ -513,7 +513,7 @@ export default function CoinDetail() {
               </div>
               {asset.id !== 'usd' && (
                 <div className="text-right">
-                  <p className="text-sm text-muted-foreground">Поточна вартість</p>
+                  <p className="text-sm text-muted-foreground">Поточна вартіст��</p>
                   <p className="text-xl font-semibold">
                     ${(assetQuantity * asset.price).toLocaleString()}
                   </p>
