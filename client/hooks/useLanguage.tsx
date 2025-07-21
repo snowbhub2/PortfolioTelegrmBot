@@ -46,7 +46,7 @@ const translations = {
     // Notifications
     'notifications.title': 'УВЕДОМЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
-    'notifications.market_trends_desc': 'Изменение цен на активы',
+    'notifications.market_trends_desc': 'Изменение цен ��а активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
     'notifications.promotions': 'Акции',
@@ -95,7 +95,7 @@ const translations = {
     'wallet.assets.buyOnMarket': 'Купите активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
-    'wallet.trending.perDay': 'за ден��',
+    'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.tabs.wallet': 'Портфель',
     'wallet.tabs.cfd': 'CFD',
@@ -107,7 +107,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Додаткові переклади для всіх текстів
+    // До��аткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
@@ -184,7 +184,7 @@ const translations = {
     'deposit.method.p2p_market': 'P2P Маркет',
     'deposit.method.p2p_market_desc': 'Купить без посредников',
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
-    'deposit.method.external_wallet': 'Внешний кошелёк',
+    'deposit.method.external_wallet': 'Внешний кошел��к',
     'deposit.method.external_wallet_desc': 'Перевести с другого кошелька',
 
     // Deposit Asset Selection
@@ -195,6 +195,17 @@ const translations = {
     // Deposit Network Selection
     'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привести к утрате средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
+
+    // Deposit Address
+    'deposit.address.title': 'Ваш адрес в',
+    'deposit.address.warning_start': 'На этот адрес отправляйте только',
+    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозвратно утрачены.',
+    'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
+    'deposit.address.qr_description_end': 'на свой кошелёк.',
+    'deposit.address.your_address': 'Ваш адрес',
+    'deposit.address.copy': 'Копировать адрес',
+    'deposit.address.copied': 'Адрес скопирован в буфер',
+    'deposit.address.copied_notification': 'Адрес скопирован в буфер.',
 
     // Withdraw Pages
     'withdraw.method.title': 'Как отправить',
@@ -294,7 +305,7 @@ const translations = {
     'common.new': 'Новый',
     'common.old': 'Старый',
     'common.recent': 'Недавние',
-    'common.popular': 'Попу��ярные',
+    'common.popular': 'Популярные',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
     'common.top': 'Топ',
