@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Переклади для всієї платформи
+// Переклади для в��ієї платформи
 const translations = {
   ru: {
     // Bottom Navigation
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с в��сокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -163,7 +163,7 @@ const translations = {
 
     // Bonuses Page
     'bonuses.title_header': 'Бонусы в Кошельке',
-    'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
+    'bonuses.subtitle': 'Получайте бонусы за хранение ��риптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
     'bonuses.tab.completed': 'Завер��ённые',
@@ -229,7 +229,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других сет��й или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -257,9 +257,9 @@ const translations = {
     'withdraw.amount.next': 'Далее',
 
     // Withdraw Processing
-    'withdraw.processing.exchange_completed': 'Обмен выполне��!',
+    'withdraw.processing.exchange_completed': 'Обмен выполнен!',
     'withdraw.processing.payment_processing': 'Ваш платёж в обработке',
-    'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
+    'withdraw.processing.exchange_success': 'Вы успешно обменя��и {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
     'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
     'withdraw.processing.notification_promise': 'Мы уведомим вас, когда транзакция будет подтверждена',
@@ -280,6 +280,27 @@ const translations = {
     'cfd.nav.trades': 'Сделки',
     'cfd.nav.autotrading': 'Автоторговля',
     'cfd.nav.history': 'История',
+
+    // Asset Detail Page
+    'asset.name.dollars': 'Доллары',
+    'asset.name.gold': 'Золото',
+    'asset.header.wallet_verified': 'Гаманець ✓',
+    'asset.header.mini_app': 'мініЗастосунок',
+    'asset.action.send': 'Отправить',
+    'asset.action.receive': 'Получить',
+    'asset.action.buy': 'Купить',
+    'asset.action.exchange': 'Обменять',
+    'asset.price.title': 'ЦЕНА',
+    'asset.price.details': 'Подробнее',
+    'asset.price.24h': '24ч',
+    'asset.transaction_history': 'ИСТОРИЯ ТРАНЗАКЦИЙ',
+    'asset.transaction.exchange_btc_usdt': 'Обмен: BTC на USDT',
+    'asset.transaction.exchange_ton_btc': 'Обмен: TON на BTC',
+    'asset.transaction.status.sent': 'Отправлено',
+    'asset.transaction.status.received': 'Получено',
+    'asset.transaction.date.dec_6': '6 дек. 2024 г. в 1...',
+    'asset.transaction.date.nov_16': '16 нояб. 2024 г...',
+    'asset.not_found': 'Актив не найден',
     
     // History
     'history.title': 'Ис��ория',
@@ -335,7 +356,7 @@ const translations = {
     // Exchange
     'exchange.title': 'Обмен',
     'exchange.you_pay': 'Вы платите',
-    'exchange.you_receive': 'Вы получаете',
+    'exchange.you_receive': 'Вы пол��чаете',
     'exchange.max': 'Макс',
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
@@ -405,7 +426,7 @@ const translations = {
     'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
     'common.save': 'Сохранить',
-    'common.edit': '��едактировать',
+    'common.edit': 'Редактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
     'common.error': '��шибка',
