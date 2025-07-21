@@ -15,6 +15,7 @@ import Market from "./pages/Market";
 import CoinDetail from "./pages/CoinDetail";
 import AssetDetail from "./pages/AssetDetail";
 import Settings from "./pages/Settings";
+import Notifications from "./pages/Notifications";
 import WithdrawMethodSelect from "./pages/WithdrawMethodSelect";
 import TelegramStarsExchange from "./pages/TelegramStarsExchange";
 import WithdrawAssetSelect from "./pages/WithdrawAssetSelect";
@@ -50,6 +51,7 @@ const App = () => (
               <Route path="/coin/:coinId" element={<CoinDetail />} />
               <Route path="/asset/:assetId" element={<AssetDetail />} />
               <Route path="/settings" element={<Settings />} />
+              <Route path="/notifications" element={<Notifications />} />
               <Route
                 path="/withdraw/method"
                 element={<WithdrawMethodSelect />}
