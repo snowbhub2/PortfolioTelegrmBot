@@ -34,7 +34,7 @@ const translations = {
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
     'settings.privacy': 'Политика конфиденциальности',
-    'settings.footer_text': 'М��ни-приложение управляется TG Wallet Inc.',
+    'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не ��вя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
     'settings.basicSettingsTitle': 'ОСНОВНЫЕ НАСТРОЙКИ',
@@ -132,7 +132,7 @@ const translations = {
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
-    'wallet.notification.earnTitle': 'Зараб��тывайте до 15% APY',
+    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
@@ -158,7 +158,7 @@ const translations = {
     'history.transaction.sell': 'Продаж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
-    'history.no_transactions': 'Пока нет транзакций',
+    'history.no_transactions': 'Пока не�� транзакций',
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
@@ -188,7 +188,7 @@ const translations = {
     'exchange.you_receive': 'Вы получаете',
     'exchange.max': 'Макс',
     'exchange.search': 'Поиск',
-    'exchange.back': 'Назад',
+    'exchange.back': '��азад',
     'exchange.asset.dollars': 'Доллары',
 
     // Додаткові переклади для завершення Wallet.tsx
@@ -210,7 +210,7 @@ const translations = {
     'deposit.method.bank_card': 'Банковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
     'deposit.method.p2p_express': 'P2P Экспресс',
-    'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
+    'deposit.method.p2p_express_desc': 'Сделк�� с надёжными продавцами',
     'deposit.method.p2p_market': 'P2P Маркет',
     'deposit.method.p2p_market_desc': 'Купить без посре��ников',
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
@@ -259,7 +259,7 @@ const translations = {
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выпол��ен!',
     'withdraw.processing.payment_processing': 'Ва�� платёж в обработке',
-    'withdraw.processing.exchange_success': 'Вы у��пешно обменяли {amount} USD на {starsAmount} Telegram Stars',
+    'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
     'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
     'withdraw.processing.notification_promise': 'Мы уведомим вас, когда транзакция будет п��дтверждена',
@@ -436,7 +436,7 @@ const translations = {
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
     'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
-    'coin.xrp_point_1': 'Ви можете купувати, продавати або зберігати XRP в Гаманці.',
+    'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гаманці.',
@@ -571,7 +571,7 @@ const translations = {
     'settings.cfdNotApplicable': 'Does not apply to CFD Space account.',
     'settings.userAgreement': 'User Agreement',
     'settings.privacyPolicy': 'Privacy Policy',
-    'settings.managedBy': 'Mini-app is managed by TG Wallet Inc.',
+    'settings.managedBy': 'Mini-app is managed by TG Portfolio Inc.',
     'settings.independent': 'Service is independent and not related to Telegram.',
     'settings.learnMore': 'Learn more',
 
