@@ -11,15 +11,15 @@ import BottomNavigation from "@/components/BottomNavigation";
 const mockBonuses: BonusReward[] = [
   {
     id: "usd",
-    name: "Доллары",
+    name: "Нобелевский портфель",
     symbol: "USD",
-    apy: 15,
+    apy: "10-20",
     icon: "💵",
     status: "active",
   },
   {
     id: "dogs",
-    name: "DOGS",
+    name: "Портфель техно",
     symbol: "DOGS",
     apy: 5,
     icon: "🐕",
@@ -27,7 +27,7 @@ const mockBonuses: BonusReward[] = [
   },
   {
     id: "major",
-    name: "MAJOR",
+    name: "Портфель легкий старт",
     symbol: "MAJOR",
     apy: 5,
     icon: "⭐",
@@ -35,9 +35,9 @@ const mockBonuses: BonusReward[] = [
   },
   {
     id: "ton",
-    name: "TON",
+    name: "Портфель VIP",
     symbol: "TON",
-    apy: 3.88,
+    apy: 7,
     icon: "💎",
     status: "active",
   },
@@ -143,7 +143,10 @@ export default function Bonuses() {
                     <span className="text-2xl">{bonus.icon}</span>
                   </div>
                   <h3 className="font-medium mb-1">
-                    {bonus.id === 'usd' ? t('bonuses.asset.dollars') : bonus.name}
+                    {bonus.id === 'usd' ? t('bonuses.asset.dollars') :
+                     bonus.id === 'dogs' ? t('bonuses.asset.dogs') :
+                     bonus.id === 'major' ? t('bonuses.asset.major') :
+                     bonus.id === 'ton' ? t('bonuses.asset.ton') : bonus.name}
                   </h3>
                   <div className="text-sm text-muted-foreground">
                     {bonus.apy}% {t('bonuses.card.annual')}
