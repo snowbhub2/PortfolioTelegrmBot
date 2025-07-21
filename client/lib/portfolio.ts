@@ -332,4 +332,22 @@ export class PortfolioManager {
 
     return { amount, percentage };
   }
+
+  // Отримати поточний портфель
+  getPortfolio(): UserPortfolio {
+    return this.portfolio;
+  }
+
+  // Отримати конкретний актив з портфеля
+  getAsset(assetId: string): UserAsset | undefined {
+    return this.portfolio.assets.find(asset => asset.id === assetId);
+  }
+
+  // Отримати транзакції для конкретного активу
+  getAssetTransactions(assetId: string): Transaction[] {
+    return this.portfolio.transactions.filter(transaction =>
+      transaction.assetId === assetId ||
+      (assetId === 'usd' && (transaction.type === 'deposit' || transaction.type === 'withdraw'))
+    );
+  }
 }
