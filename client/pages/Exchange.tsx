@@ -382,9 +382,29 @@ export default function Exchange() {
   const handleMaxAmount = () => {
     if (fromAsset) {
       hapticFeedback("light");
-      // Обрізаємо до 2 знаків після коми без заокруглень
+      // Обрізаємо до 2 зна��ів після коми без заокруглень
       const maxAmount = Math.floor(fromAsset.quantity * 100) / 100;
-      setFromAmount(maxAmount.toFixed(2));
+      let formattedAmount = maxAmount.toFixed(2);
+
+      // Обмежуємо до 7 символів максимум
+      if (formattedAmount.length > 7) {
+        // Обрізаємо до 7 символів
+        formattedAmount = formattedAmount.substring(0, 7);
+        // Переконуємося що не закінчується на крапку
+        if (formattedAmount.endsWith('.')) {
+          formattedAmount = formattedAmount.substring(0, 6);
+        }
+      }
+
+      setFromAmount(formattedAmount);
+      setLastEditedField('from');
+
+      // Автоматично обчислюємо toAmount при натиску Max
+      if (toAsset?.currentPrice && formattedAmount) {
+        const fromVal = parseFloat(formattedAmount) * (fromAsset?.currentPrice || 0);
+        const calculatedTo = fromVal / toAsset.currentPrice;
+        setToAmount(calculatedTo.toFixed(2));
+      }
     }
   };
 
