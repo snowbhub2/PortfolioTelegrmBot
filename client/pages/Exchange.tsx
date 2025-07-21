@@ -216,7 +216,7 @@ export default function Exchange() {
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
 
-  // Ініціалізація портфоліо
+  // Ініці��лізація портфоліо
   useEffect(() => {
     const userId = user?.id?.toString() || "demo_user";
     const manager = new PortfolioManager(userId);
@@ -512,7 +512,7 @@ export default function Exchange() {
           {/* Сума в доларах якщо не долар */}
           {fromAsset && fromAsset.id !== "usd" && fromAmount && parseFloat(fromAmount) > 0 && (
             <div className="text-sm text-muted-foreground mt-2">
-              ≈ ${fromValue.toFixed(2)}
+              ��� ${fromValue.toFixed(2)}
             </div>
           )}
 
@@ -542,7 +542,7 @@ export default function Exchange() {
                 {toAsset?.icon || "?"}
               </span>
             </div>
-            <span className="text-foreground">Ви отримаєте</span>
+            <span className="text-foreground">{t('exchange.you_receive')}</span>
           </div>
 
           {/* Завжди показуєм�� великі цифри */}
