@@ -1,4 +1,5 @@
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -266,7 +267,7 @@ export default function Settings() {
             className="w-full justify-start text-primary p-0"
             onClick={() => hapticFeedback("light")}
           >
-            Политика конфиденциальности
+            Политика конфиден��иальности
           </Button>
         </div>
 
