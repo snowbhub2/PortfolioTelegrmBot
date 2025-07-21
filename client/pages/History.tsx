@@ -76,6 +76,7 @@ const getTransactionTitle = (transaction: Transaction) => {
 
 export default function History() {
   const { user, hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [portfolioManager, setPortfolioManager] =
