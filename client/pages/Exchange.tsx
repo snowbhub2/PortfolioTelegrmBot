@@ -410,7 +410,7 @@ export default function Exchange() {
 
   const handleBalanceClick = () => {
     if (fromAsset?.id === "usd") {
-      // Тільки для доларів переходимо на поповнення
+      // Тільк�� для доларів переходимо на поповнення
       navigate("/deposit/method");
     }
   };
@@ -559,7 +559,7 @@ export default function Exchange() {
                 if (value.includes('.')) {
                   const parts = value.split('.');
                   if (parts[1] && parts[1].length > 2) {
-                    return; // Не дозволяємо більше 2 знаків після коми
+                    return; // ��е дозволяємо більше 2 знаків після коми
                   }
                 }
                 setFromAmount(value);
@@ -615,7 +615,7 @@ export default function Exchange() {
           )}
           {fromAsset && parseFloat(fromAmount) > 0 && parseFloat(fromAmount) < minFromAmount && (
             <div className="text-destructive text-sm mt-2">
-              Мінімал��на сума: {fromAsset.id === "usd" ? "$20" : "0.01"}
+              Минимальная сумма {fromAsset.id === "usd" ? "$20" : "0.01"}
             </div>
           )}
         </div>
@@ -864,7 +864,7 @@ export default function Exchange() {
           {/* Assets List с прокр��ткой */}
           <div className="px-4">
             <h3 className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">
-              Ви отримаєте
+              Ви отрим��єте
             </h3>
             <div className="space-y-1 max-h-96 overflow-y-auto pb-20">
               {filteredMarketAssets.map((asset) => (
