@@ -94,7 +94,7 @@ const translations = {
     'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'У��Е��ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
-    'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОН��ЕНТА',
+    'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
     'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
     'notifications.category.feedback_desc': 'Опросы пользователей, которые помогают улучшить сервис.',
     
@@ -116,7 +116,7 @@ const translations = {
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купил�� за:',
     'wallet.assets.noAssets': 'Пока нет активов',
-    'wallet.assets.buyOnMarket': 'Купи��е активы на страни��е Рынок',
+    'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
@@ -173,7 +173,7 @@ const translations = {
     'coin.about.stock': 'ОБ АКЦИИ',
     'coin.about.precious_metal': 'О ДРАГОЦЕННОМ МЕТАЛЛЕ',
     'coin.about.currency': 'О ВАЛЮТЕ',
-    'coin.in_portfolio': 'В ПОРТФЕЛЕ',
+    'coin.in_portfolio': 'В ПОР��ФЕЛЕ',
     'coin.balance': 'Баланс',
     'coin.quantity': 'Коли��ество',
     'coin.current_value': 'Текущая стоимость',
@@ -200,7 +200,7 @@ const translations = {
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
     'wallet.assets.dollars_cash': 'Доллары (наличные)',
-    'wallet.assets.for_trading': 'Для торговли',
+    'wallet.assets.for_trading': 'Для торгов��и',
     'wallet.assets.no_assets': 'Пока нет активов',
     'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
 
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
+    'deposit.network.warning': 'Убедитесь, что в�� выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -238,7 +238,7 @@ const translations = {
     'deposit.address.copied_notification': 'Адрес скопирован в буфер.',
 
     // Withdraw Pages
-    'withdraw.method.title': 'Ка�� отправить',
+    'withdraw.method.title': 'Как отправить',
     'withdraw.method.subtitle': 'криптовалюту',
     'withdraw.method.telegram.title': 'Контакт в Telegram',
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
@@ -315,7 +315,7 @@ const translations = {
     'transfer.portfolio': 'Портфель',
     'transfer.cash': 'Наличные',
     'transfer.for_trading': 'Для торговли',
-    'transfer.direction.to_cfd': 'П��ревод в CFD',
+    'transfer.direction.to_cfd': 'Перевод в CFD',
     'transfer.direction.from_cfd': 'Перевод из CFD',
     'transfer.amount_label': 'Сумма перево��а',
     'transfer.all_amount': 'Вся сумма',
@@ -500,6 +500,16 @@ const translations = {
     'notifications.cfd_news_text': 'All news can be found in the channel',
     'notifications.on': 'On',
     'notifications.off': 'Off',
+    'notifications.enabled': 'On',
+    'notifications.disabled': 'Off',
+    'notifications.security_notice': 'Transaction and security notifications will always be enabled.',
+    'notifications.news_text': 'You can read all news in the channel',
+    'notifications.news_channel_link': 'Crypto Wallet News',
+    'notifications.cfd_title': 'CFD WALLET NOTIFICATIONS',
+    'notifications.cfd_for': 'Notifications for',
+    'notifications.cfd_description': 'Get notifications when you receive CFD tokens and NFTs in CFD Wallet.',
+    'notifications.cfd_news_text': 'All news can be found in the channel',
+    'notifications.cfd_news_channel_link': 'CFD Wallet News',
     
     // Notification Categories
     'notifications.category.market_trends': 'MARKET TRENDS NOTIFICATIONS',
