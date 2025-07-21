@@ -139,8 +139,32 @@ const goldAssets: MarketAsset[] = [
   },
 ];
 
-// Всі активи з Market
-const allMarketAssets = [...cryptoAssets, ...stockAssets, ...goldAssets];
+// TrendingAssets з Market (CATI, XTZ та інші)
+const trendingAssets: MarketAsset[] = [
+  {
+    id: "cati",
+    symbol: "CATI",
+    name: "CATI",
+    price: 0.0813,
+    change24h: 3.16,
+    marketCap: 81300000,
+    icon: "🐱",
+    sparkline: [0.078, 0.079, 0.081, 0.0813],
+  },
+  {
+    id: "xtz",
+    symbol: "XTZ",
+    name: "XTZ",
+    price: 0.536,
+    change24h: 3.2,
+    marketCap: 536000000,
+    icon: "🔷",
+    sparkline: [0.52, 0.525, 0.53, 0.536],
+  },
+];
+
+// Всі активи з Market (включаючи trending assets)
+const allMarketAssets = [...cryptoAssets, ...stockAssets, ...goldAssets, ...trendingAssets];
 
 export default function Exchange() {
   const { hapticFeedback, user, tg } = useTelegram();
@@ -489,7 +513,7 @@ export default function Exchange() {
             <span className="text-foreground">Ви отримаєте</span>
           </div>
 
-          {/* Завжди показуємо великі цифри */}
+          {/* Завжди показуєм�� великі цифри */}
           <div className="flex items-center justify-between mb-2">
             <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
               {toAsset && fromAmount && parseFloat(fromAmount) > 0 ? toAmount.toFixed(8) : "0"}
