@@ -166,6 +166,13 @@ const translations = {
     'exchange.search': 'Поиск',
     'exchange.back': 'Назад',
     'exchange.asset.dollars': 'Доллары',
+
+    // Додаткові переклади для завершення Wallet.tsx
+    'wallet.trending.viewAll': 'Все',
+    'wallet.trending.title': 'В ТРЕНДЕ',
+    'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
+    'wallet.settings.open': 'Открыть настройки',
+    'wallet.user.avatar': 'аватар пользователя',
     
     // History
     'history.title': 'Ис��ория',
