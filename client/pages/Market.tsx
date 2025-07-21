@@ -357,7 +357,13 @@ export default function Market() {
                 assetsToShow = [...stockAssets, ...cryptoAssets, ...goldAssets];
             }
 
-            return assetsToShow.map((asset, index) => {
+            // Apply search filter
+            const filteredAssets = assetsToShow.filter(asset =>
+              asset.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+              asset.symbol.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+
+            return filteredAssets.map((asset, index) => {
               // Оновлюємо ціну з реальних даних ��кщо доступно
               const realTimePrice = priceUpdates[asset.id];
               const currentAsset = realTimePrice
