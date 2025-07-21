@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Card } from "@/components/ui/card";
 import { ArrowLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
