@@ -428,7 +428,7 @@ export default function Wallet() {
           </div>
 
           <div className="space-y-2">
-            {/* До��лары - готівка для торгівлі */}
+            {/* Доллары - готівка для торгівлі */}
             <Card
               className="p-4 hover:bg-muted/50 transition-colors cursor-pointer border-l-4 border-l-green-500"
               onClick={() => {
@@ -454,7 +454,7 @@ export default function Wallet() {
               </div>
             </Card>
 
-            {/* ��уплені активи користувача */}
+            {/* ����уплені активи користувача */}
             {showAllAssets &&
               userAssets.map((asset) => {
                 const pnl = portfolioManager?.getAssetPnL(asset.id) || {
@@ -602,7 +602,7 @@ export default function Wallet() {
       {user?.is_demo && (
         <div className="bg-orange-100 border-b border-orange-200 p-2 text-center">
           <span className="text-orange-800 text-sm font-medium">
-            🎭 Demo режим - для повних функцій запус����іть через Telegram бота
+            🎭 Demo режим - для повних функцій запус������іть через Telegram бота
           </span>
         </div>
       )}
