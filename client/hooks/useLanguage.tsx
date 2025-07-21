@@ -30,7 +30,7 @@ const translations = {
     'settings.max': 'Макси',
     'settings.not_applies': 'Не распространяется на аккаунт CFD Space.',
     'settings.support': 'Обратиться в поддержку',
-    'settings.faq': 'FAQ Кошелька',
+    'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
     'settings.privacy': 'Политика конфиденциальности',
@@ -53,7 +53,7 @@ const translations = {
     'notifications.promotions_desc': 'Розыгрыши и бонусы',
     'notifications.educational': 'Образовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
-    'notifications.feedback': 'Обратная связь',
+    'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут включены.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
@@ -92,7 +92,7 @@ const translations = {
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купили за:',
     'wallet.assets.noAssets': 'Пока нет активов',
-    'wallet.assets.buyOnMarket': 'Купите активы на странице Рынок',
+    'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
@@ -171,7 +171,7 @@ const translations = {
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.title': 'В ТР��НДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
-    'wallet.settings.open': 'Открыть настройки',
+    'wallet.settings.open': 'Открыть на��тройки',
     'wallet.user.avatar': 'аватар пользователя',
 
     // Deposit Pages
@@ -193,7 +193,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привести к утрате средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -224,6 +224,31 @@ const translations = {
     'history.transfers': 'Переводы',
     'history.no_transactions': 'У вас пока нет транзакций',
     'history.start_trading': 'Начните торговать, чтобы увидеть историю здесь',
+
+    // Additional History translations
+    'history.subtitle': 'Все ваши транзакции и операции',
+    'history.filter.all': 'Все',
+    'history.filter.buy': 'Покупки',
+    'history.filter.sell': 'Продажи',
+    'history.filter.deposit': 'Пополнения',
+    'history.filter.withdraw': 'Выведения',
+    'history.empty.title': 'Пока нет транзакций',
+    'history.empty.subtitle_all': 'Ваши операции появятся здесь',
+    'history.empty.subtitle_filtered': 'Нет операций этого типа',
+    'history.empty.go_to_market': 'Перейти к торговле',
+    'history.transaction.buy': 'Покупка',
+    'history.transaction.sell': 'Продажа',
+    'history.transaction.asset': 'акти��а',
+    'history.transaction.deposit': 'Пополнение звездами',
+    'history.transaction.withdraw': 'Выведение в звезды',
+    'history.transaction.transfer_to_cfd': 'Перевод в CFD',
+    'history.transaction.transfer_from_cfd': 'Перевод из CFD',
+    'history.transaction.default': 'Транзакция',
+    'history.time.now': 'Только что',
+    'history.time.hours_ago': 'ч назад',
+    'history.time.days_ago': 'дн назад',
+    'history.portfolio.total_value': 'Общая стоимость портфеля',
+    'history.portfolio.cash': 'Наличные',
     
     // Bonuses
     'bonuses.title': 'Бонусы',
