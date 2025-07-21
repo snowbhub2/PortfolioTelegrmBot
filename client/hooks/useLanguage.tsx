@@ -20,7 +20,7 @@ const translations = {
     'nav.history': 'История',
     
     // Settings
-    'settings.title': 'ОСНОВНЫЕ НАСТРОЙКИ',
+    'settings.title': 'ОСНОВНЫЕ НАСТР��ЙКИ',
     'settings.notifications': 'Уведомления',
     'settings.passcode': 'Код-пароль и Face ID',
     'settings.language': 'Язык',
@@ -104,7 +104,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с вы��окими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -524,6 +524,19 @@ const translations = {
     'common.optional': 'Optional',
     'common.required': 'Required',
     'common.recommended': 'Recommended',
+
+    // Deposit Pages (English)
+    'deposit.method.title': 'How would you like to buy',
+    'deposit.method.subtitle': 'cryptocurrency',
+    'deposit.method.bank_card': 'Bank Card',
+    'deposit.method.bank_card_desc': 'Buy cryptocurrency by card',
+    'deposit.method.p2p_express': 'P2P Express',
+    'deposit.method.p2p_express_desc': 'Deals with reliable sellers',
+    'deposit.method.p2p_market': 'P2P Market',
+    'deposit.method.p2p_market_desc': 'Buy without intermediaries',
+    'deposit.method.telegram_stars': 'Top up via Telegram Stars',
+    'deposit.method.external_wallet': 'External Wallet',
+    'deposit.method.external_wallet_desc': 'Transfer from another wallet',
   },
 };
 
