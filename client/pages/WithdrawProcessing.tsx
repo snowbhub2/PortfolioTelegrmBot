@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CheckCircleIcon, ClockIcon } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { PortfolioManager } from "@/lib/portfolio";
 
 export default function WithdrawProcessing() {
-  const { hapticFeedback, tg } = useTelegram();
+  const { hapticFeedback, tg, user } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
+  const [processed, setProcessed] = useState(false);
 
   const { asset, address, network, amount, starsAmount, type } =
     location.state || {};
@@ -38,7 +42,7 @@ export default function WithdrawProcessing() {
         {/* Success Message */}
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold mb-4">
-            {isTelegramStars ? "Обмен выполнен!" : "Ваш платёж в обработке"}
+            {isTelegramStars ? "Обмен в��полнен!" : "Ваш платёж в обработке"}
           </h1>
           <div className="text-muted-foreground max-w-sm">
             {isTelegramStars ? (
