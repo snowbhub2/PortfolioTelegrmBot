@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowLeftIcon, ArrowUpIcon } from "lucide-react";
@@ -7,6 +8,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 export default function WithdrawAmount() {
   const { hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const [amount, setAmount] = useState("");
