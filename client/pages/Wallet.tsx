@@ -308,7 +308,7 @@ export default function Wallet() {
                   }`}
                 >
                   {portfolioPnL.percentage >= 0 ? "↑" : "↓"}
-                  {Math.abs(portfolioPnL.percentage).toFixed(2)}% за весь час
+                  {Math.abs(portfolioPnL.percentage).toFixed(2)}% {t('wallet.balance.allTime')}
                 </span>
               </div>
             )}
@@ -605,7 +605,7 @@ export default function Wallet() {
 
       {/* Header */}
       <div className="flex items-center justify-between p-4">
-        {/* Avatar - перехід до налаштувань */}
+        {/* Avatar - перехід ��о налаштувань */}
         <Button
           variant="ghost"
           size="icon"
