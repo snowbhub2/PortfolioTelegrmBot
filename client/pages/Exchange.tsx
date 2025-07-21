@@ -509,7 +509,7 @@ export default function Exchange() {
             </div>
           </div>
 
-          {/* Сума в доларах якщо не долар */}
+          {/* Сума в долара�� якщо не долар */}
           {fromAsset && fromAsset.id !== "usd" && fromAmount && parseFloat(fromAmount) > 0 && (
             <div className="text-sm text-muted-foreground mt-2">
               �� ${fromValue.toFixed(2)}
@@ -546,21 +546,20 @@ export default function Exchange() {
           </div>
 
           {/* Завжди показуєм�� великі цифри */}
-          <div className="flex items-end justify-between mb-2">
-            <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground flex-1 max-w-[60%] break-all">
+          <div className="flex items-center justify-between mb-2">
+            <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
               {toAsset && fromAmount && parseFloat(fromAmount) > 0
-                ? (toAsset.id === "usd" ? toAmount.toFixed(2) : toAmount.toFixed(6))
-                : "0"
-              }
+                ? (toAsset.id === "usd" ? toAmount.toFixed(2) : toAmount.toFixed(3))
+                : "0"}
             </div>
             <div
-              className="flex items-center gap-2 cursor-pointer ml-2"
+              className="flex items-center gap-2 cursor-pointer"
               onClick={() => setShowToSelect(true)}
             >
-              <span className="text-xl sm:text-2xl md:text-4xl font-light text-muted-foreground">
-                {toAsset?.symbol || "Вибрати"}
+              <span className="text-4xl font-light text-muted-foreground">
+                {toAsset?.symbol || "Вибрати інструмент"}
               </span>
-              <span className="text-muted-foreground text-xl">›</span>
+              <span className="text-muted-foreground">›</span>
             </div>
           </div>
 
