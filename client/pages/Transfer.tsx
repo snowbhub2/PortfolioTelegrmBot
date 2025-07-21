@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,6 +10,7 @@ import { PortfolioManager } from "@/lib/portfolio";
 
 export default function Transfer() {
   const { user, hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const [portfolioManager, setPortfolioManager] =
@@ -47,7 +49,7 @@ export default function Transfer() {
 
   const handleTransfer = async () => {
     if (!portfolioManager || !canTransfer) {
-      setError("Некорректна сума");
+      setError(t('transfer.error.invalid_amount'));
       hapticFeedback("medium");
       return;
     }
