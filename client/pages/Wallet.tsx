@@ -643,7 +643,7 @@ export default function Wallet() {
             className="rounded-full px-4"
             onClick={() => handleTabSwitch("wallet")}
           >
-            Кошелёк
+            {t('wallet.tabs.wallet')}
           </Button>
           <Button
             variant={activeTab === "cfd" ? "default" : "ghost"}
