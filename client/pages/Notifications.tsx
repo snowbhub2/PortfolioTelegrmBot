@@ -91,8 +91,7 @@ export default function Notifications() {
   const handleCategoryClick = (category: NotificationCategory) => {
     if (category.hasSettings) {
       hapticFeedback("medium");
-      // Тут можна додати навігацію до детальних налаштувань категорії
-      console.log(`Открыть настройки для: ${category.title}`);
+      navigate(`/notifications/${category.id}`);
     }
   };
 
@@ -175,7 +174,7 @@ export default function Notifications() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="font-medium">Вкл</span>
+                  <span className="font-medium">В��л</span>
                 </div>
                 <Switch
                   checked={cfdNotifications.enabled}
