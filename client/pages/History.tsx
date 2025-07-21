@@ -317,7 +317,7 @@ export default function History() {
                   {transaction.description && (
                     <div className="mt-2 pt-2 border-t border-border">
                       <div className="text-xs text-muted-foreground">
-                        {transaction.description}
+                        {getTransactionDescription(transaction, t)}
                       </div>
                     </div>
                   )}
