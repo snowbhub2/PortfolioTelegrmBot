@@ -135,6 +135,7 @@ const allMarketAssets = [...cryptoAssets, ...stockAssets, ...goldAssets];
 export default function Exchange() {
   const { hapticFeedback, user, tg } = useTelegram();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [fromAsset, setFromAsset] = useState<UserAsset | null>(null);
   const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автоматично обираємо
   const [fromAmount, setFromAmount] = useState("");
