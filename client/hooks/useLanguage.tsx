@@ -189,7 +189,7 @@ const translations = {
 
     // Withdraw Pages
     'withdraw.method.title': 'Как отправить',
-    'withdrawMethod.subtitle': 'криптовалюту',
+    'withdraw.method.subtitle': 'криптовалюту',
     'withdrawMethod.telegramContact': 'Конт��кт в Telegram',
     'withdrawMethod.instantNoFees': 'Мгновенно и без комиссий',
     'withdrawMethod.externalWallet': 'Внешний кошелёк или биржа',
@@ -231,7 +231,7 @@ const translations = {
     'exchange.you_receive': 'Вы получаете',
     'exchange.rate': 'Курс',
     'exchange.min_amount': 'Мин. сумма',
-    'exchange.max_amount': 'Макс. сумма',
+    'exchange.max_amount': 'Макс. су��ма',
     'exchange.exchange_btn': 'Обменять',
     'exchange.insufficient_balance': 'Недостаточно средств',
     'exchange.enter_amount': 'Введите сумму',
@@ -304,7 +304,7 @@ const translations = {
     'common.custom': 'Настроить',
     'common.auto': 'Автоматически',
     'common.manual': 'Вручную',
-    'common.optional': 'Опционально',
+    'common.optional': 'Опциональн��',
     'common.required': 'Обязательно',
     'common.recommended': 'Рекомендуется',
   },
