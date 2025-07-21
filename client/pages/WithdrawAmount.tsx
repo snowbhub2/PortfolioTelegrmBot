@@ -113,8 +113,8 @@ export default function WithdrawAmount() {
             {showInsufficientFunds && (
               <div className="mt-4">
                 <div className="text-red-500 font-medium">
-                  Недостаточно средств.{" "}
-                  <button className="text-primary underline">Докупить.</button>
+                  {t('withdraw.amount.insufficient_funds')}{" "}
+                  <button className="text-primary underline">{t('withdraw.amount.buy_more')}</button>
                 </div>
               </div>
             )}
@@ -129,7 +129,7 @@ export default function WithdrawAmount() {
                 <span className="text-white text-sm font-bold">$</span>
               </div>
               <span className="text-sm">
-                Баланс: {userBalance.toLocaleString()} USDT
+                {t('withdraw.amount.balance')}: {userBalance.toLocaleString()} USDT
               </span>
             </div>
             <Button
@@ -138,7 +138,7 @@ export default function WithdrawAmount() {
               onClick={handleMaxAmount}
               className="text-primary"
             >
-              Макс.
+              {t('withdraw.amount.max')}
             </Button>
           </div>
 
@@ -147,7 +147,7 @@ export default function WithdrawAmount() {
             disabled={!isValidAmount}
             onClick={handleContinue}
           >
-            Далее
+            {t('withdraw.amount.next')}
           </Button>
         </div>
       </div>
