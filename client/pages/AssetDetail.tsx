@@ -89,6 +89,7 @@ const mockTransactions = [
 
 export default function AssetDetail() {
   const { tg, hapticFeedback } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const { assetId } = useParams();
 
