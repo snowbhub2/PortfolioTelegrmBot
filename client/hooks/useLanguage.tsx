@@ -30,7 +30,7 @@ const translations = {
     'settings.max': 'Макси',
     'settings.not_applies': 'Не распространяется на аккаунт CFD Space.',
     'settings.support': 'Обратиться в поддержку',
-    'settings.faq': 'FAQ Коше��ька',
+    'settings.faq': 'FAQ Коше���ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
     'settings.privacy': 'Политика конфиденциальности',
@@ -63,7 +63,7 @@ const translations = {
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
-    'notifications.promotions': '��кции',
+    'notifications.promotions': 'Акции',
     'notifications.promotions_desc': 'Розыгрыши и бонусы',
     'notifications.educational': 'Об��азовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
@@ -105,7 +105,7 @@ const translations = {
     'wallet.actions.withdraw': 'Вывес��и',
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменя��ь',
-    'wallet.actions.transfer': 'Перевести',
+    'wallet.actions.transfer': 'Перев��сти',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
@@ -137,7 +137,7 @@ const translations = {
     'wallet.notification.startEarning': 'Начать зарабатыват�� →',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
-    'wallet.settings.open': 'Открыть настро��ки',
+    'wallet.settings.open': 'Открыть настройки',
     
     // Market
     'market.title': 'Ринок',
@@ -376,7 +376,7 @@ const translations = {
 
     // Transfer
     'transfer.title': 'Перевод сре��ств',
-    'transfer.subtitle': 'Между Портфелем и CFD',
+    'transfer.subtitle': 'Между Портфел��м и CFD',
     'transfer.portfolio': 'Портфель',
     'transfer.cash': 'Наличные',
     'transfer.for_trading': 'Для торговли',
@@ -391,7 +391,7 @@ const translations = {
     'transfer.fee': 'Комиссия',
     'transfer.transferring': 'Пер��водим...',
     'transfer.transfer_button': 'Перевести',
-    'transfer.info.title': 'О п��ревод��',
+    'transfer.info.title': 'О перевод��',
     'transfer.info.portfolio_desc': 'Портфель - наличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов на разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
@@ -431,7 +431,7 @@ const translations = {
     'coin.btc_description': 'Bitcoin — це перша і найвідоміша криптовалюта у світі. Створена в 2009 році Сатоші Накамото як децентралізована цифрова валюта.',
     'coin.btc_point_1': 'Ви можете купувати, продавати або зберігати BTC в Гаманці.',
     'coin.btc_point_2': 'Bitcoin використовує технологію блокчейн для забе��печення безпеки та прозорості.',
-    'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і де��ентралізова��их додатків (DApps), запущена в 2015 році.',
+    'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатків (DApps), запущена в 2015 році.',
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
@@ -442,7 +442,7 @@ const translations = {
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гаманці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
     'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
-    'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
+    'coin.gold_point_1': 'Ви можете куп��вати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
     // Exchange
@@ -935,6 +935,9 @@ const translations = {
     'coin.generic_crypto_description': '{{name}} is a cryptocurrency based on blockchain technology. Allows fast and secure digital transactions.',
     'coin.generic_crypto_point_1': 'You can buy, sell or store {{symbol}} in the Wallet.',
     'coin.generic_crypto_point_2': 'Cryptocurrencies can have high price volatility.',
+    'coin.gold_description': 'Gold is a precious metal that has been used for millennia as a store of value and protection against inflation.',
+    'coin.gold_point_1': 'You can buy or sell gold through the platform.',
+    'coin.gold_point_2': 'Gold is traditionally considered a "safe haven" for investors.',
 
     // History (English)
     'history.subtitle': 'All your transactions and operations',
