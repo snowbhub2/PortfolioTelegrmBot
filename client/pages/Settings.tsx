@@ -52,65 +52,7 @@ export default function Settings() {
     }
   };
 
-  const handleDiagnostic = () => {
-    hapticFeedback("medium");
-    console.log("🔍 Діагностика Telegram Web App:");
-    console.log("window.Telegram:", window.Telegram);
-    console.log("tg object:", tg);
-    console.log("user object:", user);
 
-    if (tg) {
-      console.log("📱 Platform:", tg.platform);
-      console.log("🔢 Version:", tg.version);
-      console.log("🎨 Color scheme:", tg.colorScheme);
-      console.log("📍 initData:", tg.initData);
-      console.log("💾 initDataUnsafe:", tg.initDataUnsafe);
-
-      // Аналіз проблеми
-      console.log("\n🎯 АНАЛІЗ ПРОБЛЕМИ:");
-      if (!tg.initDataUnsafe?.user) {
-        console.log("❌ ПРОБЛЕМА: Дані користувача відсутні");
-
-        // Спеціальні поради для мобільних
-        const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
-        if (isMobile || tg.platform === "unknown") {
-          console.log("📱 РІШЕННЯ ДЛЯ МОБІЛЬНОГО:");
-          console.log("   1. У @BotFather напишіть /newapp");
-          console.log(
-            "   2. Створіть Web App з URL: https://a1c16b064f7149d9a9291176d41387b1-pulse-field.projects.builder.my/",
-          );
-          console.log("   3. Потім /setmenubutton");
-          console.log("   4. Виберіть створений Web App (НЕ вводьте URL)");
-          console.log("   5. Видаліть бота з чатів та додайте знову");
-          console.log("\n🔄 АБО ВИКОРИСТАЙТЕ INLINE КНОПКУ:");
-          console.log("   - Створіть бота з inline кнопкою");
-          console.log("   - Це працює у 100% випадків на мобільному");
-        } else {
-          console.log("💻 РІШЕННЯ ДЛЯ DESKTOP:");
-          console.log("   1. У Telegram відкрийте @BotFather");
-          console.log("   2. Напишіть /setmenubutton");
-          console.log("   3. Виберіть вашого бота");
-          console.log("   4. Встановіть назву: Кошелёк");
-          console.log(
-            "   5. URL: https://a1c16b064f7149d9a9291176d41387b1-pulse-field.projects.builder.my/",
-          );
-        }
-      } else {
-        console.log("✅ Дані користувача доступні");
-      }
-
-      if (tg.platform === "unknown") {
-        console.log("⚠️ Platform невідомий - можливо відкрито не через бота");
-      }
-
-      console.log("\n🔄 Перезавантаження через 3 секунди...");
-      setTimeout(() => {
-        window.location.reload();
-      }, 3000);
-    } else {
-      console.log("❌ Telegram Web App API недоступний");
-    }
-  };
 
   // Динамічно створюємо settingsItems з мовою користувача
   const settingsItems = [
@@ -328,7 +270,7 @@ export default function Settings() {
         {/* Footer */}
         <div className="text-center text-sm text-muted-foreground">
           <p className="mb-1">Мини-приложение управляется TG Wallet Inc.</p>
-          <p className="mb-1">Сервис независи�� и не связан с Telegram.</p>
+          <p className="mb-1">Сервис независим и не связан с Telegram.</p>
           <Button
             variant="ghost"
             className="text-primary p-0 h-auto"
