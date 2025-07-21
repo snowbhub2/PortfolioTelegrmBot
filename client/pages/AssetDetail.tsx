@@ -12,10 +12,10 @@ import {
 import { useNavigate, useParams } from "react-router-dom";
 import BottomNavigation from "@/components/BottomNavigation";
 
-// Asset data mapping
+// Asset data mapping - names will be translated dynamically
 const assetData = {
   usd: {
-    name: "Доллары",
+    nameKey: "asset.name.dollars",
     symbol: "USDT",
     icon: "$",
     iconBg: "bg-green-500",
@@ -25,7 +25,7 @@ const assetData = {
     priceChange: "+0.00 $",
   },
   ton: {
-    name: "Toncoin",
+    nameKey: "asset.name.toncoin",
     symbol: "TON",
     icon: "🔷",
     iconBg: "bg-blue-500",
@@ -35,7 +35,7 @@ const assetData = {
     priceChange: "-0.01 $",
   },
   btc: {
-    name: "Bitcoin",
+    nameKey: "asset.name.bitcoin",
     symbol: "BTC",
     icon: "₿",
     iconBg: "bg-orange-500",
@@ -45,7 +45,7 @@ const assetData = {
     priceChange: "+1 557.73 $",
   },
   eth: {
-    name: "Ethereum",
+    nameKey: "asset.name.ethereum",
     symbol: "ETH",
     icon: "Ξ",
     iconBg: "bg-purple-500",
@@ -55,7 +55,7 @@ const assetData = {
     priceChange: "-24.12 $",
   },
   gold: {
-    name: "Золото",
+    nameKey: "asset.name.gold",
     symbol: "GOLD",
     icon: "🥇",
     iconBg: "bg-yellow-500",
@@ -66,23 +66,23 @@ const assetData = {
   },
 };
 
-const mockTransactions = [
+const getMockTransactions = (t: any) => [
   {
     id: "1",
     type: "exchange",
-    description: "Обмен: BTC на USDT",
+    description: t('asset.transaction.exchange_btc_usdt'),
     amount: "0,0000509 BTC",
-    status: "Отправлено",
-    date: "6 дек. 2024 г. в 1...",
+    status: t('asset.transaction.status.sent'),
+    date: t('asset.transaction.date.dec_6'),
     isPositive: false,
   },
   {
     id: "2",
     type: "exchange",
-    description: "Обмен: TON на BTC",
+    description: t('asset.transaction.exchange_ton_btc'),
     amount: "+0,0000509 BTC",
-    status: "Получено",
-    date: "16 нояб. 2024 г...",
+    status: t('asset.transaction.status.received'),
+    date: t('asset.transaction.date.nov_16'),
     isPositive: true,
   },
 ];
@@ -96,8 +96,10 @@ export default function AssetDetail() {
   const asset = assetData[assetId as keyof typeof assetData];
 
   if (!asset) {
-    return <div>Asset not found</div>;
+    return <div>{t('asset.not_found')}</div>;
   }
+
+  const mockTransactions = getMockTransactions(t);
 
   useEffect(() => {
     if (tg) {
@@ -132,11 +134,11 @@ export default function AssetDetail() {
           >
             <ArrowLeftIcon className="w-5 h-5" />
           </Button>
-          <span className="text-primary">Назад</span>
+          <span className="text-primary">{t('common.back')}</span>
         </div>
         <div className="text-center">
-          <h1 className="font-semibold">Гаманець ✓</h1>
-          <p className="text-sm text-muted-foreground">мініЗастосунок</p>
+          <h1 className="font-semibold">{t('asset.header.wallet_verified')}</h1>
+          <p className="text-sm text-muted-foreground">{t('asset.header.mini_app')}</p>
         </div>
         <Button variant="ghost" size="icon">
           <div className="w-5 h-5 flex items-center justify-center">⋯</div>
@@ -150,7 +152,7 @@ export default function AssetDetail() {
         >
           <span className="text-white text-3xl font-bold">{asset.icon}</span>
         </div>
-        <h2 className="text-3xl font-bold mb-2">{asset.name}</h2>
+        <h2 className="text-3xl font-bold mb-2">{t(asset.nameKey)}</h2>
         <div className="text-3xl font-bold mb-2">0,00 $</div>
         <div className="text-muted-foreground">{asset.balance}</div>
       </div>
@@ -166,7 +168,7 @@ export default function AssetDetail() {
           >
             <ArrowUpIcon className="w-5 h-5" />
           </Button>
-          <span className="text-xs text-primary">Отправить</span>
+          <span className="text-xs text-primary">{t('asset.action.send')}</span>
         </div>
         <div className="flex flex-col items-center">
           <Button
@@ -177,7 +179,7 @@ export default function AssetDetail() {
           >
             <ArrowDownIcon className="w-5 h-5" />
           </Button>
-          <span className="text-xs text-primary">Получить</span>
+          <span className="text-xs text-primary">{t('asset.action.receive')}</span>
         </div>
         <div className="flex flex-col items-center">
           <Button
@@ -188,7 +190,7 @@ export default function AssetDetail() {
           >
             <span className="text-lg font-bold">+</span>
           </Button>
-          <span className="text-xs text-primary">Купить</span>
+          <span className="text-xs text-primary">{t('asset.action.buy')}</span>
         </div>
         <div className="flex flex-col items-center">
           <Button
@@ -199,15 +201,15 @@ export default function AssetDetail() {
           >
             <RefreshCwIcon className="w-5 h-5" />
           </Button>
-          <span className="text-xs text-primary">Обменять</span>
+          <span className="text-xs text-primary">{t('asset.action.exchange')}</span>
         </div>
       </div>
 
       {/* Price Section */}
       <div className="px-4 mb-6">
         <div className="flex items-center justify-between mb-2">
-          <h3 className="text-lg font-semibold text-muted-foreground">ЦЕНА</h3>
-          <span className="text-primary text-sm">Подробнее</span>
+          <h3 className="text-lg font-semibold text-muted-foreground">{t('asset.price.title')}</h3>
+          <span className="text-primary text-sm">{t('asset.price.details')}</span>
         </div>
         <Card className="p-4">
           <div className="flex items-center justify-between">
@@ -227,7 +229,7 @@ export default function AssetDetail() {
                 >
                   {asset.priceChange}
                 </span>
-                <span className="text-muted-foreground">24ч</span>
+                <span className="text-muted-foreground">{t('asset.price.24h')}</span>
               </div>
             </div>
             <div className="w-20 h-12">
@@ -247,7 +249,7 @@ export default function AssetDetail() {
       {/* Transaction History */}
       <div className="px-4">
         <h3 className="text-lg font-semibold mb-4 text-muted-foreground">
-          ИСТОРИЯ ТРАНЗАКЦИЙ
+          {t('asset.transaction_history')}
         </h3>
         <div className="space-y-3">
           {mockTransactions.map((transaction) => (
