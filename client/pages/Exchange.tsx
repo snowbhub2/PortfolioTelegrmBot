@@ -139,7 +139,7 @@ const goldAssets: MarketAsset[] = [
   },
 ];
 
-// TrendingAssets з Market (CATI, XTZ та інші)
+// TrendingAssets з Market (включаючи всі з TRENDING_ASSETS)
 const trendingAssets: MarketAsset[] = [
   {
     id: "cati",
@@ -161,6 +161,36 @@ const trendingAssets: MarketAsset[] = [
     icon: "🔷",
     sparkline: [0.52, 0.525, 0.53, 0.536],
   },
+  {
+    id: "pi",
+    symbol: "PI",
+    name: "Pi Network",
+    price: 0.5,
+    change24h: 5.09,
+    marketCap: 50000000,
+    icon: "π",
+    sparkline: [0.47, 0.48, 0.49, 0.5],
+  },
+  {
+    id: "wld",
+    symbol: "WLD",
+    name: "Worldcoin",
+    price: 1.097,
+    change24h: 17.7,
+    marketCap: 1000000000,
+    icon: "W",
+    sparkline: [0.9, 0.95, 1.0, 1.097],
+  },
+  {
+    id: "algo",
+    symbol: "ALGO",
+    name: "Algorand",
+    price: 0.2207,
+    change24h: 12.51,
+    marketCap: 1700000000,
+    icon: "A",
+    sparkline: [0.19, 0.20, 0.21, 0.2207],
+  },
 ];
 
 // Всі активи з Market (включаючи trending assets)
@@ -171,7 +201,7 @@ export default function Exchange() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [fromAsset, setFromAsset] = useState<UserAsset | null>(null);
-  const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автомати��но обираємо
+  const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автоматично обираємо
   const [fromAmount, setFromAmount] = useState("");
   const [userAssets, setUserAssets] = useState<UserAsset[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -232,7 +262,7 @@ export default function Exchange() {
         const allAvailable = [...allAssets, ...allMarketAssets];
         const toAssetFromUrl = allAvailable.find(asset => asset.id === toParam);
         if (toAssetFromUrl && !toAsset) {
-          // Конвертуємо в UserAsset формат якщо ц�� ринковий актив
+          // Конвертуємо в UserAsset формат якщо це ринковий актив
           if (!allAssets.find(a => a.id === toAssetFromUrl.id)) {
             const marketAsset = toAssetFromUrl as any;
             setToAsset({
