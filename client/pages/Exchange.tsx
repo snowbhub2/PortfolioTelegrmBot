@@ -762,7 +762,7 @@ export default function Exchange() {
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Пошук"
+                placeholder="Поиск"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-muted rounded-lg text-foreground placeholder-muted-foreground border-0 focus:outline-none"
@@ -831,7 +831,7 @@ export default function Exchange() {
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Пошук"
+                placeholder="Поиск"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 bg-muted rounded-lg text-foreground placeholder-muted-foreground border-0 focus:outline-none"
