@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 // Функція для отримання назви мови
 const getCurrentLanguageName = (langCode: string) => {
   const languages: Record<string, string> = {
-    ru: "Русски��",
+    ru: "Русский",
     en: "English",
   };
   return languages[langCode] || "Русский";
@@ -26,7 +26,7 @@ const getCurrentLanguageName = (langCode: string) => {
 
 export default function Settings() {
   const { hapticFeedback, user } = useTelegram();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const navigate = useNavigate();
 
   // Back button is now handled automatically by useAutoBackButton hook
@@ -90,7 +90,7 @@ export default function Settings() {
     },
     {
       icon: <MessageSquareIcon className="w-5 h-5 text-orange-500" />,
-      title: "Обратиться в поддержку",
+      title: "Об��атиться в поддержку",
       hasChevron: true,
     },
     {
@@ -146,7 +146,7 @@ export default function Settings() {
 
         {/* Basic Settings */}
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          ОСНОВНЫЕ Н��СТРОЙКИ
+          ОСНОВНЫЕ НАСТРОЙКИ
         </h2>
         <Card className="mb-6">
           {settingsItems.map((item, index) => (
