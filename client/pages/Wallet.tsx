@@ -394,7 +394,7 @@ export default function Wallet() {
                 <div className="text-3xl">💰</div>
                 <div>
                   <h3 className="font-bold text-lg mb-1">
-                    Заробляйте до 15% APY
+                    {t('wallet.notification.earnTitle')}
                   </h3>
                   <h4 className="font-semibold mb-1">з доларами</h4>
                   <p className="text-sm opacity-90">Почати заробляти →</p>
