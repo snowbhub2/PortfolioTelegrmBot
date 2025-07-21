@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import BottomNavigation from "@/components/BottomNavigation";
 import { PortfolioManager, Transaction } from "@/lib/portfolio";
 
-// Функція для отримання іконки транза��ції
+// Функція для отримання іконки транзакції
 const getTransactionIcon = (type: Transaction["type"]) => {
   switch (type) {
     case "buy":
@@ -90,7 +90,7 @@ export default function History() {
   // Back button is now handled automatically by Telegram mini app
 
   useEffect(() => {
-    // Ініціаліз��ці�� портфеля
+    // Ініц��аліз��ці�� портфеля
     const userId = user?.id?.toString() || "demo_user";
     const portfolio = new PortfolioManager(userId);
     setPortfolioManager(portfolio);
@@ -103,6 +103,54 @@ export default function History() {
     if (filter === "all") return true;
     return transaction.type === filter;
   });
+
+  // Функція для генерації номеру транзакції
+  const generateTransactionId = (transaction: Transaction, index: number) => {
+    const prefix = transaction.type.toUpperCase().slice(0, 3);
+    const timestamp = transaction.timestamp.getTime().toString().slice(-6);
+    return `${prefix}${timestamp}${index.toString().padStart(3, '0')}`;
+  };
+
+  // Функція для отримання курсу обміну
+  const getExchangeRate = (transaction: Transaction) => {
+    if (transaction.price && transaction.quantity) {
+      return transaction.price;
+    }
+    return 1; // Default rate for USD or transfers
+  };
+
+  // Функція для отримання типу транзакції для деталей
+  const getTransactionGroup = (type: Transaction["type"]) => {
+    switch (type) {
+      case "buy":
+        return t('history.details.group.purchase');
+      case "sell":
+        return t('history.details.group.sale');
+      case "deposit":
+        return t('history.details.group.deposit');
+      case "withdraw":
+        return t('history.details.group.withdrawal');
+      case "transfer_to_cfd":
+      case "transfer_from_cfd":
+        return t('history.details.group.transfer');
+      default:
+        return t('history.details.group.other');
+    }
+  };
+
+  // Функція для відкриття деталей транзакції
+  const handleTransactionClick = (transaction: Transaction) => {
+    hapticFeedback("light");
+    setSelectedTransaction(transaction);
+    setShowDetails(true);
+  };
+
+  // Функція для закриття деталей
+  const handleCloseDetails = () => {
+    hapticFeedback("light");
+    setShowDetails(false);
+    setSelectedTransaction(null);
+  };
 
   const formatDate = (date: Date) => {
     const now = new Date();
