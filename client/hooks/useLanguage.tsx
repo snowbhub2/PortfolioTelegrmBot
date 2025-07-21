@@ -48,7 +48,7 @@ const translations = {
     'settings.cfdNotApplicable': 'Распространяется на аккаунт CFD',
     'settings.userAgreement': 'Пол��зовательское соглашение',
     'settings.privacyPolicy': 'Политика конфиденциальности',
-    'settings.managedBy': 'Мини-приложение уп��авляется TG Portfolio Inc.',
+    'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
     'settings.learnMore': 'Узнать больше',
     
@@ -70,7 +70,7 @@ const translations = {
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
-    'notifications.news_channel': 'В��е новости вы можете прочитать в канале',
+    'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
@@ -86,8 +86,8 @@ const translations = {
     'notifications.news_channel_link': 'Новости Крипто Кошельк��',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_description': 'Пол���чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
+    'notifications.cfd_description': 'Пол��чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
+    'notifications.cfd_news_text': 'Все новости можно узнать в кана����',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -131,7 +131,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Додаткові переклади для всіх текстів
+    // Д��даткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с Nobel Portfolio',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную ��еть. Неверный выбор может привести к потери средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привести к потери средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -258,7 +258,7 @@ const translations = {
 
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выпол��ен!',
-    'withdraw.processing.payment_processing': 'Ва�� платёж в обработке',
+    'withdraw.processing.payment_processing': 'Ваш платёж в обработке',
     'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
     'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
@@ -270,7 +270,7 @@ const translations = {
     'withdraw.processing.status': 'Статус',
     'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
     'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
-    'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
+    'withdraw.processing.external_withdrawal': 'Вывод на внешн��й кошелёк',
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
@@ -326,7 +326,7 @@ const translations = {
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
     'history.filter.deposit': 'Пополнения',
-    'history.filter.withdraw': 'Выведения',
+    'history.filter.withdraw': 'Выведен��я',
     'history.empty.title': 'Пока нет транзак��ий',
     'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
@@ -396,10 +396,10 @@ const translations = {
     'exchange.max': 'Макс',
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
-    'exchange.insufficient_funds': 'Недостат��чно средств.',
+    'exchange.insufficient_funds': 'Недостаточно средств.',
     'exchange.select_instrument': '��ыбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
-    'exchange.review_deal': 'Просмотреть сделку',
+    'exchange.review_deal': 'Просмотреть сде��ку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
@@ -460,7 +460,7 @@ const translations = {
     'coin.btc_point_1': 'Ви можете купувати, продавати або зберігати BTC в Гаманці.',
     'coin.btc_point_2': 'Bitcoin використовує технологію блокчейн для забе��печення безпеки та прозорості.',
     'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатк��в (DApps), запущена в 2015 році.',
-    'coin.eth_point_1': 'Ви можете купуват��, продавати або зберігати ETH в Гаманці.',
+    'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
     'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
@@ -520,7 +520,7 @@ const translations = {
     'common.search': 'Поиск',
     'common.back': 'Назад',
     'common.filter': 'Фильтр',
-    'common.sort': 'С��ртиро��ка',
+    'common.sort': 'Сортиро��ка',
     'common.all': 'Все',
     'common.none': 'Нет',
     'common.yes': 'Да',
