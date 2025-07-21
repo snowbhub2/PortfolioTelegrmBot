@@ -16,25 +16,12 @@ import {
 import { useNavigate } from "react-router-dom";
 
 // Функція для отримання назви мови
-const getLanguageName = (languageCode?: string) => {
+const getCurrentLanguageName = (langCode: string) => {
   const languages: Record<string, string> = {
-    uk: "Українська",
-    ru: "Русский",
+    ru: "Русски��",
     en: "English",
-    de: "Deutsch",
-    fr: "Français",
-    es: "Español",
-    it: "Italiano",
-    pt: "Português",
-    pl: "Polski",
-    tr: "Türkçe",
-    ar: "العربية",
-    zh: "中文",
-    ja: "日本語",
-    ko: "한국어",
   };
-
-  return languages[languageCode || ""] || "Русский";
+  return languages[langCode] || "Русский";
 };
 
 export default function Settings() {
@@ -58,7 +45,7 @@ export default function Settings() {
 
 
 
-  // Динамічно створюємо settingsItems з мовою кор��стувача
+  // Динамічно створюємо settingsItems з мовою користувача
   const settingsItems = [
     {
       icon: <BellIcon className="w-5 h-5 text-red-500" />,
@@ -159,7 +146,7 @@ export default function Settings() {
 
         {/* Basic Settings */}
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          ОСНОВНЫЕ НАСТРОЙКИ
+          ОСНОВНЫЕ Н��СТРОЙКИ
         </h2>
         <Card className="mb-6">
           {settingsItems.map((item, index) => (
