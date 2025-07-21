@@ -37,8 +37,8 @@ export default function WithdrawMethodSelect() {
       <div className="p-4">
         {/* Title */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold mb-2">Как отправить</h1>
-          <h2 className="text-2xl font-bold">криптовалюту</h2>
+          <h1 className="text-2xl font-bold mb-2">{t('withdraw.method.title')}</h1>
+          <h2 className="text-2xl font-bold">{t('withdraw.method.subtitle')}</h2>
         </div>
 
         {/* Method Options */}
@@ -63,10 +63,10 @@ export default function WithdrawMethodSelect() {
                 </div>
                 <div>
                   <div className="font-semibold text-lg">
-                    Контакт в Telegram
+                    {t('withdraw.method.telegram.title')}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Мгновенно и без комиссий
+                    {t('withdraw.method.telegram.description')}
                   </div>
                 </div>
               </div>
@@ -100,10 +100,10 @@ export default function WithdrawMethodSelect() {
                 </div>
                 <div>
                   <div className="font-semibold text-lg">
-                    Внешний кошелёк или биржа
+                    {t('withdraw.method.external.title')}
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Нужно указать криптоадрес
+                    {t('withdraw.method.external.description')}
                   </div>
                 </div>
               </div>
