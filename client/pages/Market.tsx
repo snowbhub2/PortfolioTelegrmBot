@@ -132,7 +132,7 @@ const goldAssets: MarketAsset[] = [
   {
     id: "gold",
     symbol: "GOLD",
-    name: t('market.asset.gold'),
+    name: "Gold", // Will be translated via t() in component
     price: 2650.5,
     change24h: 0.75,
     marketCap: 0,
