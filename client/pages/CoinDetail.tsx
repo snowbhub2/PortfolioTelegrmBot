@@ -178,7 +178,7 @@ export default function CoinDetail() {
     category: "crypto",
   };
 
-  // Оновлює��о ціну з реальних даних якщо доступно
+  // Оновлюємо ціну з реальних даних якщо доступно
   if (priceUpdates[asset.id]) {
     asset = {
       ...asset,
@@ -203,7 +203,7 @@ export default function CoinDetail() {
         } else if (asset.id === "eth") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Ethereum — це платформа для роз��мних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
+            description: "Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
             points: [
               "Ви можете купувати, продавати або зберігати ETH в Гаманці.",
               "Ethereum є основою для багатьох DeFi проектів та NFT."
@@ -287,7 +287,7 @@ export default function CoinDetail() {
         } else {
           return {
             title: "ПРО АКЦІЮ",
-            description: `${asset.name} — це публічна компанія, акції якої торгуються на фондовому ринку.`,
+            description: `${asset.name} — ��е публічна компанія, акції якої торгуються на фондовому ринку.`,
             points: [
               `Ви можете купувати або продавати акції ${asset.symbol} через платформу.`,
               "Ціни на акції можуть коливатися залежно від ринкових умов."
@@ -302,7 +302,7 @@ export default function CoinDetail() {
             description: "Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.",
             points: [
               "Ви можете купувати або продавати золото через платформу.",
-              "Золото традиційно вважається 'безпечним притулком' для інвес��орів."
+              "Золото традиційно вважається 'безпечним притулком' для інвесторів."
             ]
           };
         } else if (asset.id === "silver") {
@@ -320,13 +320,13 @@ export default function CoinDetail() {
             description: "Платина — це рідкісний дорогоцінний метал з унікальними властивостями, який широко використовується в ювелірній справі та промисловості.",
             points: [
               "Ви можете купувати або продавати платину через платформу.",
-              "Платина рідше ��а золото та має високу стійкість до корозії."
+              "Платина рідше за золото та має високу стійкість до корозії."
             ]
           };
         } else {
           return {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
-            description: `${asset.name} — це дорогоцінний метал, що використовується для інвестицій та промислових цілей.`,
+            description: `${asset.name} — це дорогоцінний метал, що використовується для інвестицій та промислових ціл��й.`,
             points: [
               `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
               "Дорогоцінні метали можуть служити захистом від економічної нестабільності."
@@ -371,8 +371,14 @@ export default function CoinDetail() {
 
   // Отримуємо кількість активу у портфелі користувача
   const userAsset = portfolioManager?.getAsset(asset.id);
-  const assetQuantity = userAsset?.quantity || 0;
-  const hasAsset = assetQuantity > 0;
+  let assetQuantity = userAsset?.quantity || 0;
+  let hasAsset = assetQuantity > 0;
+
+  // Для USD показуємо баланс готівки
+  if (asset.id === 'usd') {
+    assetQuantity = portfolioManager?.getPortfolio().cashBalance || 0;
+    hasAsset = assetQuantity > 0;
+  }
 
   // Отримуємо історію транзакцій для цього активу
   const assetTransactions = portfolioManager?.getAssetTransactions(asset.id) || [];
@@ -405,7 +411,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторінку методів виводу
       navigate("/withdraw"); // припускаю що така сторінка існує
     } else {
-      // Для інших активів відкр��ваємо Exchange з протилежними полями
+      // Для інших активів відкриваємо Exchange з протилежними полями
       navigate(`/exchange?from=${asset.id}&to=usd`);
     }
   };
