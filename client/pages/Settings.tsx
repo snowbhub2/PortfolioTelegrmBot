@@ -75,7 +75,7 @@ export default function Settings() {
     },
     {
       icon: <GlobeIcon className="w-5 h-5 text-purple-500" />,
-      title: "Язык",
+      title: t('settings.language'),
       value: getLanguageName(user?.language_code),
       hasChevron: true,
       action: "language",
@@ -274,7 +274,7 @@ export default function Settings() {
 
         {/* Footer */}
         <div className="text-center text-sm text-muted-foreground">
-          <p className="mb-1">Мини-приложение управляется TG Wallet Inc.</p>
+          <p className="mb-1">Мин��-приложение управляется TG Wallet Inc.</p>
           <p className="mb-1">Сервис независим и не связан с Telegram.</p>
           <Button
             variant="ghost"
