@@ -33,7 +33,7 @@ const translations = {
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
-    'settings.privacy': 'Политика конфиденциальности',
+    'settings.privacy': 'Политика конфиденц��альности',
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не свя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
@@ -55,7 +55,7 @@ const translations = {
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
-    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут включены.',
+    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегд�� будут включены.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
@@ -71,8 +71,8 @@ const translations = {
     'notifications.category.updates': 'У��Е��ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
-    'notifications.category.feedback': '��ВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
-    'notifications.category.feedback_desc': 'Опросы пользователей, которые помогают улучшить сервис.',
+    'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
+    'notifications.category.feedback_desc': '��просы пользователей, которые помогают улучшить сервис.',
     
     // Wallet
     'wallet.title': 'Портфель',
@@ -93,7 +93,7 @@ const translations = {
     'wallet.assets.boughtAt': 'Купил�� за:',
     'wallet.assets.noAssets': 'Пока нет активов',
     'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
-    'wallet.trending.title': 'В Т��ЕНДЕ',
+    'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -174,7 +174,7 @@ const translations = {
     'wallet.settings.open': 'Открыть на��тройки',
     'wallet.user.avatar': 'аватар пользователя',
     'wallet.assets.boughtFor': 'Купили за',
-    'wallet.trends.perDay': 'за день',
+    'wallet.trends.perDay': 'за де��ь',
     'wallet.assets.dollars_cash': 'Доллары (наличные)',
     'wallet.assets.for_trading': 'Для торговли',
     'wallet.assets.no_assets': 'Пока нет активов',
@@ -196,7 +196,7 @@ const translations = {
     // Deposit Asset Selection
     'deposit.asset.popular': 'ПОПУЛЯРНЫЕ',
     'deposit.asset.all': 'ВСЕ',
-    'deposit.asset.not_found': 'Активы не найдены',
+    'deposit.asset.not_found': '��ктивы не найдены',
 
     // Deposit Network Selection
     'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
@@ -239,7 +239,7 @@ const translations = {
     'history.filter.deposit': 'П��полнения',
     'history.filter.withdraw': 'Выведения',
     'history.empty.title': 'Пока нет транзак��ий',
-    'history.empty.subtitle_all': 'Ваши оп��рации появятся здесь',
+    'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
@@ -266,6 +266,7 @@ const translations = {
     'bonuses.card.bonus_label': 'БОНУС',
     'bonuses.card.annual': 'годо��ых',
     'bonuses.empty.completed': 'Нет завершённых бонусов',
+    'bonuses.asset.dollars': 'Доллары',
 
     // Exchange
     'exchange.title': 'Обмен',
@@ -347,7 +348,7 @@ const translations = {
     'common.success': 'Ус��ешно',
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
-    'common.fee': 'Ко��иссия',
+    'common.fee': 'Комиссия',
     'common.total': 'Итого',
     'common.available': 'Доступно',
     'common.balance': 'Баланс',
