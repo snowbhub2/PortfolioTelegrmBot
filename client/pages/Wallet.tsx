@@ -673,7 +673,7 @@ export default function Wallet() {
             {/* Modal Header */}
             <div className="flex items-center justify-between p-4 border-b border-border">
               <h3 className="text-lg font-semibold">
-                Т���рговля {selectedTradingAsset.symbol}
+                {t('wallet.trading.title')} {selectedTradingAsset.symbol}
               </h3>
               <Button
                 variant="ghost"
