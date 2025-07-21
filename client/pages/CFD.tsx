@@ -82,12 +82,6 @@ export default function CFD() {
     <div className="flex-1">
       {/* Content starts directly without header */}
 
-      {/* Trading Balance */}
-      <div className="p-4 text-center bg-muted/20">
-        <div className="text-2xl font-bold">${cfdBalance.toFixed(2)}</div>
-        <div className="text-sm text-muted-foreground">{t('cfd.trading_balance')}</div>
-      </div>
-
       {/* Search */}
       <div className="px-4 py-3">
         <div className="relative">
