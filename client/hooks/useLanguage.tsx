@@ -69,7 +69,7 @@ const translations = {
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
-    'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включ��н��.',
+    'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с в��сокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -229,7 +229,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Активы других се��ей или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -270,7 +270,7 @@ const translations = {
     'withdraw.processing.status': 'Статус',
     'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
     'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
-    'withdraw.processing.external_withdrawal': 'Вывод на вне��ний кошелёк',
+    'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
@@ -326,7 +326,7 @@ const translations = {
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
     'history.filter.deposit': 'Пополнения',
-    'history.filter.withdraw': 'Выведен��я',
+    'history.filter.withdraw': 'Выведения',
     'history.empty.title': 'Пока нет транзак��ий',
     'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
@@ -376,7 +376,7 @@ const translations = {
     // Bonuses
     'bonuses.title': 'Бонусы',
     'bonuses.hero.title': 'Бону��ы в Кошельке',
-    'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
+    'bonuses.hero.subtitle': '��олучайте бонусы з�� хранение криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
@@ -399,7 +399,7 @@ const translations = {
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
-    'transfer.title': 'Перевод сре����тв',
+    'transfer.title': 'Перевод сре��ств',
     'transfer.subtitle': 'Между Портфелем и CFD',
     'transfer.portfolio': 'Портфель',
     'transfer.cash': 'Наличные',
@@ -459,13 +459,13 @@ const translations = {
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
-    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
+    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для ��иттєвих міжнародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
-    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захист�� від інфляції.',
+    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
     'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
@@ -1010,6 +1010,11 @@ const translations = {
     'history.details.time': 'Time',
     'history.details.status': 'Status',
     'history.details.description': 'Description',
+
+    // Transaction Descriptions
+    'history.description.initial_deposit': 'Initial deposit',
+    'history.description.purchase_details': 'Purchase {{quantity}} {{asset}} for ${{price}}',
+    'history.description.sell_details': 'Sell {{quantity}} {{asset}} for ${{price}}',
 
     // Bonuses (English)
     'bonuses.hero.title': 'Wallet Bonuses',
