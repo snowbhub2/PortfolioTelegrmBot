@@ -310,16 +310,16 @@ export default function Market() {
       {/* Top Assets Section */}
       <div className="px-4">
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          ТОП ДНЯ
+          {t('market.top_of_day')}
         </h2>
 
         {/* Tabs */}
         <div className="flex space-x-6 mb-4 overflow-x-auto">
           {[
-            { key: "all", label: "Все" },
-            { key: "stocks", label: "Акції" },
-            { key: "crypto", label: "Криптовалюти" },
-            { key: "gold", label: "Золото" },
+            { key: "all", label: t('market.tab.all') },
+            { key: "stocks", label: t('market.tab.stocks') },
+            { key: "crypto", label: t('market.tab.crypto') },
+            { key: "gold", label: t('market.tab.gold') },
           ].map((tab) => (
             <button
               key={tab.key}
