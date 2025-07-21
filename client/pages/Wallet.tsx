@@ -405,7 +405,7 @@ export default function Wallet() {
                 </div>
               </div>
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-30">
-                <div className="text-6xl">���</div>
+                <div className="text-6xl">💰</div>
               </div>
             </Card>
           </div>
