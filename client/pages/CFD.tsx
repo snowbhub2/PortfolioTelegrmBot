@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -52,6 +53,7 @@ const mockTradingAssets: MarketAsset[] = [
 
 export default function CFD() {
   const { hapticFeedback, user } = useTelegram();
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedAsset, setSelectedAsset] = useState<MarketAsset | null>(null);
   const [portfolioManager, setPortfolioManager] =
@@ -83,7 +85,7 @@ export default function CFD() {
       {/* Trading Balance */}
       <div className="p-4 text-center bg-muted/20">
         <div className="text-2xl font-bold">${cfdBalance.toFixed(2)}</div>
-        <div className="text-sm text-muted-foreground">Торговий баланс CFD</div>
+        <div className="text-sm text-muted-foreground">{t('cfd.trading_balance')}</div>
       </div>
 
       {/* Search */}
@@ -91,7 +93,7 @@ export default function CFD() {
         <div className="relative">
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
           <Input
-            placeholder="Пошук активів"
+            placeholder={t('cfd.search_assets')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10"
@@ -102,7 +104,7 @@ export default function CFD() {
       {/* Popular Pairs */}
       <div className="px-4 mb-4">
         <h2 className="text-lg font-semibold mb-3 text-muted-foreground">
-          ПОПУЛЯРНІ ПАРИ
+          {t('cfd.popular_pairs')}
         </h2>
         <div className="space-y-2">
           {mockTradingAssets.map((asset) => (
@@ -156,13 +158,13 @@ export default function CFD() {
               className="bg-success text-success-foreground"
               onClick={() => handleTrade("buy")}
             >
-              КУПИТИ
+              {t('cfd.buy')}
             </Button>
             <Button
               className="bg-destructive text-destructive-foreground"
               onClick={() => handleTrade("sell")}
             >
-              ПРОДАТИ
+              {t('cfd.sell')}
             </Button>
           </div>
         </div>
