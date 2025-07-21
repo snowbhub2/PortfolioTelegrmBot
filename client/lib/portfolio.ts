@@ -39,7 +39,7 @@ export interface UserPortfolio {
   transactions: Transaction[]; // Історія транзакцій
 }
 
-// Локальне збереження ���ортфеля (пізніше замінимо на API)
+// Локальне збереження ��ортфеля (пізніше замінимо на API)
 const PORTFOLIO_KEY = "user_portfolio";
 
 export class PortfolioManager {
@@ -70,7 +70,7 @@ export class PortfolioManager {
       quantity: 0.01,
       price: 50000,
       amount: 500,
-      description: "Покупка 0.01 BTC за $50000",
+      description: "purchase_btc_0.01_50000",
     });
 
     // Продаж Ethereum
