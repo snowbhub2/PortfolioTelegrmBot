@@ -169,7 +169,7 @@ export default function Wallet() {
         }
       });
 
-      // Оновлюємо топ-4 активи за зростанням
+      // Оновлюємо топ-4 активи за ��ростанням
       const topPerformers = getTopPerformingAssets(priceUpdates);
       setTopAssets(topPerformers);
     }
@@ -602,7 +602,7 @@ export default function Wallet() {
       {user?.is_demo && (
         <div className="bg-orange-100 border-b border-orange-200 p-2 text-center">
           <span className="text-orange-800 text-sm font-medium">
-            🎭 Demo режим - для повних функцій запус����іть через Telegram бота
+            🎭 Demo режим - для повних функцій запустіть через Telegram бота
           </span>
         </div>
       )}
