@@ -65,7 +65,7 @@ const getTransactionTitle = (transaction: Transaction) => {
     case "withdraw":
       return "Виведення у зірки";
     case "transfer_to_cfd":
-      return "Переказ до CFD";
+      return "Переказ д�� CFD";
     case "transfer_from_cfd":
       return "Переказ з CFD";
     default:
@@ -175,8 +175,8 @@ export default function History() {
             </Card>
           ) : (
             <div className="space-y-3">
-              {filteredTransactions.map((transaction) => (
-                <Card key={transaction.id} className="p-4">
+              {filteredTransactions.map((transaction, index) => (
+                <Card key={`${transaction.id}-${index}`} className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-muted rounded-full">
