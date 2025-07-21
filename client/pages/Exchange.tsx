@@ -401,7 +401,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
-        // Переходимо на сторінку деталей активу яки�� отримали
+        // Переходимо на сторінку деталей активу який отримали
         navigate(`/coin/${toAsset.id}`);
       } else {
         setError("Помилка при обміні активів");
@@ -546,18 +546,18 @@ export default function Exchange() {
           </div>
 
           {/* Завжди показуєм�� великі цифри */}
-          <div className="flex items-end justify-between mb-2">
-            <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground flex-1 max-w-[60%] break-all">
+          <div className="flex items-center justify-between mb-2">
+            <div className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground flex-1 min-w-0 break-all">
               {toAsset && fromAmount && parseFloat(fromAmount) > 0
                 ? (toAsset.id === "usd" ? toAmount.toFixed(2) : toAmount.toFixed(6))
                 : "0"
               }
             </div>
             <div
-              className="flex items-center gap-2 cursor-pointer ml-2"
+              className="flex items-center gap-2 cursor-pointer ml-4"
               onClick={() => setShowToSelect(true)}
             >
-              <span className="text-xl sm:text-2xl md:text-4xl font-light text-muted-foreground">
+              <span className="text-2xl sm:text-3xl lg:text-5xl font-light text-muted-foreground">
                 {toAsset?.symbol || "Вибрати"}
               </span>
               <span className="text-muted-foreground text-xl">›</span>
