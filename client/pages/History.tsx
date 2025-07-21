@@ -88,11 +88,7 @@ const getTransactionDescription = (transaction: Transaction, t: any) => {
     const parts = desc.split('_');
     if (parts.length === 4) {
       const [, assetId, quantity, price] = parts;
-      return t('history.description.purchase_details', {
-        quantity: parseFloat(quantity).toFixed(4),
-        asset: assetId.toUpperCase(),
-        price: parseFloat(price).toFixed(2)
-      });
+      return `${t('history.description.purchase_prefix')} ${parseFloat(quantity).toFixed(4)} ${assetId.toUpperCase()} ${t('history.description.for')} $${parseFloat(price).toFixed(2)}`;
     }
   }
 
@@ -101,11 +97,7 @@ const getTransactionDescription = (transaction: Transaction, t: any) => {
     const parts = desc.split('_');
     if (parts.length === 4) {
       const [, assetId, quantity, price] = parts;
-      return t('history.description.sell_details', {
-        quantity: parseFloat(quantity).toFixed(4),
-        asset: assetId.toUpperCase(),
-        price: parseFloat(price).toFixed(2)
-      });
+      return `${t('history.description.sell_prefix')} ${parseFloat(quantity).toFixed(4)} ${assetId.toUpperCase()} ${t('history.description.for')} $${parseFloat(price).toFixed(2)}`;
     }
   }
 
