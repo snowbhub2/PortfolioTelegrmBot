@@ -32,6 +32,7 @@ import DepositAddress from "./pages/DepositAddress";
 import Exchange from "./pages/Exchange";
 import Transfer from "./pages/Transfer";
 import DepositStars from "./pages/DepositStars";
+import CFDPage from "./pages/CFDPage";
 import NotFound from "./pages/NotFound";
 import BottomNavigation from "./components/BottomNavigation";
 import { Layout } from "./components/Layout";
