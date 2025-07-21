@@ -70,11 +70,11 @@ const translations = {
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
-    'notifications.news_channel': 'Все новости вы можете проч��тать в канале',
+    'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получайт�� уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -159,7 +159,7 @@ const translations = {
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
     'history.no_transactions': 'Пока не�� транзакций',
-    'history.go_to_trading': 'Перейти к торговле',
+    'history.go_to_trading': '��ерейти к торговле',
 
     // Bonuses Page
     'bonuses.title_header': 'Бонусы в Кошельке',
@@ -189,7 +189,7 @@ const translations = {
     'exchange.max': 'Макс',
     'exchange.search': 'Поиск',
     'exchange.back': '��азад',
-    'exchange.asset.dollars': 'Доллары',
+    'exchange.asset.dollars': 'Долл��ры',
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
@@ -207,7 +207,7 @@ const translations = {
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'криптовалюту',
-    'deposit.method.bank_card': 'Б��нковская карта',
+    'deposit.method.bank_card': 'Банковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту напрямую',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор може�� привест�� к утрате ��редств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате ��редств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -250,7 +250,7 @@ const translations = {
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
-    'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
+    'withdraw.amount.insufficient_funds': 'Недостаточно ср��дств.',
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
@@ -274,7 +274,7 @@ const translations = {
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
-    'cfd.balance.title': 'Баланс CFD',
+    'cfd.balance.title': 'Балан�� CFD',
     'cfd.balance.description': 'Средства для контрактов на разность цен',
     'cfd.trading_balance': 'Торговый ба��анс CFD',
     'cfd.search_assets': 'Поиск активов',
@@ -377,7 +377,7 @@ const translations = {
     // Bonuses
     'bonuses.title': 'Бонусы',
     'bonuses.hero.title': 'Бонусы с Портфелем',
-    'bonuses.hero.subtitle': 'Получайте бонусы за хранение акций и криптовалюты.',
+    'bonuses.hero.subtitle': 'Получайте бонус�� за хранение акций и криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
@@ -397,7 +397,7 @@ const translations = {
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
     'exchange.insufficient_funds': 'Недостаточно средств.',
-    'exchange.select_instrument': '���ыбрать инструмент',
+    'exchange.select_instrument': '��ыбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
     'exchange.review_deal': 'Просмотреть сделку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
@@ -424,7 +424,7 @@ const translations = {
     'transfer.info.cfd_desc': 'CFD - средства для контрактов ��а разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
-    'transfer.error.invalid_amount': 'Некорректная сумма',
+    'transfer.error.invalid_amount': 'Некор��ектная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
     'transfer.error.transfer_failed': 'Ошибка перевода',
     
@@ -487,7 +487,7 @@ const translations = {
     'exchange.review_deal': 'Переглянути угоду',
     'exchange.back': 'Назад',
     'exchange.search': 'По��ск',
-    'exchange.top_up': 'Пополн������ь',
+    'exchange.top_up': 'Пополн����ь',
     'exchange.enter_amount': 'Введите сумму',
     'exchange.select_asset': 'Выберите актив',
     
@@ -529,7 +529,7 @@ const translations = {
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
     'common.done': 'Готов��',
-    'common.copied': 'Ско��ировано',
+    'common.copied': 'Ско���ировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
@@ -844,7 +844,7 @@ const translations = {
     'deposit.method.external_wallet_desc': 'Transfer from crypto wallet',
 
     // Deposit Asset Selection (English)
-    'deposit.asset.popular': 'AVAILABLE',
+    'deposit.asset.popular': 'ALL AVAILABLE CRYPTOCURRENCIES ARE AUTOMATICALLY CONVERTED TO USD AT CURRENT RATE',
     'deposit.asset.all': 'ALL CRYPTOCURRENCIES ARE AUTOMATICALLY CONVERTED TO USD AT CURRENT RATE',
     'deposit.asset.not_found': 'Assets not found',
 
