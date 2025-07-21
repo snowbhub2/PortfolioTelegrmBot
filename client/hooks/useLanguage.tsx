@@ -69,7 +69,7 @@ const translations = {
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
-    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут включен��.',
+    'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
@@ -102,7 +102,7 @@ const translations = {
     'wallet.title': 'Портфель',
     'wallet.balance.portfolio': '��аланс Портфеля',
     'wallet.balance.allTime': 'за весь час',
-    'wallet.actions.withdraw': 'Вывести',
+    'wallet.actions.withdraw': 'Вывес��и',
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменя��ь',
     'wallet.actions.transfer': 'Перевести',
@@ -193,9 +193,9 @@ const translations = {
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
-    'wallet.trending.title': '�� ТР��НДЕ',
-    'wallet.demo.message': '🎭 Demo режим - для ��олных функций запустите через Telegram бота',
-    'wallet.settings.open': 'Открыть на��тройки',
+    'wallet.trending.title': 'В ТРЕНДЕ',
+    'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
+    'wallet.settings.open': 'Открыть настройки',
     'wallet.user.avatar': 'аватар пользователя',
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
@@ -251,7 +251,7 @@ const translations = {
 
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
-    'withdraw.amount.buy_more': 'Докупить.',
+    'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
@@ -348,7 +348,7 @@ const translations = {
     
     // Bonuses
     'bonuses.title': 'Бонусы',
-    'bonuses.hero.title': 'Бонусы в Кошельке',
+    'bonuses.hero.title': 'Бону��ы в Кошельке',
     'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
@@ -460,7 +460,7 @@ const translations = {
     'common.refresh': 'Обновить',
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
-    'common.done': 'Готово',
+    'common.done': 'Готов��',
     'common.copied': 'Скопировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
@@ -493,7 +493,7 @@ const translations = {
     'common.manual': 'Вручную',
     'common.optional': 'Опциональн��',
     'common.required': 'Обязательно',
-    'common.recommended': 'Рекомендуется',
+    'common.recommended': '��екомендуется',
   },
   en: {
     // Bottom Navigation
