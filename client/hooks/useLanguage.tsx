@@ -74,7 +74,7 @@ const translations = {
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
+    'notifications.cfd_desc': 'Получайте уведомления, ко��да вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -87,7 +87,7 @@ const translations = {
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в ка��ал��',
+    'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -311,7 +311,7 @@ const translations = {
     'asset.not_found': 'Актив не найден',
     
     // History
-    'history.title': 'Ис��ория',
+    'history.title': 'История',
     'history.all': 'Все',
     'history.deposits': 'Пополнения',
     'history.withdrawals': 'Выводы',
@@ -406,7 +406,7 @@ const translations = {
     'asset.about_gold': 'О ЗОЛОТЕ',
     'asset.about_currency': 'О ВАЛЮТЕ',
     'asset.portfolio': 'В портфеле',
-    'asset.not_in_portfolio': 'Нет активов в по��тфеле',
+    'asset.not_in_portfolio': 'Нет активов �� по��тфеле',
     'asset.transaction_history': 'История операций',
     'asset.no_transactions': 'Нет операций с этим активом',
     'asset.buy': 'Купить',
@@ -467,7 +467,7 @@ const translations = {
     'common.copied': 'Скопировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
-    'common.help': '��омощь',
+    'common.help': 'Помощь',
     'common.support': 'Поддержка',
     'common.about': 'О приложении',
     'common.version': 'Версия',
