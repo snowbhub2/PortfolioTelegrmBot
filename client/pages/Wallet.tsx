@@ -137,7 +137,7 @@ export default function Wallet() {
     const portfolio = new PortfolioManager(userId);
     setPortfolioManager(portfolio);
 
-    // Завантаження даних п��ртфеля
+    // Завантаження дан��х п��ртфеля
     updatePortfolioData(portfolio);
   }, [tg, user]);
 
@@ -450,7 +450,7 @@ export default function Wallet() {
               </div>
             </Card>
 
-            {/* Куплені активи користувача */}
+            {/* ��уплені активи користувача */}
             {showAllAssets &&
               userAssets.map((asset) => {
                 const pnl = portfolioManager?.getAssetPnL(asset.id) || {
@@ -529,12 +529,12 @@ export default function Wallet() {
         {/* Trending Section */}
         <div className="p-4 border-t border-border">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-muted-foreground text-sm">В ТРЕНДЕ</h3>
+            <h3 className="text-muted-foreground text-sm">{t('wallet.trending.title')}</h3>
             <button
               className="text-primary text-sm"
               onClick={handleViewAllTrending}
             >
-              Все
+              {t('wallet.trending.viewAll')}
             </button>
           </div>
 
@@ -598,7 +598,7 @@ export default function Wallet() {
       {user?.is_demo && (
         <div className="bg-orange-100 border-b border-orange-200 p-2 text-center">
           <span className="text-orange-800 text-sm font-medium">
-            🎭 Demo режим - для повних функцій запус��іть через Telegram бота
+            🎭 Demo режим - для повних функцій запус����іть через Telegram бота
           </span>
         </div>
       )}
