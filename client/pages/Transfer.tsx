@@ -246,7 +246,7 @@ export default function Transfer() {
             className="w-full"
             size="lg"
           >
-            {loading ? "Перек��з..." : `Перевести $${amountNum.toFixed(2)}`}
+            {loading ? "Переказ..." : `Перевести $${amountNum.toFixed(2)}`}
           </Button>
         </div>
 
