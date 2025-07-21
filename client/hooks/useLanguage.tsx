@@ -46,7 +46,7 @@ const translations = {
     'settings.walletFAQ': 'FAQ Портфеля',
     'settings.walletNews': 'Новости Портфеля',
     'settings.cfdNotApplicable': 'Распространяется на аккаунт CFD',
-    'settings.userAgreement': 'Пользовательское соглашение',
+    'settings.userAgreement': 'Пол��зовательское соглашение',
     'settings.privacyPolicy': 'Политика конфиденциальности',
     'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
@@ -83,7 +83,7 @@ const translations = {
     'notifications.disabled': 'Выкл',
     'notifications.security_notice': 'Уведомления о транзакциях и безопасности всегда будут включены.',
     'notifications.news_text': 'Все новости вы можете прочитать в канале',
-    'notifications.news_channel_link': 'Новости Крипто Кошелька',
+    'notifications.news_channel_link': 'Новости Крипто Кошельк��',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Пол��чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
@@ -123,7 +123,7 @@ const translations = {
     'wallet.demo.message': '🎭 Demo режим - для полных ф��нкций запустите через Telegram бота',
     'wallet.tabs.wallet': 'Портфель',
     'wallet.tabs.cfd': 'CFD',
-    'wallet.settings.open': 'Открыть настройки',
+    'wallet.settings.open': 'Откр��ть настройки',
     'wallet.trading.title': 'Торговля',
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
@@ -148,7 +148,7 @@ const translations = {
     'market.tab.all': 'Все',
     'market.tab.stocks': 'Акции',
     'market.tab.crypto': 'Криптовалюты',
-    'market.tab.gold': 'Золото',
+    'market.tab.gold': 'Зо��ото',
     'market.asset.gold': 'Золото',
     'market.asset.silver': 'Серебро',
     'market.asset.platinum': 'Платина',
@@ -202,7 +202,7 @@ const translations = {
     'wallet.assets.dollars_cash': 'Доллары USD',
     'wallet.assets.for_trading': 'для инвестирования',
     'wallet.assets.no_assets': 'Пока нет активов',
-    'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
+    'wallet.assets.buy_on_market': 'Купите акт��вы на странице Рынок',
 
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате ��редств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -321,7 +321,7 @@ const translations = {
     'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
-    'history.subtitle': 'Все ваши транза��ции и операции',
+    'history.subtitle': 'Все ваши транзакции и операции',
     'history.filter.all': 'Все',
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
@@ -336,12 +336,12 @@ const translations = {
     'history.transaction.asset': 'акти��а',
     'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
-    'history.transaction.transfer_to_cfd': 'Пере��од в CFD',
+    'history.transaction.transfer_to_cfd': 'Перевод в CFD',
     'history.transaction.transfer_from_cfd': 'Перевод из CFD',
     'history.transaction.default': 'Транзакция',
     'history.time.now': 'Только что',
     'history.time.hours_ago': 'ч назад',
-    'history.time.days_ago': 'д�� назад',
+    'history.time.days_ago': 'день назад',
     'history.portfolio.total_value': 'Общая стоимость портфеля',
     'history.portfolio.cash': 'Наличные',
     'history.status.completed': 'Завершено',
@@ -397,7 +397,7 @@ const translations = {
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
     'exchange.insufficient_funds': 'Недостаточно средств.',
-    'exchange.select_instrument': 'Выбрать инструмент',
+    'exchange.select_instrument': '��ыбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
     'exchange.review_deal': 'Просмотреть сделку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
@@ -487,7 +487,7 @@ const translations = {
     'exchange.review_deal': 'Переглянути угоду',
     'exchange.back': 'Назад',
     'exchange.search': 'По��ск',
-    'exchange.top_up': 'Пополн��ть',
+    'exchange.top_up': 'Пополн����ь',
     'exchange.enter_amount': 'Введите сумму',
     'exchange.select_asset': 'Выберите актив',
     
@@ -529,7 +529,7 @@ const translations = {
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
     'common.done': 'Готов��',
-    'common.copied': 'Скопировано',
+    'common.copied': 'Ско��ировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
@@ -561,7 +561,7 @@ const translations = {
     'common.manual': 'Вручную',
     'common.optional': 'Опциональн��',
     'common.required': 'Обязательно',
-    'common.recommended': '��екомендуется',
+    'common.recommended': '��екоме��дуется',
   },
   en: {
     // Bottom Navigation
