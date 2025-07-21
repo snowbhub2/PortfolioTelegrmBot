@@ -186,7 +186,7 @@ export default function History() {
                       </div>
                       <div>
                         <div className="font-medium">
-                          {getTransactionTitle(transaction)}
+                          {getTransactionTitle(transaction, t)}
                         </div>
                         <div className="text-sm text-muted-foreground">
                           {formatDate(transaction.timestamp)}
