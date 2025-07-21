@@ -201,18 +201,23 @@ const allMarketAssets = [...cryptoAssets, ...stockAssets, ...goldAssets, ...tren
 const getDynamicFontSize = (value: string): { fontSize: string, className: string } => {
   const length = value.length;
 
-  if (length <= 3) {
-    return { fontSize: '4rem', className: 'text-6xl' };
+  // Максимум 7 цифр
+  if (length > 7) {
+    return { fontSize: '1.8rem', className: 'text-2xl' };
+  }
+
+  if (length <= 2) {
+    return { fontSize: '3.5rem', className: 'text-5xl sm:text-6xl' };
+  } else if (length <= 3) {
+    return { fontSize: '3rem', className: 'text-4xl sm:text-5xl' };
+  } else if (length <= 4) {
+    return { fontSize: '2.5rem', className: 'text-3xl sm:text-4xl' };
   } else if (length <= 5) {
-    return { fontSize: '3.5rem', className: 'text-5xl' };
-  } else if (length <= 7) {
-    return { fontSize: '3rem', className: 'text-4xl' };
-  } else if (length <= 9) {
-    return { fontSize: '2.5rem', className: 'text-3xl' };
-  } else if (length <= 11) {
-    return { fontSize: '2rem', className: 'text-2xl' };
-  } else {
-    return { fontSize: '1.5rem', className: 'text-xl' };
+    return { fontSize: '2rem', className: 'text-2xl sm:text-3xl' };
+  } else if (length <= 6) {
+    return { fontSize: '1.8rem', className: 'text-xl sm:text-2xl' };
+  } else { // length === 7
+    return { fontSize: '1.6rem', className: 'text-lg sm:text-xl' };
   }
 };
 
@@ -584,7 +589,7 @@ export default function Exchange() {
           )}
           {fromAsset && parseFloat(fromAmount) > 0 && parseFloat(fromAmount) < minFromAmount && (
             <div className="text-destructive text-sm mt-2">
-              Мінімальна сума: {fromAsset.id === "usd" ? "$20" : "0.01"}
+              Мінімал��на сума: {fromAsset.id === "usd" ? "$20" : "0.01"}
             </div>
           )}
         </div>
