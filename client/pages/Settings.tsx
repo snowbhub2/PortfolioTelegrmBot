@@ -58,7 +58,7 @@ export default function Settings() {
 
 
 
-  // Динамічно створюємо settingsItems з мовою користувача
+  // Динамічно створюємо settingsItems з мовою кор��стувача
   const settingsItems = [
     {
       icon: <BellIcon className="w-5 h-5 text-red-500" />,
@@ -82,7 +82,7 @@ export default function Settings() {
     },
     {
       icon: <DollarSignIcon className="w-5 h-5 text-gray-500" />,
-      title: "Основная валюта",
+      title: t('settings.currency'),
       value: "USD",
       hasChevron: true,
     },
@@ -274,7 +274,7 @@ export default function Settings() {
 
         {/* Footer */}
         <div className="text-center text-sm text-muted-foreground">
-          <p className="mb-1">Мин��-приложение управляется TG Wallet Inc.</p>
+          <p className="mb-1">Мини-приложение управляется TG Wallet Inc.</p>
           <p className="mb-1">Сервис независим и не связан с Telegram.</p>
           <Button
             variant="ghost"
