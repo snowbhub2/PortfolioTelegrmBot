@@ -165,7 +165,7 @@ export default function Notifications() {
         <Card className="mb-4">
           <div className="p-4">
             <div className="flex items-center justify-between mb-3">
-              <span className="font-medium">Уведомления для</span>
+              <span className="font-medium">{t('notifications.cfd_for')}</span>
               <div className="flex items-center gap-2 text-primary">
                 <span className="text-sm">{cfdNotifications.address}</span>
                 <ChevronRightIcon className="w-4 h-4" />
@@ -176,7 +176,7 @@ export default function Notifications() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="font-medium">Вкл</span>
+                  <span className="font-medium">{t('notifications.enabled')}</span>
                 </div>
                 <Switch
                   checked={cfdNotifications.enabled}
@@ -187,7 +187,7 @@ export default function Notifications() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-muted-foreground rounded-full"></div>
-                  <span className="font-medium text-muted-foreground">Выкл</span>
+                  <span className="font-medium text-muted-foreground">{t('notifications.disabled')}</span>
                 </div>
               </div>
             </div>
