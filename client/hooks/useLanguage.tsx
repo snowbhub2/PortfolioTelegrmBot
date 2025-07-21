@@ -44,7 +44,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕДОМЛЕНИЯ',
+    'notifications.title': 'УВЕДОМЛ��НИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -104,7 +104,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговл�� криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -117,12 +117,17 @@ const translations = {
     
     // Market
     'market.title': 'Ринок',
-    'market.trending': 'Популярные',
-    'market.all_assets': 'Все активы',
-    'market.crypto': 'Криптовалюты',
-    'market.stocks': 'Акции',
-    'market.gold': 'Золото',
-    'market.price_change': 'Изменение цены',
+    'market.search_placeholder': 'Поиск',
+    'market.trending_title': 'В ТРЕНДЕ',
+    'market.per_day': 'за день',
+    'market.top_of_day': 'ТОП ДНЯ',
+    'market.tab.all': 'Все',
+    'market.tab.stocks': 'Акции',
+    'market.tab.crypto': 'Криптовалюты',
+    'market.tab.gold': 'Золото',
+    'market.asset.gold': 'Золото',
+    'market.asset.silver': 'Серебро',
+    'market.asset.platinum': 'Платина',
     
     // History
     'history.title': 'История',
