@@ -33,7 +33,7 @@ const translations = {
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
-    'settings.privacy': 'Политика конфид��нциальности',
+    'settings.privacy': 'Политика конфиденциальности',
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не свя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
@@ -106,7 +106,7 @@ const translations = {
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
-    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
+    'wallet.notification.earnTitle': '��арабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
@@ -230,7 +230,7 @@ const translations = {
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
     'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
-    'deposit.address.qr_description': 'Отсканируйте QR-код для от��равки',
+    'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
     'deposit.address.copy': 'Копировать адрес',
@@ -248,6 +248,13 @@ const translations = {
     // Withdraw Asset Selection
     'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
     'withdraw.asset.dollars': 'Доллары',
+
+    // Withdraw Amount
+    'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
+    'withdraw.amount.buy_more': 'Докупить.',
+    'withdraw.amount.balance': 'Баланс',
+    'withdraw.amount.max': 'Макс.',
+    'withdraw.amount.next': 'Далее',
     
     // History
     'history.title': 'Ис��ория',
@@ -256,11 +263,11 @@ const translations = {
     'history.withdrawals': 'Выводы',
     'history.trades': 'Сделки',
     'history.transfers': 'Переводы',
-    'history.no_transactions': 'У вас пока ��ет транзакций',
+    'history.no_transactions': 'У вас пока нет транзакций',
     'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
-    'history.subtitle': 'Все ваши ��ранзакции и операции',
+    'history.subtitle': 'Все ваши транзакции и операции',
     'history.filter.all': 'Все',
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
@@ -392,7 +399,7 @@ const translations = {
     'common.status': 'Статус',
     'common.type': 'Тип',
     'common.search': 'Поиск',
-    'common.back': '��азад',
+    'common.back': 'Назад',
     'common.filter': 'Фильтр',
     'common.sort': 'Сортиро��ка',
     'common.all': 'Все',
