@@ -74,7 +74,7 @@ const translations = {
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT �� CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получай��е уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -91,7 +91,7 @@ const translations = {
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
-    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫН��А',
+    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
@@ -132,7 +132,7 @@ const translations = {
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
-    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
+    'wallet.notification.earnTitle': 'Зарабатывайт�� до 15% APY',
     'wallet.notification.withDollars': 'с Nobel Portfolio',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
@@ -162,7 +162,7 @@ const translations = {
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
-    'bonuses.title_header': '��онусы в Кошельке',
+    'bonuses.title_header': 'Бонусы в Кошельке',
     'bonuses.subtitle': 'Получ��йте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
@@ -189,7 +189,7 @@ const translations = {
     'exchange.max': 'Макс',
     'exchange.search': 'Поиск',
     'exchange.back': '��азад',
-    'exchange.asset.dollars': 'Доллары',
+    'exchange.asset.dollars': 'Дол��ары',
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
@@ -353,7 +353,7 @@ const translations = {
     'history.details.title': 'Детали транзакции',
     'history.details.group.label': 'Тип операции',
     'history.details.group.purchase': 'Покупка',
-    'history.details.group.sale': 'Про��ажа',
+    'history.details.group.sale': 'Продажа',
     'history.details.group.deposit': 'Пополнение',
     'history.details.group.withdrawal': 'Выведение',
     'history.details.group.transfer': 'Перевод',
@@ -429,7 +429,7 @@ const translations = {
     'transfer.error.transfer_failed': 'Ошибка перевода',
     
     // Asset Details
-    'asset.about': 'О КРИПТОВАЛЮТЕ',
+    'asset.about': 'О КРИПТОВ��ЛЮТЕ',
     'asset.about_stock': 'ОБ АКЦИИ',
     'asset.about_gold': 'О ЗОЛОТЕ',
     'asset.about_currency': 'О ВАЛЮТЕ',
@@ -463,14 +463,14 @@ const translations = {
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
-    'coin.xrp_description': 'XRP ��� це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
+    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих між��ародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або ��берігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
     'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
-    'coin.gold_point_1': 'Ви можете купу��ати або продавати золото через платформу.',
+    'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
     // Exchange
@@ -500,7 +500,7 @@ const translations = {
     'common.close': 'Закрыть',
     'common.save': 'С��хранить',
     'common.edit': 'Редактировать',
-    'common.delete': 'Удалить',
+    'common.delete': 'Удали��ь',
     'common.loading': 'Загрузка...',
     'common.error': '����ибка',
     'common.success': 'Ус����шно',
@@ -532,7 +532,7 @@ const translations = {
     'common.copied': 'Ско��ировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
-    'common.help': 'По��ощь',
+    'common.help': 'Помощь',
     'common.support': 'Поддержка',
     'common.about': 'О приложении',
     'common.version': 'Версия',
@@ -543,7 +543,7 @@ const translations = {
     'common.popular': 'Популярные',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
-    'common.top': '��оп',
+    'common.top': 'Топ',
     'common.bottom': 'Ни��',
     'common.left': 'Слева',
     'common.right': 'Справа',
@@ -682,7 +682,7 @@ const translations = {
     'wallet.trading.warning': 'Cryptocurrency trading involves high risks',
     'wallet.gold': 'Gold',
 
-    // Додаткові переклади для всіх текстів (англійська)
+    // Додаткові переклади для всіх текстів (англі��ська)
     'wallet.notification.earnTitle': 'Earn up to 15% APY',
     'wallet.notification.withDollars': 'with Nobel Portfolio',
     'wallet.notification.startEarning': 'Start earning →',
@@ -711,7 +711,7 @@ const translations = {
     'market.tab.all': 'All',
     'market.tab.stocks': 'Stocks',
     'market.tab.crypto': 'Crypto',
-    'market.tab.gold': 'Gold',
+    'market.tab.gold': 'Metals',
     'market.asset.gold': 'Gold',
     'market.asset.silver': 'Silver',
     'market.asset.platinum': 'Platinum',
