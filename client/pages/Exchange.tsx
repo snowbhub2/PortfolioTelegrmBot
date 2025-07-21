@@ -216,7 +216,7 @@ export default function Exchange() {
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
 
-  // Ініці��лізація портфоліо
+  // Ініціалізація портфоліо
   useEffect(() => {
     const userId = user?.id?.toString() || "demo_user";
     const manager = new PortfolioManager(userId);
@@ -512,7 +512,7 @@ export default function Exchange() {
           {/* Сума в доларах якщо не долар */}
           {fromAsset && fromAsset.id !== "usd" && fromAmount && parseFloat(fromAmount) > 0 && (
             <div className="text-sm text-muted-foreground mt-2">
-              ��� ${fromValue.toFixed(2)}
+              �� ${fromValue.toFixed(2)}
             </div>
           )}
 
@@ -593,7 +593,7 @@ export default function Exchange() {
           disabled={!isValidAmount || isLoading || !toAsset}
           onClick={handleExchange}
         >
-          {isLoading ? "Обмінюємо..." : "Перегл��нути угоду"}
+          {isLoading ? t('exchange.processing') : t('exchange.review_deal')}
         </Button>
       </div>
 
