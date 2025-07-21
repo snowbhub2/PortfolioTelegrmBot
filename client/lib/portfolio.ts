@@ -110,7 +110,7 @@ export class PortfolioManager {
           type: "deposit",
           amount: 1000,
           timestamp: new Date(),
-          description: "Початковий депозит",
+          description: "initial_deposit",
           status: "completed",
         },
         {
