@@ -248,27 +248,27 @@ export default function Settings() {
             className="w-full justify-start text-primary p-0"
             onClick={() => hapticFeedback("light")}
           >
-            Пользовательское соглашение
+            {t('settings.userAgreement')}
           </Button>
           <Button
             variant="ghost"
             className="w-full justify-start text-primary p-0"
             onClick={() => hapticFeedback("light")}
           >
-            Политика конфиденциальности
+            {t('settings.privacyPolicy')}
           </Button>
         </div>
 
         {/* Footer */}
         <div className="text-center text-sm text-muted-foreground">
-          <p className="mb-1">Мини-приложение управляется TG Wallet Inc.</p>
-          <p className="mb-1">Сервис независим и не связан с Telegram.</p>
+          <p className="mb-1">{t('settings.managedBy')}</p>
+          <p className="mb-1">{t('settings.independent')}</p>
           <Button
             variant="ghost"
             className="text-primary p-0 h-auto"
             onClick={() => hapticFeedback("light")}
           >
-            Узнать больше
+            {t('settings.learnMore')}
           </Button>
         </div>
       </div>
