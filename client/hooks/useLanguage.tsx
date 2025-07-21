@@ -87,7 +87,7 @@ const translations = {
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в канале',
+    'notifications.cfd_news_text': 'Все новости можно узнать в кан��ле',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -106,7 +106,7 @@ const translations = {
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
-    'wallet.notification.earnTitle': '��арабатывайте до 15% APY',
+    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
@@ -131,7 +131,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Додаткові переклади для всіх текстів
+    // Додаткові пер��клади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
@@ -389,7 +389,7 @@ const translations = {
     'common.address': 'Адрес',
     'common.fee': 'Комиссия',
     'common.total': 'Итого',
-    'common.available': 'Доступно',
+    'common.available': 'До��тупно',
     'common.balance': 'Баланс',
     'common.price': 'Цена',
     'common.volume': 'Объём',
@@ -755,6 +755,13 @@ const translations = {
     // Withdraw Asset Selection (English)
     'withdraw.asset.title': 'YOU WITHDRAW',
     'withdraw.asset.dollars': 'Dollars',
+
+    // Withdraw Amount (English)
+    'withdraw.amount.insufficient_funds': 'Insufficient funds.',
+    'withdraw.amount.buy_more': 'Buy more.',
+    'withdraw.amount.balance': 'Balance',
+    'withdraw.amount.max': 'Max',
+    'withdraw.amount.next': 'Next',
 
     // History (English)
     'history.subtitle': 'All your transactions and operations',
