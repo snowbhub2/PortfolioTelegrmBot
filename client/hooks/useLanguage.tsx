@@ -49,7 +49,7 @@ const translations = {
     'settings.userAgreement': 'Пользовательское соглашение',
     'settings.privacyPolicy': 'Политика конфиденциальности',
     'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
-    'settings.independent': 'Сервис независим и не связан с Telegram.',
+    'settings.independent': 'Серв��с независим и не связан с Telegram.',
     'settings.learnMore': 'Узнать больше',
     
     // Language Selection
@@ -86,7 +86,7 @@ const translations = {
     'notifications.news_channel_link': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_description': 'Получайте уведомления, когда вам при��одят CFD токены и NFT в CFD Кошелёк.',
+    'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': '��орговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -207,7 +207,7 @@ const translations = {
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'крипт��валюту',
-    'deposit.method.bank_card': 'Банковская кар��а',
+    'deposit.method.bank_card': 'Банковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделк�� с надёжными продавцами',
@@ -250,7 +250,7 @@ const translations = {
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
-    'withdraw.amount.insufficient_funds': 'Недоста��очно средств.',
+    'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
@@ -351,7 +351,7 @@ const translations = {
     
     // Bonuses
     'bonuses.title': 'Бонусы',
-    'bonuses.hero.title': 'Бону���� в Кошельке',
+    'bonuses.hero.title': 'Бону��ы в Кошельке',
     'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
@@ -377,7 +377,7 @@ const translations = {
     // Transfer
     'transfer.title': 'Перевод сре��ств',
     'transfer.subtitle': 'Между Портфелем и CFD',
-    'transfer.portfolio': 'Портфель',
+    'transfer.portfolio': 'П��ртфель',
     'transfer.cash': 'Наличные',
     'transfer.for_trading': 'Для торговли',
     'transfer.direction.to_cfd': 'Перевод в CFD',
@@ -442,7 +442,7 @@ const translations = {
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
     'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
-    'coin.gold_point_1': 'Ви можете купув��ти або продавати золото через платформу.',
+    'coin.gold_point_1': 'Ви можете купувати або прода��ати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
     // Exchange
@@ -654,9 +654,9 @@ const translations = {
     'wallet.trading.warning': 'Cryptocurrency trading involves high risks',
     'wallet.gold': 'Gold',
 
-    // Додаткові переклади для всіх текстів (англійська)
+    // Додаткові пе��еклади для всіх текстів (англійська)
     'wallet.notification.earnTitle': 'Earn up to 15% APY',
-    'wallet.notification.withDollars': 'with dollars',
+    'wallet.notification.withDollars': 'with Nobel Portfolio',
     'wallet.notification.startEarning': 'Start earning →',
     'wallet.trending.perDay': 'per day',
     'wallet.demo.message': '🎭 Demo mode - for full features launch via Telegram bot',
