@@ -71,7 +71,7 @@ const translations = {
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
-    'notifications.crypto_news': 'Новости Крипто Кошелька',
+    'notifications.crypto_news': 'Новости Крипто ��ошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_desc': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с высоким�� рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрат�� средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -243,7 +243,7 @@ const translations = {
     'withdraw.method.telegram.title': 'Контакт в Telegram',
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
     'withdraw.method.external.title': 'Внешний кошелёк или б��ржа',
-    'withdraw.method.external.description': 'Нужно у��азать криптоадрес',
+    'withdraw.method.external.description': 'Нужно указать криптоадрес',
 
     // Withdraw Asset Selection
     'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
@@ -371,7 +371,7 @@ const translations = {
     'exchange.insufficient_funds': 'Недостаточно средств.',
     'exchange.select_instrument': 'Выбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
-    'exchange.review_deal': 'Просмотреть сд��лку',
+    'exchange.review_deal': 'Просмотреть сделку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
@@ -395,7 +395,7 @@ const translations = {
     'transfer.info.portfolio_desc': 'Портфель - наличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов на разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
-    'transfer.info.history_saved': 'В��е операции сохраняются в истории',
+    'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
     'transfer.error.transfer_failed': 'Ошибка перевода',
@@ -434,7 +434,13 @@ const translations = {
     'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатків (DApps), запущена в 2015 році.',
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
-    'coin.aapl_description': 'Apple Inc. — а��ериканська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
+    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
+    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для мит��євих міжнародних переказів та платежів.',
+    'coin.xrp_point_1': 'Ви можете купувати, продавати або зберігати XRP в Гаманці.',
+    'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
+    'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
+    'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гаманці.',
+    'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
 
     // Exchange
     'exchange.title': 'Обмен',
