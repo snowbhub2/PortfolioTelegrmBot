@@ -88,6 +88,7 @@ const availableAssets = [
 
 export default function Wallet() {
   const { user, hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [showBalance, setShowBalance] = useState(true);
   const [activeTab, setActiveTab] = useState<string>("wallet");
