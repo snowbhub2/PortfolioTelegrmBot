@@ -240,11 +240,11 @@ export default function CoinDetail() {
           };
         } else {
           return {
-            title: "О КРИПТ���ВАЛЮТЕ",
-            description: `${asset.name} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.`,
+            title: t('coin.about_crypto'),
+            description: t('coin.generic_crypto_description').replace('{{name}}', asset.name),
             points: [
-              `Ви можете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
-              "Криптовалюти можуть мати високу волатильність цін."
+              t('coin.generic_crypto_point_1').replace('{{symbol}}', asset.symbol),
+              t('coin.generic_crypto_point_2')
             ]
           };
         }
@@ -319,7 +319,7 @@ export default function CoinDetail() {
         } else if (asset.id === "platinum") {
           return {
             title: "ПРО ДОРОГОЦІННИЙ МЕ��А��",
-            description: "Платина — це рідкісний дорогоцінний метал з унікальними властивостями, який широко використов��ється в ювелірній справі та промисловості.",
+            description: "Платина — це ��ідкісний дорогоцінний метал з унікальними властивостями, який широко використов��ється в ювелірній справі та промисловості.",
             points: [
               "Ви можете купувати або продавати платину через пла��форму.",
               "Платина рідше за золото та має високу стійкість до корозії."
@@ -401,7 +401,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторінку методів поповнення
       navigate("/deposit/method");
     } else {
-      // Для інших активів відкриваємо Exchange з заповненими полями
+      // Для інших активів відкриваємо Exchange з зап��вненими полями
       navigate(`/exchange?from=usd&to=${asset.id}`);
     }
   };
