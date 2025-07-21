@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
@@ -24,46 +25,47 @@ interface NotificationCategory {
 
 export default function Notifications() {
   const { hapticFeedback } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   const [notificationSettings, setNotificationSettings] = useState<NotificationCategory[]>([
     {
       id: "market-trends",
       icon: <TrendingUpIcon className="w-5 h-5 text-green-500" />,
-      title: "Тренды рынка",
-      description: "Изменение цен на активы",
+      title: t('notifications.market_trends'),
+      description: t('notifications.market_trends_desc'),
       enabled: true,
       hasSettings: true,
     },
     {
       id: "updates",
       icon: <LightbulbIcon className="w-5 h-5 text-yellow-500" />,
-      title: "Обновления",
-      description: "Новые сервисы и возможности",
+      title: t('notifications.updates'),
+      description: t('notifications.updates_desc'),
       enabled: true,
       hasSettings: true,
     },
     {
       id: "promotions",
       icon: <MegaphoneIcon className="w-5 h-5 text-blue-500" />,
-      title: "Акции",
-      description: "Розыгрыши и бонусы",
+      title: t('notifications.promotions'),
+      description: t('notifications.promotions_desc'),
       enabled: true,
       hasSettings: true,
     },
     {
       id: "educational",
       icon: <GraduationCapIcon className="w-5 h-5 text-orange-500" />,
-      title: "Образовательный контент",
-      description: "Гайды и советы",
+      title: t('notifications.educational'),
+      description: t('notifications.educational_desc'),
       enabled: true,
       hasSettings: true,
     },
     {
       id: "feedback",
       icon: <MessageCircleIcon className="w-5 h-5 text-purple-500" />,
-      title: "Обратная связь",
-      description: "Опросы и исследования",
+      title: t('notifications.feedback'),
+      description: t('notifications.feedback_desc'),
       enabled: true,
       hasSettings: true,
     },
@@ -100,7 +102,7 @@ export default function Notifications() {
       <div className="p-4">
         {/* Main Notifications Section */}
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          УВЕДОМЛЕНИЯ
+          {t('notifications.title')}
         </h2>
         
         <Card className="mb-6">
@@ -174,7 +176,7 @@ export default function Notifications() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="font-medium">В��л</span>
+                  <span className="font-medium">Вкл</span>
                 </div>
                 <Switch
                   checked={cfdNotifications.enabled}
