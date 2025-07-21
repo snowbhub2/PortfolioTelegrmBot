@@ -637,7 +637,7 @@ export default function Exchange() {
             </h3>
             <div className="space-y-1 max-h-96 overflow-y-auto pb-20">
               {filteredUserAssets
-                .filter(asset => asset.id !== toAsset?.id) // Заборона обирати той самий
+                .filter(asset => asset.id !== toAsset?.id) // Заборона обирати той с��мий
                 .map((asset) => (
                 <div
                   key={asset.id}
@@ -785,6 +785,9 @@ function getAssetColor(symbol?: string): string {
     GOOGL: "bg-red-600",
     CATI: "bg-pink-500",
     XTZ: "bg-blue-400",
+    PI: "bg-purple-500",
+    WLD: "bg-gray-800",
+    ALGO: "bg-teal-500",
   };
   return colors[symbol] || "bg-primary";
 }
