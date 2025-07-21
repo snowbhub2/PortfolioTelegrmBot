@@ -48,47 +48,6 @@ const depositAssets: DepositAsset[] = [
     color: "bg-purple-500",
     isPopular: true,
   },
-  // All others
-  {
-    id: "link",
-    name: "Chainlink",
-    symbol: "LINK",
-    icon: "⬡",
-    color: "bg-blue-600",
-    isPopular: false,
-  },
-  {
-    id: "shib",
-    name: "Shiba Inu",
-    symbol: "SHIB",
-    icon: "🐕",
-    color: "bg-red-500",
-    isPopular: false,
-  },
-  {
-    id: "pepe",
-    name: "Pepe",
-    symbol: "PEPE",
-    icon: "🐸",
-    color: "bg-green-600",
-    isPopular: false,
-  },
-  {
-    id: "ondo",
-    name: "Ondo",
-    symbol: "ONDO",
-    icon: "⚪",
-    color: "bg-gray-800",
-    isPopular: false,
-  },
-  {
-    id: "pol",
-    name: "POL (prev. MATIC)",
-    symbol: "POL",
-    icon: "🔷",
-    color: "bg-purple-600",
-    isPopular: false,
-  },
 ];
 
 export default function DepositAssetSelect() {
