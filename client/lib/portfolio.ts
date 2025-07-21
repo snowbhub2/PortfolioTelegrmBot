@@ -60,7 +60,7 @@ export class PortfolioManager {
       return parsed;
     }
 
-    // Початковий портфель з 1000$ для демо
+    // Початко��ий портфель з 1000$ для демо
     return {
       userId,
       cashBalance: 1000,
@@ -108,7 +108,7 @@ export class PortfolioManager {
     return this.portfolio.cashBalance + assetsValue;
   }
 
-  // Розрахувати загальну інвестовану суму
+  // Розрахуват�� загальну інвестовану суму
   getTotalInvestedAmount(): number {
     const assetsInvested = this.portfolio.assets.reduce((total, asset) => {
       return total + asset.quantity * asset.avgPrice;
@@ -147,7 +147,7 @@ export class PortfolioManager {
     const totalCost = quantity * price;
 
     if (totalCost > this.portfolio.cashBalance) {
-      return false; // Недостатньо коштів
+      return false; // ��едостатньо коштів
     }
 
     // Списуємо гроші
@@ -296,8 +296,10 @@ export class PortfolioManager {
   private addTransaction(
     transaction: Omit<Transaction, "id" | "timestamp">,
   ): void {
+    // Генеруємо унікальний ID використовуючи timestamp + рандомне число
+    const uniqueId = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     this.portfolio.transactions.push({
-      id: Date.now().toString(),
+      id: uniqueId,
       timestamp: new Date(),
       ...transaction,
     });
