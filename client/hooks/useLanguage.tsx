@@ -242,7 +242,7 @@ const translations = {
     'withdraw.method.subtitle': 'криптовалюту',
     'withdraw.method.telegram.title': 'Контакт в Telegram',
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
-    'withdraw.method.external.title': 'Внешний кошелёк или биржа',
+    'withdraw.method.external.title': 'Внешний кошелёк или б��ржа',
     'withdraw.method.external.description': 'Нужно указать криптоадрес',
 
     // Withdraw Asset Selection
@@ -394,7 +394,7 @@ const translations = {
     'transfer.info.title': 'О переводе',
     'transfer.info.portfolio_desc': 'Портфель - наличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов на разность цен',
-    'transfer.info.instant_free': 'Перевод мгновенный без комиссии',
+    'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
@@ -413,7 +413,22 @@ const translations = {
     'asset.sell': 'Продать',
     'asset.deposit_btn': 'Пополнить',
     'asset.withdraw_btn': 'Вывести',
-    
+
+    // CoinDetail Page
+    'coin.about_crypto': 'О КРИПТОВАЛЮТЕ',
+    'coin.about_stock': 'ПРО АКЦИЮ',
+    'coin.about_precious_metal': 'ПРО ДОРОГОЦІННИЙ МЕТАЛ',
+    'coin.about_currency': 'ПРО ВАЛЮТУ',
+    'coin.portfolio_section': 'У ПОРТФЕЛІ',
+    'coin.read_more': 'Докладніше',
+    'coin.portfolio_empty': 'Немає активів в портфелі',
+    'coin.time_period.1d': '1Д',
+    'coin.time_period.7d': '7Д',
+    'coin.time_period.1m': '1М',
+    'coin.time_period.1y': '1Г',
+    'coin.time_period.all': 'Все',
+    'coin.today': 'Сегодня',
+
     // Exchange
     'exchange.title': 'Обмен',
     'exchange.you_pay': 'Вы платите',
@@ -437,7 +452,7 @@ const translations = {
     'common.edit': 'Редактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
-    'common.error': '��шибка',
+    'common.error': '����ибка',
     'common.success': 'Ус����шно',
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
