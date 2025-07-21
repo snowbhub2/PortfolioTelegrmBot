@@ -6,7 +6,7 @@ export interface UserAsset {
   id: string;
   symbol: string;
   name: string;
-  quantity: number; // Кільк��сть акцій/інструментів
+  quantity: number; // Кількі��ть акцій/інструментів
   avgPrice: number; // Середня ціна покупки
   currentPrice: number; // Поточна ціна
   icon: string;
@@ -46,6 +46,43 @@ export class PortfolioManager {
 
   constructor(userId: string) {
     this.portfolio = this.loadPortfolio(userId);
+
+    // Додаємо тестові транзакції для демонстрації (тільки один раз)
+    if (this.portfolio.transactions.length === 0) {
+      this.addTestTransactions();
+    }
+  }
+
+  // Метод для додавання тестових транзакцій
+  private addTestTransactions(): void {
+    // Поповнення балансу
+    this.addTransaction({
+      type: "deposit",
+      amount: 1000,
+      description: "Поповнення рахунку через карту",
+    });
+
+    // Покупка Bitcoin
+    this.addTransaction({
+      type: "buy",
+      assetId: "btc",
+      quantity: 0.01,
+      price: 50000,
+      amount: 500,
+      description: "Покупка 0.01 BTC за $50000",
+    });
+
+    // Продаж Ethereum
+    this.addTransaction({
+      type: "sell",
+      assetId: "eth",
+      quantity: 0.5,
+      price: 3000,
+      amount: 1500,
+      description: "Продаж 0.5 ETH за $3000",
+    });
+
+    this.savePortfolio();
   }
 
   private loadPortfolio(userId: string): UserPortfolio {
@@ -108,7 +145,7 @@ export class PortfolioManager {
     return this.portfolio.cashBalance + assetsValue;
   }
 
-  // Розрахуват�� загальну інвестовану суму
+  // Розрахува���� загальну інвестовану суму
   getTotalInvestedAmount(): number {
     const assetsInvested = this.portfolio.assets.reduce((total, asset) => {
       return total + asset.quantity * asset.avgPrice;
