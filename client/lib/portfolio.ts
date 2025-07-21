@@ -378,11 +378,13 @@ export class PortfolioManager {
     return this.portfolio.assets.find(asset => asset.id === assetId);
   }
 
-  // Отримати транзакції для конкретного активу
+  // Отримати транзакції для конкретн��го активу
   getAssetTransactions(assetId: string): Transaction[] {
+    let transactions: Transaction[];
+
     if (assetId === 'usd') {
       // Для USD показуємо: поповнення, виведення, продажі (отримання USD) та покупки (витрати USD)
-      return this.portfolio.transactions.filter(transaction =>
+      transactions = this.portfolio.transactions.filter(transaction =>
         transaction.type === 'deposit' ||
         transaction.type === 'withdraw' ||
         transaction.type === 'sell' || // Продаж активів за USD
@@ -390,9 +392,12 @@ export class PortfolioManager {
       );
     } else {
       // Для інших активів показуємо тільки транзакції з цим активом
-      return this.portfolio.transactions.filter(transaction =>
+      transactions = this.portfolio.transactions.filter(transaction =>
         transaction.assetId === assetId
       );
     }
+
+    // Сортуємо по даті (найновіші спочатку)
+    return transactions.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
   }
 }
