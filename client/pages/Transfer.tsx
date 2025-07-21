@@ -77,11 +77,11 @@ export default function Transfer() {
           navigate("/");
         }, 1000);
       } else {
-        setError("Недостатньо коштів");
+        setError(t('transfer.error.insufficient_funds'));
         hapticFeedback("medium");
       }
     } catch (err) {
-      setError("Помилка переказу");
+      setError(t('transfer.error.transfer_failed'));
       hapticFeedback("medium");
     } finally {
       setLoading(false);
@@ -112,8 +112,8 @@ export default function Transfer() {
           <ArrowLeftIcon className="w-5 h-5" />
         </Button>
         <div>
-          <h1 className="font-semibold">Переказ коштів</h1>
-          <p className="text-sm text-muted-foreground">Між Портфелем та CFD</p>
+          <h1 className="font-semibold">{t('transfer.title')}</h1>
+          <p className="text-sm text-muted-foreground">{t('transfer.subtitle')}</p>
         </div>
       </div>
 
@@ -121,14 +121,14 @@ export default function Transfer() {
         {/* Баланси */}
         <div className="grid grid-cols-2 gap-4">
           <Card className="p-4 text-center">
-            <div className="text-sm text-muted-foreground mb-1">Портфель</div>
+            <div className="text-sm text-muted-foreground mb-1">{t('transfer.portfolio')}</div>
             <div className="text-xl font-bold">${cashBalance.toFixed(2)}</div>
-            <div className="text-xs text-muted-foreground">Готівка</div>
+            <div className="text-xs text-muted-foreground">{t('transfer.cash')}</div>
           </Card>
           <Card className="p-4 text-center">
             <div className="text-sm text-muted-foreground mb-1">CFD</div>
             <div className="text-xl font-bold">${cfdBalance.toFixed(2)}</div>
-            <div className="text-xs text-muted-foreground">Для торгівлі</div>
+            <div className="text-xs text-muted-foreground">{t('transfer.for_trading')}</div>
           </Card>
         </div>
 
@@ -139,7 +139,7 @@ export default function Transfer() {
               <div
                 className={`font-medium ${direction === "to_cfd" ? "text-primary" : "text-muted-foreground"}`}
               >
-                Портфель
+                {t('transfer.portfolio')}
               </div>
               <div className="text-sm text-muted-foreground">
                 ${cashBalance.toFixed(2)}
