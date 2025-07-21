@@ -230,7 +230,7 @@ export default function Exchange() {
       const assets = portfolioManager.getAssets();
       const cashBalance = portfolioManager.getCashBalance();
 
-      // З��вжди додаємо долари до списку (навіть з балан��ом 0)
+      // З��вжди додаємо долари до списку (навіть з балансом 0)
       const usdAsset: UserAsset = {
         id: "usd",
         symbol: "USD",
@@ -375,7 +375,7 @@ export default function Exchange() {
       let success = false;
 
       if (fromAsset.id === "usd" && toAsset.id !== "usd") {
-        // Купуємо актив за до��ари
+        // Купуємо актив за долари
         const finalToAmount = lastEditedField === 'from' ? calculatedToAmount : parseFloat(toAmount);
         success = portfolioManager.buyAsset(
           toAsset.id,
@@ -402,11 +402,12 @@ export default function Exchange() {
         );
 
         if (sellSuccess) {
+          const finalToAmount = lastEditedField === 'from' ? calculatedToAmount : parseFloat(toAmount);
           success = portfolioManager.buyAsset(
             toAsset.id,
             toAsset.symbol,
             toAsset.name,
-            toAmount,
+            finalToAmount,
             toAsset.currentPrice,
             toAsset.icon,
             toAsset.category,
@@ -416,7 +417,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
-        // Переходимо н�� сторі��ку деталей активу який отримали
+        // Переходимо н�� сторінку деталей активу який отримали
         navigate(`/coin/${toAsset.id}`);
       } else {
         setError("Помилка при обміні активів");
@@ -795,7 +796,7 @@ export default function Exchange() {
             </div>
           </div>
 
-          {/* Assets List с прокруткой */}
+          {/* Assets List с прокр��ткой */}
           <div className="px-4">
             <h3 className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">
               Ви отримаєте
