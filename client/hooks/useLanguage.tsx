@@ -37,6 +37,20 @@ const translations = {
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не свя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
+    'settings.basicSettingsTitle': 'ОСНОВНЫЕ НАСТРОЙКИ',
+    'settings.walletTab': 'Кошелёк',
+    'settings.cfdSpaceTab': 'CFD Space',
+    'settings.verificationLevel': 'Уровень верификации',
+    'settings.maxiVerification': 'Макси',
+    'settings.contactSupport': 'Обратиться в поддержку',
+    'settings.walletFAQ': 'FAQ Кошелька',
+    'settings.walletNews': 'Новости Кошелька',
+    'settings.cfdNotApplicable': 'Не распространяется на аккаунт CFD Space.',
+    'settings.userAgreement': 'Пользовательское соглашение',
+    'settings.privacyPolicy': 'Политика конфиденциальности',
+    'settings.managedBy': 'Мини-приложение управляется TG Wallet Inc.',
+    'settings.independent': 'Сервис независим и не связан с Telegram.',
+    'settings.learnMore': 'Узнать больше',
     
     // Language Selection
     'language.title': 'ЯЗЫК',
@@ -55,7 +69,7 @@ const translations = {
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
-    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут вклю��ены.',
+    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут включены.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
@@ -147,7 +161,7 @@ const translations = {
     // CoinDetail Page
     'coin.about.crypto': 'О КРИПТОВАЛЮТЕ',
     'coin.about.stock': 'ОБ АКЦИИ',
-    'coin.about.precious_metal': 'О ДРАГОЦ��ННОМ МЕТАЛЛЕ',
+    'coin.about.precious_metal': 'О ДРАГОЦЕННОМ МЕТАЛЛЕ',
     'coin.about.currency': 'О ВАЛЮТЕ',
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
@@ -196,7 +210,7 @@ const translations = {
     // Deposit Asset Selection
     'deposit.asset.popular': 'ПОПУЛЯРНЫЕ',
     'deposit.asset.all': 'ВСЕ',
-    'deposit.asset.not_found': 'Активы не на��дены',
+    'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
     'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
@@ -229,7 +243,7 @@ const translations = {
     'history.trades': 'Сделки',
     'history.transfers': 'Переводы',
     'history.no_transactions': 'У вас пока нет транзакций',
-    'history.start_trading': 'Начните торговать, чтобы увидеть историю здесь',
+    'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
     'history.subtitle': 'Все ваши транзакции и операции',
@@ -268,7 +282,7 @@ const translations = {
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
     'bonuses.card.bonus_label': 'БОНУС',
-    'bonuses.card.annual': 'го��о��ых',
+    'bonuses.card.annual': 'годо��ых',
     'bonuses.empty.completed': 'Нет завершённых бонусов',
     'bonuses.asset.dollars': 'Доллары',
 
@@ -366,7 +380,7 @@ const translations = {
     'common.search': 'Поиск',
     'common.back': 'Назад',
     'common.filter': 'Фильтр',
-    'common.sort': 'Сортировка',
+    'common.sort': 'Сортиро��ка',
     'common.all': 'Все',
     'common.none': 'Нет',
     'common.yes': 'Да',
