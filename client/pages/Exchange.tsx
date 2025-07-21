@@ -205,6 +205,8 @@ export default function Exchange() {
   const [fromAsset, setFromAsset] = useState<UserAsset | null>(null);
   const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автоматично обираємо
   const [fromAmount, setFromAmount] = useState("");
+  const [toAmount, setToAmount] = useState("");
+  const [lastEditedField, setLastEditedField] = useState<'from' | 'to'>('from');
   const [userAssets, setUserAssets] = useState<UserAsset[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -244,7 +246,7 @@ export default function Exchange() {
 
       setUserAssets(allAssets);
 
-      // Перевіряємо URL параметри для автоматичного вибору активів
+      // Переві��яємо URL параметри для автоматичного вибору активів
       const fromParam = searchParams.get('from');
       const toParam = searchParams.get('to');
 
