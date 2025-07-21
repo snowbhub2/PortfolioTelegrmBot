@@ -88,7 +88,7 @@ export default function History() {
   // Back button is now handled automatically by Telegram mini app
 
   useEffect(() => {
-    // Ініціаліз��ція портфеля
+    // Ініціаліз��ці�� портфеля
     const userId = user?.id?.toString() || "demo_user";
     const portfolio = new PortfolioManager(userId);
     setPortfolioManager(portfolio);
@@ -213,6 +213,16 @@ export default function History() {
                       {transaction.assetId && (
                         <div className="text-xs text-muted-foreground">
                           {transaction.assetId.toUpperCase()}
+                        </div>
+                      )}
+                      {transaction.status && (
+                        <div className={`text-xs ${
+                          transaction.status === 'completed' ? 'text-success' :
+                          transaction.status === 'pending' ? 'text-warning' :
+                          transaction.status === 'processing' ? 'text-info' :
+                          'text-destructive'
+                        }`}>
+                          {t(`history.status.${transaction.status}`)}
                         </div>
                       )}
                     </div>
