@@ -178,7 +178,7 @@ const translations = {
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'криптовалюту',
     'deposit.method.bank_card': 'Банковская карта',
-    'deposit.method.bank_card_desc': 'Купить криптовалюту по карте',
+    'deposit.method.bank_card_desc': 'Купить криптовалюту ��о карте',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
     'deposit.method.p2p_market': 'P2P Маркет',
@@ -188,7 +188,7 @@ const translations = {
     'deposit.method.external_wallet_desc': 'Перевести с другого кошелька',
 
     // Withdraw Pages
-    'withdrawMethod.title': 'Как отправить',
+    'withdraw.method.title': 'Как отправить',
     'withdrawMethod.subtitle': 'криптовалюту',
     'withdrawMethod.telegramContact': 'Конт��кт в Telegram',
     'withdrawMethod.instantNoFees': 'Мгновенно и без комиссий',
