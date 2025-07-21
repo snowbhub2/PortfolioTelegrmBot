@@ -132,7 +132,7 @@ const goldAssets: MarketAsset[] = [
   {
     id: "gold",
     symbol: "GOLD",
-    name: "Золото",
+    name: t('market.asset.gold'),
     price: 2650.5,
     change24h: 0.75,
     marketCap: 0,
@@ -142,7 +142,7 @@ const goldAssets: MarketAsset[] = [
   {
     id: "silver",
     symbol: "SILVER",
-    name: "Срібло",
+    name: t('market.asset.silver'),
     price: 30.85,
     change24h: 1.22,
     marketCap: 0,
@@ -152,7 +152,7 @@ const goldAssets: MarketAsset[] = [
   {
     id: "platinum",
     symbol: "PLATINUM",
-    name: "Платина",
+    name: t('market.asset.platinum'),
     price: 945.2,
     change24h: -0.45,
     marketCap: 0,
@@ -233,7 +233,7 @@ export default function Market() {
         <div className="relative">
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
           <Input
-            placeholder="Поиск"
+            placeholder={t('market.search_placeholder')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="pl-10"
@@ -244,7 +244,7 @@ export default function Market() {
       {/* Trending Section */}
       <div className="px-4 mb-6">
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          В ТРЕНДЕ
+          {t('market.trending_title')}
         </h2>
 
         <div
