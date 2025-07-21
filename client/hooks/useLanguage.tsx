@@ -33,8 +33,8 @@ const translations = {
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
-    'settings.privacy': 'Пол��тика конфиденциальности',
-    'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
+    'settings.privacy': 'Политика конфиденциальности',
+    'settings.footer_text': 'М��ни-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не ��вя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
     'settings.basicSettingsTitle': 'ОСНОВНЫЕ НАСТРОЙКИ',
@@ -132,7 +132,7 @@ const translations = {
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
-    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
+    'wallet.notification.earnTitle': 'Зараб��тывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
@@ -230,7 +230,7 @@ const translations = {
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
     'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
-    'deposit.address.qr_description': 'О��сканируйте QR-код для отправки',
+    'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
     'deposit.address.copy': 'Копировать адре��',
@@ -258,8 +258,8 @@ const translations = {
 
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выпол��ен!',
-    'withdraw.processing.payment_processing': 'Ва�� п��атёж в обработке',
-    'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
+    'withdraw.processing.payment_processing': 'Ва�� платёж в обработке',
+    'withdraw.processing.exchange_success': 'Вы у��пешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
     'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
     'withdraw.processing.notification_promise': 'Мы уведомим вас, когда транзакция будет п��дтверждена',
@@ -562,7 +562,7 @@ const translations = {
     'settings.learn_more': 'Learn more',
     'settings.basicSettingsTitle': 'MAIN SETTINGS',
     'settings.walletTab': 'Wallet',
-    'settings.cfdSpaceTab': 'CFD Space',
+    'settings.cfdSpaceTab': 'CFD',
     'settings.verificationLevel': 'Verification Level',
     'settings.maxiVerification': 'Max',
     'settings.contactSupport': 'Contact Support',
