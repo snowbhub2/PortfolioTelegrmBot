@@ -401,7 +401,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
-        // Переходимо на сторінку деталей активу який ��тримали
+        // Переходимо на сторінку деталей активу яки�� отримали
         navigate(`/coin/${toAsset.id}`);
       } else {
         setError("Помилка при обміні активів");
@@ -471,8 +471,8 @@ export default function Exchange() {
             </span>
           </div>
 
-          <div className="mb-2">
-            <div className="flex items-end justify-between">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center gap-3 flex-1">
               <input
                 type="number"
                 placeholder="0"
@@ -481,33 +481,32 @@ export default function Exchange() {
                   setFromAmount(e.target.value);
                   setError("");
                 }}
-                className={`text-3xl sm:text-4xl md:text-6xl font-bold bg-transparent border-0 focus:outline-none flex-1 max-w-[60%] ${
+                className={`text-4xl sm:text-5xl lg:text-7xl font-bold bg-transparent border-0 focus:outline-none min-w-0 ${
                   isInsufficientFunds ? 'text-red-500' : 'text-foreground'
                 }`}
+                style={{ width: 'auto', minWidth: '120px' }}
               />
-              <div
-                className="flex items-center gap-2 cursor-pointer ml-2"
-                onClick={() => setShowFromSelect(true)}
-              >
-                <span className="text-xl sm:text-2xl md:text-4xl font-light text-muted-foreground">
-                  {fromAsset?.symbol || "USD"}
-                </span>
-                <span className="text-muted-foreground text-xl">›</span>
-              </div>
-            </div>
-            {/* Кнопка Макс під сумою */}
-            {fromAsset && fromAsset.quantity > 0 && (
-              <div className="mt-2">
+              {/* Кнопка Макс горизонтально після суми */}
+              {fromAsset && fromAsset.quantity > 0 && (
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="sm"
                   onClick={handleMaxAmount}
-                  className="text-primary border-primary/30 hover:bg-primary/10 px-4 py-2"
+                  className="text-primary hover:underline px-2 py-1 text-sm"
                 >
                   {t('exchange.max')}
                 </Button>
-              </div>
-            )}
+              )}
+            </div>
+            <div
+              className="flex items-center gap-2 cursor-pointer ml-4"
+              onClick={() => setShowFromSelect(true)}
+            >
+              <span className="text-2xl sm:text-3xl lg:text-5xl font-light text-muted-foreground">
+                {fromAsset?.symbol || "USD"}
+              </span>
+              <span className="text-muted-foreground text-xl">›</span>
+            </div>
           </div>
 
           {/* Сума в доларах якщо не долар */}
