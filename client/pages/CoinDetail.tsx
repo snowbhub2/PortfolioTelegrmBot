@@ -178,7 +178,7 @@ export default function CoinDetail() {
     category: "crypto",
   };
 
-  // Оновлюємо ціну з реальн��х даних якщо доступно
+  // Оновлюємо ціну з реальних даних якщо доступно
   if (priceUpdates[asset.id]) {
     asset = {
       ...asset,
@@ -203,7 +203,7 @@ export default function CoinDetail() {
         } else if (asset.id === "eth") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Ethereum — це платформа для розумних контракті�� і децентралізованих додатків (DApps), запущена в 2015 році.",
+            description: "Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
             points: [
               "Ви можете купувати, продавати або зберігати ETH в Гаманці.",
               "Ethereum є основою для багатьох DeFi проектів та NFT."
@@ -241,7 +241,7 @@ export default function CoinDetail() {
             title: "О КРИПТОВАЛЮТЕ",
             description: `${asset.name} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.`,
             points: [
-              `Ви мо��ете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
+              `Ви можете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
               "Криптовалюти можуть мати високу волатильність цін."
             ]
           };
@@ -253,7 +253,7 @@ export default function CoinDetail() {
             title: "ПРО АКЦІЮ",
             description: "Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.",
             points: [
-              "Ви можете купувати або продавати акції AAPL через платформу.",
+              "��и можете купувати або продавати акції AAPL через платформу.",
               "Apple є однією з найдорожчих компаній у світі за ринковою капіталізацією."
             ]
           };
@@ -280,8 +280,8 @@ export default function CoinDetail() {
             title: "ПРО АКЦІЮ",
             description: "Alphabet Inc. — материнська компанія Google, провідна інтернет-компанія та розробник пошукової системи Google.",
             points: [
-              "Ви можете ��упувати або продавати акції GOOGL через платформу.",
-              "Alphabet володіє Google, YouTube, Android та багатьма іншими сервіса��и."
+              "Ви можете купувати або продавати акції GOOGL через платформу.",
+              "Alphabet володіє Google, YouTube, Android та багатьма іншими сервісами."
             ]
           };
         } else {
@@ -397,7 +397,7 @@ export default function CoinDetail() {
 
     if (asset.id === "usd") {
       // Для USD відкриваємо сторінку методів поповнення
-      navigate("/deposit/method");
+      navigate("/deposit-method-select");
     } else {
       // Для інших активів відкриваємо Exchange з заповненими полями
       navigate(`/exchange?from=usd&to=${asset.id}`);
@@ -409,7 +409,7 @@ export default function CoinDetail() {
 
     if (asset.id === "usd") {
       // Для USD відкриваємо сторінку методів виводу
-      navigate("/withdraw/method");
+      navigate("/deposit-method-select"); // використовуємо ту ж сторінку поки немає окремої для виводу
     } else {
       // Для інших активів відкриваємо Exchange з протилежними полями
       navigate(`/exchange?from=${asset.id}&to=usd`);
@@ -511,7 +511,7 @@ export default function CoinDetail() {
               </div>
               {asset.id !== 'usd' && (
                 <div className="text-right">
-                  <p className="text-sm text-muted-foreground">Пото��на вартість</p>
+                  <p className="text-sm text-muted-foreground">Поточна вартість</p>
                   <p className="text-xl font-semibold">
                     ${(assetQuantity * asset.price).toLocaleString()}
                   </p>
