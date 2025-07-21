@@ -386,7 +386,7 @@ export default function Exchange() {
       const maxAmount = Math.floor(fromAsset.quantity * 100) / 100;
       let formattedAmount = maxAmount.toFixed(2);
 
-      // Обмежуємо до 7 символів максимум
+      // Обмежуємо до 7 символів максим��м
       if (formattedAmount.length > 7) {
         // Обрізаємо до 7 символів
         formattedAmount = formattedAmount.substring(0, 7);
@@ -703,7 +703,7 @@ export default function Exchange() {
           {/* Повідомлення про мінімальну суму для toAmount */}
           {toAsset && parseFloat(toAmount) > 0 && parseFloat(toAmount) < minToAmount && lastEditedField === 'to' && (
             <div className="text-destructive text-sm mt-2">
-              Мінімальна сума: {toAsset.id === "usd" ? "$20" : "0.01"}
+              ��інімальна сума: {toAsset.id === "usd" ? "$20" : "0.01"}
             </div>
           )}
 
@@ -820,18 +820,7 @@ export default function Exchange() {
         <div className="fixed inset-0 bg-background z-50">
           {/* Header */}
           <div className="flex items-center justify-between p-4">
-            <Button
-              variant="ghost"
-              onClick={() => {
-                setShowToSelect(false);
-                setSearchTerm("");
-              }}
-              className="text-primary"
-            >
-              Назад
-            </Button>
             <div className="text-center">
-              <div className="font-medium text-lg">Обмен</div>
             </div>
             <div className="w-16"></div>
           </div>
@@ -850,10 +839,10 @@ export default function Exchange() {
             </div>
           </div>
 
-          {/* Assets List с прокр��ткой */}
+          {/* Assets List с прокр��т��ой */}
           <div className="px-4">
             <h3 className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">
-              Ви отрим��єте
+              Вы получаете
             </h3>
             <div className="space-y-1 max-h-96 overflow-y-auto pb-20">
               {filteredMarketAssets.map((asset) => (
