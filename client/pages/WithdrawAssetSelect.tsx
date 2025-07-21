@@ -45,6 +45,19 @@ export default function WithdrawAssetSelect() {
     setRealBalance(cashBalance);
   }, [user]);
 
+  // Create dynamic assets list with real balance
+  const availableAssets: Asset[] = [
+    {
+      id: "usd",
+      name: "Доллары", // Will be translated in JSX
+      symbol: "USDT",
+      balance: realBalance,
+      usdValue: realBalance,
+      icon: "$",
+      color: "bg-green-500",
+    },
+  ];
+
   const filteredAssets = availableAssets.filter(
     (asset) =>
       asset.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
