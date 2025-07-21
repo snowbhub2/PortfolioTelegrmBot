@@ -216,11 +216,11 @@ export default function DepositStars() {
         {/* Інформація */}
         <Card className="p-4 bg-muted/50">
           <div className="text-sm text-muted-foreground space-y-2">
-            <div className="font-medium">Про Telegram Stars:</div>
-            <div>• Швидке та безпечне поповнення</div>
-            <div>• Миттєве зарахування коштів</div>
-            <div>• Підтримка всіх способів оплати Telegram</div>
-            <div>• Автоматичне конвертування у долари</div>
+            <div className="font-medium">Об Telegram Stars:</div>
+            <div>• Быстрое и безопасное пополнение</div>
+            <div>• Моментальное зачисление</div>
+            <div>• Поддержка все способов оплат Телеграм</div>
+            <div>• Автоматическая конвертация в доллары США</div>
           </div>
         </Card>
 
@@ -229,12 +229,12 @@ export default function DepositStars() {
           <Card className="p-4 border-green-200 bg-green-50">
             <div className="text-center">
               <div className="text-sm text-muted-foreground mb-1">
-                Поточний баланс
+                Баланс
               </div>
               <div className="text-xl font-bold text-green-700">
                 ${portfolioManager.getCashBalance().toFixed(2)}
               </div>
-              <div className="text-xs text-green-600">Готівка для торгівлі</div>
+
             </div>
           </Card>
         )}
