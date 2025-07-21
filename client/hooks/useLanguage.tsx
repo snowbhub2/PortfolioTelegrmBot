@@ -196,7 +196,7 @@ const translations = {
     'wallet.trending.title': 'В ТР��НДЕ',
     'wallet.demo.message': '🎭 Demo режим - для ��олных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть на��тройки',
-    'wallet.user.avatar': 'аватар пользователя',
+    'wallet.user.avatar': 'аватар пользо��ателя',
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
     'wallet.assets.dollars_cash': 'Доллары (наличные)',
@@ -279,7 +279,7 @@ const translations = {
     'history.withdrawals': 'Выводы',
     'history.trades': 'Сделки',
     'history.transfers': 'Переводы',
-    'history.no_transactions': 'У вас пока нет транза��ций',
+    'history.no_transactions': 'У вас пока нет транзакций',
     'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
@@ -417,7 +417,7 @@ const translations = {
     'common.search': 'Поиск',
     'common.back': 'Назад',
     'common.filter': 'Фильтр',
-    'common.sort': 'Сортиро��ка',
+    'common.sort': 'Сорти��о��ка',
     'common.all': 'Все',
     'common.none': 'Нет',
     'common.yes': 'Да',
@@ -778,6 +778,22 @@ const translations = {
     'withdraw.amount.balance': 'Balance',
     'withdraw.amount.max': 'Max',
     'withdraw.amount.next': 'Next',
+
+    // Withdraw Processing (English)
+    'withdraw.processing.exchange_completed': 'Exchange completed!',
+    'withdraw.processing.payment_processing': 'Your payment is processing',
+    'withdraw.processing.exchange_success': 'You successfully exchanged {amount} USD for {starsAmount} Telegram Stars',
+    'withdraw.processing.stars_available': 'Stars are already available in your Telegram account',
+    'withdraw.processing.time_estimate': 'This will take 5 to 20 minutes',
+    'withdraw.processing.notification_promise': 'We will notify you when the transaction is confirmed',
+    'withdraw.processing.amount': 'Amount',
+    'withdraw.processing.received': 'Received',
+    'withdraw.processing.recipient': 'Recipient',
+    'withdraw.processing.network': 'Network',
+    'withdraw.processing.status': 'Status',
+    'withdraw.processing.return_to_portfolio': 'Return to portfolio',
+    'withdraw.processing.telegram_stars_exchange': 'Telegram Stars exchange',
+    'withdraw.processing.external_withdrawal': 'External wallet withdrawal',
 
     // History (English)
     'history.subtitle': 'All your transactions and operations',
