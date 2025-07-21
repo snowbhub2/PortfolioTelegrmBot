@@ -92,7 +92,7 @@ const translations = {
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купили за:',
     'wallet.assets.noAssets': 'Пока нет активов',
-    'wallet.assets.buyOnMarket': 'Купи��е ак��ивы на странице Рынок',
+    'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
@@ -142,7 +142,7 @@ const translations = {
     'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
-    'bonuses.tab.completed': '��авершённые',
+    'bonuses.tab.completed': 'Завершённые',
 
     // CoinDetail Page
     'coin.about.crypto': 'О КРИПТОВАЛЮТЕ',
@@ -238,7 +238,7 @@ const translations = {
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
-    'history.transaction.asset': 'акти���а',
+    'history.transaction.asset': 'акти��а',
     'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
     'history.transaction.transfer_to_cfd': 'Перевод в CFD',
@@ -254,12 +254,25 @@ const translations = {
     'bonuses.title': 'Бонусы',
     'bonuses.hero.title': 'Бонусы в Кошельке',
     'bonuses.hero.subtitle': 'Получайте бонусы за хранение криптовалюты.',
-    'bonuses.hero.how_it_works': 'Как это работает',
+    'bonuses.hero.how_it_works': 'Как это раб��тает',
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
     'bonuses.card.bonus_label': 'БОНУС',
     'bonuses.card.annual': 'годовых',
     'bonuses.empty.completed': 'Нет завершённых бонусов',
+
+    // Exchange
+    'exchange.title': 'Обмен',
+    'exchange.you_pay': 'Вы платите',
+    'exchange.you_receive': 'Вы получаете',
+    'exchange.max': 'Макс',
+    'exchange.asset.dollars': 'Доллары',
+    'exchange.top_up': 'Пополнить',
+    'exchange.insufficient_funds': 'Недостаточно средств.',
+    'exchange.select_instrument': 'Выбрать инструмент',
+    'exchange.exchanging': 'Обмениваем...',
+    'exchange.review_deal': 'Просмотреть сделку',
+    'exchange.error.exchange_failed': 'Ошибка при обмене активов',
     
     // Asset Details
     'asset.about': 'О КРИПТОВАЛЮТЕ',
