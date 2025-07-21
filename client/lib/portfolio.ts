@@ -6,7 +6,7 @@ export interface UserAsset {
   id: string;
   symbol: string;
   name: string;
-  quantity: number; // Кількість акцій/інструментів
+  quantity: number; // Кільк��сть акцій/інструментів
   avgPrice: number; // Середня ціна покупки
   currentPrice: number; // Поточна ціна
   icon: string;
@@ -345,9 +345,19 @@ export class PortfolioManager {
 
   // Отримати транзакції для конкретного активу
   getAssetTransactions(assetId: string): Transaction[] {
-    return this.portfolio.transactions.filter(transaction =>
-      transaction.assetId === assetId ||
-      (assetId === 'usd' && (transaction.type === 'deposit' || transaction.type === 'withdraw'))
-    );
+    if (assetId === 'usd') {
+      // Для USD показуємо: поповнення, виведення, продажі (отримання USD) та покупки (витрати USD)
+      return this.portfolio.transactions.filter(transaction =>
+        transaction.type === 'deposit' ||
+        transaction.type === 'withdraw' ||
+        transaction.type === 'sell' || // Продаж активів за USD
+        transaction.type === 'buy' // Покупка активів за USD
+      );
+    } else {
+      // Для інших активів показуємо тільки транзакції з цим активом
+      return this.portfolio.transactions.filter(transaction =>
+        transaction.assetId === assetId
+      );
+    }
   }
 }
