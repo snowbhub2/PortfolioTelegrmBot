@@ -212,7 +212,7 @@ export default function CoinDetail() {
           };
         } else if (asset.id === "sol") {
           return {
-            title: "О КРИПТОВАЛЮТЕ",
+            title: "О К��ИПТОВАЛЮТЕ",
             description: "Solana — це високопродуктивний блокчейн, відомий своєю швидкістю та низькими комісіями за транзакції.",
             points: [
               "Ви можете купувати, продавати або зберігати SOL в Гаманці.",
@@ -291,7 +291,7 @@ export default function CoinDetail() {
         } else if (asset.id === "silver") {
           return {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
-            description: "Срібло — це дорогоцінний метал з широким промисловим застосуванням, популярний серед інвесторів як альтернатива золоту.",
+            description: "Срібло — це дорогоцінний ��етал з широким промисловим застосуванням, популярний серед інвесторів як альтернатива золоту.",
             points: [
               "Ви можете купувати або продавати срібло через платформу.",
               "Срібло має як інвестиційну, так і промислову цінність."
@@ -311,7 +311,7 @@ export default function CoinDetail() {
       default:
         return {
           title: "ПРО АКТИВ",
-          description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на нашій платформі.`,
+          description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на на��ій платформі.`,
           points: [
             `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
             "Будь ласка, врахуйте ризики при інвестуванні."
@@ -372,7 +372,7 @@ export default function CoinDetail() {
       {/* About Section */}
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-3 text-muted-foreground">
-          О КРИПТОВАЛЮТЕ
+          {assetInfo.title}
         </h3>
         <p className="text-sm text-muted-foreground mb-4">
           Hedera запустили в 2018 году. Вместо блокчейна она использует
