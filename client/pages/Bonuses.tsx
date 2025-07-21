@@ -142,7 +142,9 @@ export default function Bonuses() {
                   <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-2xl">{bonus.icon}</span>
                   </div>
-                  <h3 className="font-medium mb-1">{bonus.name}</h3>
+                  <h3 className="font-medium mb-1">
+                    {bonus.id === 'usd' ? t('bonuses.asset.dollars') : bonus.name}
+                  </h3>
                   <div className="text-sm text-muted-foreground">
                     {bonus.apy}% {t('bonuses.card.annual')}
                   </div>
