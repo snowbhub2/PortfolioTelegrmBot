@@ -565,7 +565,7 @@ export default function Wallet() {
                           className={`text-sm ${isPositive ? "text-success" : "text-destructive"}`}
                         >
                           {isPositive ? "↑" : "↓"}{" "}
-                          {Math.abs(asset.change24h).toFixed(2)}% за день
+                          {Math.abs(asset.change24h).toFixed(2)}% {t('wallet.trends.perDay')}
                         </div>
                         <div className="text-muted-foreground text-sm">
                           ${asset.price.toLocaleString()}
