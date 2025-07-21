@@ -491,7 +491,7 @@ export default function Wallet() {
                             </span>
                           </div>
                           <div className="text-xs text-muted-foreground">
-                            Купили за: ${asset.avgPrice.toFixed(2)}
+                            {t('wallet.assets.boughtFor')}: ${asset.avgPrice.toFixed(2)}
                           </div>
                         </div>
                       </div>
