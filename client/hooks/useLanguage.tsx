@@ -87,7 +87,7 @@ const translations = {
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в кан��ле',
+    'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -131,7 +131,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Додаткові пер��клади для всіх текстів
+    // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
@@ -255,6 +255,22 @@ const translations = {
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
+
+    // Withdraw Processing
+    'withdraw.processing.exchange_completed': 'Обмен выполнен!',
+    'withdraw.processing.payment_processing': 'Ваш платёж в обработке',
+    'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
+    'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
+    'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
+    'withdraw.processing.notification_promise': 'Мы уведомим вас, когда транзакция будет подтверждена',
+    'withdraw.processing.amount': 'Сумма',
+    'withdraw.processing.received': 'Получено',
+    'withdraw.processing.recipient': 'Получатель',
+    'withdraw.processing.network': 'Сеть',
+    'withdraw.processing.status': 'Статус',
+    'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
+    'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
+    'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
     
     // History
     'history.title': 'Ис��ория',
@@ -263,7 +279,7 @@ const translations = {
     'history.withdrawals': 'Выводы',
     'history.trades': 'Сделки',
     'history.transfers': 'Переводы',
-    'history.no_transactions': 'У вас пока нет транзакций',
+    'history.no_transactions': 'У вас пока нет транза��ций',
     'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
@@ -389,7 +405,7 @@ const translations = {
     'common.address': 'Адрес',
     'common.fee': 'Комиссия',
     'common.total': 'Итого',
-    'common.available': 'До��тупно',
+    'common.available': 'Доступно',
     'common.balance': 'Баланс',
     'common.price': 'Цена',
     'common.volume': 'Объём',
