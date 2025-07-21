@@ -142,7 +142,7 @@ const goldAssets: MarketAsset[] = [
   {
     id: "silver",
     symbol: "SILVER",
-    name: t('market.asset.silver'),
+    name: "Silver", // Will be translated via t() in component
     price: 30.85,
     change24h: 1.22,
     marketCap: 0,
@@ -173,7 +173,7 @@ export default function Market() {
   // Реальні ціни активів
   const priceUpdates = usePriceUpdates();
 
-  // Топ-4 активи ��а зростанням
+  // Топ-4 а��тиви ��а зростанням
   const [topAssets, setTopAssets] = useState(TRENDING_ASSETS.slice(0, 4));
 
   // Оновлення топ-активів при зміні цін
