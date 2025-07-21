@@ -74,7 +74,7 @@ const translations = {
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получай��е уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -132,7 +132,7 @@ const translations = {
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
-    'wallet.notification.earnTitle': 'Зарабатывайт�� до 15% APY',
+    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с Nobel Portfolio',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
@@ -189,7 +189,7 @@ const translations = {
     'exchange.max': 'Макс',
     'exchange.search': 'Поиск',
     'exchange.back': '��азад',
-    'exchange.asset.dollars': 'Дол��ары',
+    'exchange.asset.dollars': 'Доллары',
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
@@ -240,10 +240,10 @@ const translations = {
     // Withdraw Pages
     'withdraw.method.title': 'Как отправить',
     'withdraw.method.subtitle': 'криптовалюту',
-    'withdraw.method.telegram.title': 'Контакт в Telegram',
+    'withdraw.method.telegram.title': 'Telegram Stars',
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
-    'withdraw.method.external.title': 'Внешний кошелёк или б��ржа',
-    'withdraw.method.external.description': '��ужно указать криптоадрес',
+    'withdraw.method.external.title': 'Внешний кошелёк или биржа',
+    'withdraw.method.external.description': 'Нужно указать крипто адрес',
 
     // Withdraw Asset Selection
     'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
@@ -383,7 +383,7 @@ const translations = {
     'bonuses.tabs.completed': 'Завершённые',
     'bonuses.card.bonus_label': 'БОНУС',
     'bonuses.card.annual': 'годовых',
-    'bonuses.empty.completed': 'Нет завершённых бонусов',
+    'bonuses.empty.completed': 'Нет завершённ��х бонусов',
     'bonuses.asset.dollars': 'Нобелевский портфель',
     'bonuses.asset.dogs': 'Портфель техно',
     'bonuses.asset.major': 'Портфель легкий старт',
@@ -429,7 +429,7 @@ const translations = {
     'transfer.error.transfer_failed': 'Ошибка перевода',
     
     // Asset Details
-    'asset.about': 'О КРИПТОВ��ЛЮТЕ',
+    'asset.about': 'О КРИПТОВАЛЮТЕ',
     'asset.about_stock': 'ОБ АКЦИИ',
     'asset.about_gold': 'О ЗОЛОТЕ',
     'asset.about_currency': 'О ВАЛЮТЕ',
@@ -463,7 +463,7 @@ const translations = {
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
-    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих між��ародних переказів та платежів.',
+    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
@@ -500,10 +500,10 @@ const translations = {
     'common.close': 'Закрыть',
     'common.save': 'С��хранить',
     'common.edit': 'Редактировать',
-    'common.delete': 'Удали��ь',
+    'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
     'common.error': '����ибка',
-    'common.success': 'Ус����шно',
+    'common.success': 'Ус����ш��о',
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
     'common.fee': 'Комиссия',
@@ -682,7 +682,7 @@ const translations = {
     'wallet.trading.warning': 'Cryptocurrency trading involves high risks',
     'wallet.gold': 'Gold',
 
-    // Додаткові переклади для всіх текстів (англі��ська)
+    // Додаткові переклади для всіх текстів (англійська)
     'wallet.notification.earnTitle': 'Earn up to 15% APY',
     'wallet.notification.withDollars': 'with Nobel Portfolio',
     'wallet.notification.startEarning': 'Start earning →',
@@ -866,7 +866,7 @@ const translations = {
     // Withdraw Pages (English)
     'withdraw.method.title': 'How to send',
     'withdraw.method.subtitle': 'cryptocurrency',
-    'withdraw.method.telegram.title': 'Telegram Contact',
+    'withdraw.method.telegram.title': 'Telegram Stars',
     'withdraw.method.telegram.description': 'Instant and no fees',
     'withdraw.method.external.title': 'External wallet or exchange',
     'withdraw.method.external.description': 'Need to specify crypto address',
