@@ -44,7 +44,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕДОМЛЕНИЯ',
+    'notifications.title': 'УВЕДО��ЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -70,7 +70,7 @@ const translations = {
     'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'УВЕДОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
-    'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛ��НОГО КОНТЕНТА',
+    'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
     'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
     'notifications.category.feedback_desc': 'Опросы пользователей, которые помогают улучшить сервис.',
     
@@ -104,8 +104,16 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торго��ля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
+
+    // Додаткові переклади для всіх текстів
+    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
+    'wallet.notification.withDollars': 'с долларами',
+    'wallet.notification.startEarning': 'Начать зарабатывать →',
+    'wallet.trending.perDay': 'за день',
+    'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
+    'wallet.settings.open': 'Открыть настройки',
     
     // Market
     'market.title': 'Ринок',
@@ -123,7 +131,7 @@ const translations = {
     'history.withdrawals': 'Выводы',
     'history.trades': 'Сделки',
     'history.transfers': 'Переводы',
-    'history.no_transactions': 'У вас пока нет транзакций',
+    'history.no_transactions': 'У вас пока не�� транзакций',
     'history.start_trading': 'Начните торговать, чтобы увидеть историю здесь',
     
     // Bonuses
@@ -152,7 +160,7 @@ const translations = {
     'exchange.you_receive': 'Вы получаете',
     'exchange.rate': 'Курс',
     'exchange.min_amount': 'Мин. сумма',
-    'exchange.max_amount': 'Макс. сумма',
+    'exchange.max_amount': 'Ма��с. сумма',
     'exchange.exchange_btn': 'Обменять',
     'exchange.insufficient_balance': 'Недостаточно средств',
     'exchange.enter_amount': 'Введите сумму',
@@ -182,7 +190,7 @@ const translations = {
     'common.change': 'Изменение',
     'common.date': 'Дата',
     'common.time': 'Время',
-    'common.status': 'Ст��тус',
+    'common.status': 'Статус',
     'common.type': 'Тип',
     'common.search': 'Поиск',
     'common.filter': 'Фильтр',
