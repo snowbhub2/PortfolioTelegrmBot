@@ -529,6 +529,12 @@ export default function Exchange() {
               min={fromAsset?.id === "usd" ? "20" : "0.01"}
               onChange={(e) => {
                 const value = e.target.value;
+
+                // Максимум 7 цифр загалом
+                if (value.length > 7) {
+                  return;
+                }
+
                 // Обмежуємо до 2 знаків після коми
                 if (value.includes('.')) {
                   const parts = value.split('.');
