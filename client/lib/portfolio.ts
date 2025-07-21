@@ -39,7 +39,7 @@ export interface UserPortfolio {
   transactions: Transaction[]; // Історія транзакцій
 }
 
-// Локальне збереження ��ортфеля (пізніше замінимо на API)
+// Локальне збереження ���ортфеля (пізніше замінимо на API)
 const PORTFOLIO_KEY = "user_portfolio";
 
 export class PortfolioManager {
@@ -250,7 +250,7 @@ export class PortfolioManager {
       quantity,
       price,
       amount: totalCost,
-      description: `Покупка ${quantity} ${symbol} за $${price.toFixed(2)}`,
+      description: `purchase_${assetId}_${quantity}_${price.toFixed(2)}`,
       status: "completed",
     });
 
