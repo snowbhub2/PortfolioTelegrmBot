@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Card } from "@/components/ui/card";
 import { CheckIcon } from "lucide-react";
 import { useParams } from "react-router-dom";
@@ -11,8 +12,8 @@ interface CategoryConfig {
 
 const categoryConfigs: Record<string, CategoryConfig> = {
   "market-trends": {
-    title: "УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА",
-    description: "Изменения цен на активы."
+    title: t('notifications.category.market_trends'),
+    description: t('notifications.category.market_trends_desc') || t('notifications.market_trends_desc')
   },
   "updates": {
     title: "УВЕДОМЛЕНИЯ ОБНОВЛЕНИЙ",
@@ -34,6 +35,7 @@ const categoryConfigs: Record<string, CategoryConfig> = {
 
 export default function NotificationCategory() {
   const { hapticFeedback } = useTelegram();
+  const { t } = useLanguage();
   const { categoryId } = useParams<{ categoryId: string }>();
   
   const [isEnabled, setIsEnabled] = useState(true);
