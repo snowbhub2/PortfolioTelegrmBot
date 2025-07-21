@@ -605,7 +605,7 @@ export default function Wallet() {
 
       {/* Header */}
       <div className="flex items-center justify-between p-4">
-        {/* Avatar - перехід ��о налаштувань */}
+        {/* Avatar - перехід ����о налаштувань */}
         <Button
           variant="ghost"
           size="icon"
@@ -651,7 +651,7 @@ export default function Wallet() {
             className="rounded-full px-4"
             onClick={() => handleTabSwitch("cfd")}
           >
-            CFD
+            {t('wallet.tabs.cfd')}
           </Button>
         </div>
 
