@@ -172,7 +172,7 @@ export default function Transfer() {
           </div>
 
           <div className="text-center mt-3 text-sm text-muted-foreground">
-            {direction === "to_cfd" ? "Переказ до CFD" : "Переказ з CFD"}
+            {direction === "to_cfd" ? t('transfer.direction.to_cfd') : t('transfer.direction.from_cfd')}
           </div>
         </Card>
 
@@ -180,14 +180,14 @@ export default function Transfer() {
         <div className="space-y-4">
           <div className="space-y-2">
             <div className="flex justify-between items-center">
-              <label className="text-sm font-medium">Сума переказу</label>
+              <label className="text-sm font-medium">{t('transfer.amount_label')}</label>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={handleMaxAmount}
                 disabled={loading}
               >
-                Вся сума
+                {t('transfer.all_amount')}
               </Button>
             </div>
             <Input
@@ -204,7 +204,7 @@ export default function Transfer() {
               className="text-lg"
             />
             <div className="text-xs text-muted-foreground">
-              Доступно: ${maxAmount.toFixed(2)}
+              {t('transfer.available')}: ${maxAmount.toFixed(2)}
             </div>
           </div>
 
@@ -213,19 +213,19 @@ export default function Transfer() {
             <Card className="p-3 bg-blue-50 border-blue-200">
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span>Сума:</span>
+                  <span>{t('transfer.amount')}:</span>
                   <span>${amountNum.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>З:</span>
-                  <span>{direction === "to_cfd" ? "Портфель" : "CFD"}</span>
+                  <span>{t('transfer.from')}:</span>
+                  <span>{direction === "to_cfd" ? t('transfer.portfolio') : "CFD"}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>До:</span>
-                  <span>{direction === "to_cfd" ? "CFD" : "Портфель"}</span>
+                  <span>{t('transfer.to')}:</span>
+                  <span>{direction === "to_cfd" ? "CFD" : t('transfer.portfolio')}</span>
                 </div>
                 <div className="flex justify-between font-semibold border-t pt-2">
-                  <span>Комісія:</span>
+                  <span>{t('transfer.fee')}:</span>
                   <span className="text-success">$0.00</span>
                 </div>
               </div>
