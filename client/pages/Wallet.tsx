@@ -141,7 +141,7 @@ export default function Wallet() {
     updatePortfolioData(portfolio);
   }, [tg, user]);
 
-  // Функція оновлення дан��х портфеля
+  // Функція оновлення даних порт��еля
   const updatePortfolioData = (portfolio: PortfolioManager) => {
     setUserAssets(portfolio.getAssets());
     setCashBalance(portfolio.getCashBalance());
@@ -283,7 +283,7 @@ export default function Wallet() {
             </div>
             <div className="flex items-center justify-center gap-2 mb-1">
               <span className="text-sm text-muted-foreground">
-                Баланс Портфеля
+                {t('wallet.balance.portfolio')}
               </span>
               {portfolioPnL.amount !== 0 && showBalance && (
                 <span
@@ -673,7 +673,7 @@ export default function Wallet() {
             {/* Modal Header */}
             <div className="flex items-center justify-between p-4 border-b border-border">
               <h3 className="text-lg font-semibold">
-                Т��рговля {selectedTradingAsset.symbol}
+                Т���рговля {selectedTradingAsset.symbol}
               </h3>
               <Button
                 variant="ghost"
