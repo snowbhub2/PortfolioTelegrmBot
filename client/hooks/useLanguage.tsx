@@ -87,7 +87,7 @@ const translations = {
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
+    'notifications.cfd_news_text': 'Все новости можно узнать в ка��ал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -467,7 +467,7 @@ const translations = {
     'common.copied': 'Скопировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
-    'common.help': 'Помощь',
+    'common.help': '��омощь',
     'common.support': 'Поддержка',
     'common.about': 'О приложении',
     'common.version': 'Версия',
@@ -849,6 +849,9 @@ const translations = {
 
     // Asset Detail Page (English)
     'asset.name.dollars': 'Dollars',
+    'asset.name.toncoin': 'Toncoin',
+    'asset.name.bitcoin': 'Bitcoin',
+    'asset.name.ethereum': 'Ethereum',
     'asset.name.gold': 'Gold',
     'asset.header.wallet_verified': 'Wallet ✓',
     'asset.header.mini_app': 'mini app',
