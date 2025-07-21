@@ -211,7 +211,7 @@ export default function CoinDetail() {
           };
         } else if (asset.id === "ton") {
           return {
-            title: "О КРИПТОВАЛЮТЕ",
+            title: "О КРИПТОВАЛЮТ��",
             description: "Toncoin — це криптовалюта блокчейну TON (The Open Network), який спочатку розроблявся командою Telegram.",
             points: [
               "Ви можете купувати, продавати або зберігати TON в Гаманці.",
@@ -230,7 +230,7 @@ export default function CoinDetail() {
         } else if (asset.id === "xrp") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.",
+            description: "XRP — це цифрова валюта, с��ворена компанією Ripple для миттєвих міжнародних переказів та платежів.",
             points: [
               "Ви можете купувати, продавати або зберігати XRP в Гаманці.",
               "XRP використовується банками та фінансовими установами для швидких переказів."
@@ -251,9 +251,9 @@ export default function CoinDetail() {
         if (asset.id === "aapl") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.",
+            description: "Apple Inc. — американська багатонаціональ��а технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.",
             points: [
-              "��и можете купувати або продавати акції AAPL через платформу.",
+              "Ви можете купувати або продавати акції AAPL через платформу.",
               "Apple є однією з найдорожчих компаній у світі за ринковою капіталізацією."
             ]
           };
@@ -269,7 +269,7 @@ export default function CoinDetail() {
         } else if (asset.id === "msft") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Microsoft Corporation — американська багатонаціональна технологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
+            description: "Microsoft Corporation — американська багатонац��ональна технологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
             points: [
               "Ви можете купувати або продавати акції MSFT через платформу.",
               "Microsoft є провідним постачальником хмарних сервісів Azure."
@@ -310,7 +310,7 @@ export default function CoinDetail() {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
             description: "Срібло — це дорогоцінний метал з широким промисловим застосуванням, популярний серед інвесторів як альтернатива золоту.",
             points: [
-              "Ви можете купувати або продавати срібло через платформу.",
+              "Ви можете купувати або продава��и срібло через платформу.",
               "Срібло має як інвестиційну, так і промислову цінність."
             ]
           };
@@ -397,7 +397,7 @@ export default function CoinDetail() {
 
     if (asset.id === "usd") {
       // Для USD відкриваємо сторінку методів поповнення
-      navigate("/deposit-method-select");
+      navigate("/deposit/method");
     } else {
       // Для інших активів відкриваємо Exchange з заповненими полями
       navigate(`/exchange?from=usd&to=${asset.id}`);
@@ -409,7 +409,7 @@ export default function CoinDetail() {
 
     if (asset.id === "usd") {
       // Для USD відкриваємо сторінку методів виводу
-      navigate("/deposit-method-select"); // використовуємо ту ж сторінку поки немає окремої для виводу
+      navigate("/deposit/method");
     } else {
       // Для інших активів відкриваємо Exchange з протилежними полями
       navigate(`/exchange?from=${asset.id}&to=usd`);
