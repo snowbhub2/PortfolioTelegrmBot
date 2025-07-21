@@ -70,7 +70,7 @@ export default function WithdrawProcessing() {
         {/* Success Message */}
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold mb-4">
-            {isTelegramStars ? "Обмен выполнен!" : "Ваш платёж в обработке"}
+            {isTelegramStars ? t('withdraw.processing.exchange_completed') : t('withdraw.processing.payment_processing')}
           </h1>
           <div className="text-muted-foreground max-w-sm">
             {isTelegramStars ? (
