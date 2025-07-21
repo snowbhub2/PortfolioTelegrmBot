@@ -109,11 +109,11 @@ export default function History() {
     const diffDays = diff / (1000 * 60 * 60 * 24);
 
     if (diffHours < 1) {
-      return "Щойно";
+      return t('history.time.now');
     } else if (diffHours < 24) {
-      return `${Math.floor(diffHours)} год тому`;
+      return `${Math.floor(diffHours)} ${t('history.time.hours_ago')}`;
     } else if (diffDays < 7) {
-      return `${Math.floor(diffDays)} дн тому`;
+      return `${Math.floor(diffDays)} ${t('history.time.days_ago')}`;
     } else {
       return date.toLocaleDateString("uk-UA", {
         day: "2-digit",
