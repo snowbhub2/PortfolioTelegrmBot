@@ -23,7 +23,7 @@ const translations = {
     'settings.title': 'ОСНОВНЫЕ НАСТРОЙКИ',
     'settings.notifications': 'Уведомления',
     'settings.passcode': 'Код-пароль и Face ID',
-    'settings.language': 'Язык',
+    'settings.language': 'Яз��к',
     'settings.currency': 'Основная валюта',
     'settings.enabled': 'Вкл',
     'settings.verification': 'Уровень в��рификации',
@@ -33,7 +33,7 @@ const translations = {
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
-    'settings.privacy': 'Политика конфиденциальнос��и',
+    'settings.privacy': 'Политика конфиденциальности',
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не ��вя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
@@ -53,7 +53,7 @@ const translations = {
     'settings.learnMore': 'Узнать больше',
     
     // Language Selection
-    'language.title': 'ЯЗЫ��',
+    'language.title': 'ЯЗЫК',
     'language.english': 'English',
     'language.russian': 'Русский',
     
@@ -96,7 +96,7 @@ const translations = {
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
     'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
-    'notifications.category.feedback_desc': 'Опросы пользователей, которые помогают улучшить сервис.',
+    'notifications.category.feedback_desc': 'Опросы пользователей, которые помогают улучши��ь сервис.',
     
     // Wallet
     'wallet.title': 'Портфель',
@@ -108,7 +108,7 @@ const translations = {
     'wallet.actions.transfer': 'Перевести',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
-    'wallet.notification.startEarning': 'Начать зарабатыват�� →',
+    'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
     'wallet.assets.hide': 'Скрыть',
     'wallet.assets.show': 'Показать',
@@ -120,7 +120,7 @@ const translations = {
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
-    'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
+    'wallet.demo.message': '🎭 Demo режим - для полных ф��нкций запустите через Telegram бота',
     'wallet.tabs.wallet': 'Портфель',
     'wallet.tabs.cfd': 'CFD',
     'wallet.settings.open': 'Открыть настройки',
@@ -131,7 +131,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Додаткові переклади для всіх текст��в
+    // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатыват�� →',
@@ -230,7 +230,7 @@ const translations = {
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
     'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
-    'deposit.address.qr_description': 'Отсканируйт�� QR-код для отправки',
+    'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
     'deposit.address.copy': 'Копировать адре��',
@@ -254,7 +254,7 @@ const translations = {
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
-    'withdraw.amount.next': 'Да��ее',
+    'withdraw.amount.next': 'Далее',
 
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выполнен!',
@@ -274,7 +274,7 @@ const translations = {
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
-    'cfd.balance.title': 'Балан�� CFD',
+    'cfd.balance.title': 'Баланс CFD',
     'cfd.balance.description': 'Средства для контрактов на разность цен',
     'cfd.trading_balance': 'Торговый ба��анс CFD',
     'cfd.search_assets': 'Поиск активов',
@@ -317,7 +317,7 @@ const translations = {
     'history.withdrawals': 'Выводы',
     'history.trades': 'Сделки',
     'history.transfers': 'Переводы',
-    'history.no_transactions': 'У вас пока нет транзакций',
+    'history.no_transactions': 'У вас ��ока нет транзакций',
     'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
@@ -328,7 +328,7 @@ const translations = {
     'history.filter.deposit': 'Пополнения',
     'history.filter.withdraw': 'Выведения',
     'history.empty.title': 'Пока нет транзак��ий',
-    'history.empty.subtitle_all': 'Ваши оп��рации появятся здесь',
+    'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
@@ -391,14 +391,14 @@ const translations = {
     'transfer.fee': 'Комиссия',
     'transfer.transferring': 'Пер��водим...',
     'transfer.transfer_button': 'Перевести',
-    'transfer.info.title': 'О переводе',
+    'transfer.info.title': 'О перевод��',
     'transfer.info.portfolio_desc': 'Портфель - наличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов на разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
-    'transfer.error.transfer_failed': 'Ошиб��а перевода',
+    'transfer.error.transfer_failed': 'Ошибка перевода',
     
     // Asset Details
     'asset.about': 'О КРИПТОВАЛЮТЕ',
@@ -431,7 +431,7 @@ const translations = {
     'coin.btc_description': 'Bitcoin — це перша і найвідоміша криптовалюта у світі. Створена в 2009 році Сатоші Накамото як децентралізована цифрова валюта.',
     'coin.btc_point_1': 'Ви можете купувати, продавати або зберігати BTC в Гаманці.',
     'coin.btc_point_2': 'Bitcoin використовує технологію блокчейн для забезпечення безпеки та прозорості.',
-    'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.',
+    'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатків (DApps), запущена в 2015 році.',
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
@@ -469,7 +469,7 @@ const translations = {
     'common.balance': 'Баланс',
     'common.price': 'Цена',
     'common.volume': 'Объём',
-    'common.change': 'Измене��ие',
+    'common.change': 'Изменение',
     'common.date': 'Дата',
     'common.time': 'Время',
     'common.status': 'Статус',
@@ -907,6 +907,13 @@ const translations = {
     'coin.time_period.1y': '1Y',
     'coin.time_period.all': 'All',
     'coin.today': 'Today',
+    'coin.btc_description': 'Bitcoin is the first and most famous cryptocurrency in the world. Created in 2009 by Satoshi Nakamoto as a decentralized digital currency.',
+    'coin.btc_point_1': 'You can buy, sell or store BTC in the Wallet.',
+    'coin.btc_point_2': 'Bitcoin uses blockchain technology to ensure security and transparency.',
+    'coin.eth_description': 'Ethereum is a platform for smart contracts and decentralized applications (DApps), launched in 2015.',
+    'coin.eth_point_1': 'You can buy, sell or store ETH in the Wallet.',
+    'coin.eth_point_2': 'Ethereum is the foundation for many DeFi projects and NFTs.',
+    'coin.aapl_description': 'Apple Inc. is an American multinational technology corporation known for its iPhone, iPad, Mac and other devices.',
 
     // History (English)
     'history.subtitle': 'All your transactions and operations',
