@@ -246,7 +246,7 @@ export default function Exchange() {
 
       setUserAssets(allAssets);
 
-      // Переві��яємо URL параметри для автоматичного вибору активів
+      // Перевіряємо URL параметри для автоматичного вибору активів
       const fromParam = searchParams.get('from');
       const toParam = searchParams.get('to');
 
@@ -318,7 +318,8 @@ export default function Exchange() {
   }, [priceUpdates]);
 
   const fromValue = parseFloat(fromAmount) * (fromAsset?.currentPrice || 0);
-  const toAmount = toAsset?.currentPrice && fromAmount ? fromValue / toAsset.currentPrice : 0;
+  const calculatedToAmount = toAsset?.currentPrice && fromAmount && lastEditedField === 'from' ? fromValue / toAsset.currentPrice : 0;
+  const calculatedFromAmount = fromAsset?.currentPrice && toAmount && lastEditedField === 'to' ? (parseFloat(toAmount) * (toAsset?.currentPrice || 0)) / fromAsset.currentPrice : 0;
 
   const minAmount = fromAsset?.id === "usd" ? 20 : 0.01;
 
