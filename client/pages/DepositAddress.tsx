@@ -205,7 +205,7 @@ export default function DepositAddress() {
             onClick={handleCopyAddress}
             disabled={copied}
           >
-            {copied ? "��дрес скопирован в буфер" : "Копировать адрес"}
+            {copied ? t('deposit.address.copied') : t('deposit.address.copy')}
           </Button>
         </Card>
 
