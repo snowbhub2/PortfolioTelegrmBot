@@ -55,22 +55,22 @@ const getTransactionColor = (type: Transaction["type"]) => {
 };
 
 // Функція для форматування назви транзакції
-const getTransactionTitle = (transaction: Transaction) => {
+const getTransactionTitle = (transaction: Transaction, t: any) => {
   switch (transaction.type) {
     case "buy":
-      return `Покуп��а ${transaction.assetId?.toUpperCase() || "активу"}`;
+      return `${t('history.transaction.buy')} ${transaction.assetId?.toUpperCase() || t('history.transaction.asset')}`;
     case "sell":
-      return `Продаж ${transaction.assetId?.toUpperCase() || "активу"}`;
+      return `${t('history.transaction.sell')} ${transaction.assetId?.toUpperCase() || t('history.transaction.asset')}`;
     case "deposit":
-      return "Поповнення звездами";
+      return t('history.transaction.deposit');
     case "withdraw":
-      return "Виведення у зірки";
+      return t('history.transaction.withdraw');
     case "transfer_to_cfd":
-      return "Переказ д�� CFD";
+      return t('history.transaction.transfer_to_cfd');
     case "transfer_from_cfd":
-      return "Переказ з CFD";
+      return t('history.transaction.transfer_from_cfd');
     default:
-      return "Транзакція";
+      return t('history.transaction.default');
   }
 };
 
