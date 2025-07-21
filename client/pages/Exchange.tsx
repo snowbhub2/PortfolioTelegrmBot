@@ -431,7 +431,7 @@ export default function Exchange() {
 
   const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(2) : "0";
 
-  // Створюємо списки активів включаючи д��лари
+  // Створюємо списки активів включаючи долари
   const filteredUserAssets = userAssets.filter(asset => 
     asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
@@ -461,7 +461,7 @@ export default function Exchange() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header - без кнопки назад */}
+      {/* Header - без к��опки назад */}
       <div className="flex items-center justify-center p-4">
         <div className="text-center">
           <div className="font-medium text-lg">Обмен</div>
@@ -498,7 +498,7 @@ export default function Exchange() {
                 if (value.includes('.')) {
                   const parts = value.split('.');
                   if (parts[1] && parts[1].length > 2) {
-                    return; // Не дозволяємо бі��ьше 2 знаків після коми
+                    return; // Не дозволяємо більше 2 знаків після коми
                   }
                 }
                 setFromAmount(value);
@@ -552,7 +552,7 @@ export default function Exchange() {
           {isInsufficientFunds && (
             <div className="text-destructive text-sm mt-2">Недостатньо коштів.</div>
           )}
-          {fromAsset && parseFloat(fromAmount) > 0 && parseFloat(fromAmount) < minAmount && (
+          {fromAsset && parseFloat(fromAmount) > 0 && parseFloat(fromAmount) < minFromAmount && (
             <div className="text-destructive text-sm mt-2">
               Мінімальна сума: {fromAsset.id === "usd" ? "$20" : "0.01"}
             </div>
