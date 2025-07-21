@@ -266,7 +266,7 @@ export default function Exchange() {
         const allAvailable = [...allAssets, ...allMarketAssets];
         const toAssetFromUrl = allAvailable.find(asset => asset.id === toParam);
         if (toAssetFromUrl && !toAsset) {
-          // Конвертуємо в UserAsset формат якщо це ринковий актив
+          // Конвертуєм�� в UserAsset формат якщо це ринковий актив
           if (!allAssets.find(a => a.id === toAssetFromUrl.id)) {
             const marketAsset = toAssetFromUrl as any;
             setToAsset({
@@ -321,12 +321,19 @@ export default function Exchange() {
   const calculatedToAmount = toAsset?.currentPrice && fromAmount && lastEditedField === 'from' ? fromValue / toAsset.currentPrice : 0;
   const calculatedFromAmount = fromAsset?.currentPrice && toAmount && lastEditedField === 'to' ? (parseFloat(toAmount) * (toAsset?.currentPrice || 0)) / fromAsset.currentPrice : 0;
 
-  const minAmount = fromAsset?.id === "usd" ? 20 : 0.01;
+  const minFromAmount = fromAsset?.id === "usd" ? 20 : 0.01;
+  const minToAmount = toAsset?.id === "usd" ? 20 : 0.01;
 
-  const isValidAmount =
+  const isValidFromAmount =
     fromAsset &&
-    parseFloat(fromAmount) >= minAmount &&
+    parseFloat(fromAmount) >= minFromAmount &&
     parseFloat(fromAmount) <= fromAsset.quantity;
+
+  const isValidToAmount =
+    toAsset &&
+    parseFloat(toAmount) >= minToAmount;
+
+  const isValidAmount = lastEditedField === 'from' ? isValidFromAmount : isValidToAmount && calculatedFromAmount <= (fromAsset?.quantity || 0);
 
   const isInsufficientFunds = fromAsset && parseFloat(fromAmount) > fromAsset.quantity;
 
@@ -415,7 +422,7 @@ export default function Exchange() {
         hapticFeedback("medium");
       }
     } catch (err) {
-      setError("Помилка при обміні активів");
+      setError("Помилка при обм��ні активів");
       hapticFeedback("medium");
     } finally {
       setIsLoading(false);
