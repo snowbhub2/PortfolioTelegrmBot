@@ -69,7 +69,7 @@ const translations = {
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
-    'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
+    'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включ��н��.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
@@ -270,7 +270,7 @@ const translations = {
     'withdraw.processing.status': 'Статус',
     'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
     'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
-    'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
+    'withdraw.processing.external_withdrawal': 'Вывод на вне��ний кошелёк',
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
@@ -326,11 +326,11 @@ const translations = {
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
     'history.filter.deposit': 'Пополнения',
-    'history.filter.withdraw': 'Выведения',
+    'history.filter.withdraw': 'Выведен��я',
     'history.empty.title': 'Пока нет транзак��ий',
     'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
-    'history.empty.go_to_market': 'Перейти к тор��овле',
+    'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
     'history.transaction.asset': 'акти��а',
@@ -354,7 +354,7 @@ const translations = {
     'history.details.group.label': 'Тип операции',
     'history.details.group.purchase': 'Покупка',
     'history.details.group.sale': 'Продажа',
-    'history.details.group.deposit': 'По��олнение',
+    'history.details.group.deposit': 'Пополнение',
     'history.details.group.withdrawal': 'Выведение',
     'history.details.group.transfer': 'Перевод',
     'history.details.group.other': 'Другое',
@@ -367,6 +367,11 @@ const translations = {
     'history.details.time': 'Время',
     'history.details.status': 'Статус',
     'history.details.description': 'Описание',
+
+    // Transaction Descriptions
+    'history.description.initial_deposit': 'Початковый депозит',
+    'history.description.purchase_details': 'Покупка {{quantity}} {{asset}} за ${{price}}',
+    'history.description.sell_details': 'Продажа {{quantity}} {{asset}} за ${{price}}',
     
     // Bonuses
     'bonuses.title': 'Бонусы',
@@ -394,7 +399,7 @@ const translations = {
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
-    'transfer.title': 'Перевод сре��ств',
+    'transfer.title': 'Перевод сре����тв',
     'transfer.subtitle': 'Между Портфелем и CFD',
     'transfer.portfolio': 'Портфель',
     'transfer.cash': 'Наличные',
@@ -460,7 +465,7 @@ const translations = {
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
-    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
+    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захист�� від інфляції.',
     'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
