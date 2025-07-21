@@ -634,6 +634,12 @@ export default function Exchange() {
               min={toAsset?.id === "usd" ? "20" : "0.01"}
               onChange={(e) => {
                 const value = e.target.value;
+
+                // Максимум 7 цифр загалом
+                if (value.length > 7) {
+                  return;
+                }
+
                 // Обмежуємо до 2 знаків після коми
                 if (value.includes('.')) {
                   const parts = value.split('.');
@@ -684,7 +690,7 @@ export default function Exchange() {
           {/* Повідомлення про недостатність коштів при обчисленні від toAmount */}
           {lastEditedField === 'to' && calculatedFromAmount > (fromAsset?.quantity || 0) && calculatedFromAmount > 0 && (
             <div className="text-destructive text-sm mt-2">
-              Недостатньо коштів для такої суми
+              Недостатньо кош��ів для такої суми
             </div>
           )}
         </div>
