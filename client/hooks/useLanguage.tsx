@@ -74,7 +74,7 @@ const translations = {
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приход��т CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -91,7 +91,7 @@ const translations = {
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
-    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
+    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ��РЕНДОВ РЫНКА',
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
@@ -103,7 +103,7 @@ const translations = {
     'wallet.balance.portfolio': 'Баланс Портфеля',
     'wallet.balance.allTime': 'за весь час',
     'wallet.actions.withdraw': 'Вывести',
-    'wallet.actions.deposit': '��ополнить',
+    'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
@@ -125,7 +125,7 @@ const translations = {
     'wallet.tabs.cfd': 'CFD',
     'wallet.settings.open': 'Открыть настройки',
     'wallet.trading.title': 'Торговля',
-    'wallet.trading.currentPrice': 'Те��ущая цена',
+    'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
@@ -178,7 +178,7 @@ const translations = {
     'coin.quantity': 'Количество',
     'coin.current_value': 'Текущая стоимость',
     'coin.btn.buy': 'Купить',
-    'coin.btn.sell': 'Продат��',
+    'coin.btn.sell': 'Продать',
     'coin.btn.deposit': 'Пополнить',
     'coin.btn.withdraw': 'Вывести',
 
@@ -199,7 +199,7 @@ const translations = {
     'wallet.user.avatar': 'аватар пользователя',
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
-    'wallet.assets.dollars_cash': 'Доллары (наличные)',
+    'wallet.assets.dollars_cash': 'Доллары USD',
     'wallet.assets.for_trading': 'Для торговли',
     'wallet.assets.no_assets': 'Пока нет активов',
     'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
@@ -246,12 +246,12 @@ const translations = {
     'withdraw.method.external.description': '��ужно указать криптоадрес',
 
     // Withdraw Asset Selection
-    'withdraw.asset.title': 'ВЫ ВЫВ��ДИТЕ',
+    'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
-    'withdraw.amount.buy_more': '��о��упить.',
+    'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
@@ -333,7 +333,7 @@ const translations = {
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
-    'history.transaction.asset': 'акти��а',
+    'history.transaction.asset': 'акти���а',
     'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
     'history.transaction.transfer_to_cfd': 'Пере��од в CFD',
