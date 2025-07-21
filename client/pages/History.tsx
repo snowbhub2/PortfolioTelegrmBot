@@ -458,7 +458,7 @@ export default function History() {
                 {selectedTransaction.description && (
                   <div className="py-2">
                     <span className="text-muted-foreground block mb-2">{t('history.details.description')}</span>
-                    <span className="text-sm">{selectedTransaction.description}</span>
+                    <span className="text-sm">{getTransactionDescription(selectedTransaction, t)}</span>
                   </div>
                 )}
               </div>
