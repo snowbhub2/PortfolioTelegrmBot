@@ -43,7 +43,7 @@ export default function DepositStars() {
 
   const handleDeposit = async () => {
     if (!portfolioManager || amountNum <= 0) {
-      setError("Введіть коректну суму");
+      setError("Введите корректную сумму");
       hapticFeedback("medium");
       return;
     }
@@ -203,13 +203,13 @@ export default function DepositStars() {
           {/* Кнопка поповнення */}
           <Button
             onClick={handleDeposit}
-            disabled={loading || amountNum < 1}
+            disabled={loading || amountNum < 20}
             className="w-full"
             size="lg"
           >
             {loading
-              ? "Поповнення..."
-              : `Поповнити на ${starsAmount} ⭐ ($${amountNum.toFixed(2)})`}
+              ? "Пополнение..."
+              : `Пополнить на ${starsAmount} ⭐ ($${amountNum.toFixed(2)})`}
           </Button>
         </div>
 
