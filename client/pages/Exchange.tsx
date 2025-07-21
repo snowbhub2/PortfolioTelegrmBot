@@ -258,7 +258,7 @@ export default function Exchange() {
       const usdAsset: UserAsset = {
         id: "usd",
         symbol: "USD",
-        name: "Долари",
+        name: "Доллары",
         quantity: cashBalance,
         avgPrice: 1,
         currentPrice: 1,
@@ -410,7 +410,7 @@ export default function Exchange() {
 
   const handleBalanceClick = () => {
     if (fromAsset?.id === "usd") {
-      // Тільк�� для доларів переходимо на поповнення
+      // Тільк�� для до��арів переходимо на поповнення
       navigate("/deposit/method");
     }
   };
@@ -497,7 +497,7 @@ export default function Exchange() {
     {
       id: "usd",
       symbol: "USD", 
-      name: "Долари",
+      name: "Доллары",
       price: 1,
       change24h: 0,
       marketCap: 0,
@@ -644,7 +644,7 @@ export default function Exchange() {
             <span className="text-foreground">{t('exchange.you_receive')}</span>
           </div>
 
-          {/* Завжди ��оказуєм�� великі цифри */}
+          {/* Завжди ��оказуєм��� великі цифри */}
           <div className="flex items-center justify-between mb-2">
             <input
               type="number"
@@ -751,18 +751,7 @@ export default function Exchange() {
         <div className="fixed inset-0 bg-background z-50">
           {/* Header */}
           <div className="flex items-center justify-between p-4">
-            <Button
-              variant="ghost"
-              onClick={() => {
-                setShowFromSelect(false);
-                setSearchTerm("");
-              }}
-              className="text-primary"
-            >
-              ��аз��д
-            </Button>
             <div className="text-center">
-              <div className="font-medium text-lg">Обмен</div>
             </div>
             <div className="w-16"></div>
           </div>
@@ -784,7 +773,7 @@ export default function Exchange() {
           {/* Assets List с прокруткой */}
           <div className="px-4">
             <h3 className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">
-              Ви сплачуєте
+              Вы оплачиваете
             </h3>
             <div className="space-y-1 max-h-96 overflow-y-auto pb-20">
               {filteredUserAssets
