@@ -49,6 +49,16 @@ const cryptoAssets: MarketAsset[] = [
     icon: "🌅",
     sparkline: [150, 151, 152, 152.47],
   },
+  {
+    id: "xrp",
+    symbol: "XRP",
+    name: "XRP",
+    price: 2.45,
+    change24h: -1.85,
+    marketCap: 140000000000,
+    icon: "💎",
+    sparkline: [2.55, 2.50, 2.47, 2.45],
+  },
 ];
 
 // Акції
@@ -527,7 +537,7 @@ export default function Exchange() {
           disabled={!isValidAmount || isLoading || !toAsset}
           onClick={handleExchange}
         >
-          {isLoading ? "Обмінюємо..." : "Переглянути угоду"}
+          {isLoading ? "Обмінюємо..." : "Перегл��нути угоду"}
         </Button>
       </div>
 
