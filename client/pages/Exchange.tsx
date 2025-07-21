@@ -415,7 +415,7 @@ export default function Exchange() {
     }
   };
 
-  const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(6) : "0";
+  const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(2) : "0";
 
   // Створюємо списки активів включаючи долари
   const filteredUserAssets = userAssets.filter(asset => 
@@ -549,7 +549,7 @@ export default function Exchange() {
           <div className="flex items-center justify-between mb-2">
             <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
               {toAsset && fromAmount && parseFloat(fromAmount) > 0
-                ? (toAsset.id === "usd" ? toAmount.toFixed(2) : toAmount.toFixed(3))
+                ? toAmount.toFixed(2)
                 : "0"}
             </div>
             <div
@@ -672,7 +672,7 @@ export default function Exchange() {
                       {(asset.quantity * asset.currentPrice).toFixed(2)} $
                     </div>
                     <div className="text-muted-foreground text-sm">
-                      {asset.quantity.toFixed(4)} {asset.symbol}
+                      {asset.quantity.toFixed(2)} {asset.symbol}
                     </div>
                   </div>
                 </div>
