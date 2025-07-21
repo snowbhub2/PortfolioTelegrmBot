@@ -87,7 +87,7 @@ const translations = {
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в канале',
+    'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -258,7 +258,7 @@ const translations = {
 
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выполнен!',
-    'withdraw.processing.payment_processing': 'Ваш платёж в обработке',
+    'withdraw.processing.payment_processing': 'Ва�� платёж в обработке',
     'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
     'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
@@ -276,7 +276,7 @@ const translations = {
     'cfd.title': 'CFD Торговля',
     'cfd.balance.title': 'Баланс CFD',
     'cfd.balance.description': 'Средства для контрактов на разность цен',
-    'cfd.trading_balance': 'Торговый баланс CFD',
+    'cfd.trading_balance': 'Торговый ба��анс CFD',
     'cfd.search_assets': 'Поиск активов',
     'cfd.popular_pairs': 'ПОПУЛЯРНЫЕ ПАРЫ',
     'cfd.buy': 'КУПИТЬ',
@@ -288,6 +288,9 @@ const translations = {
 
     // Asset Detail Page
     'asset.name.dollars': 'Доллары',
+    'asset.name.toncoin': 'Toncoin',
+    'asset.name.bitcoin': 'Bitcoin',
+    'asset.name.ethereum': 'Ethereum',
     'asset.name.gold': 'Золото',
     'asset.header.wallet_verified': 'Гаманець ✓',
     'asset.header.mini_app': 'мініЗастосунок',
