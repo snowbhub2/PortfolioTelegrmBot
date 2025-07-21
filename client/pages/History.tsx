@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import BottomNavigation from "@/components/BottomNavigation";
 import { PortfolioManager, Transaction } from "@/lib/portfolio";
 
-// Функція для отримання іконки транзакції
+// Функція для отримання іконки транза��ції
 const getTransactionIcon = (type: Transaction["type"]) => {
   switch (type) {
     case "buy":
@@ -84,6 +84,8 @@ export default function History() {
   const [filter, setFilter] = useState<
     "all" | "buy" | "sell" | "deposit" | "withdraw"
   >("all");
+  const [selectedTransaction, setSelectedTransaction] = useState<Transaction | null>(null);
+  const [showDetails, setShowDetails] = useState(false);
 
   // Back button is now handled automatically by Telegram mini app
 
