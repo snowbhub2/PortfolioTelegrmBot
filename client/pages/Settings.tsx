@@ -69,8 +69,8 @@ export default function Settings() {
     },
     {
       icon: <FingerprintIcon className="w-5 h-5 text-green-500" />,
-      title: "Код-пароль и Face ID",
-      value: "Вкл",
+      title: t('settings.passcode'),
+      value: t('settings.enabled'),
       hasChevron: true,
     },
     {
