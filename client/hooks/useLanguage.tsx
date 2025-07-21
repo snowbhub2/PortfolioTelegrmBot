@@ -44,7 +44,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕДОМЛ��НИЯ',
+    'notifications.title': 'УВЕДОМЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -104,7 +104,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговл�� криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -128,9 +128,47 @@ const translations = {
     'market.asset.gold': 'Золото',
     'market.asset.silver': 'Серебро',
     'market.asset.platinum': 'Платина',
+
+    // History Page - базові переклади
+    'history.transaction.buy': 'Покупка',
+    'history.transaction.sell': 'Продаж',
+    'history.operations_history': 'История операций',
+    'history.time.just_now': 'Только что',
+    'history.no_transactions': 'Пока нет транзакций',
+    'history.go_to_trading': 'Перейти к торговле',
+
+    // Bonuses Page
+    'bonuses.title_header': 'Бонусы в Кошельке',
+    'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
+    'bonuses.how_it_works': 'Как это работает',
+    'bonuses.tab.active': 'Активные',
+    'bonuses.tab.completed': 'Завершённые',
+
+    // CoinDetail Page
+    'coin.about.crypto': 'О КРИПТОВАЛЮТЕ',
+    'coin.about.stock': 'ОБ АКЦИИ',
+    'coin.about.precious_metal': 'О ДРАГОЦЕННОМ МЕТАЛЛЕ',
+    'coin.about.currency': 'О ВАЛЮТЕ',
+    'coin.in_portfolio': 'В ПОРТФЕЛЕ',
+    'coin.balance': 'Баланс',
+    'coin.quantity': 'Количество',
+    'coin.current_value': 'Текущая стоимость',
+    'coin.btn.buy': 'Купить',
+    'coin.btn.sell': 'Продать',
+    'coin.btn.deposit': 'Пополнить',
+    'coin.btn.withdraw': 'Вывести',
+
+    // Exchange Page
+    'exchange.title_header': 'Обмен',
+    'exchange.you_pay': 'Вы платите',
+    'exchange.you_receive': 'Вы получаете',
+    'exchange.max': 'Макс',
+    'exchange.search': 'Поиск',
+    'exchange.back': 'Назад',
+    'exchange.asset.dollars': 'Доллары',
     
     // History
-    'history.title': 'История',
+    'history.title': 'Ис��ория',
     'history.all': 'Все',
     'history.deposits': 'Пополнения',
     'history.withdrawals': 'Выводы',
