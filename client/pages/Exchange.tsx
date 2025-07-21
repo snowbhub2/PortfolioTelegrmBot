@@ -240,7 +240,7 @@ export default function Exchange() {
         category: "currency",
       };
 
-      const allAssets = [usdAsset, ...assets]; // Долари завжди першими
+      const allAssets = [usdAsset, ...assets]; // До��ари завжди першими
 
       setUserAssets(allAssets);
 
@@ -448,14 +448,14 @@ export default function Exchange() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header - без кнопки назад */}
-      <div className="flex items-center justify-center p-4 max-w-md mx-auto">
+      <div className="flex items-center justify-center p-4">
         <div className="text-center">
           <div className="font-medium text-lg">Обмен</div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="px-4 pb-20 max-w-md mx-auto">
+      <div className="px-4 pb-20">
         {/* Ви сплачуєте */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
