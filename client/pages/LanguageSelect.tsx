@@ -2,6 +2,7 @@ import { useLanguage, Language } from "@/hooks/useLanguage";
 import { useTelegram } from "@/hooks/useTelegram";
 import { Card } from "@/components/ui/card";
 import { CheckIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 interface LanguageOption {
   code: Language;
@@ -25,10 +26,15 @@ const languageOptions: LanguageOption[] = [
 export default function LanguageSelect() {
   const { hapticFeedback } = useTelegram();
   const { language, setLanguage, t } = useLanguage();
+  const navigate = useNavigate();
 
   const handleLanguageSelect = (langCode: Language) => {
     hapticFeedback("light");
     setLanguage(langCode);
+    // Перейти на головну сторінку після вибору мови
+    setTimeout(() => {
+      navigate("/");
+    }, 100);
   };
 
   return (
