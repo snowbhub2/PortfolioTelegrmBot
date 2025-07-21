@@ -70,7 +70,7 @@ export default function Bonuses() {
   };
 
   return (
-    <div className="min-h-[822px] sm:min-h-screen bg-background text-foreground pb-[79px] sm:pb-20">
+    <div className="h-screen bg-background text-foreground pb-24 overflow-hidden">
       {/* Empty Header */}
       <div className="h-16 p-4 -mb-5 sm:mb-0"></div>
 
