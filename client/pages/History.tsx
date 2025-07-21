@@ -90,7 +90,7 @@ export default function History() {
   // Back button is now handled automatically by Telegram mini app
 
   useEffect(() => {
-    // Ініц��аліз��ці�� портфеля
+    // Ініціаліз��ці�� портфеля
     const userId = user?.id?.toString() || "demo_user";
     const portfolio = new PortfolioManager(userId);
     setPortfolioManager(portfolio);
@@ -228,7 +228,11 @@ export default function History() {
           ) : (
             <div className="space-y-3">
               {filteredTransactions.map((transaction, index) => (
-                <Card key={`${transaction.id}-${index}`} className="p-4">
+                <Card
+                  key={`${transaction.id}-${index}`}
+                  className="p-4 cursor-pointer hover:bg-muted/50 transition-colors"
+                  onClick={() => handleTransactionClick(transaction)}
+                >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-muted rounded-full">
