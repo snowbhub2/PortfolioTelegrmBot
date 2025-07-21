@@ -35,7 +35,7 @@ const translations = {
     'settings.agreement': 'Пользовательское соглашение',
     'settings.privacy': 'Политика конфиденциальности',
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
-    'settings.footer_text2': 'Сервис независим �� не ��вя��ан с Telegram.',
+    'settings.footer_text2': 'Сервис независим и не ��вя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
     'settings.basicSettingsTitle': 'ОСНОВНЫЕ НАСТРОЙКИ',
     'settings.walletTab': 'Портфель',
@@ -58,7 +58,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕДОМЛЕНИЯ',
+    'notifications.title': 'УВЕД��МЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -91,7 +91,7 @@ const translations = {
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
-    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
+    'notifications.category.market_trends': 'УВЕДОМЛЕНИ�� ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
@@ -112,7 +112,7 @@ const translations = {
     'wallet.assets.title': 'АКТИВЫ',
     'wallet.assets.hide': 'Скрыть',
     'wallet.assets.show': 'Показать',
-    'wallet.assets.cashDollars': 'До��л��ры',
+    'wallet.assets.cashDollars': 'Долл��ры',
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купил�� за:',
     'wallet.assets.noAssets': 'Пока нет активов',
@@ -162,7 +162,7 @@ const translations = {
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
-    'bonuses.title_header': 'Бонусы в Ко��ельке',
+    'bonuses.title_header': 'Бонусы в Кошельке',
     'bonuses.subtitle': 'Получ��йте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
@@ -191,7 +191,7 @@ const translations = {
     'exchange.back': '��азад',
     'exchange.asset.dollars': 'Доллары',
 
-    // Додаткові переклади для завершення Wallet.tsx
+    // Додаткові переклади для заверш��ння Wallet.tsx
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -212,7 +212,7 @@ const translations = {
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделк�� с надёжными продавцами',
     'deposit.method.p2p_market': 'P2P Маркет',
-    'deposit.method.p2p_market_desc': 'Купить без ��осре��ников',
+    'deposit.method.p2p_market_desc': 'Купить без посре��ников',
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
     'deposit.method.external_wallet': 'Внешний кошелёк',
     'deposit.method.external_wallet_desc': 'Перевести с другого кошел��ка',
@@ -348,6 +348,25 @@ const translations = {
     'history.status.pending': 'Ожидание',
     'history.status.processing': 'В обработке',
     'history.status.failed': 'Неуспешно',
+
+    // History Details Modal
+    'history.details.title': 'Детали транзакции',
+    'history.details.group.label': 'Тип операции',
+    'history.details.group.purchase': 'Покупка',
+    'history.details.group.sale': 'Продажа',
+    'history.details.group.deposit': 'Пополнение',
+    'history.details.group.withdrawal': 'Выведение',
+    'history.details.group.transfer': 'Перевод',
+    'history.details.group.other': 'Другое',
+    'history.details.id': 'Номер транзакции',
+    'history.details.amount': 'Сумма',
+    'history.details.instrument': 'Инструмент',
+    'history.details.exchange_rate': 'Курс обмена',
+    'history.details.purchase_price': 'Цена покупки',
+    'history.details.quantity': 'Количество',
+    'history.details.time': 'Время',
+    'history.details.status': 'Статус',
+    'history.details.description': 'Описание',
     
     // Bonuses
     'bonuses.title': 'Бонусы',
@@ -479,7 +498,7 @@ const translations = {
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
     'common.fee': 'Комиссия',
-    'common.total': 'Итог��',
+    'common.total': 'Итого',
     'common.available': 'Доступно',
     'common.balance': 'Баланс',
     'common.price': 'Цена',
