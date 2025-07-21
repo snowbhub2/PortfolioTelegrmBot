@@ -518,8 +518,8 @@ export default function Wallet() {
               <Card className="p-4 text-center border-dashed">
                 <div className="text-muted-foreground">
                   <div className="text-2xl mb-2">📈</div>
-                  <div className="font-medium">Поки немає активів</div>
-                  <div className="text-sm">Купіть активи на сторінці Ринок</div>
+                  <div className="font-medium">{t('wallet.assets.no_assets')}</div>
+                  <div className="text-sm">{t('wallet.assets.buy_on_market')}</div>
                 </div>
               </Card>
             )}
