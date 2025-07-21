@@ -338,10 +338,6 @@ export default function History() {
                 <div className="text-2xl font-bold text-primary">
                   ${portfolioManager.getTotalPortfolioValue().toFixed(2)}
                 </div>
-                <div className="text-xs text-muted-foreground mt-1">
-                  {t('history.portfolio.cash')}: ${portfolioManager.getCashBalance().toFixed(2)} |
-                  CFD: ${portfolioManager.getCfdBalance().toFixed(2)}
-                </div>
               </div>
             </Card>
           </div>
