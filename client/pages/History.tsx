@@ -74,6 +74,45 @@ const getTransactionTitle = (transaction: Transaction, t: any) => {
   }
 };
 
+// Функція для форматування опису транзакції з перекладами
+const getTransactionDescription = (transaction: Transaction, t: any) => {
+  const desc = transaction.description || '';
+
+  // Обробка спеціальних ключів
+  if (desc === 'initial_deposit') {
+    return t('history.description.initial_deposit');
+  }
+
+  // Обробка покупок: purchase_assetId_quantity_price
+  if (desc.startsWith('purchase_')) {
+    const parts = desc.split('_');
+    if (parts.length === 4) {
+      const [, assetId, quantity, price] = parts;
+      return t('history.description.purchase_details', {
+        quantity: parseFloat(quantity).toFixed(4),
+        asset: assetId.toUpperCase(),
+        price: parseFloat(price).toFixed(2)
+      });
+    }
+  }
+
+  // Обробка продажів: sell_assetId_quantity_price
+  if (desc.startsWith('sell_')) {
+    const parts = desc.split('_');
+    if (parts.length === 4) {
+      const [, assetId, quantity, price] = parts;
+      return t('history.description.sell_details', {
+        quantity: parseFloat(quantity).toFixed(4),
+        asset: assetId.toUpperCase(),
+        price: parseFloat(price).toFixed(2)
+      });
+    }
+  }
+
+  // Якщо опис не відповідає шаблону, повертаємо як є
+  return desc;
+};
+
 export default function History() {
   const { user, hapticFeedback, tg } = useTelegram();
   const { t } = useLanguage();
