@@ -317,6 +317,136 @@ export default function History() {
         )}
       </div>
 
+      {/* Transaction Details Modal */}
+      {showDetails && selectedTransaction && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center">
+          <div className="bg-background rounded-t-3xl sm:rounded-3xl w-full sm:max-w-md sm:mx-4 max-h-[90vh] overflow-y-auto">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-background border-b border-border p-4 rounded-t-3xl">
+              <div className="flex items-center justify-between">
+                <h2 className="text-xl font-semibold">{t('history.details.title')}</h2>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={handleCloseDetails}
+                  className="h-8 w-8"
+                >
+                  ✕
+                </Button>
+              </div>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-4 space-y-4">
+              {/* Transaction Icon and Title */}
+              <div className="text-center">
+                <div className="inline-flex p-4 bg-muted rounded-full mb-3">
+                  {getTransactionIcon(selectedTransaction.type)}
+                </div>
+                <h3 className="text-lg font-semibold mb-2">
+                  {getTransactionTitle(selectedTransaction, t)}
+                </h3>
+                <div className={`text-2xl font-bold ${getTransactionColor(selectedTransaction.type)}`}>
+                  {selectedTransaction.type === "buy" ||
+                  selectedTransaction.type === "withdraw" ||
+                  selectedTransaction.type === "transfer_to_cfd"
+                    ? "-"
+                    : "+"}
+                  ${selectedTransaction.amount.toFixed(2)}
+                </div>
+              </div>
+
+              {/* Transaction Details */}
+              <div className="space-y-3">
+                {/* Transaction Group */}
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span className="text-muted-foreground">{t('history.details.group.label')}</span>
+                  <span className="font-medium">{getTransactionGroup(selectedTransaction.type)}</span>
+                </div>
+
+                {/* Transaction ID */}
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span className="text-muted-foreground">{t('history.details.id')}</span>
+                  <span className="font-mono text-sm">{generateTransactionId(selectedTransaction, filteredTransactions.indexOf(selectedTransaction))}</span>
+                </div>
+
+                {/* Amount */}
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span className="text-muted-foreground">{t('history.details.amount')}</span>
+                  <span className="font-medium">${selectedTransaction.amount.toFixed(2)}</span>
+                </div>
+
+                {/* Instrument */}
+                {selectedTransaction.assetId && (
+                  <div className="flex justify-between items-center py-2 border-b border-border">
+                    <span className="text-muted-foreground">{t('history.details.instrument')}</span>
+                    <span className="font-medium">{selectedTransaction.assetId.toUpperCase()}</span>
+                  </div>
+                )}
+
+                {/* Exchange Rate / Purchase Price */}
+                {selectedTransaction.price && (
+                  <div className="flex justify-between items-center py-2 border-b border-border">
+                    <span className="text-muted-foreground">
+                      {selectedTransaction.type === 'buy' ? t('history.details.purchase_price') : t('history.details.exchange_rate')}
+                    </span>
+                    <span className="font-medium">${getExchangeRate(selectedTransaction).toFixed(2)}</span>
+                  </div>
+                )}
+
+                {/* Quantity */}
+                {selectedTransaction.quantity && (
+                  <div className="flex justify-between items-center py-2 border-b border-border">
+                    <span className="text-muted-foreground">{t('history.details.quantity')}</span>
+                    <span className="font-medium">{selectedTransaction.quantity.toFixed(4)}</span>
+                  </div>
+                )}
+
+                {/* Time */}
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span className="text-muted-foreground">{t('history.details.time')}</span>
+                  <span className="font-medium">
+                    {selectedTransaction.timestamp.toLocaleDateString()} {selectedTransaction.timestamp.toLocaleTimeString()}
+                  </span>
+                </div>
+
+                {/* Status */}
+                <div className="flex justify-between items-center py-2 border-b border-border">
+                  <span className="text-muted-foreground">{t('history.details.status')}</span>
+                  <span className={`font-medium ${
+                    selectedTransaction.status === 'completed' ? 'text-success' :
+                    selectedTransaction.status === 'pending' ? 'text-warning' :
+                    selectedTransaction.status === 'processing' ? 'text-info' :
+                    'text-destructive'
+                  }`}>
+                    {t(`history.status.${selectedTransaction.status || 'completed'}`)}
+                  </span>
+                </div>
+
+                {/* Description */}
+                {selectedTransaction.description && (
+                  <div className="py-2">
+                    <span className="text-muted-foreground block mb-2">{t('history.details.description')}</span>
+                    <span className="text-sm">{selectedTransaction.description}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Action Button */}
+              <div className="pt-4">
+                <Button
+                  onClick={handleCloseDetails}
+                  className="w-full"
+                  variant="outline"
+                >
+                  {t('common.close')}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <BottomNavigation />
     </div>
   );
