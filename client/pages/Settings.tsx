@@ -63,7 +63,7 @@ export default function Settings() {
     {
       icon: <GlobeIcon className="w-5 h-5 text-purple-500" />,
       title: t('settings.language'),
-      value: getLanguageName(user?.language_code),
+      value: getCurrentLanguageName(language),
       hasChevron: true,
       action: "language",
     },
@@ -90,7 +90,7 @@ export default function Settings() {
     },
     {
       icon: <MessageSquareIcon className="w-5 h-5 text-orange-500" />,
-      title: "Об��атиться в поддержку",
+      title: "Обратиться в поддержку",
       hasChevron: true,
     },
     {
