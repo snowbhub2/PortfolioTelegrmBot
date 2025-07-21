@@ -119,6 +119,27 @@ const allAssets = [
     iconBgColor: "bg-purple-500",
     category: "crypto",
   },
+  {
+    id: "xrp",
+    symbol: "XRP",
+    name: "XRP",
+    price: 2.45,
+    change24h: -1.85,
+    icon: "💎",
+    iconBgColor: "bg-blue-400",
+    category: "crypto",
+  },
+  // Платина
+  {
+    id: "platinum",
+    symbol: "PLATINUM",
+    name: "Платина",
+    price: 985.50,
+    change24h: 0.45,
+    icon: "🪙",
+    iconBgColor: "bg-gray-300",
+    category: "gold",
+  },
 ];
 
 export default function CoinDetail() {
@@ -183,7 +204,7 @@ export default function CoinDetail() {
             description: "Toncoin — це криптовалюта блокчейну TON (The Open Network), який спочатку розроблявся командою Telegram.",
             points: [
               "Ви можете купувати, продавати або зберігати TON в Гаманці.",
-              "TON відомий своєю високою швидкістю транзакцій та низькими к��місіями."
+              "TON відомий своєю високою швидкістю транзакцій та низькими комісіями."
             ]
           };
         } else if (asset.id === "sol") {
@@ -198,7 +219,7 @@ export default function CoinDetail() {
         } else {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: `${asset.name} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.`,
+            description: `${asset.name} — це криптов��люта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.`,
             points: [
               `Ви можете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
               "Криптовалюти можуть мати високу волатильність цін."
@@ -237,7 +258,7 @@ export default function CoinDetail() {
         } else if (asset.id === "googl") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Alphabet Inc. — материнська компанія Google, провідна інтернет-компанія та розробник пошукової системи Google.",
+            description: "Alphabet Inc. — ��атеринська компанія Google, провідна інтернет-компанія та розробник пошукової системи Google.",
             points: [
               "Ви можете купувати або продавати акції GOOGL через платформу.",
               "Alphabet володіє Google, YouTube, Android та багатьма іншими сервісами."
@@ -258,7 +279,7 @@ export default function CoinDetail() {
         if (asset.id === "gold") {
           return {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
-            description: "Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.",
+            description: "Золото — це дорогоцінний метал, який протягом тисячоліть викори��товується як засіб збереження вартості та захисту від інфляції.",
             points: [
               "Ви можете купувати або продавати золото через платформу.",
               "Золото традиційно вважається 'безпечним притулком' для інвесторів."
