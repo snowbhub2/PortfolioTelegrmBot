@@ -64,7 +64,7 @@ const translations = {
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
     'notifications.promotions': 'Акции',
-    'notifications.promotions_desc': 'Розыгрыши и бонусы',
+    'notifications.promotions_desc': 'Розыгры��и и бонусы',
     'notifications.educational': 'Об��азовательный ко��тент',
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
@@ -95,7 +95,7 @@ const translations = {
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
-    'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
+    'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРА��НОЙ СВЯЗИ',
     'notifications.category.feedback_desc': 'Опросы пользователей, ��оторые помогают улучши��ь сервис.',
     
     // Wallet
@@ -176,7 +176,7 @@ const translations = {
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
     'coin.quantity': 'Количество',
-    'coin.current_value': 'Текуща�� стоимость',
+    'coin.current_value': 'Текущая стоимость',
     'coin.btn.buy': 'Купить',
     'coin.btn.sell': 'Продать',
     'coin.btn.deposit': 'Пополнить',
@@ -202,7 +202,7 @@ const translations = {
     'wallet.assets.dollars_cash': 'Доллары USD',
     'wallet.assets.for_trading': 'для инвестирования',
     'wallet.assets.no_assets': 'Пока нет активов',
-    'wallet.assets.buy_on_market': 'Купите акт��вы на стр��нице Рынок',
+    'wallet.assets.buy_on_market': 'Купите акт��вы на странице Рынок',
 
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
@@ -218,8 +218,8 @@ const translations = {
     'deposit.method.external_wallet_desc': 'Перевести с крипто кошелька',
 
     // Deposit Asset Selection
-    'deposit.asset.popular': 'ПОПУЛЯРНЫЕ',
-    'deposit.asset.all': 'ВСЕ',
+    'deposit.asset.popular': 'ДОСТУПНЫЕ',
+    'deposit.asset.all': 'ВСЕ КРИПТОВАЛЮТЫ АВТОМАТИЧЕСКИ КОНВЕРТИРУЮТСЯ В ДОЛЛАРЫ США, ПО АКТУАЛЬНОМУ КУРСУ',
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
@@ -250,7 +250,7 @@ const translations = {
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
-    'withdraw.amount.insufficient_funds': 'Недоста��очно средств.',
+    'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
@@ -488,7 +488,7 @@ const translations = {
     'exchange.back': 'Назад',
     'exchange.search': 'По��ск',
     'exchange.top_up': 'Пополн����ь',
-    'exchange.enter_amount': 'Введит�� сумму',
+    'exchange.enter_amount': 'Введите сумму',
     'exchange.select_asset': 'Выберите актив',
     
     // Common
@@ -530,7 +530,7 @@ const translations = {
     'common.skip': 'Пропустить',
     'common.done': 'Готов��',
     'common.copied': 'Ско��ировано',
-    'common.copy': '��опироват��',
+    'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
     'common.support': 'Поддержка',
@@ -550,7 +550,7 @@ const translations = {
     'common.center': 'Центр',
     'common.up': 'Вверх',
     'common.down': 'Вниз',
-    'common.high': 'Высокий',
+    'common.high': 'Высо��ий',
     'common.low': 'Низкий',
     'common.medium': 'Средний',
     'common.fast': 'Быстро',
@@ -844,8 +844,8 @@ const translations = {
     'deposit.method.external_wallet_desc': 'Transfer from crypto wallet',
 
     // Deposit Asset Selection (English)
-    'deposit.asset.popular': 'POPULAR',
-    'deposit.asset.all': 'ALL',
+    'deposit.asset.popular': 'AVAILABLE',
+    'deposit.asset.all': 'ALL CRYPTOCURRENCIES ARE AUTOMATICALLY CONVERTED TO USD AT CURRENT RATE',
     'deposit.asset.not_found': 'Assets not found',
 
     // Deposit Network Selection (English)
