@@ -49,7 +49,7 @@ const translations = {
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
-    'notifications.promotions': 'Акции',
+    'notifications.promotions': 'Акци��',
     'notifications.promotions_desc': 'Розыгрыши и бонусы',
     'notifications.educational': 'Образовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
@@ -87,7 +87,7 @@ const translations = {
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
     'wallet.assets.hide': 'Скрыть',
-    'wallet.assets.show': 'Показать',
+    'wallet.assets.show': 'Показ��ть',
     'wallet.assets.cashDollars': 'Доллары',
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купили за:',
@@ -109,7 +109,7 @@ const translations = {
 
     // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
-    'wallet.notification.withDollars': 'с долларами',
+    'wallet.notification.withDollars': 'с доллар��ми',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -285,7 +285,7 @@ const translations = {
     'common.new': 'Новый',
     'common.old': 'Старый',
     'common.recent': 'Недавние',
-    'common.popular': 'Популярные',
+    'common.popular': 'Популярн��е',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
     'common.top': 'Топ',
@@ -547,12 +547,12 @@ const translations = {
     'deposit.method.external_wallet_desc': 'Transfer from another wallet',
 
     // Withdraw Pages (English)
-    'withdrawMethod.title': 'How to send',
-    'withdrawMethod.subtitle': 'cryptocurrency',
-    'withdrawMethod.telegramContact': 'Telegram Contact',
-    'withdrawMethod.instantNoFees': 'Instant and no fees',
-    'withdrawMethod.externalWallet': 'External wallet or exchange',
-    'withdrawMethod.needAddress': 'Need to specify crypto address',
+    'withdraw.method.title': 'How to send',
+    'withdraw.method.subtitle': 'cryptocurrency',
+    'withdraw.method.telegram.title': 'Telegram Contact',
+    'withdraw.method.telegram.description': 'Instant and no fees',
+    'withdraw.method.external.title': 'External wallet or exchange',
+    'withdraw.method.external.description': 'Need to specify crypto address',
   },
 };
 
