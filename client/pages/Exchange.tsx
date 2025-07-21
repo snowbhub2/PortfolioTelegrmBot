@@ -318,9 +318,11 @@ export default function Exchange() {
   const fromValue = parseFloat(fromAmount) * (fromAsset?.currentPrice || 0);
   const toAmount = toAsset?.currentPrice && fromAmount ? fromValue / toAsset.currentPrice : 0;
 
+  const minAmount = fromAsset?.id === "usd" ? 20 : 0.01;
+
   const isValidAmount =
     fromAsset &&
-    parseFloat(fromAmount) > 0 &&
+    parseFloat(fromAmount) >= minAmount &&
     parseFloat(fromAmount) <= fromAsset.quantity;
 
   const isInsufficientFunds = fromAsset && parseFloat(fromAmount) > fromAsset.quantity;
@@ -337,7 +339,9 @@ export default function Exchange() {
   const handleMaxAmount = () => {
     if (fromAsset) {
       hapticFeedback("light");
-      setFromAmount(fromAsset.quantity.toString());
+      // Обрізаємо до 2 знаків після коми без заокруглень
+      const maxAmount = Math.floor(fromAsset.quantity * 100) / 100;
+      setFromAmount(maxAmount.toFixed(2));
     }
   };
 
@@ -476,8 +480,18 @@ export default function Exchange() {
               type="number"
               placeholder="0"
               value={fromAmount}
+              step="0.01"
+              min={fromAsset?.id === "usd" ? "20" : "0.01"}
               onChange={(e) => {
-                setFromAmount(e.target.value);
+                const value = e.target.value;
+                // Обмежуємо до 2 знаків після коми
+                if (value.includes('.')) {
+                  const parts = value.split('.');
+                  if (parts[1] && parts[1].length > 2) {
+                    return; // Не дозволяємо більше 2 знаків після коми
+                  }
+                }
+                setFromAmount(value);
                 setError("");
               }}
               className={`text-6xl font-bold bg-transparent border-0 focus:outline-none w-1/2 ${
@@ -518,6 +532,11 @@ export default function Exchange() {
 
           {isInsufficientFunds && (
             <div className="text-destructive text-sm mt-2">Недостатньо коштів.</div>
+          )}
+          {fromAsset && parseFloat(fromAmount) > 0 && parseFloat(fromAmount) < minAmount && (
+            <div className="text-destructive text-sm mt-2">
+              Мінімальна сума: {fromAsset.id === "usd" ? "$20" : "0.01"}
+            </div>
           )}
         </div>
 
