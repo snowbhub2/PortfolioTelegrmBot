@@ -611,7 +611,7 @@ export default function Exchange() {
           )}
 
           {isInsufficientFunds && (
-            <div className="text-destructive text-sm mt-2">Недостатньо коштів.</div>
+            <div className="text-destructive text-sm mt-2">Недостаточно средств</div>
           )}
           {fromAsset && parseFloat(fromAmount) > 0 && parseFloat(fromAmount) < minFromAmount && (
             <div className="text-destructive text-sm mt-2">
@@ -710,7 +710,7 @@ export default function Exchange() {
           {/* Повідомлення про недостатність коштів при обчисленні від toAmount */}
           {lastEditedField === 'to' && calculatedFromAmount > (fromAsset?.quantity || 0) && calculatedFromAmount > 0 && (
             <div className="text-destructive text-sm mt-2">
-              Недостатньо кош��ів для такої суми
+              Недостаточно средств для такой сделки
             </div>
           )}
         </div>
