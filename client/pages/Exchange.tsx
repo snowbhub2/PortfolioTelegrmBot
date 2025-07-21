@@ -198,6 +198,7 @@ const trendingAssets: MarketAsset[] = [
 const allMarketAssets = [...cryptoAssets, ...stockAssets, ...goldAssets, ...trendingAssets];
 
 export default function Exchange() {
+  const { t } = useLanguage();
   const { hapticFeedback, user, tg } = useTelegram();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
