@@ -529,18 +529,18 @@ export default function Exchange() {
               }`}
               style={{ fontSize: '4rem' }}
             />
+            {/* Кнопка Макс горизонтально після інпуту */}
+            {fromAsset && fromAsset.quantity > 0 && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleMaxAmount}
+                className="text-primary hover:underline p-0 h-auto sm:ml-2"
+              >
+                {t('exchange.max')}
+              </Button>
+            )}
             <div className="flex items-center gap-4">
-              {/* Кнопка Макс горизонтально */}
-              {fromAsset && fromAsset.quantity > 0 && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleMaxAmount}
-                  className="text-primary hover:underline p-0 h-auto"
-                >
-                  {t('exchange.max')}
-                </Button>
-              )}
               <div
                 className="flex items-center gap-2 cursor-pointer"
                 onClick={() => setShowFromSelect(true)}
