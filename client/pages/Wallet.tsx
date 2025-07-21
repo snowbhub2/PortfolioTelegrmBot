@@ -515,7 +515,7 @@ export default function Wallet() {
         </div>
 
         {/* Trending Section */}
-        <div className="p-4 border-t border-border">
+        <div className="p-4 pt-2 mt-[26px] sm:pt-4 sm:mt-0 border-t border-border">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-muted-foreground text-sm">{t('wallet.trending.title')}</h3>
             <button
