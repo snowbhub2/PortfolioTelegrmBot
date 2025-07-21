@@ -20,7 +20,7 @@ const translations = {
     'nav.history': 'История',
     
     // Settings
-    'settings.title': 'ОСНОВНЫЕ НАСТР��ЙКИ',
+    'settings.title': 'ОСНОВНЫЕ НАСТРОЙКИ',
     'settings.notifications': 'Уведомления',
     'settings.passcode': 'Код-пароль и Face ID',
     'settings.language': 'Язык',
@@ -46,7 +46,7 @@ const translations = {
     // Notifications
     'notifications.title': 'УВЕДОМЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
-    'notifications.market_trends_desc': 'Изменение цен на активы',
+    'notifications.market_trends_desc': 'Изменение цен на ак��ивы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
     'notifications.promotions': 'Акции',
@@ -62,7 +62,7 @@ const translations = {
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_desc': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
-    'notifications.cfd_news_text': 'Все новости можно узнать в канале',
+    'notifications.cfd_news_text': 'Все новос��и можно узнать в канале',
     'notifications.on': 'Вкл',
     'notifications.off': 'Выкл',
     
@@ -104,7 +104,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с вы��окими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -186,6 +186,14 @@ const translations = {
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
     'deposit.method.external_wallet': 'Внешний кошелёк',
     'deposit.method.external_wallet_desc': 'Перевести с другого кошелька',
+
+    // Withdraw Pages
+    'withdrawMethod.title': 'Как отправить',
+    'withdrawMethod.subtitle': 'криптовалюту',
+    'withdrawMethod.telegramContact': 'Контакт в Telegram',
+    'withdrawMethod.instantNoFees': 'Мгновенно и без комиссий',
+    'withdrawMethod.externalWallet': 'Внешний кошелёк или биржа',
+    'withdrawMethod.needAddress': 'Нужно указать криптоадрес',
     
     // History
     'history.title': 'Ис��ория',
