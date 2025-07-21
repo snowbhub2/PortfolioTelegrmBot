@@ -28,7 +28,7 @@ const translations = {
     'settings.enabled': 'Вкл',
     'settings.verification': 'Уровень в��рификации',
     'settings.max': 'Макси',
-    'settings.not_applies': 'Не распространяется на аккаунт CFD Space.',
+    'settings.not_applies': 'Не распростра��яется на аккаунт CFD Space.',
     'settings.support': 'Обратиться в поддержку',
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
@@ -103,7 +103,7 @@ const translations = {
     'wallet.balance.portfolio': '��аланс Портфеля',
     'wallet.balance.allTime': 'за весь час',
     'wallet.actions.withdraw': 'Вывести',
-    'wallet.actions.deposit': 'Пополнить',
+    'wallet.actions.deposit': 'По��олнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
@@ -196,7 +196,7 @@ const translations = {
     'wallet.trending.title': 'В ТР��НДЕ',
     'wallet.demo.message': '🎭 Demo режим - для ��олных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть на��тройки',
-    'wallet.user.avatar': 'аватар пользо��ателя',
+    'wallet.user.avatar': 'аватар пользователя',
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
     'wallet.assets.dollars_cash': 'Доллары (наличные)',
@@ -252,7 +252,7 @@ const translations = {
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
     'withdraw.amount.buy_more': 'Докупить.',
-    'withdraw.amount.balance': 'Баланс',
+    'withdraw.amount.balance': 'Б��ланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
 
@@ -271,6 +271,15 @@ const translations = {
     'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
     'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
     'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
+
+    // CFD Page
+    'cfd.title': 'CFD Торговля',
+    'cfd.balance.title': 'Баланс CFD',
+    'cfd.balance.description': 'Средства для контрактов на разность цен',
+    'cfd.nav.market': 'Рынок',
+    'cfd.nav.trades': 'Сделки',
+    'cfd.nav.autotrading': 'Автоторговля',
+    'cfd.nav.history': 'История',
     
     // History
     'history.title': 'Ис��ория',
@@ -339,7 +348,7 @@ const translations = {
     // Transfer
     'transfer.title': 'Перевод сре��ств',
     'transfer.subtitle': 'Между Портфелем и CFD',
-    'transfer.portfolio': 'Портфель',
+    'transfer.portfolio': 'Порт��ель',
     'transfer.cash': 'Наличные',
     'transfer.for_trading': 'Для торговли',
     'transfer.direction.to_cfd': 'Перевод в CFD',
@@ -360,7 +369,7 @@ const translations = {
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
-    'transfer.error.transfer_failed': 'Ошибка перевода',
+    'transfer.error.transfer_failed': 'Ошибка перевод��',
     
     // Asset Details
     'asset.about': 'О КРИПТОВАЛЮТЕ',
@@ -391,7 +400,7 @@ const translations = {
     // Common
     'common.back': 'Назад',
     'common.next': 'Далее',
-    'common.continue': 'Продолжить',
+    'common.continue': 'Продол��ить',
     'common.cancel': 'Отмена',
     'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
@@ -417,7 +426,7 @@ const translations = {
     'common.search': 'Поиск',
     'common.back': 'Назад',
     'common.filter': 'Фильтр',
-    'common.sort': 'Сорти��о��ка',
+    'common.sort': 'Сортиро��ка',
     'common.all': 'Все',
     'common.none': 'Нет',
     'common.yes': 'Да',
@@ -426,7 +435,7 @@ const translations = {
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
     'common.done': 'Готово',
-    'common.copied': 'Скопировано',
+    'common.copied': 'Скоп��ровано',
     'common.copy': 'Копировать',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
