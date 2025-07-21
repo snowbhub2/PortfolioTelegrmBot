@@ -419,7 +419,7 @@ export default function Wallet() {
               onClick={toggleAssetsVisibility}
               className="text-muted-foreground"
             >
-              {showAllAssets ? "Сховати" : "Показати"}
+              {showAllAssets ? t('wallet.assets.hide') : t('wallet.assets.show')}
             </Button>
           </div>
 
