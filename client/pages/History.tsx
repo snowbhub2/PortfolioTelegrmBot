@@ -128,9 +128,9 @@ export default function History() {
       <div className="pb-20">
         {/* Header */}
         <div className="p-4 border-b border-border">
-          <h1 className="text-xl font-semibold">Історія операцій</h1>
+          <h1 className="text-xl font-semibold">{t('history.title')}</h1>
           <p className="text-sm text-muted-foreground">
-            Всі ваші транзакції та операції
+            {t('history.subtitle')}
           </p>
         </div>
 
@@ -138,11 +138,11 @@ export default function History() {
         <div className="p-4 border-b border-border">
           <div className="flex gap-2 overflow-x-auto">
             {[
-              { key: "all", label: "Всі" },
-              { key: "buy", label: "Покупки" },
-              { key: "sell", label: "Продажі" },
-              { key: "deposit", label: "Поповнення" },
-              { key: "withdraw", label: "Виведення" },
+              { key: "all", label: t('history.filter.all') },
+              { key: "buy", label: t('history.filter.buy') },
+              { key: "sell", label: t('history.filter.sell') },
+              { key: "deposit", label: t('history.filter.deposit') },
+              { key: "withdraw", label: t('history.filter.withdraw') },
             ].map((item) => (
               <Button
                 key={item.key}
@@ -165,14 +165,14 @@ export default function History() {
           {filteredTransactions.length === 0 ? (
             <Card className="p-8 text-center">
               <div className="text-4xl mb-4">📊</div>
-              <div className="font-medium mb-2">Поки немає транзакцій</div>
+              <div className="font-medium mb-2">{t('history.empty.title')}</div>
               <div className="text-sm text-muted-foreground mb-4">
                 {filter === "all"
-                  ? "Ваші операції з'являться тут"
-                  : "Немає операцій цього типу"}
+                  ? t('history.empty.subtitle_all')
+                  : t('history.empty.subtitle_filtered')}
               </div>
               <Button onClick={() => navigate("/market")} variant="outline">
-                Перейти до торгівлі
+                {t('history.empty.go_to_market')}
               </Button>
             </Card>
           ) : (
@@ -238,13 +238,13 @@ export default function History() {
             <Card className="p-4 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
               <div className="text-center">
                 <div className="text-sm text-muted-foreground mb-1">
-                  Загальна вартість портфеля
+                  {t('history.portfolio.total_value')}
                 </div>
                 <div className="text-2xl font-bold text-primary">
                   ${portfolioManager.getTotalPortfolioValue().toFixed(2)}
                 </div>
                 <div className="text-xs text-muted-foreground mt-1">
-                  Готівка: ${portfolioManager.getCashBalance().toFixed(2)} |
+                  {t('history.portfolio.cash')}: ${portfolioManager.getCashBalance().toFixed(2)} |
                   CFD: ${portfolioManager.getCfdBalance().toFixed(2)}
                 </div>
               </div>
