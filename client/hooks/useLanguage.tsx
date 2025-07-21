@@ -87,7 +87,7 @@ const translations = {
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_description': 'Пол��чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
-    'notifications.cfd_news_text': 'Все новости можно узнать в кана����',
+    'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
@@ -131,7 +131,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Д��даткові переклади для всіх текстів
+    // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с Nobel Portfolio',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
@@ -158,7 +158,7 @@ const translations = {
     'history.transaction.sell': 'Продаж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
-    'history.no_transactions': 'Пока не�� транзакций',
+    'history.no_transactions': 'Пока не���� транзакций',
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
@@ -227,13 +227,13 @@ const translations = {
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
-    'deposit.address.title': 'Ваш адрес в',
+    'deposit.address.title': 'Ваш адрес для пополнения',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозвратно утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
-    'deposit.address.copy': 'Копировать адре��',
+    'deposit.address.copy': 'Копировать адрес',
     'deposit.address.copied': 'Адрес скопирован в буфер',
     'deposit.address.copied_notification': 'Адрес скопирован в буфер.',
 
@@ -270,7 +270,7 @@ const translations = {
     'withdraw.processing.status': 'Статус',
     'withdraw.processing.return_to_portfolio': 'Вернуться к портфелю',
     'withdraw.processing.telegram_stars_exchange': 'Обмен на Telegram Stars',
-    'withdraw.processing.external_withdrawal': 'Вывод на внешн��й кошелёк',
+    'withdraw.processing.external_withdrawal': 'Вывод на внешний кошелёк',
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
@@ -326,8 +326,8 @@ const translations = {
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
     'history.filter.deposit': 'Пополнения',
-    'history.filter.withdraw': 'Выведен��я',
-    'history.empty.title': 'Пока нет транзак��ий',
+    'history.filter.withdraw': 'Выведения',
+    'history.empty.title': 'Пока нет т��анзак��ий',
     'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
@@ -399,7 +399,7 @@ const translations = {
     'exchange.insufficient_funds': 'Недостаточно средств.',
     'exchange.select_instrument': '��ыбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
-    'exchange.review_deal': 'Просмотреть сде��ку',
+    'exchange.review_deal': 'Просмотреть сделку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
@@ -423,7 +423,7 @@ const translations = {
     'transfer.info.portfolio_desc': 'Портфель - ��аличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов ��а разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
-    'transfer.info.history_saved': 'Все операции сохраняются в истории',
+    'transfer.info.history_saved': 'Все операции сохраняются в ��стории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
     'transfer.error.transfer_failed': 'Ошибка перевода',
@@ -469,7 +469,7 @@ const translations = {
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або ��берігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
-    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
+    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом т��сячоліть використовується як засіб збереження вартості та захисту від інфляції.',
     'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
@@ -499,7 +499,7 @@ const translations = {
     'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
     'common.save': 'С��хранить',
-    'common.edit': 'Редактировать',
+    'common.edit': 'Редакт��ровать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
     'common.error': '����ибка',
@@ -853,7 +853,7 @@ const translations = {
     'deposit.network.select': 'SELECT NETWORK',
 
     // Deposit Address (English)
-    'deposit.address.title': 'Your address in',
+    'deposit.address.title': 'Your address for deposit',
     'deposit.address.warning_start': 'Send only',
     'deposit.address.warning_end': 'Assets from other networks or NFTs will be permanently lost.',
     'deposit.address.qr_description': 'Scan QR code to send',
