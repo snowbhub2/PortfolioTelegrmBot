@@ -24,7 +24,7 @@ export interface BonusReward {
   id: string;
   name: string;
   symbol: string;
-  apy: number;
+  apy: number | string;
   icon: string;
   status: "active" | "completed";
 }
