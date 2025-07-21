@@ -77,15 +77,15 @@ export default function Settings() {
   ];
 
   const walletTabs = [
-    { id: "wallet", label: "Кошелёк", active: true },
-    { id: "cfdspace", label: "CFD Space", error: true },
+    { id: "wallet", label: t('settings.walletTab'), active: true },
+    { id: "cfdspace", label: t('settings.cfdSpaceTab'), error: true },
   ];
 
   const supportItems = [
     {
       icon: <CreditCardIcon className="w-5 h-5 text-blue-500" />,
-      title: "Уровень верификации",
-      value: "Макси",
+      title: t('settings.verificationLevel'),
+      value: t('settings.maxiVerification'),
       hasChevron: true,
     },
     {
