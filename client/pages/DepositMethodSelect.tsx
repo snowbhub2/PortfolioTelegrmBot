@@ -109,9 +109,9 @@ export default function DepositMethodSelect() {
                   </svg>
                 </div>
                 <div>
-                  <div className="font-semibold text-lg">P2P Экспресс</div>
+                  <div className="font-semibold text-lg">{t('deposit.method.p2p_express')}</div>
                   <div className="text-sm text-muted-foreground">
-                    Сделки с надёжными продавцами
+                    {t('deposit.method.p2p_express_desc')}
                   </div>
                 </div>
               </div>
@@ -139,13 +139,13 @@ export default function DepositMethodSelect() {
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-semibold text-lg">P2P Маркет</span>
+                    <span className="font-semibold text-lg">{t('deposit.method.p2p_market')}</span>
                     <span className="bg-muted px-2 py-1 rounded text-xs font-medium">
                       PRO
                     </span>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Купить без посредников
+                    {t('deposit.method.p2p_market_desc')}
                   </div>
                 </div>
               </div>
