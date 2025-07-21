@@ -47,7 +47,7 @@ const translations = {
     'settings.walletNews': 'Новости Портфеля',
     'settings.cfdNotApplicable': 'Распространяется на аккаунт CFD',
     'settings.userAgreement': 'Пользовательское соглашение',
-    'settings.privacyPolicy': 'Политика конфиденциа��ьности',
+    'settings.privacyPolicy': 'Политика конфиденциальности',
     'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
     'settings.learnMore': 'Узнать больше',
@@ -85,8 +85,8 @@ const translations = {
     'notifications.news_text': 'Все новости вы можете прочитать в канале',
     'notifications.news_channel_link': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
-    'notifications.cfd_for': 'Уве��омления для',
-    'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
+    'notifications.cfd_for': 'Уведомления для',
+    'notifications.cfd_description': 'Пол��чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
@@ -205,7 +205,7 @@ const translations = {
     'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
 
     // Deposit Pages
-    'deposit.method.title': 'Как вы хотите ку��ить',
+    'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'крипт��валюту',
     'deposit.method.bank_card': 'Банковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
@@ -251,7 +251,7 @@ const translations = {
 
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
-    'withdraw.amount.buy_more': 'До����пить.',
+    'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
@@ -301,7 +301,7 @@ const translations = {
     'asset.price.title': 'ЦЕНА',
     'asset.price.details': 'Подробнее',
     'asset.price.24h': '24ч',
-    'asset.transaction_history': 'ИСТОРИЯ ТРАНЗАКЦИЙ',
+    'asset.transaction_history': 'ИСТОРИЯ ТРАНЗАК��ИЙ',
     'asset.transaction.exchange_btc_usdt': 'Обмен: BTC на USDT',
     'asset.transaction.exchange_ton_btc': 'Обмен: TON на BTC',
     'asset.transaction.status.sent': 'Отправлено',
@@ -376,7 +376,7 @@ const translations = {
     
     // Bonuses
     'bonuses.title': 'Бонусы',
-    'bonuses.hero.title': 'Бону��ы в Кошельке',
+    'bonuses.hero.title': 'Бону��ы �� Кошельке',
     'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
@@ -459,7 +459,7 @@ const translations = {
     'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатк��в (DApps), запущена в 2015 році.',
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
-    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac т�� іншими пристроями.',
+    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
     'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
@@ -493,9 +493,9 @@ const translations = {
     'common.next': 'Далее',
     'common.continue': 'Продолжить',
     'common.cancel': 'Отмена',
-    'common.confirm': 'Подтверд��ть',
+    'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
-    'common.save': 'Сохранить',
+    'common.save': 'С��хранить',
     'common.edit': 'Редактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
@@ -534,9 +534,9 @@ const translations = {
     'common.about': 'О приложении',
     'common.version': 'Версия',
     'common.update': 'Обновить',
-    'common.new': 'Но��ый',
+    'common.new': 'Новый',
     'common.old': 'Старый',
-    'common.recent': 'Недавн��е',
+    'common.recent': 'Не��авн��е',
     'common.popular': 'Популярные',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
@@ -1014,8 +1014,9 @@ const translations = {
 
     // Transaction Descriptions
     'history.description.initial_deposit': 'Initial deposit',
-    'history.description.purchase_details': 'Purchase {{quantity}} {{asset}} for ${{price}}',
-    'history.description.sell_details': 'Sell {{quantity}} {{asset}} for ${{price}}',
+    'history.description.purchase_prefix': 'Purchase',
+    'history.description.sell_prefix': 'Sale',
+    'history.description.for': 'for',
 
     // Bonuses (English)
     'bonuses.hero.title': 'Wallet Bonuses',
