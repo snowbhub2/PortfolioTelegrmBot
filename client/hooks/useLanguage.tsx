@@ -20,7 +20,7 @@ const translations = {
     'nav.history': 'История',
     
     // Settings
-    'settings.title': 'ОСНОВНЫЕ НАСТРОЙКИ',
+    'settings.title': 'ОСНОВНЫЕ НАСТ��ОЙКИ',
     'settings.notifications': 'Уведомления',
     'settings.passcode': 'Код-пароль и Face ID',
     'settings.language': 'Язык',
@@ -45,7 +45,7 @@ const translations = {
     
     // Notifications
     'notifications.title': 'УВЕДОМЛЕНИЯ',
-    'notifications.market_trends': 'Тренды рынка',
+    'notifications.market_trends': 'Тр��нды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
@@ -82,7 +82,7 @@ const translations = {
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
-    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
+    'wallet.notification.earnTitle': 'Зараб��тывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
@@ -131,7 +131,7 @@ const translations = {
 
     // History Page - базові переклади
     'history.transaction.buy': 'Покупка',
-    'history.transaction.sell': 'Продаж',
+    'history.transaction.sell': 'Пр��даж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
     'history.no_transactions': 'Пока нет транзакций',
@@ -205,7 +205,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Ак��ивы других сетей или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -521,6 +521,17 @@ const translations = {
     'market.stocks': 'Stocks',
     'market.gold': 'Gold',
     'market.price_change': 'Price change',
+    'market.search_placeholder': 'Search',
+    'market.trending_title': 'TRENDING',
+    'market.per_day': 'per day',
+    'market.top_of_day': 'TOP OF DAY',
+    'market.tab.all': 'All',
+    'market.tab.stocks': 'Stocks',
+    'market.tab.crypto': 'Crypto',
+    'market.tab.gold': 'Gold',
+    'market.asset.gold': 'Gold',
+    'market.asset.silver': 'Silver',
+    'market.asset.platinum': 'Platinum',
     
     // History
     'history.title': 'History',
