@@ -171,7 +171,7 @@ export default function Exchange() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [fromAsset, setFromAsset] = useState<UserAsset | null>(null);
-  const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автоматично обираємо
+  const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автомати��но обираємо
   const [fromAmount, setFromAmount] = useState("");
   const [userAssets, setUserAssets] = useState<UserAsset[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -232,7 +232,7 @@ export default function Exchange() {
         const allAvailable = [...allAssets, ...allMarketAssets];
         const toAssetFromUrl = allAvailable.find(asset => asset.id === toParam);
         if (toAssetFromUrl && !toAsset) {
-          // Конвертуємо в UserAsset формат якщо це ринковий актив
+          // Конвертуємо в UserAsset формат якщо ц�� ринковий актив
           if (!allAssets.find(a => a.id === toAssetFromUrl.id)) {
             const marketAsset = toAssetFromUrl as any;
             setToAsset({
@@ -753,6 +753,8 @@ function getAssetColor(symbol?: string): string {
     TSLA: "bg-red-500",
     MSFT: "bg-blue-600",
     GOOGL: "bg-red-600",
+    CATI: "bg-pink-500",
+    XTZ: "bg-blue-400",
   };
   return colors[symbol] || "bg-primary";
 }
