@@ -146,7 +146,7 @@ export default function Settings() {
 
         {/* Basic Settings */}
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          ОСНОВНЫЕ НАСТРОЙКИ
+          {t('settings.basicSettingsTitle')}
         </h2>
         <Card className="mb-6">
           {settingsItems.map((item, index) => (
