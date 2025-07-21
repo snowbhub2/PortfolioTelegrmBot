@@ -16,7 +16,7 @@ const cryptoAssets: MarketAsset[] = [
     price: 109008.18,
     change24h: 1.09,
     marketCap: 2150000000000,
-    icon: "��",
+    icon: "₿",
     sparkline: [108000, 108500, 109000, 109008],
   },
   {
@@ -136,7 +136,7 @@ export default function Exchange() {
   const { hapticFeedback, user, tg } = useTelegram();
   const navigate = useNavigate();
   const [fromAsset, setFromAsset] = useState<UserAsset | null>(null);
-  const [toAsset, setToAsset] = useState<UserAsset | null>(null);
+  const [toAsset, setToAsset] = useState<UserAsset | null>(null); // НЕ автоматично обираємо
   const [fromAmount, setFromAmount] = useState("");
   const [userAssets, setUserAssets] = useState<UserAsset[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -184,26 +184,12 @@ export default function Exchange() {
         setFromAsset(allAssets[0]);
       }
 
-      // Автоматично обираємо перший ринковий актив якщо маємо долари
-      if (allAssets.length > 0 && allAssets[0].id === "usd" && !toAsset) {
-        const firstMarketAsset = allMarketAssets[0];
-        const marketAssetForExchange: UserAsset = {
-          id: firstMarketAsset.id,
-          symbol: firstMarketAsset.symbol,
-          name: firstMarketAsset.name,
-          quantity: 0,
-          avgPrice: firstMarketAsset.price,
-          currentPrice: firstMarketAsset.price,
-          icon: firstMarketAsset.icon,
-          category: "crypto",
-        };
-        setToAsset(marketAssetForExchange);
-      }
-
+      // НЕ автоматично обираємо toAsset - користувач має вибрати сам
+      
       setFromAmount("");
       setError("");
     }
-  }, [portfolioManager, fromAsset, toAsset]);
+  }, [portfolioManager, fromAsset]);
 
   // Налаштування Telegram
   useEffect(() => {
@@ -247,6 +233,13 @@ export default function Exchange() {
     setFromAsset(toAsset);
     setToAsset(temp);
     setFromAmount("");
+  };
+
+  const handleMaxAmount = () => {
+    if (fromAsset) {
+      hapticFeedback("light");
+      setFromAmount(fromAsset.quantity.toString());
+    }
   };
 
   const handleBalanceClick = () => {
@@ -330,10 +323,12 @@ export default function Exchange() {
     asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const filteredMarketAssets = allMarketAssets.filter(asset => 
-    asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredMarketAssets = allMarketAssets
+    .filter(asset => 
+      asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .filter(asset => asset.id !== fromAsset?.id); // Заборонити обирати той самий актив
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -346,7 +341,7 @@ export default function Exchange() {
 
       {/* Main Content */}
       <div className="px-4 pb-20">
-        {/* Ви сплачуєте */}
+        {/* Ви сп��ачуєте */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className={`w-8 h-8 ${getAssetColor(fromAsset?.symbol)} rounded-full flex items-center justify-center`}>
@@ -386,6 +381,20 @@ export default function Exchange() {
             </div>
           </div>
 
+          {/* Кнопка Макс */}
+          {fromAsset && fromAsset.quantity > 0 && (
+            <div className="flex justify-end mt-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={handleMaxAmount}
+                className="text-primary hover:underline p-0 h-auto"
+              >
+                Макс
+              </Button>
+            </div>
+          )}
+
           {isInsufficientFunds && (
             <div className="text-destructive text-sm">Недостатньо коштів.</div>
           )}
@@ -407,28 +416,37 @@ export default function Exchange() {
         {/* Ви отримаєте */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className={`w-8 h-8 ${getAssetColor(toAsset?.symbol)} rounded-full flex items-center justify-center`}>
+            <div className={`w-8 h-8 ${toAsset ? getAssetColor(toAsset?.symbol) : "bg-muted"} rounded-full flex items-center justify-center`}>
               <span className="text-white text-sm font-bold">
-                {toAsset?.icon || "🔷"}
+                {toAsset?.icon || "?"}
               </span>
             </div>
             <span className="text-foreground">Ви отримаєте</span>
           </div>
 
-          <div className="flex items-center justify-between mb-2">
-            <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
-              {toAmount.toFixed(8)}
+          {toAsset ? (
+            <div className="flex items-center justify-between mb-2">
+              <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
+                {toAmount.toFixed(8)}
+              </div>
+              <div
+                className="flex items-center gap-2 cursor-pointer"
+                onClick={() => setShowToSelect(true)}
+              >
+                <span className="text-4xl font-light text-muted-foreground">
+                  {toAsset.symbol}
+                </span>
+                <span className="text-muted-foreground">›</span>
+              </div>
             </div>
-            <div
-              className="flex items-center gap-2 cursor-pointer"
+          ) : (
+            <div 
+              className="flex items-center justify-center py-8 cursor-pointer hover:bg-muted/50 rounded-lg border border-dashed border-muted-foreground/30"
               onClick={() => setShowToSelect(true)}
             >
-              <span className="text-4xl font-light text-muted-foreground">
-                {toAsset?.symbol || "BTC"}
-              </span>
-              <span className="text-muted-foreground">›</span>
+              <span className="text-muted-foreground text-lg">Вибрати інструмент</span>
             </div>
-          </div>
+          )}
         </div>
 
         {/* Spacer */}
@@ -448,11 +466,11 @@ export default function Exchange() {
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-background">
         <Button
           className={`w-full py-4 text-lg font-medium rounded-xl ${
-            isValidAmount && !isLoading 
+            isValidAmount && !isLoading && toAsset
               ? "bg-primary hover:bg-primary/80 text-primary-foreground" 
               : "bg-muted text-muted-foreground"
           }`}
-          disabled={!isValidAmount || isLoading}
+          disabled={!isValidAmount || isLoading || !toAsset}
           onClick={handleExchange}
         >
           {isLoading ? "Обмінюємо..." : "Переглянути угоду"}
@@ -463,10 +481,21 @@ export default function Exchange() {
       {showFromSelect && (
         <div className="fixed inset-0 bg-background z-50">
           {/* Header */}
-          <div className="flex items-center justify-center p-4">
+          <div className="flex items-center justify-between p-4">
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setShowFromSelect(false);
+                setSearchTerm("");
+              }}
+              className="text-primary"
+            >
+              Назад
+            </Button>
             <div className="text-center">
               <div className="font-medium text-lg">Обмен</div>
             </div>
+            <div className="w-16"></div>
           </div>
 
           {/* Search */}
@@ -483,13 +512,15 @@ export default function Exchange() {
             </div>
           </div>
 
-          {/* Assets List */}
+          {/* Assets List с прокруткой */}
           <div className="px-4">
             <h3 className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">
               Ви сплачуєте
             </h3>
-            <div className="space-y-1">
-              {filteredUserAssets.map((asset) => (
+            <div className="space-y-1 max-h-96 overflow-y-auto pb-20">
+              {filteredUserAssets
+                .filter(asset => asset.id !== toAsset?.id) // Заборона обирати той самий
+                .map((asset) => (
                 <div
                   key={asset.id}
                   className="flex items-center gap-3 p-4 hover:bg-muted/50 rounded-lg cursor-pointer"
@@ -530,10 +561,21 @@ export default function Exchange() {
       {showToSelect && (
         <div className="fixed inset-0 bg-background z-50">
           {/* Header */}
-          <div className="flex items-center justify-center p-4">
+          <div className="flex items-center justify-between p-4">
+            <Button
+              variant="ghost"
+              onClick={() => {
+                setShowToSelect(false);
+                setSearchTerm("");
+              }}
+              className="text-primary"
+            >
+              Назад
+            </Button>
             <div className="text-center">
               <div className="font-medium text-lg">Обмен</div>
             </div>
+            <div className="w-16"></div>
           </div>
 
           {/* Search */}
@@ -550,12 +592,12 @@ export default function Exchange() {
             </div>
           </div>
 
-          {/* Assets List */}
+          {/* Assets List с прокруткой */}
           <div className="px-4">
             <h3 className="text-muted-foreground text-sm font-medium mb-4 uppercase tracking-wider">
               Ви отримаєте
             </h3>
-            <div className="space-y-1">
+            <div className="space-y-1 max-h-96 overflow-y-auto pb-20">
               {filteredMarketAssets.map((asset) => (
                 <div
                   key={asset.id}
