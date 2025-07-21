@@ -39,6 +39,7 @@ const getLanguageName = (languageCode?: string) => {
 
 export default function Settings() {
   const { hapticFeedback, user } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
 
   // Back button is now handled automatically by useAutoBackButton hook
@@ -267,7 +268,7 @@ export default function Settings() {
             className="w-full justify-start text-primary p-0"
             onClick={() => hapticFeedback("light")}
           >
-            Политика конфиден��иальности
+            Политика конфиденциальности
           </Button>
         </div>
 
