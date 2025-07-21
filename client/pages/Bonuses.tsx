@@ -72,7 +72,7 @@ export default function Bonuses() {
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
       {/* Empty Header */}
-      <div className="h-16 p-4"></div>
+      <div className="h-16 p-4 -mb-5 sm:mb-0"></div>
 
       {/* Bonus Hero Section */}
       <div className="text-center py-8">
