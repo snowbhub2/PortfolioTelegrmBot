@@ -28,6 +28,7 @@ export interface Transaction {
   amount: number; // Сума в доларах
   timestamp: Date;
   description: string;
+  status?: "completed" | "pending" | "processing" | "failed";
 }
 
 export interface UserPortfolio {
@@ -89,7 +90,7 @@ export class PortfolioManager {
     const saved = localStorage.getItem(`${PORTFOLIO_KEY}_${userId}`);
     if (saved) {
       const parsed = JSON.parse(saved);
-      // Відновлюємо дати
+      // Відновлю��мо дати
       parsed.transactions = parsed.transactions.map((t: any) => ({
         ...t,
         timestamp: new Date(t.timestamp),
