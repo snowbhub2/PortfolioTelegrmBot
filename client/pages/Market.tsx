@@ -163,6 +163,7 @@ const goldAssets: MarketAsset[] = [
 
 export default function Market() {
   const { tg, hapticFeedback } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<
     "all" | "stocks" | "crypto" | "gold"
