@@ -17,6 +17,8 @@ import AssetDetail from "./pages/AssetDetail";
 import Settings from "./pages/Settings";
 import Notifications from "./pages/Notifications";
 import NotificationCategory from "./pages/NotificationCategory";
+import LanguageSelect from "./pages/LanguageSelect";
+import { LanguageProvider } from "./hooks/useLanguage";
 import WithdrawMethodSelect from "./pages/WithdrawMethodSelect";
 import TelegramStarsExchange from "./pages/TelegramStarsExchange";
 import WithdrawAssetSelect from "./pages/WithdrawAssetSelect";
@@ -37,11 +39,12 @@ import { Layout } from "./components/Layout";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  <LanguageProvider>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
         <Layout>
           <div className="min-h-screen bg-background text-foreground">
             <Routes>
@@ -54,6 +57,7 @@ const App = () => (
               <Route path="/settings" element={<Settings />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/notifications/:categoryId" element={<NotificationCategory />} />
+              <Route path="/language" element={<LanguageSelect />} />
               <Route
                 path="/withdraw/method"
                 element={<WithdrawMethodSelect />}
@@ -92,9 +96,10 @@ const App = () => (
             </Routes>
           </div>
         </Layout>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </LanguageProvider>
 );
 
 // Wallet page with bottom navigation
