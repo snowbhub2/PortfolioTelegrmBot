@@ -47,6 +47,14 @@ export default function WithdrawAssetSelect() {
     };
   }, [tg, navigate]);
 
+  useEffect(() => {
+    // Get real balance from portfolio
+    const userId = user?.id?.toString() || "demo_user";
+    const portfolio = new PortfolioManager(userId);
+    const cashBalance = portfolio.getCashBalance();
+    setRealBalance(cashBalance);
+  }, [user]);
+
   const filteredAssets = availableAssets.filter(
     (asset) =>
       asset.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
