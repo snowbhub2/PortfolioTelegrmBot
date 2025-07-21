@@ -155,31 +155,7 @@ export default function CoinDetail() {
     };
   }
 
-  // Back button is now handled automatically by Telegram mini app
-
-  useEffect(() => {
-    // Ініціалізація портфеля
-    const userId = user?.id?.toString() || "demo_user";
-    const portfolio = new PortfolioManager(userId);
-    setPortfolioManager(portfolio);
-  }, [user]);
-
-  const handleBuy = () => {
-    hapticFeedback("medium");
-    setShowBuyModal(true);
-  };
-
-  const handleSell = () => {
-    hapticFeedback("medium");
-    setShowSellModal(true);
-  };
-
-  const handleBuySuccess = () => {
-    hapticFeedback("light");
-    // Портфель автоматично оновиться через реактивність
-  };
-
-  // Генерація динамічного контенту ��ля різних типів активів
+  // Генерація динамічного контенту для різних типів активів
   const getAssetInfo = () => {
     switch (asset.category) {
       case "crypto":
@@ -203,16 +179,16 @@ export default function CoinDetail() {
           };
         } else if (asset.id === "ton") {
           return {
-            title: "О КРИПТОВ��ЛЮТЕ",
+            title: "О КРИПТОВАЛЮТЕ",
             description: "Toncoin — це криптовалюта блокчейну TON (The Open Network), який спочатку розроблявся командою Telegram.",
             points: [
               "Ви можете купувати, продавати або зберігати TON в Гаманці.",
-              "TON відомий своєю високою швидкістю транзакцій та низькими комісіями."
+              "TON відомий своєю високою швидкістю транзакцій та низькими к��місіями."
             ]
           };
         } else if (asset.id === "sol") {
           return {
-            title: "О К��ИПТОВАЛЮТЕ",
+            title: "О КРИПТОВАЛЮТЕ",
             description: "Solana — це високопродуктивний блокчейн, відомий своєю швидкістю та низькими комісіями за транзакції.",
             points: [
               "Ви можете купувати, продавати або зберігати SOL в Гаманці.",
@@ -229,7 +205,7 @@ export default function CoinDetail() {
             ]
           };
         }
-
+      
       case "stocks":
         if (asset.id === "aapl") {
           return {
@@ -243,7 +219,7 @@ export default function CoinDetail() {
         } else if (asset.id === "tsla") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Tesla, Inc. — американ��ька компанія, що спеціалізується на електромобілях, накопичувачах енергії та сонячних панелях.",
+            description: "Tesla, Inc. — американська компанія, що спеціалізується на електромобілях, накопичувачах енергії та сонячних панелях.",
             points: [
               "Ви можете купувати або продавати акції TSLA через платформу.",
               "Tesla є лідером в галузі електромобілів та чистої енергії."
@@ -277,7 +253,7 @@ export default function CoinDetail() {
             ]
           };
         }
-
+      
       case "gold":
         if (asset.id === "gold") {
           return {
@@ -291,7 +267,7 @@ export default function CoinDetail() {
         } else if (asset.id === "silver") {
           return {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
-            description: "Срібло — це дорогоцінний ��етал з широким промисловим застосуванням, популярний серед інвесторів як альтернатива золоту.",
+            description: "Срібло — це дорогоцінний метал з широким промисловим застосуванням, популярний серед інвесторів як альтернатива золоту.",
             points: [
               "Ви можете купувати або продавати срібло через платформу.",
               "Срібло має як інвестиційну, так і промислову цінність."
@@ -307,11 +283,11 @@ export default function CoinDetail() {
             ]
           };
         }
-
+      
       default:
         return {
           title: "ПРО АКТИВ",
-          description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на на��ій платформі.`,
+          description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на нашій платформі.`,
           points: [
             `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
             "Будь ласка, врахуйте ризики при інвестуванні."
@@ -321,6 +297,30 @@ export default function CoinDetail() {
   };
 
   const assetInfo = getAssetInfo();
+
+  // Back button is now handled automatically by Telegram mini app
+
+  useEffect(() => {
+    // Ініціалізація портфеля
+    const userId = user?.id?.toString() || "demo_user";
+    const portfolio = new PortfolioManager(userId);
+    setPortfolioManager(portfolio);
+  }, [user]);
+
+  const handleBuy = () => {
+    hapticFeedback("medium");
+    setShowBuyModal(true);
+  };
+
+  const handleSell = () => {
+    hapticFeedback("medium");
+    setShowSellModal(true);
+  };
+
+  const handleBuySuccess = () => {
+    hapticFeedback("light");
+    // Портфель автоматично оновиться через реактивність
+  };
 
   // Chart functionality moved to InteractiveChart component
 
@@ -375,18 +375,19 @@ export default function CoinDetail() {
           {assetInfo.title}
         </h3>
         <p className="text-sm text-muted-foreground mb-4">
-          Hedera запустили в 2018 году. Вместо блокчейна она использует
-          технологию hashgraph — данные записывают{" "}
-          <span className="text-primary">��одробнее</span>
+          {assetInfo.description}{" "}
+          <span className="text-primary">Докладніше</span>
         </p>
 
         <div className="space-y-3">
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
-            <p className="text-sm text-muted-foreground">
-              Вы можете только поку��ать, продавать или хранить HBAR в Кошельке.
-            </p>
-          </div>
+          {assetInfo.points.map((point, index) => (
+            <div key={index} className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-muted-foreground rounded-full mt-2 flex-shrink-0" />
+              <p className="text-sm text-muted-foreground">
+                {point}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
