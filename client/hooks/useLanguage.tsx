@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Переклади для всієї платформи
+// ��ереклади для всієї платформи
 const translations = {
   ru: {
     // Bottom Navigation
@@ -92,7 +92,7 @@ const translations = {
     
     // Notification Categories
     'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
-    'notifications.category.updates': 'У��Е��ОМЛЕНИЯ ОБНОВЛЕНИЙ',
+    'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
     'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
@@ -134,7 +134,7 @@ const translations = {
     // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
-    'wallet.notification.startEarning': 'Начать зарабатывать →',
+    'wallet.notification.startEarning': 'Начать зарабатыват�� →',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть настройки',
@@ -163,7 +163,7 @@ const translations = {
 
     // Bonuses Page
     'bonuses.title_header': 'Бонусы в Кошельке',
-    'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
+    'bonuses.subtitle': 'Получ��йте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
     'bonuses.tab.completed': 'Завер��ённые',
@@ -175,7 +175,7 @@ const translations = {
     'coin.about.currency': 'О ВАЛЮТЕ',
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
-    'coin.quantity': 'Коли��ество',
+    'coin.quantity': 'Количество',
     'coin.current_value': 'Текущая стоимость',
     'coin.btn.buy': 'Купить',
     'coin.btn.sell': 'Продать',
@@ -193,7 +193,7 @@ const translations = {
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
-    'wallet.trending.title': 'В ТР��НДЕ',
+    'wallet.trending.title': '�� ТР��НДЕ',
     'wallet.demo.message': '🎭 Demo режим - для ��олных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть на��тройки',
     'wallet.user.avatar': 'аватар пользователя',
@@ -233,7 +233,7 @@ const translations = {
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
-    'deposit.address.copy': 'Копировать адрес',
+    'deposit.address.copy': 'Копировать адре��',
     'deposit.address.copied': 'Адрес скопирован в буфер',
     'deposit.address.copied_notification': 'Адрес скопирован в буфер.',
 
@@ -333,7 +333,7 @@ const translations = {
     'history.transaction.asset': 'акти��а',
     'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
-    'history.transaction.transfer_to_cfd': 'Перевод в CFD',
+    'history.transaction.transfer_to_cfd': 'Пере��од в CFD',
     'history.transaction.transfer_from_cfd': 'Перевод из CFD',
     'history.transaction.default': 'Транзакция',
     'history.time.now': 'То��ько что',
@@ -386,7 +386,7 @@ const translations = {
     'transfer.from': 'Из',
     'transfer.to': 'В',
     'transfer.fee': 'Комиссия',
-    'transfer.transferring': 'Переводим...',
+    'transfer.transferring': 'Пер��водим...',
     'transfer.transfer_button': 'Перевести',
     'transfer.info.title': 'О переводе',
     'transfer.info.portfolio_desc': 'Портфель - наличные для покупки активов',
