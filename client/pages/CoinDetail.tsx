@@ -61,7 +61,7 @@ const allAssets = [
   {
     id: "gold",
     symbol: "GOLD",
-    name: "Золо��о",
+    name: "Золото",
     price: 2650.5,
     change24h: 0.75,
     icon: "🥇",
@@ -203,7 +203,7 @@ export default function CoinDetail() {
         } else if (asset.id === "eth") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Ethereum — це платформа для розумних ко��трактів і децентралізованих додатків (DApps), запущена в 2015 році.",
+            description: "Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
             points: [
               "Ви можете купувати, продавати або зберігати ETH в Гаманці.",
               "Ethereum є основою для багатьох DeFi проектів та NFT."
@@ -269,7 +269,7 @@ export default function CoinDetail() {
         } else if (asset.id === "msft") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Microsoft Corporation — американська багатонаціональна технологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
+            description: "Microsoft Corporation — американська багатонаціональна те��нологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
             points: [
               "Ви можете купувати або продавати акції MSFT через платформу.",
               "Microsoft є провідним постачальником хмарних сервісів Azure."
@@ -308,7 +308,7 @@ export default function CoinDetail() {
         } else if (asset.id === "silver") {
           return {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
-            description: "Срібло — це дорогоцінний метал з широким промисловим застосуванням, популярний серед інвесторів як альтернатива золоту.",
+            description: "Срібло — це дорогоцінний метал з широким промисловим застосуванням, п��пулярний серед інвесторів як альтернатива золоту.",
             points: [
               "Ви можете купувати або продавати срібло через платформу.",
               "Срібло має як інвестиційну, так і промислову цінність."
@@ -341,7 +341,7 @@ export default function CoinDetail() {
             description: "Долар США — це основна резервна валюта світу та базова валюта для торгівлі на нашій платформі.",
             points: [
               "Ви можете поповнювати баланс або виводити кошти.",
-              "USD використовується для покупки інших активів на платформ��."
+              "USD використовується для покупки інших активів на платформі."
             ]
           };
         } else {
@@ -349,7 +349,7 @@ export default function CoinDetail() {
             title: "ПРО ВАЛЮТУ",
             description: `${asset.name} — це валюта, доступна для операцій на нашій платформі.`,
             points: [
-              `Ви можете здійснювати операції з ${asset.symbol} через платформу.`,
+              `Ви можете з��ійснювати операції з ${asset.symbol} через платформу.`,
               "Валютні курси можуть коливатися залежно від ринкових умов."
             ]
           };
@@ -482,6 +482,112 @@ export default function CoinDetail() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Portfolio Holdings Section */}
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-3 text-muted-foreground">
+          У ПОРТФЕЛІ
+        </h3>
+        {hasAsset ? (
+          <div className="bg-card rounded-lg p-4 border">
+            <div className="flex justify-between items-center">
+              <div>
+                <p className="text-sm text-muted-foreground">Кількість</p>
+                <p className="text-xl font-semibold">
+                  {assetQuantity.toLocaleString()} {asset.symbol}
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-muted-foreground">Поточна вартість</p>
+                <p className="text-xl font-semibold">
+                  ${(assetQuantity * asset.price).toLocaleString()}
+                </p>
+              </div>
+            </div>
+            {userAsset && (
+              <div className="mt-3 pt-3 border-t flex justify-between text-sm">
+                <span className="text-muted-foreground">
+                  Середня ціна: ${userAsset.avgPrice.toFixed(2)}
+                </span>
+                <span className={`${
+                  asset.price >= userAsset.avgPrice ? 'text-success' : 'text-destructive'
+                }`}>
+                  {asset.price >= userAsset.avgPrice ? '+' : ''}
+                  {((asset.price - userAsset.avgPrice) / userAsset.avgPrice * 100).toFixed(2)}%
+                </span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="bg-card rounded-lg p-4 border text-center">
+            <p className="text-muted-foreground">
+              У вас немає {asset.name} в портфелі
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Transaction History Section */}
+      <div className="p-4">
+        <h3 className="text-lg font-semibold mb-3 text-muted-foreground">
+          ІСТОРІЯ ОПЕРАЦІЙ
+        </h3>
+        {assetTransactions.length > 0 ? (
+          <div className="space-y-2">
+            {assetTransactions.slice(0, 5).map((transaction) => (
+              <div key={transaction.id} className="bg-card rounded-lg p-3 border">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <p className="font-medium">
+                      {transaction.type === 'buy' && '🟢 Покупка'}
+                      {transaction.type === 'sell' && '🔴 Продаж'}
+                      {transaction.type === 'deposit' && '💵 Поповнення'}
+                      {transaction.type === 'withdraw' && '💸 Виведення'}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {transaction.description}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {new Date(transaction.timestamp).toLocaleDateString()} {new Date(transaction.timestamp).toLocaleTimeString()}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className={`font-semibold ${
+                      transaction.type === 'buy' || transaction.type === 'deposit'
+                        ? 'text-success'
+                        : 'text-destructive'
+                    }`}>
+                      {(transaction.type === 'buy' || transaction.type === 'deposit') ? '+' : '-'}
+                      ${transaction.amount.toFixed(2)}
+                    </p>
+                    {transaction.quantity && (
+                      <p className="text-sm text-muted-foreground">
+                        {transaction.quantity} {asset.symbol}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+            {assetTransactions.length > 5 && (
+              <div className="text-center pt-2">
+                <button
+                  className="text-primary text-sm"
+                  onClick={() => navigate("/history")}
+                >
+                  Показати всі операції
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="bg-card rounded-lg p-4 border text-center">
+            <p className="text-muted-foreground">
+              Операцій з {asset.name} поки немає
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Action Buttons */}
