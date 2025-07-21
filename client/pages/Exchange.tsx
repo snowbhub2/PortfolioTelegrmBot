@@ -230,7 +230,7 @@ export default function Exchange() {
       const assets = portfolioManager.getAssets();
       const cashBalance = portfolioManager.getCashBalance();
 
-      // З��вжди додаємо долари до списку (навіть з балансом 0)
+      // З��вжди додаємо долари до списку (навіть з балан��ом 0)
       const usdAsset: UserAsset = {
         id: "usd",
         symbol: "USD",
@@ -375,12 +375,13 @@ export default function Exchange() {
       let success = false;
 
       if (fromAsset.id === "usd" && toAsset.id !== "usd") {
-        // Купуємо актив за долари
+        // Купуємо актив за до��ари
+        const finalToAmount = lastEditedField === 'from' ? calculatedToAmount : parseFloat(toAmount);
         success = portfolioManager.buyAsset(
           toAsset.id,
           toAsset.symbol,
           toAsset.name,
-          toAmount,
+          finalToAmount,
           toAsset.currentPrice,
           toAsset.icon,
           toAsset.category,
@@ -415,7 +416,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
-        // Переходимо н�� сторінку деталей активу який отримали
+        // Переходимо н�� сторі��ку деталей активу який отримали
         navigate(`/coin/${toAsset.id}`);
       } else {
         setError("Помилка при обміні активів");
@@ -437,7 +438,7 @@ export default function Exchange() {
     asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Долари ��акож можна отримати + всі ринкові активи
+  // Долари також можна отримати + всі ринкові активи
   const allAvailableAssets = [
     {
       id: "usd",
@@ -835,7 +836,7 @@ export default function Exchange() {
                       {asset.price.toLocaleString()} $
                     </div>
                     <div className={`text-sm ${asset.change24h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {asset.change24h >= 0 ? '��' : '↓'} {Math.abs(asset.change24h).toFixed(2)}%
+                      {asset.change24h >= 0 ? '↑' : '↓'} {Math.abs(asset.change24h).toFixed(2)}%
                     </div>
                   </div>
                 </div>
