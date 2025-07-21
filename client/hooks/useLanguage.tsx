@@ -49,7 +49,7 @@ const translations = {
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
-    'notifications.promotions': 'Акци��',
+    'notifications.promotions': 'Акции',
     'notifications.promotions_desc': 'Розыгрыши и бонусы',
     'notifications.educational': 'Образовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
@@ -87,7 +87,7 @@ const translations = {
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
     'wallet.assets.hide': 'Скрыть',
-    'wallet.assets.show': 'Показ��ть',
+    'wallet.assets.show': 'Показать',
     'wallet.assets.cashDollars': 'Доллары',
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купили за:',
@@ -109,7 +109,7 @@ const translations = {
 
     // Додаткові переклади для всіх текстів
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
-    'wallet.notification.withDollars': 'с доллар��ми',
+    'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -186,6 +186,11 @@ const translations = {
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
     'deposit.method.external_wallet': 'Внешний кошелёк',
     'deposit.method.external_wallet_desc': 'Перевести с другого кошелька',
+
+    // Deposit Asset Selection
+    'deposit.asset.popular': 'ПОПУЛЯРНЫЕ',
+    'deposit.asset.all': 'ВСЕ',
+    'deposit.asset.not_found': 'Активы не найдены',
 
     // Withdraw Pages
     'withdraw.method.title': 'Как отправить',
@@ -285,7 +290,7 @@ const translations = {
     'common.new': 'Новый',
     'common.old': 'Старый',
     'common.recent': 'Недавние',
-    'common.popular': 'Популярн��е',
+    'common.popular': 'Популярные',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
     'common.top': 'Топ',
