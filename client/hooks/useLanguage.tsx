@@ -46,7 +46,7 @@ const translations = {
     // Notifications
     'notifications.title': 'УВЕДОМЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
-    'notifications.market_trends_desc': 'Изменение цен на ак��ивы',
+    'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
     'notifications.promotions': 'Акции',
@@ -62,7 +62,7 @@ const translations = {
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_desc': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
-    'notifications.cfd_news_text': 'Все новос��и можно узнать в канале',
+    'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
     'notifications.off': 'Выкл',
     
@@ -169,7 +169,7 @@ const translations = {
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
-    'wallet.trending.title': 'В ТРЕНДЕ',
+    'wallet.trending.title': 'В ТР��НДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть настройки',
     'wallet.user.avatar': 'аватар пользователя',
@@ -190,7 +190,7 @@ const translations = {
     // Withdraw Pages
     'withdrawMethod.title': 'Как отправить',
     'withdrawMethod.subtitle': 'криптовалюту',
-    'withdrawMethod.telegramContact': 'Контакт в Telegram',
+    'withdrawMethod.telegramContact': 'Конт��кт в Telegram',
     'withdrawMethod.instantNoFees': 'Мгновенно и без комиссий',
     'withdrawMethod.externalWallet': 'Внешний кошелёк или биржа',
     'withdrawMethod.needAddress': 'Нужно указать криптоадрес',
@@ -217,7 +217,7 @@ const translations = {
     'asset.about_gold': 'О ЗОЛОТЕ',
     'asset.about_currency': 'О ВАЛЮТЕ',
     'asset.portfolio': 'В портфеле',
-    'asset.not_in_portfolio': 'Нет активов в портфеле',
+    'asset.not_in_portfolio': 'Нет активов в по��тфеле',
     'asset.transaction_history': 'История операций',
     'asset.no_transactions': 'Нет операций с этим активом',
     'asset.buy': 'Купить',
@@ -248,7 +248,7 @@ const translations = {
     'common.edit': 'Редактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
-    'common.error': 'Ошибка',
+    'common.error': '��шибка',
     'common.success': 'Успешно',
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
@@ -545,6 +545,14 @@ const translations = {
     'deposit.method.telegram_stars': 'Top up via Telegram Stars',
     'deposit.method.external_wallet': 'External Wallet',
     'deposit.method.external_wallet_desc': 'Transfer from another wallet',
+
+    // Withdraw Pages (English)
+    'withdrawMethod.title': 'How to send',
+    'withdrawMethod.subtitle': 'cryptocurrency',
+    'withdrawMethod.telegramContact': 'Telegram Contact',
+    'withdrawMethod.instantNoFees': 'Instant and no fees',
+    'withdrawMethod.externalWallet': 'External wallet or exchange',
+    'withdrawMethod.needAddress': 'Need to specify crypto address',
   },
 };
 
