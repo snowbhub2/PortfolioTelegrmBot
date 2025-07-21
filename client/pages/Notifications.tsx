@@ -141,25 +141,25 @@ export default function Notifications() {
 
         {/* Transaction Security Notice */}
         <div className="mb-4 text-sm text-muted-foreground">
-          Уведомления о транзакциях и безопасности всегда будут включены.
+          {t('notifications.security_notice')}
         </div>
 
         {/* News Channel Link */}
         <div className="mb-6 text-sm text-muted-foreground">
-          Все новости вы можете прочитать в канале{" "}
+          {t('notifications.news_text')}{" "}
           <Button
             variant="ghost"
             className="text-primary p-0 h-auto text-sm"
             onClick={() => hapticFeedback("light")}
           >
-            Новости Крипто Кошелька
+            {t('notifications.news_channel_link')}
           </Button>
           .
         </div>
 
         {/* CFD Wallet Notifications */}
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
-          УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА
+          {t('notifications.cfd_title')}
         </h2>
 
         <Card className="mb-4">
