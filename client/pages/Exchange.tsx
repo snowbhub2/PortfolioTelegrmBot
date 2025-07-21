@@ -115,7 +115,7 @@ const goldAssets: MarketAsset[] = [
     price: 2650.5,
     change24h: 0.75,
     marketCap: 0,
-    icon: "���",
+    icon: "🥇",
     sparkline: [2640, 2645, 2648, 2650.5],
   },
   {
@@ -494,7 +494,7 @@ export default function Exchange() {
                   onClick={handleMaxAmount}
                   className="text-primary hover:underline p-0 h-auto"
                 >
-                  Макс
+                  {t('exchange.max')}
                 </Button>
               )}
               <div
