@@ -10,7 +10,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Переклади для в��ієї платформи
+// Переклади для всієї платформи
 const translations = {
   ru: {
     // Bottom Navigation
@@ -65,7 +65,7 @@ const translations = {
     'notifications.updates_desc': 'Новые сервисы и возможности',
     'notifications.promotions': 'Акции',
     'notifications.promotions_desc': 'Розыгрыши и бонусы',
-    'notifications.educational': 'Образовательный контент',
+    'notifications.educational': 'Об��азовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
@@ -163,7 +163,7 @@ const translations = {
 
     // Bonuses Page
     'bonuses.title_header': 'Бонусы в Кошельке',
-    'bonuses.subtitle': 'Получайте бонусы за хранение ��риптовалюты.',
+    'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
     'bonuses.tab.completed': 'Завер��ённые',
@@ -259,10 +259,10 @@ const translations = {
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выполнен!',
     'withdraw.processing.payment_processing': 'Ваш платёж в обработке',
-    'withdraw.processing.exchange_success': 'Вы успешно обменя��и {amount} USD на {starsAmount} Telegram Stars',
+    'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
     'withdraw.processing.time_estimate': 'Это займет от 5 до 20 минут',
-    'withdraw.processing.notification_promise': 'Мы уведомим вас, когда транзакция будет подтверждена',
+    'withdraw.processing.notification_promise': 'Мы уведомим вас, когда транзакция будет п��дтверждена',
     'withdraw.processing.amount': 'Сумма',
     'withdraw.processing.received': 'Получено',
     'withdraw.processing.recipient': 'Получатель',
@@ -356,7 +356,7 @@ const translations = {
     // Exchange
     'exchange.title': 'Обмен',
     'exchange.you_pay': 'Вы платите',
-    'exchange.you_receive': 'Вы пол��чаете',
+    'exchange.you_receive': 'Вы получаете',
     'exchange.max': 'Макс',
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
@@ -833,6 +833,27 @@ const translations = {
     'cfd.nav.trades': 'Trades',
     'cfd.nav.autotrading': 'Auto Trading',
     'cfd.nav.history': 'History',
+
+    // Asset Detail Page (English)
+    'asset.name.dollars': 'Dollars',
+    'asset.name.gold': 'Gold',
+    'asset.header.wallet_verified': 'Wallet ✓',
+    'asset.header.mini_app': 'mini app',
+    'asset.action.send': 'Send',
+    'asset.action.receive': 'Receive',
+    'asset.action.buy': 'Buy',
+    'asset.action.exchange': 'Exchange',
+    'asset.price.title': 'PRICE',
+    'asset.price.details': 'Details',
+    'asset.price.24h': '24h',
+    'asset.transaction_history': 'TRANSACTION HISTORY',
+    'asset.transaction.exchange_btc_usdt': 'Exchange: BTC to USDT',
+    'asset.transaction.exchange_ton_btc': 'Exchange: TON to BTC',
+    'asset.transaction.status.sent': 'Sent',
+    'asset.transaction.status.received': 'Received',
+    'asset.transaction.date.dec_6': '6 Dec 2024 at 1...',
+    'asset.transaction.date.nov_16': '16 Nov 2024...',
+    'asset.not_found': 'Asset not found',
 
     // History (English)
     'history.subtitle': 'All your transactions and operations',
