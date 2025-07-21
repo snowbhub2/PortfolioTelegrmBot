@@ -111,6 +111,7 @@ export class PortfolioManager {
           amount: 1000,
           timestamp: new Date(),
           description: "Початковий депозит",
+          status: "completed",
         },
       ],
     };
@@ -254,7 +255,7 @@ export class PortfolioManager {
       quantity,
       price,
       amount: totalValue,
-      description: `Продаж ${quantity} ${asset.symbol} за $${price.toFixed(2)}`,
+      description: `П��одаж ${quantity} ${asset.symbol} за $${price.toFixed(2)}`,
     });
 
     this.savePortfolio();
