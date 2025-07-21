@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { MarketAsset } from "@/types/crypto";
-import { SearchIcon, TrendingUpIcon, UserIcon, SettingsIcon } from "lucide-react";
+import { SearchIcon, TrendingUpIcon, UserIcon, SettingsIcon, RefreshCwIcon, EyeIcon, EyeOffIcon } from "lucide-react";
 import { PortfolioManager } from "@/lib/portfolio";
 import { useNavigate } from "react-router-dom";
 
@@ -77,6 +77,7 @@ export default function CFDPage() {
   const { t } = useLanguage();
   const navigate = useNavigate();
   const [portfolioManager, setPortfolioManager] = useState<PortfolioManager | null>(null);
+  const [showBalance, setShowBalance] = useState(true);
 
   useEffect(() => {
     // Initialize portfolio manager
@@ -88,54 +89,124 @@ export default function CFDPage() {
   const cfdBalance = portfolioManager?.getCfdBalance() || 0;
   const totalPortfolioValue = portfolioManager?.getTotalPortfolioValue() || 0;
 
+  const handleTabSwitch = (tab: string) => {
+    hapticFeedback("light");
+    if (tab === "wallet") {
+      navigate("/");
+    }
+  };
+
+  const handleAvatarClick = () => {
+    hapticFeedback("light");
+    navigate("/settings");
+  };
+
+  const toggleBalanceVisibility = () => {
+    hapticFeedback("light");
+    setShowBalance(!showBalance);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground pb-20">
-      {/* Header like main wallet page */}
+      {/* Demo Mode Banner */}
+      {user?.is_demo && (
+        <div className="bg-orange-100 border-b border-orange-200 p-2 text-center">
+          <span className="text-orange-800 text-sm font-medium">
+            🎭 Demo режим - для повних функцій запустіть через Telegram бота
+          </span>
+        </div>
+      )}
+
+      {/* Shared Header with Portfolio/CFD toggle */}
       <div className="flex items-center justify-between p-4">
-        {/* Avatar - go to settings */}
+        {/* Avatar - перехід до налаштувань */}
         <Button
           variant="ghost"
           size="icon"
-          onClick={() => {
-            hapticFeedback("light");
-            navigate("/settings");
-          }}
-          className="rounded-full"
+          className="w-10 h-10 rounded-full p-0 hover:ring-2 hover:ring-primary/20 transition-all"
+          onClick={handleAvatarClick}
+          title={t('wallet.settings.open')}
         >
-          <UserIcon className="w-6 h-6" />
+          {user?.photo_url ? (
+            <img
+              src={user.photo_url}
+              alt={`${user.first_name || "User"} ${t('wallet.user.avatar')}`}
+              className="w-10 h-10 rounded-full object-cover"
+            />
+          ) : user?.first_name ? (
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+              <span className="text-sm font-medium text-white">
+                {user.first_name[0].toUpperCase()}
+              </span>
+            </div>
+          ) : (
+            // Fallback for cases when Telegram data is unavailable
+            <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-full flex items-center justify-center">
+              <span className="text-sm font-medium text-white">
+                {tg ? "TG" : "U"}
+              </span>
+            </div>
+          )}
         </Button>
 
-        {/* Title */}
-        <h1 className="text-xl font-semibold">{t('cfd.title')}</h1>
+        {/* Tab Switcher */}
+        <div className="flex items-center gap-1 bg-muted rounded-full p-1">
+          <Button
+            variant="ghost"
+            size="sm"
+            className="rounded-full px-4"
+            onClick={() => handleTabSwitch("wallet")}
+          >
+            {t('wallet.tabs.wallet')}
+          </Button>
+          <Button
+            variant="default"
+            size="sm"
+            className="rounded-full px-4"
+          >
+            {t('wallet.tabs.cfd')}
+          </Button>
+        </div>
 
-        {/* Settings */}
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => {
-            hapticFeedback("light");
-            navigate("/settings");
-          }}
-        >
-          <SettingsIcon className="w-5 h-5" />
+        {/* Refresh Button */}
+        <Button variant="ghost" size="icon">
+          <RefreshCwIcon className="w-5 h-5" />
         </Button>
       </div>
 
-      {/* Balance Section similar to main wallet */}
-      <div className="p-4">
-        <Card className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200">
-          <div className="text-center">
-            <div className="text-sm text-muted-foreground mb-1">
-              {t('cfd.balance.title')}
-            </div>
-            <div className="text-3xl font-bold text-primary mb-2">
-              ${cfdBalance.toFixed(2)}
-            </div>
-            <div className="text-xs text-muted-foreground">
-              {t('cfd.balance.description')}
-            </div>
+      {/* CFD Balance Section */}
+      <div className="px-4 pb-6 pt-4">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <span className="text-4xl font-bold">
+              {showBalance
+                ? `${cfdBalance.toFixed(2)} $`
+                : "•".repeat(`${cfdBalance.toFixed(2)} $`.length)}
+            </span>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={toggleBalanceVisibility}
+              className="h-8 w-8"
+            >
+              {showBalance ? (
+                <EyeIcon className="w-4 h-4" />
+              ) : (
+                <EyeOffIcon className="w-4 h-4" />
+              )}
+            </Button>
           </div>
-        </Card>
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <span className="text-sm text-muted-foreground">
+              {t('cfd.balance.title')}
+            </span>
+          </div>
+          <div className="text-center">
+            <span className="text-xs text-muted-foreground">
+              {t('cfd.balance.description')}
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* CFD Trading Content */}
