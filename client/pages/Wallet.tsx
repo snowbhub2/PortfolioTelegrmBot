@@ -132,7 +132,7 @@ export default function Wallet() {
       console.warn("❌ tg object відсутній у Wallet");
     }
 
-    // Ініціалізація портфеля
+    // Ініц��алізація портфеля
     const userId = user?.id?.toString() || "demo_user";
     const portfolio = new PortfolioManager(userId);
     setPortfolioManager(portfolio);
@@ -438,9 +438,9 @@ export default function Wallet() {
                     <span className="text-white text-xl font-bold">$</span>
                   </div>
                   <div>
-                    <div className="font-medium">Доллары (готівка)</div>
+                    <div className="font-medium">{t('wallet.assets.dollars_cash')}</div>
                     <div className="text-sm text-muted-foreground">
-                      Для торгівлі
+                      {t('wallet.assets.for_trading')}
                     </div>
                   </div>
                 </div>
