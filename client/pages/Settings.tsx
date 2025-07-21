@@ -1,8 +1,6 @@
-import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { TelegramSetupModal } from "@/components/TelegramSetupModal";
 import {
   BellIcon,
   FingerprintIcon,
@@ -39,17 +37,16 @@ const getLanguageName = (languageCode?: string) => {
 };
 
 export default function Settings() {
-  const { tg, hapticFeedback, user } = useTelegram();
+  const { hapticFeedback, user } = useTelegram();
   const navigate = useNavigate();
-  const [showSetupModal, setShowSetupModal] = useState(false);
 
   // Back button is now handled automatically by useAutoBackButton hook
 
   const handleItemClick = (item: any) => {
     hapticFeedback("light");
 
-    if (item.action === "telegram-setup") {
-      setShowSetupModal(true);
+    if (item.action === "notifications") {
+      navigate("/notifications");
     } else {
       console.log(`Clicked: ${item.title}`);
     }
@@ -122,6 +119,7 @@ export default function Settings() {
       title: "Уведомления",
       value: "",
       hasChevron: true,
+      action: "notifications",
     },
     {
       icon: <FingerprintIcon className="w-5 h-5 text-green-500" />,
@@ -141,22 +139,12 @@ export default function Settings() {
       value: "USD",
       hasChevron: true,
     },
-    {
-      icon: (
-        <span className="w-5 h-5 text-blue-500 flex items-center justify-center">
-          📱
-        </span>
-      ),
-      title: "Telegram інтеграція",
-      value: "Налаштувати",
-      hasChevron: true,
-      action: "telegram-setup",
-    },
+
   ];
 
   const walletTabs = [
     { id: "wallet", label: "Кошелёк", active: true },
-    { id: "tonspace", label: "TON Space", error: true },
+    { id: "cfdspace", label: "CFD Space", error: true },
   ];
 
   const supportItems = [
@@ -220,44 +208,7 @@ export default function Settings() {
           </Card>
         )}
 
-        {/* Telegram Integration Section */}
-        {(!user || user?.is_demo || !tg) && (
-          <Card className="mb-6 p-4 border-blue-200 bg-blue-50">
-            <div className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <Button
-                  onClick={handleDiagnostic}
-                  className="bg-blue-600 hover:bg-blue-700"
-                >
-                  🔍 Діагностика
-                </Button>
-                <Button
-                  onClick={() => setShowSetupModal(true)}
-                  variant="outline"
-                  className="border-blue-300 text-blue-700 hover:bg-blue-100"
-                >
-                  📋 Інструкції
-                </Button>
-              </div>
 
-              {user?.is_demo && (
-                <div className="text-center">
-                  <p className="text-sm text-blue-700 font-medium mb-2">
-                    🎭 Зараз активний Demo режим
-                  </p>
-                  <p className="text-xs text-blue-600">
-                    Натисніть "Інструкції" для налаштування реальної інтеграції
-                    з Telegram
-                  </p>
-                </div>
-              )}
-
-              <p className="text-xs text-blue-600 text-center">
-                Діагностика - перевірка підключення | Інструкції - повний гайд
-              </p>
-            </div>
-          </Card>
-        )}
 
         {/* Basic Settings */}
         <h2 className="text-lg font-semibold mb-4 text-muted-foreground">
@@ -324,7 +275,7 @@ export default function Settings() {
             </div>
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            Не распространяется на аккаунт TON Space.
+            Не распространяется на аккаунт CFD Space.
           </p>
         </Card>
 
@@ -377,7 +328,7 @@ export default function Settings() {
         {/* Footer */}
         <div className="text-center text-sm text-muted-foreground">
           <p className="mb-1">Мини-приложение управляется TG Wallet Inc.</p>
-          <p className="mb-1">Сервис независим и не связан с Telegram.</p>
+          <p className="mb-1">Сервис независи�� и не связан с Telegram.</p>
           <Button
             variant="ghost"
             className="text-primary p-0 h-auto"
@@ -388,11 +339,7 @@ export default function Settings() {
         </div>
       </div>
 
-      {/* Telegram Setup Modal */}
-      <TelegramSetupModal
-        isOpen={showSetupModal}
-        onClose={() => setShowSetupModal(false)}
-      />
+
     </div>
   );
 }
