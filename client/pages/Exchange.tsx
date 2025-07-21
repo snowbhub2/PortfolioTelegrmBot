@@ -448,14 +448,14 @@ export default function Exchange() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header - без кнопки назад */}
-      <div className="flex items-center justify-center p-4 max-w-2xl mx-auto">
+      <div className="flex items-center justify-center p-4 max-w-md mx-auto">
         <div className="text-center">
-          <div className="font-medium text-xl">Обмен</div>
+          <div className="font-medium text-lg">Обмен</div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="px-4 pb-20 max-w-2xl mx-auto">
+      <div className="px-4 pb-20 max-w-md mx-auto">
         {/* Ви сплачуєте */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -471,8 +471,8 @@ export default function Exchange() {
             </span>
           </div>
 
-          <div className="flex items-center justify-between mb-2">
-            <div className="flex items-center gap-3 flex-1">
+          <div className="mb-2">
+            <div className="flex items-end justify-between">
               <input
                 type="number"
                 placeholder="0"
@@ -481,32 +481,33 @@ export default function Exchange() {
                   setFromAmount(e.target.value);
                   setError("");
                 }}
-                className={`text-4xl sm:text-5xl lg:text-7xl font-bold bg-transparent border-0 focus:outline-none min-w-0 ${
+                className={`text-3xl sm:text-4xl md:text-6xl font-bold bg-transparent border-0 focus:outline-none flex-1 max-w-[60%] ${
                   isInsufficientFunds ? 'text-red-500' : 'text-foreground'
                 }`}
-                style={{ width: 'auto', minWidth: '120px' }}
               />
-              {/* Кнопка Макс горизонтально після суми */}
-              {fromAsset && fromAsset.quantity > 0 && (
+              <div
+                className="flex items-center gap-2 cursor-pointer ml-2"
+                onClick={() => setShowFromSelect(true)}
+              >
+                <span className="text-xl sm:text-2xl md:text-4xl font-light text-muted-foreground">
+                  {fromAsset?.symbol || "USD"}
+                </span>
+                <span className="text-muted-foreground text-xl">›</span>
+              </div>
+            </div>
+            {/* Кнопка Макс під сумою */}
+            {fromAsset && fromAsset.quantity > 0 && (
+              <div className="mt-2">
                 <Button
-                  variant="ghost"
+                  variant="outline"
                   size="sm"
                   onClick={handleMaxAmount}
-                  className="text-primary hover:underline px-2 py-1 text-sm"
+                  className="text-primary border-primary/30 hover:bg-primary/10 px-4 py-2"
                 >
                   {t('exchange.max')}
                 </Button>
-              )}
-            </div>
-            <div
-              className="flex items-center gap-2 cursor-pointer ml-4"
-              onClick={() => setShowFromSelect(true)}
-            >
-              <span className="text-2xl sm:text-3xl lg:text-5xl font-light text-muted-foreground">
-                {fromAsset?.symbol || "USD"}
-              </span>
-              <span className="text-muted-foreground text-xl">›</span>
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Сума в доларах якщо не долар */}
@@ -546,18 +547,18 @@ export default function Exchange() {
           </div>
 
           {/* Завжди показуєм�� великі цифри */}
-          <div className="flex items-center justify-between mb-2">
-            <div className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground flex-1 min-w-0 break-all">
+          <div className="flex items-end justify-between mb-2">
+            <div className="text-3xl sm:text-4xl md:text-6xl font-bold text-foreground flex-1 max-w-[60%] break-all">
               {toAsset && fromAmount && parseFloat(fromAmount) > 0
                 ? (toAsset.id === "usd" ? toAmount.toFixed(2) : toAmount.toFixed(6))
                 : "0"
               }
             </div>
             <div
-              className="flex items-center gap-2 cursor-pointer ml-4"
+              className="flex items-center gap-2 cursor-pointer ml-2"
               onClick={() => setShowToSelect(true)}
             >
-              <span className="text-2xl sm:text-3xl lg:text-5xl font-light text-muted-foreground">
+              <span className="text-xl sm:text-2xl md:text-4xl font-light text-muted-foreground">
                 {toAsset?.symbol || "Вибрати"}
               </span>
               <span className="text-muted-foreground text-xl">›</span>
