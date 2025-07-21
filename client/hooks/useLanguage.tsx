@@ -54,8 +54,8 @@ const translations = {
     'notifications.educational': 'Образовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
-    'notifications.feedback_desc': 'Опросы и исследо��ания',
-    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут включены.',
+    'notifications.feedback_desc': 'Опросы и исследования',
+    'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут вклю��ены.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
@@ -147,7 +147,7 @@ const translations = {
     // CoinDetail Page
     'coin.about.crypto': 'О КРИПТОВАЛЮТЕ',
     'coin.about.stock': 'ОБ АКЦИИ',
-    'coin.about.precious_metal': 'О ДРАГОЦЕННОМ МЕТАЛЛЕ',
+    'coin.about.precious_metal': 'О ДРАГОЦ��ННОМ МЕТАЛЛЕ',
     'coin.about.currency': 'О ВАЛЮТЕ',
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
@@ -196,7 +196,7 @@ const translations = {
     // Deposit Asset Selection
     'deposit.asset.popular': 'ПОПУЛЯРНЫЕ',
     'deposit.asset.all': 'ВСЕ',
-    'deposit.asset.not_found': 'Активы не найдены',
+    'deposit.asset.not_found': 'Активы не на��дены',
 
     // Deposit Network Selection
     'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
@@ -268,7 +268,7 @@ const translations = {
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
     'bonuses.card.bonus_label': 'БОНУС',
-    'bonuses.card.annual': 'годо��ых',
+    'bonuses.card.annual': 'го��о��ых',
     'bonuses.empty.completed': 'Нет завершённых бонусов',
     'bonuses.asset.dollars': 'Доллары',
 
@@ -345,7 +345,7 @@ const translations = {
     'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
     'common.save': 'Сохранить',
-    'common.edit': 'Ре��актировать',
+    'common.edit': 'Редактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
     'common.error': '��шибка',
@@ -717,6 +717,10 @@ const translations = {
     'history.time.days_ago': 'd ago',
     'history.portfolio.total_value': 'Total portfolio value',
     'history.portfolio.cash': 'Cash',
+    'history.status.completed': 'Completed',
+    'history.status.pending': 'Pending',
+    'history.status.processing': 'Processing',
+    'history.status.failed': 'Failed',
 
     // Bonuses (English)
     'bonuses.hero.title': 'Wallet Bonuses',
