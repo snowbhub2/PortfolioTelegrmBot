@@ -4,7 +4,7 @@ import { ArrowUpDownIcon, SearchIcon } from "lucide-react";
 import { PortfolioManager, UserAsset } from "@/lib/portfolio";
 import { useTelegram } from "@/hooks/useTelegram";
 import { usePriceUpdates } from "@/lib/priceService";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { MarketAsset } from "@/types/crypto";
 
 // Активи з Market сторінки - криптовалюти
