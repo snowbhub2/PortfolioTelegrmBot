@@ -107,17 +107,15 @@ export default function DepositAddress() {
         {/* Title */}
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-2">
-            Ваш адрес в {asset.name.toLowerCase()}{" "}
-            <span className="w-6 h-6 bg-muted-foreground rounded-full inline-flex items-center justify-center text-xs ml-2">
-              ?
-            </span>
+            {t('deposit.address.title')}
           </h1>
           <div className="text-sm text-muted-foreground max-w-sm mx-auto">
-            На этот адрес отправляйте только{" "}
+            {t('deposit.address.warning_start')}{" "}
             <span className="font-semibold">
               {asset.symbol} {networkName}
             </span>
-            . Активы других сетей или NFT будут безвозвратно утрачены.
+            .<br />
+            &nbsp;{t('deposit.address.warning_end')}
           </div>
         </div>
 
@@ -187,7 +185,7 @@ export default function DepositAddress() {
               </svg>
             </div>
             <div className="text-center mt-4 text-sm text-muted-foreground max-w-xs">
-              Отсканируйт�� QR-код для отправки {asset.symbol} на свой кошелёк.
+              {t('deposit.address.qr_description')} {asset.symbol} {t('deposit.address.qr_description_end')}
             </div>
           </Card>
         </div>
