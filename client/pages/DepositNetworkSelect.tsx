@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Card } from "@/components/ui/card";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -37,6 +38,7 @@ const networks: Network[] = [
 
 export default function DepositNetworkSelect() {
   const { hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const [selectedNetwork, setSelectedNetwork] = useState<string>("");
@@ -80,15 +82,14 @@ export default function DepositNetworkSelect() {
         {/* Warning */}
         <Card className="p-4 bg-muted/50">
           <div className="text-sm text-muted-foreground">
-            Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привести
-            к утрате средств.
+            {t('deposit.network.warning')}
           </div>
         </Card>
 
         {/* Title */}
         <div>
           <h2 className="text-sm text-muted-foreground font-medium mb-4">
-            ВЫБЕРИТЕ СЕТЬ {asset.symbol}
+            {t('deposit.network.select')} {asset.symbol}
           </h2>
         </div>
 
