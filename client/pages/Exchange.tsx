@@ -115,7 +115,7 @@ const goldAssets: MarketAsset[] = [
     price: 2650.5,
     change24h: 0.75,
     marketCap: 0,
-    icon: "🥇",
+    icon: "���",
     sparkline: [2640, 2645, 2648, 2650.5],
   },
   {
@@ -462,7 +462,7 @@ export default function Exchange() {
             <div className={`w-8 h-8 ${getAssetColor(fromAsset?.symbol)} rounded-full flex items-center justify-center`}>
               <span className="text-white text-sm font-bold">{fromAsset?.icon || "$"}</span>
             </div>
-            <span className="text-foreground">Ви сплачуєте</span>
+            <span className="text-foreground">{t('exchange.you_pay')}</span>
             <span 
               className={`text-blue-400 text-sm ml-auto ${fromAsset?.id === "usd" ? "cursor-pointer" : ""}`} 
               onClick={fromAsset?.id === "usd" ? handleBalanceClick : undefined}
