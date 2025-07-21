@@ -6,39 +6,41 @@ import {
   ClockIcon,
 } from "lucide-react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 
 interface NavItem {
   path: string;
-  label: string;
+  labelKey: string;
   icon: React.ReactNode;
 }
-
-const navItems: NavItem[] = [
-  {
-    path: "/",
-    label: "Кошелёк",
-    icon: <WalletIcon className="w-5 h-5" />,
-  },
-  {
-    path: "/market",
-    label: "Ринок",
-    icon: <TrendingUpIcon className="w-5 h-5" />,
-  },
-  {
-    path: "/bonuses",
-    label: "Бонусы",
-    icon: <PercentIcon className="w-5 h-5" />,
-  },
-  {
-    path: "/history",
-    label: "История",
-    icon: <ClockIcon className="w-5 h-5" />,
-  },
-];
 
 export default function BottomNavigation() {
   const location = useLocation();
   const { hapticFeedback } = useTelegram();
+  const { t } = useLanguage();
+
+  const navItems: NavItem[] = [
+    {
+      path: "/",
+      labelKey: "nav.wallet",
+      icon: <WalletIcon className="w-5 h-5" />,
+    },
+    {
+      path: "/market",
+      labelKey: "nav.market",
+      icon: <TrendingUpIcon className="w-5 h-5" />,
+    },
+    {
+      path: "/bonuses",
+      labelKey: "nav.bonuses",
+      icon: <PercentIcon className="w-5 h-5" />,
+    },
+    {
+      path: "/history",
+      labelKey: "nav.history",
+      icon: <ClockIcon className="w-5 h-5" />,
+    },
+  ];
 
   const handleNavClick = () => {
     hapticFeedback("light");
@@ -67,7 +69,7 @@ export default function BottomNavigation() {
               >
                 {item.icon}
               </div>
-              <span className="text-xs font-medium">{item.label}</span>
+              <span className="text-xs font-medium">{t(item.labelKey)}</span>
             </Link>
           );
         })}
