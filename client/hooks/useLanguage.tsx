@@ -28,7 +28,7 @@ const translations = {
     'settings.enabled': 'Вкл',
     'settings.verification': 'Уровень в��рификации',
     'settings.max': 'Макси',
-    'settings.not_applies': 'Не распростра��яется на аккаунт CFD Space.',
+    'settings.not_applies': 'Не распространяется на аккаунт CFD Space.',
     'settings.support': 'Обратиться в поддержку',
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
@@ -103,7 +103,7 @@ const translations = {
     'wallet.balance.portfolio': '��аланс Портфеля',
     'wallet.balance.allTime': 'за весь час',
     'wallet.actions.withdraw': 'Вывести',
-    'wallet.actions.deposit': 'По��олнить',
+    'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с в��сокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -229,7 +229,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Активы других сет��й или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -252,12 +252,12 @@ const translations = {
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
     'withdraw.amount.buy_more': 'Докупить.',
-    'withdraw.amount.balance': 'Б��ланс',
+    'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
 
     // Withdraw Processing
-    'withdraw.processing.exchange_completed': 'Обмен выполнен!',
+    'withdraw.processing.exchange_completed': 'Обмен выполне��!',
     'withdraw.processing.payment_processing': 'Ваш платёж в обработке',
     'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
@@ -348,7 +348,7 @@ const translations = {
     // Transfer
     'transfer.title': 'Перевод сре��ств',
     'transfer.subtitle': 'Между Портфелем и CFD',
-    'transfer.portfolio': 'Порт��ель',
+    'transfer.portfolio': 'Портфель',
     'transfer.cash': 'Наличные',
     'transfer.for_trading': 'Для торговли',
     'transfer.direction.to_cfd': 'Перевод в CFD',
@@ -369,7 +369,7 @@ const translations = {
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
-    'transfer.error.transfer_failed': 'Ошибка перевод��',
+    'transfer.error.transfer_failed': 'Ошибка перевода',
     
     // Asset Details
     'asset.about': 'О КРИПТОВАЛЮТЕ',
@@ -400,12 +400,12 @@ const translations = {
     // Common
     'common.back': 'Назад',
     'common.next': 'Далее',
-    'common.continue': 'Продол��ить',
+    'common.continue': 'Продолжить',
     'common.cancel': 'Отмена',
     'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
     'common.save': 'Сохранить',
-    'common.edit': 'Редактировать',
+    'common.edit': '��едактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
     'common.error': '��шибка',
@@ -435,7 +435,7 @@ const translations = {
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
     'common.done': 'Готово',
-    'common.copied': 'Скоп��ровано',
+    'common.copied': 'Скопировано',
     'common.copy': 'Копировать',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
@@ -803,6 +803,15 @@ const translations = {
     'withdraw.processing.return_to_portfolio': 'Return to portfolio',
     'withdraw.processing.telegram_stars_exchange': 'Telegram Stars exchange',
     'withdraw.processing.external_withdrawal': 'External wallet withdrawal',
+
+    // CFD Page (English)
+    'cfd.title': 'CFD Trading',
+    'cfd.balance.title': 'CFD Balance',
+    'cfd.balance.description': 'Funds for contracts for difference',
+    'cfd.nav.market': 'Market',
+    'cfd.nav.trades': 'Trades',
+    'cfd.nav.autotrading': 'Auto Trading',
+    'cfd.nav.history': 'History',
 
     // History (English)
     'history.subtitle': 'All your transactions and operations',
