@@ -215,7 +215,7 @@ export default function DepositAddress() {
             <Card className="p-3 bg-muted border text-center">
               <div className="flex items-center justify-center gap-2">
                 <span className="text-lg">📋</span>
-                <span className="text-sm">Адрес скопирован в буфер.</span>
+                <span className="text-sm">{t('deposit.address.copied_notification')}</span>
               </div>
             </Card>
           </div>
