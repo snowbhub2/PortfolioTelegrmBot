@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BonusReward } from "@/types/crypto";
@@ -44,6 +45,7 @@ const mockBonuses: BonusReward[] = [
 
 export default function Bonuses() {
   const { tg, hapticFeedback } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<"active" | "completed">("active");
 
@@ -75,16 +77,16 @@ export default function Bonuses() {
       {/* Bonus Hero Section */}
       <div className="text-center py-8">
         <div className="text-6xl mb-4">💰</div>
-        <h2 className="text-2xl font-bold mb-2">Бонусы в Кошельке</h2>
+        <h2 className="text-2xl font-bold mb-2">{t('bonuses.hero.title')}</h2>
         <p className="text-muted-foreground mb-4">
-          Получайте бонусы за хранение криптовалюты.
+          {t('bonuses.hero.subtitle')}
         </p>
         <Button
           variant="ghost"
           className="text-primary"
           onClick={() => hapticFeedback("light")}
         >
-          Как это работает <ChevronRightIcon className="w-4 h-4 ml-1" />
+          {t('bonuses.hero.how_it_works')} <ChevronRightIcon className="w-4 h-4 ml-1" />
         </Button>
       </div>
 
@@ -102,7 +104,7 @@ export default function Bonuses() {
                 : "border-transparent text-muted-foreground"
             }`}
           >
-            Активные
+            {t('bonuses.tabs.active')}
           </button>
           <button
             onClick={() => {
@@ -115,7 +117,7 @@ export default function Bonuses() {
                 : "border-transparent text-muted-foreground"
             }`}
           >
-            Завершённые
+            {t('bonuses.tabs.completed')}
           </button>
         </div>
       </div>
@@ -133,7 +135,7 @@ export default function Bonuses() {
               >
                 {bonus.id === "usd" && (
                   <div className="absolute top-2 right-2 bg-primary text-primary-foreground text-xs px-2 py-1 rounded-full">
-                    БОНУС
+                    {t('bonuses.card.bonus_label')}
                   </div>
                 )}
                 <div className="text-center">
@@ -142,7 +144,7 @@ export default function Bonuses() {
                   </div>
                   <h3 className="font-medium mb-1">{bonus.name}</h3>
                   <div className="text-sm text-muted-foreground">
-                    {bonus.apy}% годовых
+                    {bonus.apy}% {t('bonuses.card.annual')}
                   </div>
                 </div>
               </Card>
@@ -152,7 +154,7 @@ export default function Bonuses() {
         {activeTab === "completed" && (
           <div className="text-center py-8 text-muted-foreground">
             <div className="text-4xl mb-2">📦</div>
-            <p>Нет завершённых бонусов</p>
+            <p>{t('bonuses.empty.completed')}</p>
           </div>
         )}
       </div>
