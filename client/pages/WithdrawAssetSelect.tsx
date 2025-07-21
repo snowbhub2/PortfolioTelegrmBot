@@ -16,17 +16,7 @@ interface Asset {
   color: string;
 }
 
-const availableAssets: Asset[] = [
-  {
-    id: "usd",
-    name: "Доллары",
-    symbol: "USDT",
-    balance: 5500,
-    usdValue: 5500,
-    icon: "$",
-    color: "bg-green-500",
-  },
-];
+// This will be updated with real balance in component
 
 export default function WithdrawAssetSelect() {
   const { hapticFeedback, tg, user } = useTelegram();
