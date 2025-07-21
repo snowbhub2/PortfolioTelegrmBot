@@ -7,6 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 export default function DepositAddress() {
   const { hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
   const [copied, setCopied] = useState(false);
@@ -186,7 +187,7 @@ export default function DepositAddress() {
               </svg>
             </div>
             <div className="text-center mt-4 text-sm text-muted-foreground max-w-xs">
-              Отсканируйте QR-код для отправки {asset.symbol} на свой кошелёк.
+              Отсканируйт�� QR-код для отправки {asset.symbol} на свой кошелёк.
             </div>
           </Card>
         </div>
