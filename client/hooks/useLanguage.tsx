@@ -95,7 +95,7 @@ const translations = {
     'wallet.assets.buyOnMarket': 'Купите активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
-    'wallet.trending.perDay': 'за день',
+    'wallet.trending.perDay': 'за ден��',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.tabs.wallet': 'Портфель',
     'wallet.tabs.cfd': 'CFD',
@@ -193,7 +193,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может п��ивести к утрате средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привести к утрате средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Withdraw Pages
@@ -284,17 +284,17 @@ const translations = {
     'common.skip': 'Пропустить',
     'common.done': 'Готово',
     'common.copied': 'Скопировано',
-    'common.copy': 'Копиро��ать',
+    'common.copy': 'Копировать',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
     'common.support': 'Поддержка',
     'common.about': 'О приложении',
-    'common.version': '��ерсия',
+    'common.version': 'Версия',
     'common.update': 'Обновить',
     'common.new': 'Новый',
     'common.old': 'Старый',
     'common.recent': 'Недавние',
-    'common.popular': 'Популярные',
+    'common.popular': 'Попу��ярные',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
     'common.top': 'Топ',
@@ -559,6 +559,10 @@ const translations = {
     'deposit.asset.popular': 'POPULAR',
     'deposit.asset.all': 'ALL',
     'deposit.asset.not_found': 'Assets not found',
+
+    // Deposit Network Selection (English)
+    'deposit.network.warning': 'Make sure you select the correct network. Wrong choice may lead to loss of funds.',
+    'deposit.network.select': 'SELECT NETWORK',
 
     // Withdraw Pages (English)
     'withdraw.method.title': 'How to send',
