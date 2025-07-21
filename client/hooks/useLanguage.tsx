@@ -64,13 +64,13 @@ const translations = {
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
     'notifications.promotions': 'Акции',
-    'notifications.promotions_desc': 'Розыгры��и и бонусы',
+    'notifications.promotions_desc': 'Розыгрыши и бонусы',
     'notifications.educational': 'Об��азовательный ко��тент',
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
-    'notifications.news_channel': 'Все новости вы можете прочитать в канале',
+    'notifications.news_channel': 'Все новости вы можете проч��тать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
@@ -95,7 +95,7 @@ const translations = {
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
-    'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРА��НОЙ СВЯЗИ',
+    'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
     'notifications.category.feedback_desc': 'Опросы пользователей, ��оторые помогают улучши��ь сервис.',
     
     // Wallet
@@ -207,7 +207,7 @@ const translations = {
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'криптовалюту',
-    'deposit.method.bank_card': 'Банковская карта',
+    'deposit.method.bank_card': 'Б��нковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту напрямую',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
@@ -218,12 +218,12 @@ const translations = {
     'deposit.method.external_wallet_desc': 'Перевести с крипто кошелька',
 
     // Deposit Asset Selection
-    'deposit.asset.popular': 'ДОСТУПНЫЕ',
+    'deposit.asset.popular': 'ВСЕ ДОСТУПНЫЕ КРИПТОВАЛЮТЫ АВТОМАТИЧЕСКИ КОНВЕРТИРУЮТСЯ В ДОЛЛАРЫ США, ПО АКТУАЛЬНОМУ КУРСУ',
     'deposit.asset.all': 'ВСЕ КРИПТОВАЛЮТЫ АВТОМАТИЧЕСКИ КОНВЕРТИРУЮТСЯ В ДОЛЛАРЫ США, ПО АКТУАЛЬНОМУ КУРСУ',
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате ��редств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор може�� привест�� к утрате ��редств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -397,7 +397,7 @@ const translations = {
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
     'exchange.insufficient_funds': 'Недостаточно средств.',
-    'exchange.select_instrument': '��ыбрать инструмент',
+    'exchange.select_instrument': '���ыбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
     'exchange.review_deal': 'Просмотреть сделку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
@@ -487,7 +487,7 @@ const translations = {
     'exchange.review_deal': 'Переглянути угоду',
     'exchange.back': 'Назад',
     'exchange.search': 'По��ск',
-    'exchange.top_up': 'Пополн����ь',
+    'exchange.top_up': 'Пополн������ь',
     'exchange.enter_amount': 'Введите сумму',
     'exchange.select_asset': 'Выберите актив',
     
@@ -550,7 +550,7 @@ const translations = {
     'common.center': 'Центр',
     'common.up': 'Вверх',
     'common.down': 'Вниз',
-    'common.high': 'Высо��ий',
+    'common.high': 'Высокий',
     'common.low': 'Низкий',
     'common.medium': 'Средний',
     'common.fast': 'Быстро',
