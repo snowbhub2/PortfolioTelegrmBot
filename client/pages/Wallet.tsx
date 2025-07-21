@@ -211,7 +211,11 @@ export default function Wallet() {
 
   const handleTabSwitch = (tab: string) => {
     hapticFeedback("light");
-    setActiveTab(tab);
+    if (tab === "cfd") {
+      navigate("/cfd");
+    } else {
+      setActiveTab(tab);
+    }
   };
 
   const handleAvatarClick = () => {
