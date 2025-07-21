@@ -349,7 +349,7 @@ export default function Exchange() {
   const handleMaxAmount = () => {
     if (fromAsset) {
       hapticFeedback("light");
-      // Обрізаємо до 2 знаків після коми без зао��руглень
+      // Обрізаємо до 2 знаків після коми без заокруглень
       const maxAmount = Math.floor(fromAsset.quantity * 100) / 100;
       setFromAmount(maxAmount.toFixed(2));
     }
@@ -431,7 +431,7 @@ export default function Exchange() {
 
   const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(2) : "0";
 
-  // Створюємо списки активів включаючи долари
+  // Створюємо списки активів включаючи д��лари
   const filteredUserAssets = userAssets.filter(asset => 
     asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
@@ -498,7 +498,7 @@ export default function Exchange() {
                 if (value.includes('.')) {
                   const parts = value.split('.');
                   if (parts[1] && parts[1].length > 2) {
-                    return; // Не дозволяємо більше 2 знаків після коми
+                    return; // Не дозволяємо бі��ьше 2 знаків після коми
                   }
                 }
                 setFromAmount(value);
@@ -585,11 +585,36 @@ export default function Exchange() {
 
           {/* Завжди показуєм�� великі цифри */}
           <div className="flex items-center justify-between mb-2">
-            <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
-              {toAsset && fromAmount && parseFloat(fromAmount) > 0
-                ? toAmount.toFixed(2)
-                : "0"}
-            </div>
+            <input
+              type="number"
+              placeholder="0"
+              value={lastEditedField === 'from' && calculatedToAmount > 0 ? calculatedToAmount.toFixed(2) : toAmount}
+              step="0.01"
+              min={toAsset?.id === "usd" ? "20" : "0.01"}
+              onChange={(e) => {
+                const value = e.target.value;
+                // Обмежуємо до 2 знаків після коми
+                if (value.includes('.')) {
+                  const parts = value.split('.');
+                  if (parts[1] && parts[1].length > 2) {
+                    return;
+                  }
+                }
+                setToAmount(value);
+                setLastEditedField('to');
+                // Обчислюємо fromAmount
+                if (fromAsset?.currentPrice && toAsset?.currentPrice && value) {
+                  const toVal = parseFloat(value) * toAsset.currentPrice;
+                  const calculatedFrom = toVal / fromAsset.currentPrice;
+                  setFromAmount(calculatedFrom.toFixed(2));
+                } else {
+                  setFromAmount("");
+                }
+                setError("");
+              }}
+              className="text-6xl font-bold bg-transparent border-0 focus:outline-none w-1/2 text-foreground"
+              style={{ fontSize: '4rem' }}
+            />
             <div
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => setShowToSelect(true)}
