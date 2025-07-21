@@ -321,7 +321,7 @@ const translations = {
     'history.start_trading': 'Начните торговать, чтобы ув��деть историю здесь',
 
     // Additional History translations
-    'history.subtitle': 'Все ваши транзакции и операции',
+    'history.subtitle': 'Все ваши транза��ции и операции',
     'history.filter.all': 'Все',
     'history.filter.buy': 'Покупки',
     'history.filter.sell': 'Продажи',
@@ -376,15 +376,18 @@ const translations = {
     
     // Bonuses
     'bonuses.title': 'Бонусы',
-    'bonuses.hero.title': 'Бону��ы �� Кошельке',
-    'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
+    'bonuses.hero.title': 'Бонусы с Портфелем',
+    'bonuses.hero.subtitle': 'Получайте бонусы за хранение акций и криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
     'bonuses.card.bonus_label': 'БОНУС',
-    'bonuses.card.annual': 'годо��ых',
+    'bonuses.card.annual': 'годовых',
     'bonuses.empty.completed': 'Нет завершённых бонусов',
-    'bonuses.asset.dollars': 'Доллары',
+    'bonuses.asset.dollars': 'Нобелевский портфель',
+    'bonuses.asset.dogs': 'Портфель техно',
+    'bonuses.asset.major': 'Портфель легкий старт',
+    'bonuses.asset.ton': 'Портфель VIP',
 
     // Exchange
     'exchange.title': 'Обмен',
@@ -441,7 +444,7 @@ const translations = {
 
     // CoinDetail Page
     'coin.about_crypto': 'О КРИПТОВАЛЮТЕ',
-    'coin.about_stock': 'ПРО АКЦИЮ',
+    'coin.about_stock': 'ПРО ��КЦИЮ',
     'coin.about_precious_metal': 'ПРО ДОРОГОЦІННИЙ МЕТАЛ',
     'coin.about_currency': 'ПРО ВАЛЮТУ',
     'coin.portfolio_section': 'У ПОРТФЕЛІ',
@@ -464,7 +467,7 @@ const translations = {
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
-    'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
+    'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або ��берігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
     'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
     'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
@@ -1019,15 +1022,18 @@ const translations = {
     'history.description.for': 'for',
 
     // Bonuses (English)
-    'bonuses.hero.title': 'Wallet Bonuses',
-    'bonuses.hero.subtitle': 'Get bonuses for storing cryptocurrency.',
+    'bonuses.hero.title': 'Portfolio Bonuses',
+    'bonuses.hero.subtitle': 'Get bonuses for storing stocks and cryptocurrency.',
     'bonuses.hero.how_it_works': 'How it works',
     'bonuses.tabs.active': 'Active',
     'bonuses.tabs.completed': 'Completed',
     'bonuses.card.bonus_label': 'BONUS',
     'bonuses.card.annual': 'annually',
     'bonuses.empty.completed': 'No completed bonuses',
-    'bonuses.asset.dollars': 'Dollars',
+    'bonuses.asset.dollars': 'Nobel Portfolio',
+    'bonuses.asset.dogs': 'Tech Portfolio',
+    'bonuses.asset.major': 'Light Start Portfolio',
+    'bonuses.asset.ton': 'VIP Portfolio',
 
     // Exchange (English)
     'exchange.title': 'Exchange',
