@@ -47,8 +47,10 @@ export class PortfolioManager {
   constructor(userId: string) {
     this.portfolio = this.loadPortfolio(userId);
 
-    // Додаємо тестові транзакції для демонстрації (завжди для тестування)
-    this.addTestTransactions();
+    // Додаємо тестові транзакції для демонстрації (тільки один раз)
+    if (this.portfolio.transactions.length === 0) {
+      this.addTestTransactions();
+    }
   }
 
   // Метод для додавання тестових транзакцій
@@ -378,12 +380,12 @@ export class PortfolioManager {
     return this.portfolio.assets.find(asset => asset.id === assetId);
   }
 
-  // Отримати транзакції для конкретн��го активу
+  // Отримати транзакції для конкретного активу
   getAssetTransactions(assetId: string): Transaction[] {
     let transactions: Transaction[];
 
     if (assetId === 'usd') {
-      // Для USD показуємо: поповнення, виведення, продажі (отримання USD) та покупки (витрати USD)
+      // Для USD показуємо: поповнення, виведення, продажі (отримання USD) та покупки (витр��ти USD)
       transactions = this.portfolio.transactions.filter(transaction =>
         transaction.type === 'deposit' ||
         transaction.type === 'withdraw' ||
