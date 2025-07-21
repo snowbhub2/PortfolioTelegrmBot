@@ -35,7 +35,7 @@ const translations = {
     'settings.agreement': 'Пользовательское соглашение',
     'settings.privacy': 'Политика конфиденциальности',
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
-    'settings.footer_text2': 'Сервис независим и не связан с Telegram.',
+    'settings.footer_text2': 'Сервис независим и не свя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
     
     // Language Selection
@@ -54,7 +54,7 @@ const translations = {
     'notifications.educational': 'Образовательный контент',
     'notifications.educational_desc': 'Гайды и советы',
     'notifications.feedback': 'Обратная связ��',
-    'notifications.feedback_desc': 'Опросы и исследов��ния',
+    'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомления о транзакциях и безопасности всегда будут включены.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
@@ -76,7 +76,7 @@ const translations = {
     
     // Wallet
     'wallet.title': 'Портфель',
-    'wallet.balance.portfolio': 'Баланс Портфеля',
+    'wallet.balance.portfolio': '��аланс Портфеля',
     'wallet.balance.allTime': 'за весь час',
     'wallet.actions.withdraw': 'Вывести',
     'wallet.actions.deposit': 'Пополнить',
@@ -151,7 +151,7 @@ const translations = {
     'coin.about.currency': 'О ВАЛЮТЕ',
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
-    'coin.quantity': 'Количество',
+    'coin.quantity': 'Коли��ество',
     'coin.current_value': 'Текущая стоимость',
     'coin.btn.buy': 'Купить',
     'coin.btn.sell': 'Продать',
@@ -172,13 +172,13 @@ const translations = {
     'wallet.trending.title': 'В ТР��НДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть на��тройки',
-    'wallet.user.avatar': 'аватар поль��ователя',
+    'wallet.user.avatar': 'аватар пользователя',
 
     // Deposit Pages
     'deposit.method.title': 'Как вы хотите купить',
     'deposit.method.subtitle': 'криптовалюту',
     'deposit.method.bank_card': 'Банковская карта',
-    'deposit.method.bank_card_desc': 'Купить криптовалюту ��о карте',
+    'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
     'deposit.method.p2p_express': 'P2P Экспресс',
     'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
     'deposit.method.p2p_market': 'P2P Маркет',
@@ -199,7 +199,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозвратно утрачены.',
+    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -239,12 +239,12 @@ const translations = {
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
     'history.transaction.asset': 'акти��а',
-    'history.transaction.deposit': 'Пополне��ие звездами',
+    'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
     'history.transaction.transfer_to_cfd': 'Перевод в CFD',
     'history.transaction.transfer_from_cfd': 'Перевод из CFD',
     'history.transaction.default': 'Транзакция',
-    'history.time.now': 'Только что',
+    'history.time.now': 'То��ько что',
     'history.time.hours_ago': 'ч назад',
     'history.time.days_ago': 'дн назад',
     'history.portfolio.total_value': 'Общая стоимость портфеля',
@@ -275,7 +275,7 @@ const translations = {
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
-    'transfer.title': 'Перевод средств',
+    'transfer.title': 'Перевод сре��ств',
     'transfer.subtitle': 'Между Портфелем и CFD',
     'transfer.portfolio': 'Портфель',
     'transfer.cash': 'Наличные',
@@ -579,6 +579,7 @@ const translations = {
     'common.status': 'Status',
     'common.type': 'Type',
     'common.search': 'Search',
+    'common.back': 'Back',
     'common.filter': 'Filter',
     'common.sort': 'Sort',
     'common.all': 'All',
