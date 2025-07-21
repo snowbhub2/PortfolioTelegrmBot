@@ -134,7 +134,7 @@ const translations = {
     'history.transaction.sell': 'Продаж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
-    'history.no_transactions': 'Пока нет транзакций',
+    'history.no_transactions': 'Пока нет тра��закций',
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
@@ -180,7 +180,7 @@ const translations = {
     'deposit.method.bank_card': 'Банковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту ��о карте',
     'deposit.method.p2p_express': 'P2P Экспресс',
-    'deposit.method.p2p_express_desc': 'Сде��ки с надёжными продавцами',
+    'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
     'deposit.method.p2p_market': 'P2P Маркет',
     'deposit.method.p2p_market_desc': 'Купить без посредников',
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
@@ -200,7 +200,7 @@ const translations = {
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
     'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозвратно утрачены.',
-    'deposit.address.qr_description': 'Отсканируйте QR-код для отп��авки',
+    'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
     'deposit.address.copy': 'Копировать адрес',
@@ -252,9 +252,14 @@ const translations = {
     
     // Bonuses
     'bonuses.title': 'Бонусы',
-    'bonuses.available': 'Доступные бонусы',
-    'bonuses.completed': 'Выполненные',
-    'bonuses.no_bonuses': 'У вас пока нет доступных бонусов',
+    'bonuses.hero.title': 'Бонусы в Кошельке',
+    'bonuses.hero.subtitle': 'Получайте бонусы за хранение криптовалюты.',
+    'bonuses.hero.how_it_works': 'Как это работает',
+    'bonuses.tabs.active': 'Активные',
+    'bonuses.tabs.completed': 'Завершённые',
+    'bonuses.card.bonus_label': 'БОНУС',
+    'bonuses.card.annual': 'годовых',
+    'bonuses.empty.completed': 'Нет завершённых бонусов',
     
     // Asset Details
     'asset.about': 'О КРИПТОВАЛЮТЕ',
@@ -279,7 +284,7 @@ const translations = {
     'exchange.max_amount': 'Макс. су��ма',
     'exchange.exchange_btn': 'Обменять',
     'exchange.insufficient_balance': 'Недостаточно средств',
-    'exchange.enter_amount': 'Введите су��му',
+    'exchange.enter_amount': 'Введите сумму',
     'exchange.select_asset': 'Выберите актив',
     
     // Common
