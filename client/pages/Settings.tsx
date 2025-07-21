@@ -200,16 +200,16 @@ export default function Settings() {
             <CreditCardIcon className="w-5 h-5 text-blue-500" />
             <div className="flex-1">
               <div className="flex items-center justify-between">
-                <span className="font-medium">Уровень верификации</span>
+                <span className="font-medium">{t('settings.verificationLevel')}</span>
                 <div className="flex items-center gap-2">
-                  <span className="text-muted-foreground">Макси</span>
+                  <span className="text-muted-foreground">{t('settings.maxiVerification')}</span>
                   <ChevronRightIcon className="w-4 h-4 text-muted-foreground" />
                 </div>
               </div>
             </div>
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            Не распространяется на аккаунт CFD Space.
+            {t('settings.cfdNotApplicable')}
           </p>
         </Card>
 
