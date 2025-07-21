@@ -401,7 +401,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
-        // Переходимо на сторінку деталей активу який отримали
+        // Переходимо на сторінку деталей активу який ��тримали
         navigate(`/coin/${toAsset.id}`);
       } else {
         setError("Помилка при обміні активів");
@@ -448,9 +448,9 @@ export default function Exchange() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header - без кнопки назад */}
-      <div className="flex items-center justify-center p-4 max-w-md mx-auto">
+      <div className="flex items-center justify-center p-4 max-w-2xl mx-auto">
         <div className="text-center">
-          <div className="font-medium text-lg">Обмен</div>
+          <div className="font-medium text-xl">Обмен</div>
         </div>
       </div>
 
