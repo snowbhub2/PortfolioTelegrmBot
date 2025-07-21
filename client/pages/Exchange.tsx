@@ -266,7 +266,7 @@ export default function Exchange() {
         const allAvailable = [...allAssets, ...allMarketAssets];
         const toAssetFromUrl = allAvailable.find(asset => asset.id === toParam);
         if (toAssetFromUrl && !toAsset) {
-          // Конвертуєм�� в UserAsset формат якщо це ринковий актив
+          // Конвертуємо в UserAsset формат якщо це ринковий актив
           if (!allAssets.find(a => a.id === toAssetFromUrl.id)) {
             const marketAsset = toAssetFromUrl as any;
             setToAsset({
@@ -349,7 +349,7 @@ export default function Exchange() {
   const handleMaxAmount = () => {
     if (fromAsset) {
       hapticFeedback("light");
-      // Обрізаємо до 2 знаків після коми без заокруглень
+      // Обрізаємо до 2 знаків після коми без зао��руглень
       const maxAmount = Math.floor(fromAsset.quantity * 100) / 100;
       setFromAmount(maxAmount.toFixed(2));
     }
@@ -422,7 +422,7 @@ export default function Exchange() {
         hapticFeedback("medium");
       }
     } catch (err) {
-      setError("Помилка при обм��ні активів");
+      setError("Помилка при обміні активів");
       hapticFeedback("medium");
     } finally {
       setIsLoading(false);
@@ -502,6 +502,15 @@ export default function Exchange() {
                   }
                 }
                 setFromAmount(value);
+                setLastEditedField('from');
+                // Обчислюємо toAmount
+                if (toAsset?.currentPrice && value) {
+                  const fromVal = parseFloat(value) * (fromAsset?.currentPrice || 0);
+                  const calculatedTo = fromVal / toAsset.currentPrice;
+                  setToAmount(calculatedTo.toFixed(2));
+                } else {
+                  setToAmount("");
+                }
                 setError("");
               }}
               className={`text-6xl font-bold bg-transparent border-0 focus:outline-none w-1/2 ${
