@@ -47,7 +47,7 @@ const translations = {
     'settings.walletNews': 'Новости Портфеля',
     'settings.cfdNotApplicable': 'Распространяется на аккаунт CFD',
     'settings.userAgreement': 'Пользовательское соглашение',
-    'settings.privacyPolicy': 'Политика конфиденциальности',
+    'settings.privacyPolicy': 'Политика конфиденциа��ьности',
     'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
     'settings.learnMore': 'Узнать больше',
@@ -85,7 +85,7 @@ const translations = {
     'notifications.news_text': 'Все новости вы можете прочитать в канале',
     'notifications.news_channel_link': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
-    'notifications.cfd_for': 'Уведомления для',
+    'notifications.cfd_for': 'Уве��омления для',
     'notifications.cfd_description': 'Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с в��сокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -205,7 +205,7 @@ const translations = {
     'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
 
     // Deposit Pages
-    'deposit.method.title': 'Как вы хотите купить',
+    'deposit.method.title': 'Как вы хотите ку��ить',
     'deposit.method.subtitle': 'крипт��валюту',
     'deposit.method.bank_card': 'Банковская карта',
     'deposit.method.bank_card_desc': 'Купить криптовалюту ��о кар��е',
@@ -229,7 +229,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Активы других се��ей или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -251,7 +251,7 @@ const translations = {
 
     // Withdraw Amount
     'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
-    'withdraw.amount.buy_more': 'До��упить.',
+    'withdraw.amount.buy_more': 'До����пить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
     'withdraw.amount.next': 'Далее',
@@ -370,13 +370,14 @@ const translations = {
 
     // Transaction Descriptions
     'history.description.initial_deposit': 'Початковый депозит',
-    'history.description.purchase_details': 'Покупка {{quantity}} {{asset}} за ${{price}}',
-    'history.description.sell_details': 'Продажа {{quantity}} {{asset}} за ${{price}}',
+    'history.description.purchase_prefix': 'Покупка',
+    'history.description.sell_prefix': 'Продажа',
+    'history.description.for': 'за',
     
     // Bonuses
     'bonuses.title': 'Бонусы',
     'bonuses.hero.title': 'Бону��ы в Кошельке',
-    'bonuses.hero.subtitle': '��олучайте бонусы з�� хранение криптовалюты.',
+    'bonuses.hero.subtitle': '��олучайте бонусы за хранение криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
@@ -458,8 +459,8 @@ const translations = {
     'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатк��в (DApps), запущена в 2015 році.',
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
-    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
-    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для ��иттєвих міжнародних переказів та платежів.',
+    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac т�� іншими пристроями.',
+    'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
     'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
@@ -492,7 +493,7 @@ const translations = {
     'common.next': 'Далее',
     'common.continue': 'Продолжить',
     'common.cancel': 'Отмена',
-    'common.confirm': 'Подтвердить',
+    'common.confirm': 'Подтверд��ть',
     'common.close': 'Закрыть',
     'common.save': 'Сохранить',
     'common.edit': 'Редактировать',
@@ -533,7 +534,7 @@ const translations = {
     'common.about': 'О приложении',
     'common.version': 'Версия',
     'common.update': 'Обновить',
-    'common.new': 'Новый',
+    'common.new': 'Но��ый',
     'common.old': 'Старый',
     'common.recent': 'Недавн��е',
     'common.popular': 'Популярные',
