@@ -33,7 +33,7 @@ const translations = {
     'settings.faq': 'FAQ Коше��ька',
     'settings.news': 'Новости Кошелька',
     'settings.agreement': 'Пользовательское соглашение',
-    'settings.privacy': 'Политика конфиденциальности',
+    'settings.privacy': 'Политика конфиденциальнос��и',
     'settings.footer_text': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.footer_text2': 'Сервис независим и не ��вя��ан с Telegram.',
     'settings.learn_more': 'Узнать больше',
@@ -46,14 +46,14 @@ const translations = {
     'settings.walletFAQ': 'FAQ Кошелька',
     'settings.walletNews': 'Новости Кошелька',
     'settings.cfdNotApplicable': 'Не распространяется на аккаунт CFD Space.',
-    'settings.userAgreement': 'Пользователь��кое соглашение',
+    'settings.userAgreement': 'Пользовательское соглашение',
     'settings.privacyPolicy': 'Политика конфиденциальности',
     'settings.managedBy': 'Мини-приложение управляется TG Wallet Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
     'settings.learnMore': 'Узнать больше',
     
     // Language Selection
-    'language.title': 'ЯЗЫК',
+    'language.title': 'ЯЗЫ��',
     'language.english': 'English',
     'language.russian': 'Русский',
     
@@ -108,7 +108,7 @@ const translations = {
     'wallet.actions.transfer': 'Перевести',
     'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
-    'wallet.notification.startEarning': 'Начать зарабатывать →',
+    'wallet.notification.startEarning': 'Начать зарабатыват�� →',
     'wallet.assets.title': 'АКТИВЫ',
     'wallet.assets.hide': 'Скрыть',
     'wallet.assets.show': 'Показать',
@@ -131,7 +131,7 @@ const translations = {
     'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
     'wallet.gold': 'Золото',
 
-    // Додаткові переклади для всіх текстів
+    // Додаткові переклади для всіх текст��в
     'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатыват�� →',
@@ -176,7 +176,7 @@ const translations = {
     'coin.in_portfolio': 'В ПОРТФЕЛЕ',
     'coin.balance': 'Баланс',
     'coin.quantity': 'Количество',
-    'coin.current_value': 'Текущая с��оимость',
+    'coin.current_value': 'Текущая стоимость',
     'coin.btn.buy': 'Купить',
     'coin.btn.sell': 'Продать',
     'coin.btn.deposit': 'Пополнить',
@@ -230,7 +230,7 @@ const translations = {
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
     'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
-    'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
+    'deposit.address.qr_description': 'Отсканируйт�� QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
     'deposit.address.copy': 'Копировать адре��',
@@ -254,7 +254,7 @@ const translations = {
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
-    'withdraw.amount.next': 'Далее',
+    'withdraw.amount.next': 'Да��ее',
 
     // Withdraw Processing
     'withdraw.processing.exchange_completed': 'Обмен выполнен!',
@@ -274,7 +274,7 @@ const translations = {
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
-    'cfd.balance.title': 'Баланс CFD',
+    'cfd.balance.title': 'Балан�� CFD',
     'cfd.balance.description': 'Средства для контрактов на разность цен',
     'cfd.trading_balance': 'Торговый ба��анс CFD',
     'cfd.search_assets': 'Поиск активов',
@@ -328,7 +328,7 @@ const translations = {
     'history.filter.deposit': 'Пополнения',
     'history.filter.withdraw': 'Выведения',
     'history.empty.title': 'Пока нет транзак��ий',
-    'history.empty.subtitle_all': 'Ваши операции появятся здесь',
+    'history.empty.subtitle_all': 'Ваши оп��рации появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
@@ -398,7 +398,7 @@ const translations = {
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
-    'transfer.error.transfer_failed': 'Ошибка перевода',
+    'transfer.error.transfer_failed': 'Ошиб��а перевода',
     
     // Asset Details
     'asset.about': 'О КРИПТОВАЛЮТЕ',
@@ -421,13 +421,20 @@ const translations = {
     'coin.about_currency': 'ПРО ВАЛЮТУ',
     'coin.portfolio_section': 'У ПОРТФЕЛІ',
     'coin.read_more': 'Докладніше',
-    'coin.portfolio_empty': 'Немає активів в портф��лі',
+    'coin.portfolio_empty': 'Немає активів в портфелі',
     'coin.time_period.1d': '1Д',
     'coin.time_period.7d': '7Д',
     'coin.time_period.1m': '1М',
     'coin.time_period.1y': '1Г',
     'coin.time_period.all': 'Все',
     'coin.today': 'Сегодня',
+    'coin.btc_description': 'Bitcoin — це перша і найвідоміша криптовалюта у світі. Створена в 2009 році Сатоші Накамото як децентралізована цифрова валюта.',
+    'coin.btc_point_1': 'Ви можете купувати, продавати або зберігати BTC в Гаманці.',
+    'coin.btc_point_2': 'Bitcoin використовує технологію блокчейн для забезпечення безпеки та прозорості.',
+    'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.',
+    'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
+    'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
+    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
 
     // Exchange
     'exchange.title': 'Обмен',
@@ -462,7 +469,7 @@ const translations = {
     'common.balance': 'Баланс',
     'common.price': 'Цена',
     'common.volume': 'Объём',
-    'common.change': 'Изменение',
+    'common.change': 'Измене��ие',
     'common.date': 'Дата',
     'common.time': 'Время',
     'common.status': 'Статус',
