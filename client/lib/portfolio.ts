@@ -6,7 +6,7 @@ export interface UserAsset {
   id: string;
   symbol: string;
   name: string;
-  quantity: number; // Кількі��ть акцій/інструментів
+  quantity: number; // Кількість акцій/інструментів
   avgPrice: number; // Середня ціна покупки
   currentPrice: number; // Поточна ціна
   icon: string;
@@ -47,10 +47,8 @@ export class PortfolioManager {
   constructor(userId: string) {
     this.portfolio = this.loadPortfolio(userId);
 
-    // Додаємо тестові транзакції для демонстрації (тільки один раз)
-    if (this.portfolio.transactions.length === 0) {
-      this.addTestTransactions();
-    }
+    // Додаємо тестові транзакції для демонстрації (завжди для тестування)
+    this.addTestTransactions();
   }
 
   // Метод для додавання тестових транзакцій
@@ -145,7 +143,7 @@ export class PortfolioManager {
     return this.portfolio.cashBalance + assetsValue;
   }
 
-  // Розрахува���� загальну інвестовану суму
+  // Розрахуват�� загальну інвестовану суму
   getTotalInvestedAmount(): number {
     const assetsInvested = this.portfolio.assets.reduce((total, asset) => {
       return total + asset.quantity * asset.avgPrice;
