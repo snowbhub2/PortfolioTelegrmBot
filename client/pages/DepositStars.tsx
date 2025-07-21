@@ -165,7 +165,7 @@ export default function DepositStars() {
 
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span>Сума:</span>
+                    <span>Сумма:</span>
                     <span>${amountNum.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
@@ -173,7 +173,7 @@ export default function DepositStars() {
                     <span>$1 = {USD_TO_STARS_RATE} ⭐</span>
                   </div>
                   <div className="flex justify-between font-semibold border-t pt-2">
-                    <span>До сплати:</span>
+                    <span>К оплате:</span>
                     <span className="text-primary">{starsAmount} ⭐</span>
                   </div>
                 </div>
