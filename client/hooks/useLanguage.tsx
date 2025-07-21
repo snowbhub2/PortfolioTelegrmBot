@@ -68,7 +68,7 @@ const translations = {
     
     // Notification Categories
     'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
-    'notifications.category.updates': 'УВЕДОМЛЕНИЯ ОБНОВЛЕНИЙ',
+    'notifications.category.updates': 'УВЕ��ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
     'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
@@ -89,7 +89,7 @@ const translations = {
     'wallet.assets.hide': 'Скрыть',
     'wallet.assets.show': 'Показать',
     'wallet.assets.cashDollars': 'Доллары',
-    'wallet.assets.forTrading': 'Для торговли',
+    'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купили за:',
     'wallet.assets.noAssets': 'Пока нет активов',
     'wallet.assets.buyOnMarket': 'Купите активы на странице Рынок',
@@ -173,6 +173,19 @@ const translations = {
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.settings.open': 'Открыть настройки',
     'wallet.user.avatar': 'аватар пользователя',
+
+    // Deposit Pages
+    'deposit.method.title': 'Как вы хотите купить',
+    'deposit.method.subtitle': 'криптовалюту',
+    'deposit.method.bank_card': 'Банковская карта',
+    'deposit.method.bank_card_desc': 'Купить криптовалюту по карте',
+    'deposit.method.p2p_express': 'P2P Экспресс',
+    'deposit.method.p2p_express_desc': 'Сделки с надёжными продавцами',
+    'deposit.method.p2p_market': 'P2P Маркет',
+    'deposit.method.p2p_market_desc': 'Купить без посредников',
+    'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
+    'deposit.method.external_wallet': 'Внешний кошелёк',
+    'deposit.method.external_wallet_desc': 'Перевести с другого кошелька',
     
     // History
     'history.title': 'Ис��ория',
