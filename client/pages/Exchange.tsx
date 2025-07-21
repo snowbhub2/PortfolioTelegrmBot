@@ -426,7 +426,7 @@ export default function Exchange() {
 
       if (success) {
         hapticFeedback("light");
-        // Переходимо н�� сторінку деталей активу який отримали
+        // Переходимо н�� сторінку деталей активу який отри��али
         navigate(`/coin/${toAsset.id}`);
       } else {
         setError("Помилка при обміні активів");
@@ -631,7 +631,7 @@ export default function Exchange() {
               onClick={() => setShowToSelect(true)}
             >
               <span className="text-4xl font-light text-muted-foreground">
-                {toAsset?.symbol || "Вибрати інструмент"}
+                {toAsset?.symbol || "Вибрати"}
               </span>
               <span className="text-muted-foreground">›</span>
             </div>
@@ -703,7 +703,7 @@ export default function Exchange() {
               }}
               className="text-primary"
             >
-              Назад
+              ��азад
             </Button>
             <div className="text-center">
               <div className="font-medium text-lg">Обмен</div>
