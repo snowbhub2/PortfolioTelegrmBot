@@ -10,39 +10,40 @@ interface CategoryConfig {
   description: string;
 }
 
-const categoryConfigs: Record<string, CategoryConfig> = {
-  "market-trends": {
-    title: t('notifications.category.market_trends'),
-    description: t('notifications.category.market_trends_desc') || t('notifications.market_trends_desc')
-  },
-  "updates": {
-    title: "УВЕДОМЛЕНИЯ ОБНОВЛЕНИЙ",
-    description: "Новые сервисы и возможности."
-  },
-  "promotions": {
-    title: "УВЕДОМЛЕНИЯ АКЦИЙ",
-    description: "Розыгрыши и бонусы."
-  },
-  "educational": {
-    title: "УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА",
-    description: "Гайды и советы."
-  },
-  "feedback": {
-    title: "УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ",
-    description: "Опросы пользователей, которые помогают улучшить сервис."
-  },
-};
-
 export default function NotificationCategory() {
   const { hapticFeedback } = useTelegram();
   const { t } = useLanguage();
   const { categoryId } = useParams<{ categoryId: string }>();
   
   const [isEnabled, setIsEnabled] = useState(true);
+
+  // Перемістив categoryConfigs всередину компонента, щоб мати доступ до t()
+  const categoryConfigs: Record<string, CategoryConfig> = {
+    "market-trends": {
+      title: t('notifications.category.market_trends'),
+      description: t('notifications.market_trends_desc')
+    },
+    "updates": {
+      title: t('notifications.category.updates'),
+      description: t('notifications.updates_desc')
+    },
+    "promotions": {
+      title: t('notifications.category.promotions'),
+      description: t('notifications.promotions_desc')
+    },
+    "educational": {
+      title: t('notifications.category.educational'),
+      description: t('notifications.educational_desc')
+    },
+    "feedback": {
+      title: t('notifications.category.feedback'),
+      description: t('notifications.category.feedback_desc')
+    },
+  };
   
   const config = categoryConfigs[categoryId || ""] || {
-    title: "УВЕДОМЛЕНИЯ",
-    description: "Настройки уведомлений."
+    title: t('notifications.title'),
+    description: t('notifications.category.feedback_desc')
   };
 
   const handleToggle = (enabled: boolean) => {
@@ -71,7 +72,7 @@ export default function NotificationCategory() {
               onClick={() => handleToggle(true)}
             >
               <span className={`font-medium ${isEnabled ? "text-primary" : "text-foreground"}`}>
-                Вкл
+                {t('notifications.on')}
               </span>
               {isEnabled && (
                 <CheckIcon className="w-5 h-5 text-primary" />
@@ -88,7 +89,7 @@ export default function NotificationCategory() {
               onClick={() => handleToggle(false)}
             >
               <span className={`font-medium ${!isEnabled ? "text-primary" : "text-foreground"}`}>
-                Выкл
+                {t('notifications.off')}
               </span>
               {!isEnabled && (
                 <CheckIcon className="w-5 h-5 text-primary" />
