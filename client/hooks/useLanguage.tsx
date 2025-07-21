@@ -20,7 +20,7 @@ const translations = {
     'nav.history': 'История',
     
     // Settings
-    'settings.title': 'ОСНОВНЫЕ НАСТ��ОЙКИ',
+    'settings.title': 'ОСНОВНЫЕ НАСТРОЙКИ',
     'settings.notifications': 'Уведомления',
     'settings.passcode': 'Код-пароль и Face ID',
     'settings.language': 'Язык',
@@ -45,7 +45,7 @@ const translations = {
     
     // Notifications
     'notifications.title': 'УВЕДОМЛЕНИЯ',
-    'notifications.market_trends': 'Тр��нды рынка',
+    'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
     'notifications.updates_desc': 'Новые сервисы и возможности',
@@ -71,7 +71,7 @@ const translations = {
     'notifications.category.updates': 'У��Е��ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
-    'notifications.category.feedback': 'УВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
+    'notifications.category.feedback': '��ВЕДОМЛЕНИЯ ОБ ОБРАТНОЙ СВЯЗИ',
     'notifications.category.feedback_desc': 'Опросы пользователей, которые помогают улучшить сервис.',
     
     // Wallet
@@ -82,7 +82,7 @@ const translations = {
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
     'wallet.actions.transfer': 'Перевести',
-    'wallet.notification.earnTitle': 'Зараб��тывайте до 15% APY',
+    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.assets.title': 'АКТИВЫ',
@@ -93,7 +93,7 @@ const translations = {
     'wallet.assets.boughtAt': 'Купил�� за:',
     'wallet.assets.noAssets': 'Пока нет активов',
     'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
-    'wallet.trending.title': 'В ТРЕНДЕ',
+    'wallet.trending.title': 'В Т��ЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -131,7 +131,7 @@ const translations = {
 
     // History Page - базові переклади
     'history.transaction.buy': 'Покупка',
-    'history.transaction.sell': 'Пр��даж',
+    'history.transaction.sell': 'Продаж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
     'history.no_transactions': 'Пока нет транзакций',
@@ -205,7 +205,7 @@ const translations = {
     // Deposit Address
     'deposit.address.title': 'Ваш адрес в',
     'deposit.address.warning_start': 'На этот адрес отправляйте только',
-    'deposit.address.warning_end': 'Ак��ивы других сетей или NFT будут безвозврат��о утрачены.',
+    'deposit.address.warning_end': 'Активы других сетей или NFT будут безвозврат��о утрачены.',
     'deposit.address.qr_description': 'Отсканируйте QR-код для отправки',
     'deposit.address.qr_description_end': 'на свой кошелёк.',
     'deposit.address.your_address': 'Ваш адрес',
@@ -239,7 +239,7 @@ const translations = {
     'history.filter.deposit': 'П��полнения',
     'history.filter.withdraw': 'Выведения',
     'history.empty.title': 'Пока нет транзак��ий',
-    'history.empty.subtitle_all': 'Ваши операции появятся здесь',
+    'history.empty.subtitle_all': 'Ваши оп��рации появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
@@ -347,7 +347,7 @@ const translations = {
     'common.success': 'Ус��ешно',
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
-    'common.fee': 'Комиссия',
+    'common.fee': 'Ко��иссия',
     'common.total': 'Итого',
     'common.available': 'Доступно',
     'common.balance': 'Баланс',
