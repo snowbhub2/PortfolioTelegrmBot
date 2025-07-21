@@ -48,8 +48,8 @@ export default function DepositStars() {
       return;
     }
 
-    if (amountNum < 1) {
-      setError("Мінімальна сума: $1.00");
+    if (amountNum < 20) {
+      setError("Минимальная сумма: $20.00");
       hapticFeedback("medium");
       return;
     }
@@ -76,7 +76,7 @@ export default function DepositStars() {
     }
   };
 
-  const presetAmounts = [5, 10, 25, 50];
+  const presetAmounts = [20, 100, 500, 5000];
 
   const handlePresetAmount = (preset: number) => {
     setAmount(preset.toString());
@@ -87,16 +87,8 @@ export default function DepositStars() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
       <div className="flex items-center gap-3 p-4 border-b border-border">
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => navigate("/")}
-          className="text-primary"
-        >
-          <ArrowLeftIcon className="w-5 h-5" />
-        </Button>
         <div>
-          <h1 className="font-semibold">Поповнення звездами</h1>
+          <h1 className="font-semibold">Пополнение звездами</h1>
           <p className="text-sm text-muted-foreground">Telegram Stars</p>
         </div>
       </div>
@@ -110,7 +102,7 @@ export default function DepositStars() {
             </div>
             <div>
               <div className="font-semibold text-blue-800">
-                Поповнення через Telegram Stars
+                Пополнение через Telegram Stars
               </div>
               <div className="text-sm text-blue-600">
                 1 ⭐ = ${STARS_TO_USD_RATE.toFixed(2)} | $1 ={" "}
@@ -122,7 +114,7 @@ export default function DepositStars() {
 
         {/* Швидкі суми */}
         <div className="space-y-2">
-          <label className="text-sm font-medium">Швидкий вибір:</label>
+          <label className="text-sm font-medium">Быстрый выбор:</label>
           <div className="grid grid-cols-4 gap-2">
             {presetAmounts.map((preset) => (
               <Button
@@ -141,7 +133,7 @@ export default function DepositStars() {
         {/* Ввід суми */}
         <div className="space-y-4">
           <div className="space-y-2">
-            <label className="text-sm font-medium">Сума в доларах</label>
+            <label className="text-sm font-medium">Сумма в долларах</label>
             <Input
               type="number"
               placeholder="1.00"
@@ -156,7 +148,7 @@ export default function DepositStars() {
               className="text-lg"
             />
             <div className="text-xs text-muted-foreground">
-              Мінімальна сума: $1.00
+              Минимальная сумма: $20.00
             </div>
           </div>
 
