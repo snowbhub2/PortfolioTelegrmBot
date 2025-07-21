@@ -415,7 +415,7 @@ export default function Exchange() {
           toAsset.category,
         );
       } else if (fromAsset.id !== "usd" && toAsset.id === "usd") {
-        // Продаємо актив за долари
+        // Прод��ємо актив за долари
         success = portfolioManager.sellAsset(
           fromAsset.id,
           parseFloat(fromAmount),
@@ -642,8 +642,8 @@ export default function Exchange() {
                 }
                 setError("");
               }}
-              className="text-6xl font-bold bg-transparent border-0 focus:outline-none w-1/2 text-foreground"
-              style={{ fontSize: '4rem' }}
+              className={`${getDynamicFontSize(lastEditedField === 'from' && calculatedToAmount > 0 ? calculatedToAmount.toFixed(2) : toAmount).className} font-bold bg-transparent border-0 focus:outline-none w-1/2 text-foreground`}
+              style={{ fontSize: getDynamicFontSize(lastEditedField === 'from' && calculatedToAmount > 0 ? calculatedToAmount.toFixed(2) : toAmount).fontSize }}
             />
             <div
               className="flex items-center gap-2 cursor-pointer"
