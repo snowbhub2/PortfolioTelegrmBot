@@ -74,7 +74,7 @@ const translations = {
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайте ув��домления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -191,7 +191,7 @@ const translations = {
     'exchange.back': 'Назад',
     'exchange.asset.dollars': 'Доллары',
 
-    // Додатков�� переклади для завершення Wallet.tsx
+    // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -257,7 +257,7 @@ const translations = {
     'withdraw.amount.next': 'Далее',
 
     // Withdraw Processing
-    'withdraw.processing.exchange_completed': 'Обмен выпо��нен!',
+    'withdraw.processing.exchange_completed': 'Обмен выпол��ен!',
     'withdraw.processing.payment_processing': 'Ва�� платёж в обработке',
     'withdraw.processing.exchange_success': 'Вы успешно обменяли {amount} USD на {starsAmount} Telegram Stars',
     'withdraw.processing.stars_available': 'Stars уже доступны в вашем аккаунте Telegram',
@@ -334,7 +334,7 @@ const translations = {
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
     'history.transaction.asset': 'акти��а',
-    'history.transaction.deposit': 'Поп��лнение звездами',
+    'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
     'history.transaction.transfer_to_cfd': 'Пере��од в CFD',
     'history.transaction.transfer_from_cfd': 'Перевод из CFD',
