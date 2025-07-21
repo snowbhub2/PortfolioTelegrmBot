@@ -195,18 +195,18 @@ export default function Notifications() {
         </Card>
 
         <div className="text-sm text-muted-foreground">
-          Получайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.
+          {t('notifications.cfd_description')}
         </div>
 
         {/* News Channel Link for CFD */}
         <div className="mt-6 text-sm text-muted-foreground">
-          Все новости можно узнать в канале{" "}
+          {t('notifications.cfd_news_text')}{" "}
           <Button
             variant="ghost"
             className="text-primary p-0 h-auto text-sm"
             onClick={() => hapticFeedback("light")}
           >
-            Новости CFD Кошелька
+            {t('notifications.cfd_news_channel_link')}
           </Button>
           .
         </div>
