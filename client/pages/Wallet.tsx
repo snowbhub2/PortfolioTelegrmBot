@@ -78,7 +78,7 @@ const availableAssets = [
   {
     id: "gold",
     symbol: "GOLD",
-    name: "Золото",
+    name: "Gold", // Буде замінено через t() нижче
     price: 2650.5,
     change24h: 0.75,
     icon: "🥇",
@@ -141,7 +141,7 @@ export default function Wallet() {
     updatePortfolioData(portfolio);
   }, [tg, user]);
 
-  // Функція оновлення даних портфеля
+  // Функція оновлення дан��х портфеля
   const updatePortfolioData = (portfolio: PortfolioManager) => {
     setUserAssets(portfolio.getAssets());
     setCashBalance(portfolio.getCashBalance());
