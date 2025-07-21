@@ -142,7 +142,7 @@ const translations = {
     'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
-    'bonuses.tab.completed': 'Завершённые',
+    'bonuses.tab.completed': 'Завер��ённые',
 
     // CoinDetail Page
     'coin.about.crypto': 'О КРИПТОВАЛЮТЕ',
@@ -191,7 +191,7 @@ const translations = {
     'deposit.method.p2p_market_desc': 'Купить без посредников',
     'deposit.method.telegram_stars': 'Пополнить через Telegram Stars',
     'deposit.method.external_wallet': 'Внешний кошелёк',
-    'deposit.method.external_wallet_desc': 'Перевести с другого кошелька',
+    'deposit.method.external_wallet_desc': 'Перевести с другого кошел��ка',
 
     // Deposit Asset Selection
     'deposit.asset.popular': 'ПОПУЛЯРНЫЕ',
@@ -238,7 +238,7 @@ const translations = {
     'history.filter.sell': 'Продажи',
     'history.filter.deposit': 'П��полнения',
     'history.filter.withdraw': 'Выведения',
-    'history.empty.title': 'Пока нет транзакций',
+    'history.empty.title': 'Пока нет транзак��ий',
     'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
@@ -264,7 +264,7 @@ const translations = {
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
     'bonuses.card.bonus_label': 'БОНУС',
-    'bonuses.card.annual': 'годовых',
+    'bonuses.card.annual': 'годо��ых',
     'bonuses.empty.completed': 'Нет завершённых бонусов',
 
     // Exchange
@@ -380,7 +380,7 @@ const translations = {
     'common.update': 'Обновить',
     'common.new': 'Новый',
     'common.old': 'Старый',
-    'common.recent': 'Недавние',
+    'common.recent': 'Недавн��е',
     'common.popular': 'Популярные',
     'common.recommended': 'Рекомендуемые',
     'common.trending': 'В тренде',
@@ -506,7 +506,13 @@ const translations = {
     'wallet.trending.perDay': 'per day',
     'wallet.demo.message': '🎭 Demo mode - for full features launch via Telegram bot',
     'wallet.settings.open': 'Open settings',
-    
+    'wallet.assets.boughtFor': 'Bought for',
+    'wallet.trends.perDay': 'per day',
+    'wallet.assets.dollars_cash': 'Dollars (cash)',
+    'wallet.assets.for_trading': 'For trading',
+    'wallet.assets.no_assets': 'No assets yet',
+    'wallet.assets.buy_on_market': 'Buy assets on Market page',
+
     // Market
     'market.title': 'Market',
     'market.trending': 'Trending',
