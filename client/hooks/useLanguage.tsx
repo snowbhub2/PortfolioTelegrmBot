@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате средств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрат�� средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -243,7 +243,7 @@ const translations = {
     'withdraw.method.telegram.title': 'Контакт в Telegram',
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
     'withdraw.method.external.title': 'Внешний кошелёк или б��ржа',
-    'withdraw.method.external.description': 'Нужно указать криптоадрес',
+    'withdraw.method.external.description': 'Нужно у��азать криптоадрес',
 
     // Withdraw Asset Selection
     'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
@@ -371,7 +371,7 @@ const translations = {
     'exchange.insufficient_funds': 'Недостаточно средств.',
     'exchange.select_instrument': 'Выбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
-    'exchange.review_deal': 'Просмотреть сделку',
+    'exchange.review_deal': 'Просмотреть сд��лку',
     'exchange.error.exchange_failed': 'Ошибка при обмене активов',
 
     // Transfer
@@ -395,7 +395,7 @@ const translations = {
     'transfer.info.portfolio_desc': 'Портфель - наличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов на разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
-    'transfer.info.history_saved': 'Все операции сохраняются в истории',
+    'transfer.info.history_saved': 'В��е операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
     'transfer.error.transfer_failed': 'Ошибка перевода',
@@ -434,7 +434,7 @@ const translations = {
     'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатків (DApps), запущена в 2015 році.',
     'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
-    'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
+    'coin.aapl_description': 'Apple Inc. — а��ериканська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
 
     // Exchange
     'exchange.title': 'Обмен',
@@ -973,6 +973,11 @@ const translations = {
     'exchange.exchanging': 'Exchanging...',
     'exchange.review_deal': 'Review deal',
     'exchange.error.exchange_failed': 'Error during asset exchange',
+    'exchange.max': 'Max',
+    'exchange.processing': 'Exchanging...',
+    'exchange.back': 'Back',
+    'exchange.search': 'Search',
+    'exchange.top_up': 'Top up',
 
     // Transfer (English)
     'transfer.title': 'Transfer funds',
