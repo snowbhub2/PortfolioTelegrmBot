@@ -437,7 +437,7 @@ export default function Exchange() {
     asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Долари також можна отримати + всі ринкові активи
+  // Долари ��акож можна отримати + всі ринкові активи
   const allAvailableAssets = [
     {
       id: "usd",
@@ -627,9 +627,23 @@ export default function Exchange() {
           </div>
 
           {/* Сума в доларах якщо не долар */}
-          {toAsset && toAsset.id !== "usd" && fromAmount && parseFloat(fromAmount) > 0 && (
+          {toAsset && toAsset.id !== "usd" && ((lastEditedField === 'from' && calculatedToAmount > 0) || (lastEditedField === 'to' && parseFloat(toAmount) > 0)) && (
             <div className="text-sm text-muted-foreground mt-2">
-              ≈ ${(toAmount * toAsset.currentPrice).toFixed(2)}
+              ≈ ${((lastEditedField === 'from' ? calculatedToAmount : parseFloat(toAmount)) * toAsset.currentPrice).toFixed(2)}
+            </div>
+          )}
+
+          {/* Повідомлення про мінімальну суму для toAmount */}
+          {toAsset && parseFloat(toAmount) > 0 && parseFloat(toAmount) < minToAmount && lastEditedField === 'to' && (
+            <div className="text-destructive text-sm mt-2">
+              Мінімальна сума: {toAsset.id === "usd" ? "$20" : "0.01"}
+            </div>
+          )}
+
+          {/* Повідомлення про недостатність коштів при обчисленні від toAmount */}
+          {lastEditedField === 'to' && calculatedFromAmount > (fromAsset?.quantity || 0) && calculatedFromAmount > 0 && (
+            <div className="text-destructive text-sm mt-2">
+              Недостатньо коштів для такої суми
             </div>
           )}
         </div>
@@ -821,7 +835,7 @@ export default function Exchange() {
                       {asset.price.toLocaleString()} $
                     </div>
                     <div className={`text-sm ${asset.change24h >= 0 ? 'text-green-400' : 'text-red-400'}`}>
-                      {asset.change24h >= 0 ? '↑' : '↓'} {Math.abs(asset.change24h).toFixed(2)}%
+                      {asset.change24h >= 0 ? '��' : '↓'} {Math.abs(asset.change24h).toFixed(2)}%
                     </div>
                   </div>
                 </div>
