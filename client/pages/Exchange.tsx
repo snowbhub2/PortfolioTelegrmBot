@@ -579,8 +579,11 @@ export default function Exchange() {
         {/* Exchange Rate */}
         {fromAsset && toAsset && (
           <div className="text-center mb-6">
-            <div className="text-muted-foreground">
-              = 1 {toAsset.symbol} = {exchangeRate} {fromAsset.symbol} = ${toAsset.currentPrice.toFixed(2)}
+            <div className="text-muted-foreground text-sm">
+              1 {toAsset.symbol} = {exchangeRate} {fromAsset.symbol}
+            </div>
+            <div className="text-muted-foreground text-xs mt-1">
+              ${toAsset.currentPrice.toFixed(2)}
             </div>
           </div>
         )}
