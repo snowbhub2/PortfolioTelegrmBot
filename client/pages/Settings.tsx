@@ -76,6 +76,7 @@ export default function Settings() {
       title: "Язык",
       value: getLanguageName(user?.language_code),
       hasChevron: true,
+      action: "language",
     },
     {
       icon: <DollarSignIcon className="w-5 h-5 text-gray-500" />,
