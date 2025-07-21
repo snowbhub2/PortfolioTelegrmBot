@@ -48,7 +48,7 @@ const translations = {
     'settings.cfdNotApplicable': 'Распространяется на аккаунт CFD',
     'settings.userAgreement': 'Пол��зовательское соглашение',
     'settings.privacyPolicy': 'Политика конфиденциальности',
-    'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
+    'settings.managedBy': 'Мини-приложение уп��авляется TG Portfolio Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
     'settings.learnMore': 'Узнать больше',
     
@@ -70,11 +70,11 @@ const translations = {
     'notifications.feedback': 'Обратная связ��',
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
-    'notifications.news_channel': 'Все новости вы можете прочитать в канале',
+    'notifications.news_channel': 'В��е новости вы можете прочитать в канале',
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайт�� уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -86,7 +86,7 @@ const translations = {
     'notifications.news_channel_link': 'Новости Крипто Кошельк��',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_description': 'Пол��чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
+    'notifications.cfd_description': 'Пол���чайте уведомления, когда вам приходят CFD токены и NFT в CFD Кошелёк.',
     'notifications.cfd_news_text': 'Все новости можно узнать в канал��',
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
@@ -159,7 +159,7 @@ const translations = {
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
     'history.no_transactions': 'Пока не�� транзакций',
-    'history.go_to_trading': '��ерейти к торговле',
+    'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
     'bonuses.title_header': 'Бонусы в Кошельке',
@@ -189,7 +189,7 @@ const translations = {
     'exchange.max': 'Макс',
     'exchange.search': 'Поиск',
     'exchange.back': '��азад',
-    'exchange.asset.dollars': 'Долл��ры',
+    'exchange.asset.dollars': 'Доллары',
 
     // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
@@ -223,7 +223,7 @@ const translations = {
     'deposit.asset.not_found': 'Активы не найдены',
 
     // Deposit Network Selection
-    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную сеть. Неверный выбор может привест�� к утрате ��редств.',
+    'deposit.network.warning': 'Убедитесь, что вы выбрали нужную ��еть. Неверный выбор может привести к потери средств.',
     'deposit.network.select': 'ВЫБЕРИТЕ СЕТЬ',
 
     // Deposit Address
@@ -250,7 +250,7 @@ const translations = {
     'withdraw.asset.dollars': 'Доллары',
 
     // Withdraw Amount
-    'withdraw.amount.insufficient_funds': 'Недостаточно ср��дств.',
+    'withdraw.amount.insufficient_funds': 'Недостаточно средств.',
     'withdraw.amount.buy_more': 'До��упить.',
     'withdraw.amount.balance': 'Баланс',
     'withdraw.amount.max': 'Макс.',
@@ -274,7 +274,7 @@ const translations = {
 
     // CFD Page
     'cfd.title': 'CFD Торговля',
-    'cfd.balance.title': 'Балан�� CFD',
+    'cfd.balance.title': 'Баланс CFD',
     'cfd.balance.description': 'Средства для контрактов на разность цен',
     'cfd.trading_balance': 'Торговый ба��анс CFD',
     'cfd.search_assets': 'Поиск активов',
@@ -377,7 +377,7 @@ const translations = {
     // Bonuses
     'bonuses.title': 'Бонусы',
     'bonuses.hero.title': 'Бонусы с Портфелем',
-    'bonuses.hero.subtitle': 'Получайте бонус�� за хранение акций и криптовалюты.',
+    'bonuses.hero.subtitle': 'Получайте бонусы за хранение акций и криптовалюты.',
     'bonuses.hero.how_it_works': 'Как это работает',
     'bonuses.tabs.active': 'Активные',
     'bonuses.tabs.completed': 'Завершённые',
@@ -396,7 +396,7 @@ const translations = {
     'exchange.max': 'Макс',
     'exchange.asset.dollars': 'Доллары',
     'exchange.top_up': 'Пополнить',
-    'exchange.insufficient_funds': 'Недостаточно средств.',
+    'exchange.insufficient_funds': 'Недостат��чно средств.',
     'exchange.select_instrument': '��ыбрать инструмент',
     'exchange.exchanging': 'Обмениваем...',
     'exchange.review_deal': 'Просмотреть сделку',
@@ -424,7 +424,7 @@ const translations = {
     'transfer.info.cfd_desc': 'CFD - средства для контрактов ��а разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
-    'transfer.error.invalid_amount': 'Некор��ектная сумма',
+    'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
     'transfer.error.transfer_failed': 'Ошибка перевода',
     
@@ -460,7 +460,7 @@ const translations = {
     'coin.btc_point_1': 'Ви можете купувати, продавати або зберігати BTC в Гаманці.',
     'coin.btc_point_2': 'Bitcoin використовує технологію блокчейн для забе��печення безпеки та прозорості.',
     'coin.eth_description': 'Ethereum — це платформа для розумних контрактів і децентралізова��их додатк��в (DApps), запущена в 2015 році.',
-    'coin.eth_point_1': 'Ви можете купувати, продавати або зберігати ETH в Гаманці.',
+    'coin.eth_point_1': 'Ви можете купуват��, продавати або зберігати ETH в Гаманці.',
     'coin.eth_point_2': 'Ethereum є основою для багатьох DeFi проектів та NFT.',
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
     'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
@@ -520,7 +520,7 @@ const translations = {
     'common.search': 'Поиск',
     'common.back': 'Назад',
     'common.filter': 'Фильтр',
-    'common.sort': 'Сортиро��ка',
+    'common.sort': 'С��ртиро��ка',
     'common.all': 'Все',
     'common.none': 'Нет',
     'common.yes': 'Да',
@@ -529,7 +529,7 @@ const translations = {
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
     'common.done': 'Готов��',
-    'common.copied': 'Ско���ировано',
+    'common.copied': 'Ско��ировано',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
