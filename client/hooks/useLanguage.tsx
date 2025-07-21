@@ -58,7 +58,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕДОМЛЕНИЯ',
+    'notifications.title': 'УВЕД��МЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -74,7 +74,7 @@ const translations = {
     'notifications.crypto_news': 'Новости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
-    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приход��т CFD токены и NFT в CFD К��шелёк.',
+    'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
     'notifications.cfd_news': 'Новости CFD Кошелька',
     'notifications.cfd_news_text': 'Все новости можно узнать в канале',
     'notifications.on': 'Вкл',
@@ -91,7 +91,7 @@ const translations = {
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
-    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ��РЕНДОВ РЫНКА',
+    'notifications.category.market_trends': 'УВЕДОМЛЕНИ�� ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
@@ -191,7 +191,7 @@ const translations = {
     'exchange.back': '��азад',
     'exchange.asset.dollars': 'Доллары',
 
-    // Додаткові переклади для завершення Wallet.tsx
+    // Додаткові переклади для заверш��ння Wallet.tsx
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -200,7 +200,7 @@ const translations = {
     'wallet.assets.boughtFor': 'Купили за',
     'wallet.trends.perDay': 'за день',
     'wallet.assets.dollars_cash': 'Доллары USD',
-    'wallet.assets.for_trading': 'Для торговли',
+    'wallet.assets.for_trading': 'для инвестирования',
     'wallet.assets.no_assets': 'Пока нет активов',
     'wallet.assets.buy_on_market': 'Купите активы на странице Рынок',
 
@@ -333,7 +333,7 @@ const translations = {
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
-    'history.transaction.asset': 'акти���а',
+    'history.transaction.asset': 'акти��а',
     'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
     'history.transaction.transfer_to_cfd': 'Пере��од в CFD',
@@ -437,7 +437,7 @@ const translations = {
     'coin.aapl_description': 'Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.',
     'coin.xrp_description': 'XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.',
     'coin.xrp_point_1': 'Ви можете купувати, ��родавати або зберігати XRP в Гаманці.',
-    'coin.xrp_point_2': 'XRP використовується банками та фінансовими установами для швидких переказів.',
+    'coin.xrp_point_2': 'XRP викори��товується банками та фінансовими установами для швидких переказів.',
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або зберігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
