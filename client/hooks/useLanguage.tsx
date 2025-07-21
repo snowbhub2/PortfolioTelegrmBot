@@ -108,7 +108,7 @@ const translations = {
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
-    'wallet.notification.earnTitle': 'Зарабатывайте до 15% APY',
+    'wallet.notification.earnTitle': 'За��абатывайте до 15% APY',
     'wallet.notification.withDollars': 'с долларами',
     'wallet.notification.startEarning': 'Начать зарабатывать →',
     'wallet.trending.perDay': 'за день',
@@ -190,10 +190,10 @@ const translations = {
     // Withdraw Pages
     'withdraw.method.title': 'Как отправить',
     'withdraw.method.subtitle': 'криптовалюту',
-    'withdrawMethod.telegramContact': 'Конт��кт в Telegram',
-    'withdrawMethod.instantNoFees': 'Мгновенно и без комиссий',
-    'withdrawMethod.externalWallet': 'Внешний кошелёк или биржа',
-    'withdrawMethod.needAddress': 'Нужно указать криптоадрес',
+    'withdraw.method.telegram.title': 'Контакт в Telegram',
+    'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
+    'withdraw.method.external.title': 'Внешний кошелёк или биржа',
+    'withdraw.method.external.description': 'Нужно указать криптоадрес',
     
     // History
     'history.title': 'Ис��ория',
