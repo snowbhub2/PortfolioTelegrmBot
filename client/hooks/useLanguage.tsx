@@ -92,7 +92,7 @@ const translations = {
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купили за:',
     'wallet.assets.noAssets': 'Пока нет активов',
-    'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
+    'wallet.assets.buyOnMarket': 'Купи��е ак��ивы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.perDay': 'за день',
@@ -134,7 +134,7 @@ const translations = {
     'history.transaction.sell': 'Продаж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
-    'history.no_transactions': 'Пока нет тра��закций',
+    'history.no_transactions': 'Пока нет транзакций',
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
@@ -142,7 +142,7 @@ const translations = {
     'bonuses.subtitle': 'Получайте бонусы за хранение криптовалюты.',
     'bonuses.how_it_works': 'Как это работает',
     'bonuses.tab.active': 'Активные',
-    'bonuses.tab.completed': 'Завершённые',
+    'bonuses.tab.completed': '��авершённые',
 
     // CoinDetail Page
     'coin.about.crypto': 'О КРИПТОВАЛЮТЕ',
@@ -238,7 +238,7 @@ const translations = {
     'history.empty.go_to_market': 'Перейти к торговле',
     'history.transaction.buy': 'Покупка',
     'history.transaction.sell': 'Продажа',
-    'history.transaction.asset': 'акти��а',
+    'history.transaction.asset': 'акти���а',
     'history.transaction.deposit': 'Пополнение звездами',
     'history.transaction.withdraw': 'Выведение в звезды',
     'history.transaction.transfer_to_cfd': 'Перевод в CFD',
@@ -648,6 +648,16 @@ const translations = {
     'history.time.days_ago': 'd ago',
     'history.portfolio.total_value': 'Total portfolio value',
     'history.portfolio.cash': 'Cash',
+
+    // Bonuses (English)
+    'bonuses.hero.title': 'Wallet Bonuses',
+    'bonuses.hero.subtitle': 'Get bonuses for storing cryptocurrency.',
+    'bonuses.hero.how_it_works': 'How it works',
+    'bonuses.tabs.active': 'Active',
+    'bonuses.tabs.completed': 'Completed',
+    'bonuses.card.bonus_label': 'BONUS',
+    'bonuses.card.annual': 'annually',
+    'bonuses.empty.completed': 'No completed bonuses',
   },
 };
 
