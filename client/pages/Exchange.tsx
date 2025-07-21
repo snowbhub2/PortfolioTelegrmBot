@@ -333,7 +333,16 @@ export default function Exchange() {
     toAsset &&
     parseFloat(toAmount) >= minToAmount;
 
-  const isValidAmount = lastEditedField === 'from' ? isValidFromAmount : isValidToAmount && calculatedFromAmount <= (fromAsset?.quantity || 0);
+  // Перевіряємо що обидва поля мають валідні значення та достатньо коштів
+  const hasValidAmounts = lastEditedField === 'from'
+    ? (fromAmount && parseFloat(fromAmount) > 0)
+    : (toAmount && parseFloat(toAmount) > 0);
+
+  const meetsMinimumRequirements = lastEditedField === 'from'
+    ? isValidFromAmount
+    : isValidToAmount && calculatedFromAmount <= (fromAsset?.quantity || 0) && calculatedFromAmount >= minFromAmount;
+
+  const isValidAmount = hasValidAmounts && meetsMinimumRequirements && fromAsset && toAsset;
 
   const isInsufficientFunds = fromAsset && parseFloat(fromAmount) > fromAsset.quantity;
 
@@ -424,7 +433,7 @@ export default function Exchange() {
         hapticFeedback("medium");
       }
     } catch (err) {
-      setError("Помилка при обміні активів");
+      setError("Помилка при обміні а��тивів");
       hapticFeedback("medium");
     } finally {
       setIsLoading(false);
@@ -463,7 +472,7 @@ export default function Exchange() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Header - без к��опки назад */}
+      {/* Header - без к��оп��и назад */}
       <div className="flex items-center justify-center p-4">
         <div className="text-center">
           <div className="font-medium text-lg">Обмен</div>
