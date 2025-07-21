@@ -397,7 +397,7 @@ export default function Wallet() {
                     {t('wallet.notification.earnTitle')}
                   </h3>
                   <h4 className="font-semibold mb-1">{t('wallet.notification.withDollars')}</h4>
-                  <p className="text-sm opacity-90">Почати заробляти →</p>
+                  <p className="text-sm opacity-90">{t('wallet.notification.startEarning')}</p>
                 </div>
               </div>
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-30">
