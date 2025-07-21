@@ -225,6 +225,7 @@ export class PortfolioManager {
       price,
       amount: totalCost,
       description: `Покупка ${quantity} ${symbol} за $${price.toFixed(2)}`,
+      status: "completed",
     });
 
     this.savePortfolio();
@@ -387,7 +388,7 @@ export class PortfolioManager {
     let transactions: Transaction[];
 
     if (assetId === 'usd') {
-      // Для USD показуємо: поповнення, виведення, продажі (отримання USD) та покупки (витр��ти USD)
+      // Для USD показуємо: поповненн��, виведення, продажі (отримання USD) та покупки (витр��ти USD)
       transactions = this.portfolio.transactions.filter(transaction =>
         transaction.type === 'deposit' ||
         transaction.type === 'withdraw' ||
