@@ -95,7 +95,7 @@ const translations = {
     'wallet.assets.buyOnMarket': 'Купите активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
-    'wallet.trending.perDay': 'за день',
+    'wallet.trending.perDay': 'за де��ь',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
     'wallet.tabs.wallet': 'Портфель',
     'wallet.tabs.cfd': 'CFD',
@@ -224,7 +224,7 @@ const translations = {
     'asset.portfolio': 'В портфеле',
     'asset.not_in_portfolio': 'Нет активов в по��тфеле',
     'asset.transaction_history': 'История операций',
-    'asset.no_transactions': 'Нет операций с этим активом',
+    'asset.no_transactions': 'Нет операций с этим актив��м',
     'asset.buy': 'Купить',
     'asset.sell': 'Продать',
     'asset.deposit_btn': 'Пополнить',
@@ -257,7 +257,7 @@ const translations = {
     'common.success': 'Успешно',
     'common.amount': 'Сумма',
     'common.address': 'Адрес',
-    'common.fee': 'Комиссия',
+    'common.fee': 'Ко��иссия',
     'common.total': 'Итого',
     'common.available': 'Доступно',
     'common.balance': 'Баланс',
@@ -550,6 +550,11 @@ const translations = {
     'deposit.method.telegram_stars': 'Top up via Telegram Stars',
     'deposit.method.external_wallet': 'External Wallet',
     'deposit.method.external_wallet_desc': 'Transfer from another wallet',
+
+    // Deposit Asset Selection (English)
+    'deposit.asset.popular': 'POPULAR',
+    'deposit.asset.all': 'ALL',
+    'deposit.asset.not_found': 'Assets not found',
 
     // Withdraw Pages (English)
     'withdraw.method.title': 'How to send',
