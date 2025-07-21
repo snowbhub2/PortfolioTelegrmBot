@@ -455,7 +455,7 @@ export default function Exchange() {
       </div>
 
       {/* Main Content */}
-      <div className="px-4 pb-20">
+      <div className="px-4 pb-20 max-w-md mx-auto">
         {/* Ви сплачуєте */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
