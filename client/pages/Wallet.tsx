@@ -611,12 +611,12 @@ export default function Wallet() {
           size="icon"
           className="w-10 h-10 rounded-full p-0 hover:ring-2 hover:ring-primary/20 transition-all"
           onClick={handleAvatarClick}
-          title="Відкрити налаштування"
+          title={t('wallet.settings.open')}
         >
           {user?.photo_url ? (
             <img
               src={user.photo_url}
-              alt={`${user.first_name || "User"} avatar`}
+              alt={`${user.first_name || "User"} ${t('wallet.user.avatar')}`}
               className="w-10 h-10 rounded-full object-cover"
             />
           ) : user?.first_name ? (
@@ -626,7 +626,7 @@ export default function Wallet() {
               </span>
             </div>
           ) : (
-            // Fallback для випадків, коли Telegram дані недоступні
+            // Fallback for cases when Telegram data is unavailable
             <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-600 rounded-full flex items-center justify-center">
               <span className="text-sm font-medium text-white">
                 {tg ? "TG" : "U"}
