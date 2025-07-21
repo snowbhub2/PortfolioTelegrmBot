@@ -96,7 +96,7 @@ export default function CFD() {
       </div>
 
       {/* Popular Pairs */}
-      <div className="px-4 mb-4">
+      <div className="px-4 mb-4 pt-2 sm:pt-0">
         <h2 className="text-lg font-semibold mb-3 text-muted-foreground">
           {t('cfd.popular_pairs')}
         </h2>
