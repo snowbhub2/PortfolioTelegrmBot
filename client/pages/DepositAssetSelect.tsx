@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { Card } from "@/components/ui/card";
 import { SearchIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -92,6 +93,7 @@ const depositAssets: DepositAsset[] = [
 
 export default function DepositAssetSelect() {
   const { hapticFeedback, tg } = useTelegram();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -149,7 +151,7 @@ export default function DepositAssetSelect() {
           <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Поиск"
+            placeholder={t('common.search')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-10 pr-4 py-3 bg-muted rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-primary"
@@ -162,7 +164,7 @@ export default function DepositAssetSelect() {
         <div className="mb-6">
           <div className="px-4 mb-3">
             <h2 className="text-sm text-muted-foreground font-medium">
-              ПОПУЛЯРНЫЕ
+              {t('deposit.asset.popular')}
             </h2>
           </div>
           <Card className="mx-4">
@@ -175,7 +177,7 @@ export default function DepositAssetSelect() {
       {allAssets.length > 0 && (
         <div>
           <div className="px-4 mb-3">
-            <h2 className="text-sm text-muted-foreground font-medium">ВСЕ</h2>
+            <h2 className="text-sm text-muted-foreground font-medium">{t('deposit.asset.all')}</h2>
           </div>
           <Card className="mx-4">
             {allAssets.map((asset) => renderAssetItem(asset))}
@@ -185,7 +187,7 @@ export default function DepositAssetSelect() {
 
       {filteredAssets.length === 0 && (
         <div className="text-center py-8">
-          <div className="text-muted-foreground">Активы не найдены</div>
+          <div className="text-muted-foreground">{t('deposit.asset.not_found')}</div>
         </div>
       )}
     </div>
