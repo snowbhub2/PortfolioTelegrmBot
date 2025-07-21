@@ -325,7 +325,7 @@ export default function Wallet() {
                   <ArrowUpIcon className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <span className="text-xs text-primary font-medium text-center">
-                  Вывести
+                  {t('wallet.actions.withdraw')}
                 </span>
               </div>
             </div>
@@ -338,7 +338,7 @@ export default function Wallet() {
                   <ArrowDownIcon className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <span className="text-xs text-primary font-medium text-center">
-                  Пополнить
+                  {t('wallet.actions.deposit')}
                 </span>
               </div>
             </div>
@@ -351,7 +351,7 @@ export default function Wallet() {
                   <RefreshCwIcon className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <span className="text-xs text-primary font-medium text-center">
-                  Обменять
+                  {t('wallet.actions.exchange')}
                 </span>
               </div>
             </div>
@@ -364,7 +364,7 @@ export default function Wallet() {
                   <SendIcon className="w-4 h-4 text-primary-foreground" />
                 </div>
                 <span className="text-xs text-primary font-medium text-center">
-                  Перевести
+                  {t('wallet.actions.transfer')}
                 </span>
               </div>
             </div>
