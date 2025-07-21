@@ -47,6 +47,8 @@ export default function Settings() {
 
     if (item.action === "notifications") {
       navigate("/notifications");
+    } else if (item.action === "language") {
+      navigate("/language");
     } else {
       console.log(`Clicked: ${item.title}`);
     }
