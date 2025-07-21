@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpDownIcon, SearchIcon } from "lucide-react";
 import { PortfolioManager, UserAsset } from "@/lib/portfolio";
 import { useTelegram } from "@/hooks/useTelegram";
+import { useLanguage } from "@/hooks/useLanguage";
 import { usePriceUpdates } from "@/lib/priceService";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { MarketAsset } from "@/types/crypto";
