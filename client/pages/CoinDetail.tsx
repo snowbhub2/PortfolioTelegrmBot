@@ -178,7 +178,7 @@ export default function CoinDetail() {
     category: "crypto",
   };
 
-  // Оновлюємо ціну з реальних даних якщо доступно
+  // Оновлюємо ціну з реальн��х даних якщо доступно
   if (priceUpdates[asset.id]) {
     asset = {
       ...asset,
@@ -194,7 +194,7 @@ export default function CoinDetail() {
         if (asset.id === "btc") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Bitcoin — це перша і найвідоміша криптовалюта у світі. Створена в 2009 році Сатоші Накамото як децентралі��ована цифрова валюта.",
+            description: "Bitcoin — це перша і найвідоміша криптовалюта у світі. Створена в 2009 році Сатоші Накамото як децентралізована цифрова валюта.",
             points: [
               "Ви можете купувати, продавати або зберігати BTC в Гаманці.",
               "Bitcoin використовує технологію блокчейн для забезпечення безпеки та прозорості."
@@ -203,7 +203,7 @@ export default function CoinDetail() {
         } else if (asset.id === "eth") {
           return {
             title: "О КРИПТОВАЛЮТЕ",
-            description: "Ethereum — це платформа для розумних контрактів і децентралізованих додатків (DApps), запущена в 2015 році.",
+            description: "Ethereum — це платформа для розумних контракті�� і децентралізованих додатків (DApps), запущена в 2015 році.",
             points: [
               "Ви можете купувати, продавати або зберігати ETH в Гаманці.",
               "Ethereum є основою для багатьох DeFi проектів та NFT."
@@ -214,7 +214,7 @@ export default function CoinDetail() {
             title: "О КРИПТОВАЛЮТЕ",
             description: "Toncoin — це криптовалюта блокчейну TON (The Open Network), який спочатку розроблявся командою Telegram.",
             points: [
-              "Ви ��ожете купувати, продавати або зберігати TON в Гаманці.",
+              "Ви можете купувати, продавати або зберігати TON в Гаманці.",
               "TON відомий своєю високою швидкістю транзакцій та низькими комісіями."
             ]
           };
@@ -232,7 +232,7 @@ export default function CoinDetail() {
             title: "О КРИПТОВАЛЮТЕ",
             description: "XRP — це цифрова валюта, створена компанією Ripple для миттєвих міжнародних переказів та платежів.",
             points: [
-              "Ви можете купувати, продавати або збер��гати XRP в Гаманці.",
+              "Ви можете купувати, продавати або зберігати XRP в Гаманці.",
               "XRP використовується банками та фінансовими установами для швидких переказів."
             ]
           };
@@ -241,7 +241,7 @@ export default function CoinDetail() {
             title: "О КРИПТОВАЛЮТЕ",
             description: `${asset.name} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.`,
             points: [
-              `Ви можете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
+              `Ви мо��ете купувати, продавати або зберігати ${asset.symbol} в Гаманці.`,
               "Криптовалюти можуть мати високу волатильність цін."
             ]
           };
@@ -280,8 +280,8 @@ export default function CoinDetail() {
             title: "ПРО АКЦІЮ",
             description: "Alphabet Inc. — материнська компанія Google, провідна інтернет-компанія та розробник пошукової системи Google.",
             points: [
-              "Ви можете купувати або продавати акції GOOGL через платформу.",
-              "Alphabet володіє Google, YouTube, Android та багатьма іншими сервісами."
+              "Ви можете ��упувати або продавати акції GOOGL через платформу.",
+              "Alphabet володіє Google, YouTube, Android та багатьма іншими сервіса��и."
             ]
           };
         } else {
@@ -290,7 +290,7 @@ export default function CoinDetail() {
             description: `${asset.name} — це публічна компанія, акції якої торгуються на фондовому ринку.`,
             points: [
               `Ви можете купувати або продавати акції ${asset.symbol} через платформу.`,
-              "Ціни на акції можуть коливатися залеж��о від ринкових умов."
+              "Ціни на акції можуть коливатися залежно від ринкових умов."
             ]
           };
         }
@@ -499,19 +499,26 @@ export default function CoinDetail() {
           <div className="bg-card rounded-lg p-4 border">
             <div className="flex justify-between items-center">
               <div>
-                <p className="text-sm text-muted-foreground">Кількість</p>
+                <p className="text-sm text-muted-foreground">
+                  {asset.id === 'usd' ? 'Баланс' : 'Кількість'}
+                </p>
                 <p className="text-xl font-semibold">
-                  {assetQuantity.toLocaleString()} {asset.symbol}
+                  {asset.id === 'usd'
+                    ? `$${assetQuantity.toLocaleString()}`
+                    : `${assetQuantity.toLocaleString()} ${asset.symbol}`
+                  }
                 </p>
               </div>
-              <div className="text-right">
-                <p className="text-sm text-muted-foreground">Поточна вартість</p>
-                <p className="text-xl font-semibold">
-                  ${(assetQuantity * asset.price).toLocaleString()}
-                </p>
-              </div>
+              {asset.id !== 'usd' && (
+                <div className="text-right">
+                  <p className="text-sm text-muted-foreground">Пото��на вартість</p>
+                  <p className="text-xl font-semibold">
+                    ${(assetQuantity * asset.price).toLocaleString()}
+                  </p>
+                </div>
+              )}
             </div>
-            {userAsset && (
+            {userAsset && asset.id !== 'usd' && (
               <div className="mt-3 pt-3 border-t flex justify-between text-sm">
                 <span className="text-muted-foreground">
                   Середня ціна: ${userAsset.avgPrice.toFixed(2)}
@@ -528,7 +535,10 @@ export default function CoinDetail() {
         ) : (
           <div className="bg-card rounded-lg p-4 border text-center">
             <p className="text-muted-foreground">
-              У вас немає {asset.name} в портфелі
+              {asset.id === 'usd'
+                ? 'Баланс доларів: $0.00'
+                : `У вас немає ${asset.name} в портфелі`
+              }
             </p>
           </div>
         )}
