@@ -17,6 +17,10 @@ export default function WithdrawProcessing() {
   const { asset, address, network, amount, starsAmount, type } =
     location.state || {};
 
+  // Define these variables early to avoid temporal dead zone
+  const isTelegramStars = type === "telegram-stars";
+  const isExternalWallet = type === "external-wallet";
+
   useEffect(() => {
     if (tg) {
       tg.BackButton.hide();
@@ -55,9 +59,6 @@ export default function WithdrawProcessing() {
     hapticFeedback("medium");
     navigate("/");
   };
-
-  const isTelegramStars = type === "telegram-stars";
-  const isExternalWallet = type === "external-wallet";
 
   return (
     <div className="min-h-screen bg-background text-foreground">
