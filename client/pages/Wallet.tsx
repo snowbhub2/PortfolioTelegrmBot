@@ -409,7 +409,7 @@ export default function Wallet() {
         <div className="px-4">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-muted-foreground">
-              АКТИВИ
+              А��ТИВИ
             </h2>
             <Button
               variant="ghost"
@@ -427,7 +427,7 @@ export default function Wallet() {
               className="p-4 hover:bg-muted/50 transition-colors cursor-pointer border-l-4 border-l-green-500"
               onClick={() => {
                 hapticFeedback("medium");
-                // navigate(`/cash-detail`);
+                navigate(`/coin/usd`);
               }}
             >
               <div className="flex items-center justify-between">
