@@ -266,24 +266,8 @@ export default function Wallet() {
         {/* Balance Section */}
         <div className="px-4 pb-6 pt-4">
           <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-4xl font-bold">
-                {showBalance
-                  ? `${totalPortfolioValue.toFixed(2)} $`
-                  : "•".repeat(`${totalPortfolioValue.toFixed(2)} $`.length)}
-              </span>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleBalanceVisibility}
-                className="h-8 w-8"
-              >
-                {showBalance ? (
-                  <EyeIcon className="w-4 h-4" />
-                ) : (
-                  <EyeOffIcon className="w-4 h-4" />
-                )}
-              </Button>
+            <div className="text-4xl font-normal mb-2">
+              {totalPortfolioValue.toFixed(2)} $
             </div>
             <div className="flex items-center justify-center gap-2 mb-1">
               <span className="text-sm text-muted-foreground">
