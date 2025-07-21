@@ -58,7 +58,7 @@ const translations = {
     'language.russian': 'Русский',
     
     // Notifications
-    'notifications.title': 'УВЕД��МЛЕНИЯ',
+    'notifications.title': 'УВЕДОМЛЕНИЯ',
     'notifications.market_trends': 'Тренды рынка',
     'notifications.market_trends_desc': 'Изменение цен на активы',
     'notifications.updates': 'Обновления',
@@ -91,7 +91,7 @@ const translations = {
     'notifications.cfd_news_channel_link': 'Новости CFD Кошелька',
     
     // Notification Categories
-    'notifications.category.market_trends': 'УВЕДОМЛЕНИ�� ТРЕНДОВ РЫНКА',
+    'notifications.category.market_trends': 'УВЕДОМЛЕНИЯ ТРЕНДОВ РЫНКА',
     'notifications.category.updates': 'У������ОМЛЕНИЯ ОБНОВЛЕНИЙ',
     'notifications.category.promotions': 'УВЕДОМЛЕНИЯ АКЦИЙ',
     'notifications.category.educational': 'УВЕДОМЛЕНИЯ ОБРАЗОВАТЕЛЬНОГО КОНТЕНТА',
@@ -115,7 +115,7 @@ const translations = {
     'wallet.assets.cashDollars': 'Долл��ры',
     'wallet.assets.forTrading': 'Для тор��овли',
     'wallet.assets.boughtAt': 'Купил�� за:',
-    'wallet.assets.noAssets': 'Пока нет активов',
+    'wallet.assets.noAssets': 'Пока нет активо��',
     'wallet.assets.buyOnMarket': 'Купи��е активы на странице Рынок',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.trending.viewAll': 'Все',
@@ -191,7 +191,7 @@ const translations = {
     'exchange.back': '��азад',
     'exchange.asset.dollars': 'Доллары',
 
-    // Додаткові переклади для заверш��ння Wallet.tsx
+    // Додаткові переклади для завершення Wallet.tsx
     'wallet.trending.viewAll': 'Все',
     'wallet.trending.title': 'В ТРЕНДЕ',
     'wallet.demo.message': '🎭 Demo режим - для полных функций запустите через Telegram бота',
@@ -412,7 +412,7 @@ const translations = {
     'transfer.transfer_button': 'Перевести',
     'transfer.info.title': 'О перевод��',
     'transfer.info.portfolio_desc': 'Портфель - ��аличные для покупки активов',
-    'transfer.info.cfd_desc': 'CFD - средства для контрактов на разность цен',
+    'transfer.info.cfd_desc': 'CFD - средства для контрактов ��а разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
     'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
@@ -478,7 +478,7 @@ const translations = {
     'exchange.review_deal': 'Переглянути угоду',
     'exchange.back': 'Назад',
     'exchange.search': 'По��ск',
-    'exchange.top_up': 'Пополнить',
+    'exchange.top_up': 'Пополн��ть',
     'exchange.enter_amount': 'Введите сумму',
     'exchange.select_asset': 'Выберите актив',
     
@@ -547,7 +547,7 @@ const translations = {
     'common.fast': 'Быстро',
     'common.slow': 'Медленно',
     'common.normal': 'Об��чно',
-    'common.custom': 'Настроить',
+    'common.custom': 'Наст��оить',
     'common.auto': 'Автоматически',
     'common.manual': 'Вручную',
     'common.optional': 'Опциональн��',
@@ -986,6 +986,25 @@ const translations = {
     'history.status.pending': 'Pending',
     'history.status.processing': 'Processing',
     'history.status.failed': 'Failed',
+
+    // History Details Modal
+    'history.details.title': 'Transaction Details',
+    'history.details.group.label': 'Operation Type',
+    'history.details.group.purchase': 'Purchase',
+    'history.details.group.sale': 'Sale',
+    'history.details.group.deposit': 'Deposit',
+    'history.details.group.withdrawal': 'Withdrawal',
+    'history.details.group.transfer': 'Transfer',
+    'history.details.group.other': 'Other',
+    'history.details.id': 'Transaction ID',
+    'history.details.amount': 'Amount',
+    'history.details.instrument': 'Instrument',
+    'history.details.exchange_rate': 'Exchange Rate',
+    'history.details.purchase_price': 'Purchase Price',
+    'history.details.quantity': 'Quantity',
+    'history.details.time': 'Time',
+    'history.details.status': 'Status',
+    'history.details.description': 'Description',
 
     // Bonuses (English)
     'bonuses.hero.title': 'Wallet Bonuses',
