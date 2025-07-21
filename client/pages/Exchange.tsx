@@ -161,21 +161,19 @@ export default function Exchange() {
       const assets = portfolioManager.getAssets();
       const cashBalance = portfolioManager.getCashBalance();
 
-      // Додаємо долари тільки якщо є готівка
-      const allAssets = [...assets];
-      if (cashBalance > 0) {
-        const usdAsset: UserAsset = {
-          id: "usd",
-          symbol: "USD",
-          name: "Долари",
-          quantity: cashBalance,
-          avgPrice: 1,
-          currentPrice: 1,
-          icon: "$",
-          category: "currency",
-        };
-        allAssets.unshift(usdAsset);
-      }
+      // Завжди додаємо долари до списку (навіть з балансом 0)
+      const usdAsset: UserAsset = {
+        id: "usd",
+        symbol: "USD",
+        name: "Долари",
+        quantity: cashBalance,
+        avgPrice: 1,
+        currentPrice: 1,
+        icon: "$",
+        category: "currency",
+      };
+
+      const allAssets = [usdAsset, ...assets]; // Долари завжди першими
 
       setUserAssets(allAssets);
 
@@ -316,14 +314,30 @@ export default function Exchange() {
     }
   };
 
-  const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(2) : "0";
+  const exchangeRate = toAsset && fromAsset ? (toAsset.currentPrice / fromAsset.currentPrice).toFixed(6) : "0";
 
+  // Створюємо списки активів включаючи долари
   const filteredUserAssets = userAssets.filter(asset => 
     asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const filteredMarketAssets = allMarketAssets
+  // Долари також можна отримати + всі ринкові активи
+  const allAvailableAssets = [
+    {
+      id: "usd",
+      symbol: "USD", 
+      name: "Долари",
+      price: 1,
+      change24h: 0,
+      marketCap: 0,
+      icon: "$",
+      sparkline: [1, 1, 1, 1],
+    },
+    ...allMarketAssets
+  ];
+
+  const filteredMarketAssets = allAvailableAssets
     .filter(asset => 
       asset.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       asset.symbol.toLowerCase().includes(searchTerm.toLowerCase())
@@ -341,7 +355,7 @@ export default function Exchange() {
 
       {/* Main Content */}
       <div className="px-4 pb-20">
-        {/* Ви сп��ачуєте */}
+        {/* Ви сплачуєте */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className={`w-8 h-8 ${getAssetColor(fromAsset?.symbol)} rounded-full flex items-center justify-center`}>
@@ -352,7 +366,7 @@ export default function Exchange() {
               className={`text-blue-400 text-sm ml-auto ${fromAsset?.id === "usd" ? "cursor-pointer" : ""}`} 
               onClick={fromAsset?.id === "usd" ? handleBalanceClick : undefined}
             >
-              {fromAsset?.id === "usd" ? "Поповнити • " : ""}{fromAsset?.quantity.toFixed(2) || "0"} {fromAsset?.symbol || "USD"}
+              {fromAsset?.id === "usd" && fromAsset.quantity === 0 ? "Поповнити • " : ""}{fromAsset?.quantity.toFixed(2) || "0"} {fromAsset?.symbol || "USD"}
             </span>
           </div>
 
@@ -370,33 +384,39 @@ export default function Exchange() {
               }`}
               style={{ fontSize: '4rem' }}
             />
-            <div
-              className="flex items-center gap-2 cursor-pointer"
-              onClick={() => setShowFromSelect(true)}
-            >
-              <span className="text-4xl font-light text-muted-foreground">
-                {fromAsset?.symbol || "USD"}
-              </span>
-              <span className="text-muted-foreground">›</span>
+            <div className="flex items-center gap-4">
+              {/* Кнопка Макс горизонтально */}
+              {fromAsset && fromAsset.quantity > 0 && (
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleMaxAmount}
+                  className="text-primary hover:underline p-0 h-auto"
+                >
+                  Макс
+                </Button>
+              )}
+              <div
+                className="flex items-center gap-2 cursor-pointer"
+                onClick={() => setShowFromSelect(true)}
+              >
+                <span className="text-4xl font-light text-muted-foreground">
+                  {fromAsset?.symbol || "USD"}
+                </span>
+                <span className="text-muted-foreground">›</span>
+              </div>
             </div>
           </div>
 
-          {/* Кнопка Макс */}
-          {fromAsset && fromAsset.quantity > 0 && (
-            <div className="flex justify-end mt-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={handleMaxAmount}
-                className="text-primary hover:underline p-0 h-auto"
-              >
-                Макс
-              </Button>
+          {/* Сума в доларах якщо не долар */}
+          {fromAsset && fromAsset.id !== "usd" && fromAmount && parseFloat(fromAmount) > 0 && (
+            <div className="text-sm text-muted-foreground mt-2">
+              ≈ ${fromValue.toFixed(2)}
             </div>
           )}
 
           {isInsufficientFunds && (
-            <div className="text-destructive text-sm">Недостатньо коштів.</div>
+            <div className="text-destructive text-sm mt-2">Недостатньо коштів.</div>
           )}
         </div>
 
@@ -424,27 +444,26 @@ export default function Exchange() {
             <span className="text-foreground">Ви отримаєте</span>
           </div>
 
-          {toAsset ? (
-            <div className="flex items-center justify-between mb-2">
-              <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
-                {toAmount.toFixed(8)}
-              </div>
-              <div
-                className="flex items-center gap-2 cursor-pointer"
-                onClick={() => setShowToSelect(true)}
-              >
-                <span className="text-4xl font-light text-muted-foreground">
-                  {toAsset.symbol}
-                </span>
-                <span className="text-muted-foreground">›</span>
-              </div>
+          {/* Завжди показуємо великі цифри */}
+          <div className="flex items-center justify-between mb-2">
+            <div className="text-6xl font-bold text-foreground w-1/2" style={{ fontSize: '4rem' }}>
+              {toAsset && fromAmount && parseFloat(fromAmount) > 0 ? toAmount.toFixed(8) : "0"}
             </div>
-          ) : (
-            <div 
-              className="flex items-center justify-center py-8 cursor-pointer hover:bg-muted/50 rounded-lg border border-dashed border-muted-foreground/30"
+            <div
+              className="flex items-center gap-2 cursor-pointer"
               onClick={() => setShowToSelect(true)}
             >
-              <span className="text-muted-foreground text-lg">Вибрати інструмент</span>
+              <span className="text-4xl font-light text-muted-foreground">
+                {toAsset?.symbol || "Вибрати інструмент"}
+              </span>
+              <span className="text-muted-foreground">›</span>
+            </div>
+          </div>
+
+          {/* Сума в доларах якщо не долар */}
+          {toAsset && toAsset.id !== "usd" && fromAmount && parseFloat(fromAmount) > 0 && (
+            <div className="text-sm text-muted-foreground mt-2">
+              ≈ ${(toAmount * toAsset.currentPrice).toFixed(2)}
             </div>
           )}
         </div>
@@ -456,7 +475,7 @@ export default function Exchange() {
         {fromAsset && toAsset && (
           <div className="text-center mb-6">
             <div className="text-muted-foreground">
-              ≈ 1 {toAsset.symbol} ≈ {exchangeRate} {fromAsset.symbol}
+              = 1 {toAsset.symbol} = {exchangeRate} {fromAsset.symbol} = ${toAsset.currentPrice.toFixed(2)}
             </div>
           </div>
         )}
@@ -544,7 +563,7 @@ export default function Exchange() {
                   </div>
                   <div className="text-right">
                     <div className="text-foreground font-medium">
-                      {asset.quantity.toFixed(2)} $
+                      {(asset.quantity * asset.currentPrice).toFixed(2)} $
                     </div>
                     <div className="text-muted-foreground text-sm">
                       {asset.quantity.toFixed(4)} {asset.symbol}
@@ -611,7 +630,7 @@ export default function Exchange() {
                       avgPrice: asset.price,
                       currentPrice: asset.price,
                       icon: asset.icon,
-                      category: "crypto",
+                      category: asset.id === "usd" ? "currency" : "crypto",
                     };
                     setToAsset(marketAsset);
                     setShowToSelect(false);
