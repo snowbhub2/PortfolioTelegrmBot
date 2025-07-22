@@ -22,7 +22,7 @@ const translations = {
     // Settings
     'settings.title': 'ОСНОВНЫЕ НАСТРОЙКИ',
     'settings.notifications': 'Уведомления',
-    'settings.passcode': 'Код-па��оль и Face ID',
+    'settings.passcode': 'Код-пароль и Face ID',
     'settings.language': 'Язык',
     'settings.currency': 'Основная валюта',
     'settings.enabled': 'Вкл',
@@ -46,7 +46,7 @@ const translations = {
     'settings.walletFAQ': 'FAQ Портфеля',
     'settings.walletNews': 'Новости Портфеля',
     'settings.cfdNotApplicable': 'Распространяется на аккаунт CFD',
-    'settings.userAgreement': 'Пол��зовательское соглашение',
+    'settings.userAgreement': 'Пользовательское соглашение',
     'settings.privacyPolicy': 'Политика конфиденциальности',
     'settings.managedBy': 'Мини-приложение управляется TG Portfolio Inc.',
     'settings.independent': 'Сервис независим и не связан с Telegram.',
@@ -71,7 +71,7 @@ const translations = {
     'notifications.feedback_desc': 'Опросы и исследования',
     'notifications.always_on': 'Уведомлен��я о транзакциях и безопасности всегда будут включен��.',
     'notifications.news_channel': 'Все новости вы можете прочитать в канале',
-    'notifications.crypto_news': 'Новости Крипто Кошелька',
+    'notifications.crypto_news': 'Но��ости Крипто Кошелька',
     'notifications.cfd_title': 'УВЕДОМЛЕНИЯ CFD КОШЕЛЬКА',
     'notifications.cfd_for': 'Уведомления для',
     'notifications.cfd_desc': 'Получайте уве��омления, когда вам приходят CFD токены и NFT в CFD К��шелёк.',
@@ -101,7 +101,7 @@ const translations = {
     // Wallet
     'wallet.title': 'Портфель',
     'wallet.balance.portfolio': 'Баланс Портфеля',
-    'wallet.balance.allTime': 'за весь час',
+    'wallet.balance.allTime': 'за весь ча��',
     'wallet.actions.withdraw': 'Вывести',
     'wallet.actions.deposit': 'Пополнить',
     'wallet.actions.exchange': 'Обменять',
@@ -128,7 +128,7 @@ const translations = {
     'wallet.trading.currentPrice': 'Текущая цена',
     'wallet.trading.buy': 'КУПИТЬ',
     'wallet.trading.sell': 'ПРОДАТЬ',
-    'wallet.trading.warning': 'Торговля криптовалютами связана с высокими рисками',
+    'wallet.trading.warning': 'Торговля криптовалюта��и связана с высокими рисками',
     'wallet.gold': 'Золото',
 
     // Додаткові переклади для всіх текстів
@@ -155,10 +155,10 @@ const translations = {
 
     // History Page - базов�� переклади
     'history.transaction.buy': 'Покупка',
-    'history.transaction.sell': 'Продаж',
+    'history.transaction.sell': 'Прод��ж',
     'history.operations_history': 'История операций',
     'history.time.just_now': 'Только что',
-    'history.no_transactions': 'Пока не���� транзакций',
+    'history.no_transactions': 'Пока не�� транзакций',
     'history.go_to_trading': 'Перейти к торговле',
 
     // Bonuses Page
@@ -243,7 +243,7 @@ const translations = {
     'withdraw.method.telegram.title': 'Telegram Stars',
     'withdraw.method.telegram.description': 'Мгновенно и без комиссий',
     'withdraw.method.external.title': 'Внешний кошелёк или биржа',
-    'withdraw.method.external.description': 'Нужно указать крипто адрес',
+    'withdraw.method.external.description': 'Нужно указать крипто ад��ес',
 
     // Withdraw Asset Selection
     'withdraw.asset.title': 'ВЫ ВЫВОДИТЕ',
@@ -327,7 +327,7 @@ const translations = {
     'history.filter.sell': 'Продажи',
     'history.filter.deposit': 'Пополнения',
     'history.filter.withdraw': 'Выведения',
-    'history.empty.title': 'Пока нет т��анзак��ий',
+    'history.empty.title': 'Пока нет транзак��ий',
     'history.empty.subtitle_all': 'Ваши операции появятся здесь',
     'history.empty.subtitle_filtered': 'Нет операций этого типа',
     'history.empty.go_to_market': 'Перейти к торговле',
@@ -371,7 +371,7 @@ const translations = {
     // Transaction Descriptions
     'history.description.initial_deposit': 'Початковый депозит',
     'history.description.purchase_prefix': 'Покупка',
-    'history.description.sell_prefix': 'Продажа',
+    'history.description.sell_prefix': '��родажа',
     'history.description.for': 'за',
     
     // Bonuses
@@ -423,7 +423,7 @@ const translations = {
     'transfer.info.portfolio_desc': 'Портфель - ��аличные для покупки активов',
     'transfer.info.cfd_desc': 'CFD - средства для контрактов ��а разность цен',
     'transfer.info.instant_free': 'Перевод мгновенный без ��омиссии',
-    'transfer.info.history_saved': 'Все операции сохраняются в ��стории',
+    'transfer.info.history_saved': 'Все операции сохраняются в истории',
     'transfer.error.invalid_amount': 'Некорректная сумма',
     'transfer.error.insufficient_funds': 'Недостаточно средств',
     'transfer.error.transfer_failed': 'Ошибка перевода',
@@ -446,7 +446,7 @@ const translations = {
     'coin.about_crypto': 'О КРИПТОВАЛЮТЕ',
     'coin.about_stock': 'ПРО ��КЦИЮ',
     'coin.about_precious_metal': 'ПРО ДОРОГОЦІННИЙ МЕТАЛ',
-    'coin.about_currency': 'ПРО ВАЛЮТУ',
+    'coin.about_currency': 'ПРО ВАЛ��ТУ',
     'coin.portfolio_section': 'У ПОРТФЕЛІ',
     'coin.read_more': 'Докладніше',
     'coin.portfolio_empty': 'Немає активів в портфелі',
@@ -469,7 +469,7 @@ const translations = {
     'coin.generic_crypto_description': '{{name}} — це криптовалюта на базі блокчейн технології. Дозволяє здійснювати швидкі та безпечні цифрові транзакції.',
     'coin.generic_crypto_point_1': 'Ви можете купувати, продавати або ��берігати {{symbol}} в Гама��ці.',
     'coin.generic_crypto_point_2': 'Криптовалюти можуть мати високу волатильність цін.',
-    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом т��сячоліть використовується як засіб збереження вартості та захисту від інфляції.',
+    'coin.gold_description': 'Золото — це дорогоцінний метал, який протягом тисячоліть використовується як засіб збереження вартості та захисту від інфляції.',
     'coin.gold_point_1': 'Ви можете купувати або продавати золото через платформу.',
     'coin.gold_point_2': 'Золото традиційно вважається "безпечним притулком" для інвесторів.',
 
@@ -499,7 +499,7 @@ const translations = {
     'common.confirm': 'Подтвердить',
     'common.close': 'Закрыть',
     'common.save': 'С��хранить',
-    'common.edit': 'Редакт��ровать',
+    'common.edit': 'Редактировать',
     'common.delete': 'Удалить',
     'common.loading': 'Загрузка...',
     'common.error': '����ибка',
@@ -512,8 +512,8 @@ const translations = {
     'common.balance': 'Баланс',
     'common.price': 'Цена',
     'common.volume': 'Объём',
-    'common.change': 'Изменение',
-    'common.date': 'Дата',
+    'common.change': '��зменение',
+    'common.date': '��ата',
     'common.time': 'Время',
     'common.status': 'Статус',
     'common.type': 'Тип',
@@ -529,7 +529,7 @@ const translations = {
     'common.retry': 'Повторить',
     'common.skip': 'Пропустить',
     'common.done': 'Готов��',
-    'common.copied': 'Ско��ировано',
+    'common.copied': 'Ско��ирован��',
     'common.copy': 'Копироват��',
     'common.share': 'Поделиться',
     'common.help': 'Помощь',
@@ -561,7 +561,7 @@ const translations = {
     'common.manual': 'Вручную',
     'common.optional': 'Опциональн��',
     'common.required': 'Обязательно',
-    'common.recommended': '��екоме��дуется',
+    'common.recommended': '��екоме��дует��я',
   },
   en: {
     // Bottom Navigation
