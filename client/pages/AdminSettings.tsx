@@ -26,7 +26,8 @@ import {
   Globe,
   Database,
   Key,
-  BarChart3
+  BarChart3,
+  MessageCircle
 } from "lucide-react";
 
 interface PlatformSettings {
@@ -382,7 +383,7 @@ export default function AdminSettings() {
                 <div>
                   <Label>Торговля включена</Label>
                   <p className="text-sm text-gray-500">
-                    Разрешить пользователям покупать и продавать активы
+                    Разре��ить пользователям покупать и продавать активы
                   </p>
                 </div>
                 <Switch
@@ -473,7 +474,7 @@ export default function AdminSettings() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
-                Настройки безопасности
+                Настройки безопасн��сти
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
