@@ -41,6 +41,9 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminClients from "./pages/AdminClients";
 import AdminClientDetail from "./pages/AdminClientDetail";
+import AdminAssets from "./pages/AdminAssets";
+import AdminTransactions from "./pages/AdminTransactions";
+import AdminSettings from "./pages/AdminSettings";
 
 const queryClient = new QueryClient();
 
