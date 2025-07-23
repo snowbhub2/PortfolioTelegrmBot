@@ -412,11 +412,15 @@ export default function AdminTransactions() {
 
       {/* Urgent Actions Alert */}
       {stats.pendingWithdrawals > 0 && (
-        <Alert>
-          <AlertTriangle className="w-4 h-4" />
-          <AlertDescription>
-            У вас {stats.pendingWithdrawals} выво��ов ожидают подтверждения. Пожалуйста, проверьте их как можно скорее.
-          </AlertDescription>
+        <Alert className="bg-gradient-to-r from-orange-50 to-red-50 border-orange-200 shadow-lg">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+              <AlertTriangle className="w-5 h-5 text-white" />
+            </div>
+            <AlertDescription className="text-orange-800 font-semibold">
+              У вас <span className="font-bold">{stats.pendingWithdrawals}</span> выводов ожидают подтверждения. Пожалуйста, проверьте их как можно скорее.
+            </AlertDescription>
+          </div>
         </Alert>
       )}
 
@@ -429,32 +433,32 @@ export default function AdminTransactions() {
           setSearchParams(newParams);
         }}
       >
-        <TabsList>
-          <TabsTrigger value="all">Все транзакции</TabsTrigger>
-          <TabsTrigger value="withdrawals">
+        <TabsList className="bg-slate-100 border border-slate-200">
+          <TabsTrigger value="all" className="font-medium">Все транзакции</TabsTrigger>
+          <TabsTrigger value="withdrawals" className="font-medium">
             Выводы
             {stats.pendingWithdrawals > 0 && (
-              <Badge variant="destructive" className="ml-2 h-5 px-1.5 text-xs">
+              <Badge className="ml-2 h-5 px-1.5 text-xs bg-red-500 hover:bg-red-600 font-semibold shadow-sm">
                 {stats.pendingWithdrawals}
               </Badge>
             )}
           </TabsTrigger>
-          <TabsTrigger value="deposits">Пополнения</TabsTrigger>
-          <TabsTrigger value="trades">Торговля</TabsTrigger>
+          <TabsTrigger value="deposits" className="font-medium">Пополнения</TabsTrigger>
+          <TabsTrigger value="trades" className="font-medium">Торговля</TabsTrigger>
         </TabsList>
 
         <TabsContent value={tab} className="space-y-6">
           {/* Filters */}
-          <Card>
+          <Card className="bg-gradient-to-r from-white to-slate-50 border-slate-200 shadow-lg">
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
                   <Input
                     placeholder="Поиск по пользователю, ID, хешу..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 bg-white border-slate-300 text-slate-800 font-medium focus:border-blue-500"
                   />
                 </div>
                 
@@ -465,7 +469,7 @@ export default function AdminTransactions() {
                   <SelectContent>
                     <SelectItem value="all">Все типы</SelectItem>
                     <SelectItem value="deposit">Пополнения</SelectItem>
-                    <SelectItem value="withdraw">Выводы</SelectItem>
+                    <SelectItem value="withdraw">Вы��оды</SelectItem>
                     <SelectItem value="buy">Покупки</SelectItem>
                     <SelectItem value="sell">Продажи</SelectItem>
                     <SelectItem value="transfer">Переводы</SelectItem>
