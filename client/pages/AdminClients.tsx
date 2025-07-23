@@ -66,25 +66,81 @@ export default function AdminClients() {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
     
-    const mockClients: ClientData[] = Array.from({ length: 50 }, (_, i) => ({
-      id: `client-${i + 1}`,
-      telegramId: `${1000000000 + i}`,
-      username: `user_${i + 1}`,
-      firstName: `Пользователь`,
-      lastName: `${i + 1}`,
-      email: `user${i + 1}@example.com`,
-      registrationDate: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000),
-      lastActive: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000),
-      status: ["active", "inactive", "banned", "pending"][Math.floor(Math.random() * 4)] as any,
-      balanceUSD: Math.random() * 10000,
-      totalDeposits: Math.random() * 50000,
-      totalWithdrawals: Math.random() * 30000,
-      tradesCount: Math.floor(Math.random() * 200),
-      totalVolume: Math.random() * 100000,
-      verificationLevel: ["none", "basic", "advanced"][Math.floor(Math.random() * 3)] as any,
-      country: ["Ukraine", "Russia", "Belarus", "Kazakhstan"][Math.floor(Math.random() * 4)],
-      riskLevel: ["low", "medium", "high"][Math.floor(Math.random() * 3)] as any
-    }));
+    const realNames = [
+      ["Александр", "Иванов"], ["Мария", "Петрова"], ["Дмитрий", "Сидоров"], ["Елена", "Козлова"],
+      ["Сергей", "Попов"], ["Анна", "Волкова"], ["Михаил", "Соколов"], ["Ольга", "Зайцева"],
+      ["Владимир", "Лебедев"], ["Татьяна", "Новикова"], ["Игорь", "Морозов"], ["Наталья", "Павлова"],
+      ["Алексей", "Волков"], ["Светлана", "Семенова"], ["Андрей", "Голубев"], ["Ирина", "Виноградова"],
+      ["Николай", "Богданов"], ["Юлия", "Воробьева"], ["Василий", "Федоров"], ["Екатерина", "Михайлова"],
+      ["Константин", "Беляев"], ["Людмила", "Тарасова"], ["Геннадий", "Белов"], ["Валентина", "Комарова"],
+      ["Виктор", "Орлов"], ["Галина", "Киселева"], ["Анатолий", "Макаров"], ["Вера", "Ильина"],
+      ["Евгений", "Костин"], ["Любовь", "Гусева"], ["Валерий", "Титов"], ["Надежда", "Кузнецова"],
+      ["Борис", "Кудрявцев"], ["Раиса", "Максимова"], ["Станислав", "Сергеев"], ["Зинаида", "Николаева"],
+      ["Петр", "Щербаков"], ["Лариса", "Степанова"], ["Виталий", "Романов"], ["Марина", "Понома��ева"],
+      ["Олег", "Захаров"], ["Тамара", "Григорьева"], ["Роман", "Данилов"], ["Инна", "Савельева"],
+      ["Юрий", "Жуков"], ["Елизавета", "Яковлева"], ["Павел", "Антонов"], ["Нина", "Арсеньева"],
+      ["Валентин", "Демидов"], ["Лидия", "Крылова"], ["Максим", "Мамонтов"], ["Альбина", "Денисова"]
+    ];
+
+    const usernames = [
+      "crypto_king", "bitcoin_trader", "eth_holder", "moon_rider", "diamond_hands",
+      "whale_watcher", "alt_hunter", "hodl_master", "day_trader", "swing_pro",
+      "profit_seeker", "chart_master", "bull_runner", "bear_fighter", "trend_follower",
+      "risk_taker", "safe_player", "volume_tracker", "price_action", "technical_guru",
+      "fundamental_guy", "news_trader", "scalper_pro", "position_trader", "arbitrage_king",
+      "defi_lover", "nft_collector", "yield_farmer", "liquidity_provider", "staking_master",
+      "mining_expert", "blockchain_dev", "crypto_analyst", "market_maker", "institutional_player",
+      "retail_hero", "degen_trader", "conservative_investor", "momentum_trader", "value_hunter",
+      "growth_seeker", "income_generator", "capital_preserver", "wealth_builder", "fortune_maker",
+      "money_manager", "asset_allocator", "portfolio_optimizer", "diversification_king", "hedge_fund_wannabe"
+    ];
+
+    const countries = ["Ukraine", "Russia", "Belarus", "Kazakhstan", "Poland", "Germany", "USA", "Canada"];
+
+    const mockClients: ClientData[] = Array.from({ length: 150 }, (_, i) => {
+      const nameIndex = i % realNames.length;
+      const usernameIndex = i % usernames.length;
+      const [firstName, lastName] = realNames[nameIndex];
+      const username = usernames[usernameIndex] + (i > 49 ? `_${Math.floor(i/50)}` : "");
+
+      const registrationDate = new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000);
+      const daysSinceReg = (Date.now() - registrationDate.getTime()) / (24 * 60 * 60 * 1000);
+
+      // More realistic data based on registration time
+      const isActive = Math.random() < 0.85;
+      const status = isActive ?
+        (Math.random() < 0.05 ? "banned" : "active") :
+        (Math.random() < 0.1 ? "pending" : "inactive");
+
+      const baseDeposit = Math.random() < 0.1 ? Math.random() * 100000 : Math.random() * 25000;
+      const totalDeposits = baseDeposit * (1 + Math.random() * 3);
+      const totalWithdrawals = totalDeposits * (0.3 + Math.random() * 0.5);
+      const balanceUSD = Math.max(0, totalDeposits - totalWithdrawals + (Math.random() - 0.5) * 5000);
+
+      const tradesCount = Math.floor(daysSinceReg * (Math.random() * 5));
+      const totalVolume = tradesCount * (1000 + Math.random() * 10000);
+
+      return {
+        id: `client-${String(i + 1).padStart(4, '0')}`,
+        telegramId: `${1000000000 + i}`,
+        username,
+        firstName,
+        lastName,
+        email: `${username}@${["gmail.com", "yahoo.com", "outlook.com", "proton.me"][Math.floor(Math.random() * 4)]}`,
+        phone: `+${[380, 7, 375, 7, 48, 49, 1][Math.floor(Math.random() * 7)]}${Math.floor(Math.random() * 900000000 + 100000000)}`,
+        registrationDate,
+        lastActive: new Date(Date.now() - Math.random() * (isActive ? 7 : 30) * 24 * 60 * 60 * 1000),
+        status: status as any,
+        balanceUSD,
+        totalDeposits,
+        totalWithdrawals,
+        tradesCount,
+        totalVolume,
+        verificationLevel: totalDeposits > 10000 ? "advanced" : (totalDeposits > 1000 ? "basic" : "none") as any,
+        country: countries[Math.floor(Math.random() * countries.length)],
+        riskLevel: (totalVolume > 50000 ? "high" : (totalVolume > 10000 ? "medium" : "low")) as any
+      };
+    });
 
     setClients(mockClients);
     setFilteredClients(mockClients);
@@ -390,7 +446,7 @@ export default function AdminClients() {
                       <div>
                         <p className="font-medium">${client.totalVolume.toFixed(0)}</p>
                         <p className="text-sm text-gray-500">
-                          {client.tradesCount} ��делок
+                          {client.tradesCount} сделок
                         </p>
                       </div>
                     </TableCell>
