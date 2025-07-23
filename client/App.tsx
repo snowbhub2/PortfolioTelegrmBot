@@ -154,6 +154,7 @@ const AdminProtectedRoutes = () => {
         <Route path="/transactions/withdrawals" element={<AdminTransactions />} />
         <Route path="/transactions/deposits" element={<AdminTransactions />} />
         <Route path="/settings" element={<AdminSettings />} />
+        <Route path="/test" element={<AdminTest />} />
       </Routes>
     </AdminLayout>
   );
