@@ -121,6 +121,8 @@ const App = () => (
                 <Route path="transactions" element={<AdminTransactions />} />
                 <Route path="transactions/withdrawals" element={<AdminTransactions />} />
                 <Route path="transactions/deposits" element={<AdminTransactions />} />
+                <Route path="security" element={<AdminSecurity />} />
+                <Route path="notifications" element={<AdminNotifications />} />
                 <Route path="settings" element={<AdminSettings />} />
                 <Route path="test" element={<AdminTest />} />
               </Route>
