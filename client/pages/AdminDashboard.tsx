@@ -107,29 +107,74 @@ export default function AdminDashboard() {
       {
         id: "tx-001",
         type: "withdrawal",
-        user: "user_1247",
-        amount: 1250.00,
+        user: "crypto_trader_pro",
+        amount: 5250.00,
         asset: "USDT",
         status: "pending",
-        timestamp: new Date(Date.now() - 300000)
+        timestamp: new Date(Date.now() - 180000)
       },
       {
-        id: "tx-002", 
+        id: "tx-002",
         type: "deposit",
-        user: "user_0892",
-        amount: 500.00,
+        user: "bitcoin_holder",
+        amount: 12500.00,
         asset: "BTC",
         status: "completed",
-        timestamp: new Date(Date.now() - 600000)
+        timestamp: new Date(Date.now() - 420000)
       },
       {
         id: "tx-003",
         type: "trade",
-        user: "user_0445",
-        amount: 2500.00,
+        user: "eth_maximalist",
+        amount: 8750.00,
         asset: "ETH",
-        status: "completed", 
-        timestamp: new Date(Date.now() - 900000)
+        status: "completed",
+        timestamp: new Date(Date.now() - 680000)
+      },
+      {
+        id: "tx-004",
+        type: "withdrawal",
+        user: "day_trader_99",
+        amount: 2100.00,
+        asset: "TON",
+        status: "pending",
+        timestamp: new Date(Date.now() - 840000)
+      },
+      {
+        id: "tx-005",
+        type: "deposit",
+        user: "whale_investor",
+        amount: 25000.00,
+        asset: "USDT",
+        status: "processing",
+        timestamp: new Date(Date.now() - 1020000)
+      },
+      {
+        id: "tx-006",
+        type: "trade",
+        user: "swing_trader",
+        amount: 3400.00,
+        asset: "BNB",
+        status: "completed",
+        timestamp: new Date(Date.now() - 1200000)
+      },
+      {
+        id: "tx-007",
+        type: "withdrawal",
+        user: "hodl_master",
+        amount: 750.00,
+        asset: "BTC",
+        status: "pending",
+        timestamp: new Date(Date.now() - 1380000)
+      },
+      {
+        id: "tx-008",
+        type: "deposit",
+        user: "alt_coin_hunter",
+        amount: 1800.00,
+        asset: "SOL",
+        status: "completed",
+        timestamp: new Date(Date.now() - 1560000)
       }
     ]
   });
@@ -207,7 +252,7 @@ export default function AdminDashboard() {
                 <p className="text-2xl font-bold text-gray-900">{dashboardData.overview.totalUsers.toLocaleString()}</p>
                 <p className="text-sm text-green-600 flex items-center mt-1">
                   <TrendingUp className="w-3 h-3 mr-1" />
-                  +12% за не��елю
+                  +12% за неделю
                 </p>
               </div>
               <div className="p-3 bg-blue-100 rounded-full">
