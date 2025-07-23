@@ -130,7 +130,7 @@ const allAssets = [
     iconBgColor: "bg-blue-400",
     category: "crypto",
   },
-  // Пл��тина
+  // Платина
   {
     id: "platinum",
     symbol: "PLATINUM",
@@ -189,7 +189,7 @@ export default function CoinDetail() {
     };
   }
 
-  // Генерація динамічного контенту для різн��х типів активів
+  // Генерация динамического контента для разных типов активов
   const getAssetInfo = () => {
     switch (asset.category) {
       case "crypto":
@@ -253,7 +253,7 @@ export default function CoinDetail() {
         if (asset.id === "aapl") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продуктами iPhone, iPad, Mac та іншими пристроями.",
+            description: "Apple Inc. — американська багатонаціональна технологічна корпорація, відома своїми продук��ами iPhone, iPad, Mac та іншими пристроями.",
             points: [
               "Ви можете купувати або продавати акції AAPL через платформу.",
               "Apple є однією з найдорожчих компаній у світі за ринковою капіталізацією."
@@ -291,7 +291,7 @@ export default function CoinDetail() {
             title: "ПРО АКЦІЮ",
             description: `${asset.name} — це публічна компанія, акції якої торгуються на фондовому ринку.`,
             points: [
-              `Ви можете купувати або продавати акції ${asset.symbol} через платформу.`,
+              `Ви можете купувати або продав��ти акції ${asset.symbol} через платформу.`,
               "Ціни на акції можуть коливатися залежно від ринкових умов."
             ]
           };
@@ -318,11 +318,11 @@ export default function CoinDetail() {
           };
         } else if (asset.id === "platinum") {
           return {
-            title: "ПРО ДОРОГОЦІННИЙ МЕ��А��",
-            description: "Платина — це ��ідкісний дорогоцінний метал з унікальними властивостями, який широко використов��ється в ювелірній справі та промисловості.",
+            title: "О ДРАГОЦЕННОМ МЕТАЛЛЕ",
+            description: "Платина — это редкий драгоценный металл с уникальными свойствами, который широко используется в ювелирном деле и промышленности.",
             points: [
-              "Ви можете купуват�� або продавати платину через пла��форму.",
-              "Платина рідше за золото та має високу стійкість до корозії."
+              "Вы можете покупать или продавать платину через платформу.",
+              "Платина реже золота и имеет высокую стойкость к коррозии."
             ]
           };
         } else {
@@ -340,7 +340,7 @@ export default function CoinDetail() {
         if (asset.id === "usd") {
           return {
             title: "ПРО ВАЛЮТУ",
-            description: "Долар США — це основна резервна валюта світу та ��азова валюта для ��оргі��лі на нашій платформі.",
+            description: "Доллар США — это основная резервная валюта мира и базовая валюта для торговли на нашей платформе.",
             points: [
               "Ви можете поповнювати баланс або виводити кошти.",
               "USD використовується для покупки інших активів на платформі."
@@ -363,7 +363,7 @@ export default function CoinDetail() {
           description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на нашій платформі.`,
           points: [
             `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
-            "Бу��ь ласка, врахуй��е ризики при інвестуванні."
+            "Пожалуйста, учитывайте риски при инвестировании."
           ]
         };
     }
@@ -401,7 +401,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторінку методів поповнення
       navigate("/deposit/method");
     } else {
-      // Для інших активів відкриваємо Exchange з зап��вненими полями
+      // Для других ак��ивов открываем Exchange с заполненными полями
       navigate(`/exchange?from=usd&to=${asset.id}`);
     }
   };
@@ -413,7 +413,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторінку методів виводу
       navigate("/withdraw/method");
     } else {
-      // Для інших активів відкрив��ємо Exchange з протилежними полями
+      // Для других активов открываем Exchange с противоположными полями
       navigate(`/exchange?from=${asset.id}&to=usd`);
     }
   };
@@ -513,7 +513,7 @@ export default function CoinDetail() {
               </div>
               {asset.id !== 'usd' && (
                 <div className="text-right">
-                  <p className="text-sm text-muted-foreground">Поточна вартіст��</p>
+                  <p className="text-sm text-muted-foreground">Текущая стоимость</p>
                   <p className="text-xl font-semibold">
                     ${(assetQuantity * asset.price).toLocaleString()}
                   </p>
