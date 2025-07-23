@@ -72,7 +72,7 @@ const allAssets = [
   {
     id: "silver",
     symbol: "SILVER",
-    name: "Срібло",
+    name: "Серебро",
     price: 30.85,
     change24h: 1.22,
     icon: "🥈",
@@ -330,7 +330,7 @@ export default function CoinDetail() {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
             description: `${asset.name} — це дорогоцінний метал, що використовується для інвестицій та промислових цілей.`,
             points: [
-              `Ви можете купувати або прода��ати ${asset.symbol} через платформу.`,
+              `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
               "Дорогоцінні метали можуть служити захистом від економічної нестабільності."
             ]
           };
@@ -401,7 +401,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторінку методів поповнення
       navigate("/deposit/method");
     } else {
-      // Для других ак��ивов открываем Exchange с заполненными полями
+      // Для других ак��ивов открываем Exchange с заполненными п��лями
       navigate(`/exchange?from=usd&to=${asset.id}`);
     }
   };
