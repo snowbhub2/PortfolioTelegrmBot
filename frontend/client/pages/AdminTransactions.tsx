@@ -312,82 +312,99 @@ export default function AdminTransactions() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Управление транзакциями</h1>
-          <p className="text-gray-600">
-            Всего транзакций: {stats.total} • Ожидают: {stats.pending} • Общий объем: ${stats.totalVolume.toLocaleString()}
-          </p>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={exportTransactions}
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Экспорт
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={loadTransactions}
-            disabled={isLoading}
-          >
-            <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
-            Обновить
-          </Button>
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                <BarChart3 className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-800">Управление транзакциями</h1>
+            </div>
+            <p className="text-slate-600 ml-13 font-medium">
+              Всего транзакций: <span className="font-bold text-slate-800">{stats.total}</span> • Ожидают: <span className="font-bold text-orange-600">{stats.pending}</span> • Общий объем: <span className="font-bold text-green-600">${stats.totalVolume.toLocaleString()}</span>
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={exportTransactions}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Экспорт
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={loadTransactions}
+              disabled={isLoading}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
+              Обновить
+            </Button>
+          </div>
         </div>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card>
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Всего транзакций</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+                <p className="text-sm font-semibold text-blue-700 mb-1">Всего транзакций</p>
+                <p className="text-3xl font-bold text-slate-800">{stats.total}</p>
               </div>
-              <Activity className="w-8 h-8 text-blue-500" />
+              <div className="p-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-md">
+                <Activity className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-yellow-50 to-orange-50 border-yellow-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Ожидают подтверждения</p>
-                <p className="text-2xl font-bold text-yellow-600">{stats.pending}</p>
+                <p className="text-sm font-semibold text-yellow-700 mb-1">Ожидают подтверждения</p>
+                <p className="text-3xl font-bold text-slate-800">{stats.pending}</p>
               </div>
-              <Clock className="w-8 h-8 text-yellow-500" />
+              <div className="p-4 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl shadow-md">
+                <Clock className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-red-50 to-pink-50 border-red-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Выводы на подтверждении</p>
-                <p className="text-2xl font-bold text-red-600">{stats.pendingWithdrawals}</p>
+                <p className="text-sm font-semibold text-red-700 mb-1">Выводы на подтверждении</p>
+                <p className="text-3xl font-bold text-slate-800">{stats.pendingWithdrawals}</p>
               </div>
-              <ArrowDownCircle className="w-8 h-8 text-red-500" />
+              <div className="p-4 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl shadow-md">
+                <ArrowDownCircle className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Общий объем</p>
-                <p className="text-2xl font-bold text-green-600">${stats.totalVolume.toFixed(0)}</p>
+                <p className="text-sm font-semibold text-green-700 mb-1">Общий объем</p>
+                <p className="text-3xl font-bold text-slate-800">${stats.totalVolume.toFixed(0)}</p>
               </div>
-              <DollarSign className="w-8 h-8 text-green-500" />
+              <div className="p-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl shadow-md">
+                <DollarSign className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -395,11 +412,15 @@ export default function AdminTransactions() {
 
       {/* Urgent Actions Alert */}
       {stats.pendingWithdrawals > 0 && (
-        <Alert>
-          <AlertTriangle className="w-4 h-4" />
-          <AlertDescription>
-            У вас {stats.pendingWithdrawals} выводов ожидают подтверждения. Пожалуйста, проверьте их как можно скорее.
-          </AlertDescription>
+        <Alert className="bg-gradient-to-r from-orange-50 to-red-50 border-orange-200 shadow-lg">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+              <AlertTriangle className="w-5 h-5 text-white" />
+            </div>
+            <AlertDescription className="text-orange-800 font-semibold">
+              У вас <span className="font-bold">{stats.pendingWithdrawals}</span> выводов ожидают подтверждения. Пожалуйста, проверьте их как можно скорее.
+            </AlertDescription>
+          </div>
         </Alert>
       )}
 
@@ -412,32 +433,32 @@ export default function AdminTransactions() {
           setSearchParams(newParams);
         }}
       >
-        <TabsList>
-          <TabsTrigger value="all">Все транзакции</TabsTrigger>
-          <TabsTrigger value="withdrawals">
+        <TabsList className="bg-slate-100 border border-slate-200">
+          <TabsTrigger value="all" className="font-medium">Все транзакции</TabsTrigger>
+          <TabsTrigger value="withdrawals" className="font-medium">
             Выводы
             {stats.pendingWithdrawals > 0 && (
-              <Badge variant="destructive" className="ml-2 h-5 px-1.5 text-xs">
+              <Badge className="ml-2 h-5 px-1.5 text-xs bg-red-500 hover:bg-red-600 font-semibold shadow-sm">
                 {stats.pendingWithdrawals}
               </Badge>
             )}
           </TabsTrigger>
-          <TabsTrigger value="deposits">Пополнения</TabsTrigger>
-          <TabsTrigger value="trades">Торговля</TabsTrigger>
+          <TabsTrigger value="deposits" className="font-medium">Пополнения</TabsTrigger>
+          <TabsTrigger value="trades" className="font-medium">Торговля</TabsTrigger>
         </TabsList>
 
         <TabsContent value={tab} className="space-y-6">
           {/* Filters */}
-          <Card>
+          <Card className="bg-gradient-to-r from-white to-slate-50 border-slate-200 shadow-lg">
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
                   <Input
                     placeholder="Поиск по пользователю, ID, хешу..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10"
+                    className="pl-10 bg-white border-slate-300 text-slate-800 font-medium focus:border-blue-500"
                   />
                 </div>
                 
@@ -448,7 +469,7 @@ export default function AdminTransactions() {
                   <SelectContent>
                     <SelectItem value="all">Все типы</SelectItem>
                     <SelectItem value="deposit">Пополнения</SelectItem>
-                    <SelectItem value="withdraw">Выводы</SelectItem>
+                    <SelectItem value="withdraw">Вы��оды</SelectItem>
                     <SelectItem value="buy">Покупки</SelectItem>
                     <SelectItem value="sell">Продажи</SelectItem>
                     <SelectItem value="transfer">Переводы</SelectItem>

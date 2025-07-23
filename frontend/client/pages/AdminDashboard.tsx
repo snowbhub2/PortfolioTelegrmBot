@@ -38,7 +38,8 @@ import {
 
 export default function AdminDashboard() {
   const [timeRange, setTimeRange] = useState("7d");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   // Rich demo data for admin panel
   const [dashboardData, setDashboardData] = useState({
@@ -179,6 +180,24 @@ export default function AdminDashboard() {
     ]
   });
 
+  // Initialize dashboard on component mount
+  useEffect(() => {
+    const initializeDashboard = async () => {
+      try {
+        setIsLoading(true);
+        // Simulate data loading
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading dashboard:", error);
+        setHasError(true);
+        setIsLoading(false);
+      }
+    };
+
+    initializeDashboard();
+  }, []);
+
   const refreshData = async () => {
     setIsLoading(true);
     // Simulate API call
@@ -210,17 +229,57 @@ export default function AdminDashboard() {
     }
   };
 
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-slate-200">
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-slate-200 border-t-blue-600 mx-auto"></div>
+          <p className="mt-6 text-slate-700 font-semibold text-lg">Загрузка данных дашборда...</p>
+          <p className="text-slate-500 text-sm mt-2">Пожалуйста, подождите</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (hasError) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-red-200">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <AlertTriangle className="w-8 h-8 text-red-600" />
+          </div>
+          <p className="text-red-600 text-xl font-bold mb-2">Ошибка загрузки данных</p>
+          <p className="text-slate-600 text-sm mb-6">Не удалось загрузить данные дашборда</p>
+          <Button
+            onClick={() => window.location.reload()}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium"
+          >
+            <RefreshCw className="w-4 h-4 mr-2" />
+            Перезагрузить
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Дашборд</h1>
-          <p className="text-gray-600">Обзор платформы и ключевые метрики</p>
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+              <Activity className="w-6 h-6 text-white" />
+            </div>
+            <h1 className="text-3xl font-bold text-slate-800">Дашборд</h1>
+          </div>
+          <p className="text-slate-600 ml-13">Обзор платформы и ключевые метрики</p>
         </div>
         <div className="flex items-center space-x-3">
           <Select value={timeRange} onValueChange={setTimeRange}>
-            <SelectTrigger className="w-32">
+            <SelectTrigger className="w-36 bg-white border-slate-300 text-slate-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -235,6 +294,7 @@ export default function AdminDashboard() {
             size="sm"
             onClick={refreshData}
             disabled={isLoading}
+            className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
           >
             <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
             Обновить
@@ -244,72 +304,72 @@ export default function AdminDashboard() {
 
       {/* Key Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card>
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Всего пользователей</p>
-                <p className="text-2xl font-bold text-gray-900">{dashboardData.overview.totalUsers.toLocaleString()}</p>
-                <p className="text-sm text-green-600 flex items-center mt-1">
-                  <TrendingUp className="w-3 h-3 mr-1" />
+                <p className="text-sm font-semibold text-blue-700 mb-1">Всего пользователей</p>
+                <p className="text-3xl font-bold text-slate-800">{dashboardData.overview.totalUsers.toLocaleString()}</p>
+                <p className="text-sm text-green-700 flex items-center mt-2 font-medium">
+                  <TrendingUp className="w-4 h-4 mr-1" />
                   +12% за неделю
                 </p>
               </div>
-              <div className="p-3 bg-blue-100 rounded-full">
-                <Users className="w-6 h-6 text-blue-600" />
+              <div className="p-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-md">
+                <Users className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Общий баланс</p>
-                <p className="text-2xl font-bold text-gray-900">${dashboardData.overview.totalBalance.toLocaleString()}</p>
-                <p className="text-sm text-green-600 flex items-center mt-1">
-                  <TrendingUp className="w-3 h-3 mr-1" />
+                <p className="text-sm font-semibold text-green-700 mb-1">Общий баланс</p>
+                <p className="text-3xl font-bold text-slate-800">${dashboardData.overview.totalBalance.toLocaleString()}</p>
+                <p className="text-sm text-green-700 flex items-center mt-2 font-medium">
+                  <TrendingUp className="w-4 h-4 mr-1" />
                   +8.5% за месяц
                 </p>
               </div>
-              <div className="p-3 bg-green-100 rounded-full">
-                <DollarSign className="w-6 h-6 text-green-600" />
+              <div className="p-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl shadow-md">
+                <DollarSign className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-purple-50 to-violet-50 border-purple-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Объем за сегодня</p>
-                <p className="text-2xl font-bold text-gray-900">${dashboardData.overview.todayVolume.toLocaleString()}</p>
-                <p className="text-sm text-red-600 flex items-center mt-1">
-                  <TrendingDown className="w-3 h-3 mr-1" />
+                <p className="text-sm font-semibold text-purple-700 mb-1">Объем за сегодня</p>
+                <p className="text-3xl font-bold text-slate-800">${dashboardData.overview.todayVolume.toLocaleString()}</p>
+                <p className="text-sm text-red-600 flex items-center mt-2 font-medium">
+                  <TrendingDown className="w-4 h-4 mr-1" />
                   -3.2% от вчера
                 </p>
               </div>
-              <div className="p-3 bg-purple-100 rounded-full">
-                <Activity className="w-6 h-6 text-purple-600" />
+              <div className="p-4 bg-gradient-to-r from-purple-500 to-violet-600 rounded-2xl shadow-md">
+                <Activity className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-orange-50 to-red-50 border-orange-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Ожидающие выводы</p>
-                <p className="text-2xl font-bold text-gray-900">{dashboardData.overview.pendingWithdrawals}</p>
-                <Badge variant="destructive" className="mt-1">
+                <p className="text-sm font-semibold text-orange-700 mb-1">Ожидающие выводы</p>
+                <p className="text-3xl font-bold text-slate-800">{dashboardData.overview.pendingWithdrawals}</p>
+                <Badge className="mt-2 bg-red-100 text-red-700 hover:bg-red-200 border-red-300 font-medium">
                   Требует внимания
                 </Badge>
               </div>
-              <div className="p-3 bg-red-100 rounded-full">
-                <AlertTriangle className="w-6 h-6 text-red-600" />
+              <div className="p-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl shadow-md">
+                <AlertTriangle className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
@@ -319,16 +379,19 @@ export default function AdminDashboard() {
       {/* Charts Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Revenue Chart */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Доходы и активность</CardTitle>
+        <Card className="bg-white border-slate-200 shadow-lg">
+          <CardHeader className="border-b border-slate-100">
+            <CardTitle className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-blue-600" />
+              Доходы и активность
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <Tabs defaultValue="revenue" className="space-y-4">
-              <TabsList>
-                <TabsTrigger value="revenue">Доходы</TabsTrigger>
-                <TabsTrigger value="trades">Сделки</TabsTrigger>
-                <TabsTrigger value="users">Пользователи</TabsTrigger>
+              <TabsList className="bg-slate-100 border border-slate-200">
+                <TabsTrigger value="revenue" className="font-medium">Доходы</TabsTrigger>
+                <TabsTrigger value="trades" className="font-medium">Сделки</TabsTrigger>
+                <TabsTrigger value="users" className="font-medium">Пользователи</TabsTrigger>
               </TabsList>
               
               <TabsContent value="revenue">
@@ -371,11 +434,14 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Asset Distribution */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Распределение активов</CardTitle>
+        <Card className="bg-white border-slate-200 shadow-lg">
+          <CardHeader className="border-b border-slate-100">
+            <CardTitle className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <DollarSign className="w-5 h-5 text-green-600" />
+              Распределение активов
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <div className="space-y-4">
               <ResponsiveContainer width="100%" height={200}>
                 <PieChart>
@@ -395,17 +461,17 @@ export default function AdminDashboard() {
                 </PieChart>
               </ResponsiveContainer>
               
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {dashboardData.assetDistribution.map((asset) => (
-                  <div key={asset.name} className="flex items-center justify-between text-sm">
-                    <div className="flex items-center space-x-2">
+                  <div key={asset.name} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <div className="flex items-center space-x-3">
                       <div
-                        className="w-3 h-3 rounded-full"
+                        className="w-4 h-4 rounded-full shadow-sm"
                         style={{ backgroundColor: asset.color }}
                       />
-                      <span className="font-medium">{asset.name}</span>
+                      <span className="font-semibold text-slate-800">{asset.name}</span>
                     </div>
-                    <span className="text-gray-600">${asset.amount.toLocaleString()}</span>
+                    <span className="text-slate-700 font-medium">${asset.amount.toLocaleString()}</span>
                   </div>
                 ))}
               </div>
@@ -417,30 +483,33 @@ export default function AdminDashboard() {
       {/* Bottom Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Top Assets */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Топ активы по объему</CardTitle>
+        <Card className="bg-white border-slate-200 shadow-lg">
+          <CardHeader className="border-b border-slate-100">
+            <CardTitle className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-yellow-600" />
+              Топ активы по объему
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <div className="space-y-4">
               {dashboardData.topAssets.map((asset, index) => (
-                <div key={asset.symbol} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">{index + 1}</span>
+                <div key={asset.symbol} className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl border border-slate-200 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
+                      <span className="text-sm font-bold text-white">#{index + 1}</span>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">{asset.symbol}</p>
-                      <p className="text-sm text-gray-500">{asset.trades} сделок</p>
+                      <p className="font-bold text-slate-800 text-lg">{asset.symbol}</p>
+                      <p className="text-sm text-slate-600 font-medium">{asset.trades} сделок</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-gray-900">${asset.volume24h.toLocaleString()}</p>
-                    <p className={`text-sm flex items-center ${asset.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    <p className="font-bold text-slate-800 text-lg">${asset.volume24h.toLocaleString()}</p>
+                    <p className={`text-sm flex items-center font-semibold ${asset.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                       {asset.change24h >= 0 ? (
-                        <TrendingUp className="w-3 h-3 mr-1" />
+                        <TrendingUp className="w-4 h-4 mr-1" />
                       ) : (
-                        <TrendingDown className="w-3 h-3 mr-1" />
+                        <TrendingDown className="w-4 h-4 mr-1" />
                       )}
                       {Math.abs(asset.change24h)}%
                     </p>
@@ -452,39 +521,44 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Recent Transactions */}
-        <Card>
-          <CardHeader>
+        <Card className="bg-white border-slate-200 shadow-lg">
+          <CardHeader className="border-b border-slate-100">
             <div className="flex items-center justify-between">
-              <CardTitle>Последние транзакции</CardTitle>
-              <Button variant="outline" size="sm">
+              <CardTitle className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-purple-600" />
+                Последние транзакции
+              </CardTitle>
+              <Button variant="outline" size="sm" className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50">
                 <Eye className="w-4 h-4 mr-2" />
                 Все
               </Button>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <div className="space-y-4">
               {dashboardData.recentTransactions.map((tx) => (
-                <div key={tx.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                <div key={tx.id} className="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all hover:shadow-sm">
                   <div className="flex items-center space-x-3">
-                    {getTransactionTypeIcon(tx.type)}
+                    <div className="p-2 rounded-lg bg-slate-100">
+                      {getTransactionTypeIcon(tx.type)}
+                    </div>
                     <div>
-                      <p className="font-medium text-gray-900">{tx.user}</p>
-                      <p className="text-sm text-gray-500">
-                        {tx.timestamp.toLocaleTimeString('ru-RU', { 
-                          hour: '2-digit', 
-                          minute: '2-digit' 
+                      <p className="font-semibold text-slate-800">{tx.user}</p>
+                      <p className="text-sm text-slate-600 font-medium">
+                        {tx.timestamp.toLocaleTimeString('ru-RU', {
+                          hour: '2-digit',
+                          minute: '2-digit'
                         })}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-gray-900">
+                    <p className="font-bold text-slate-800">
                       ${tx.amount.toFixed(2)} {tx.asset}
                     </p>
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center space-x-2 justify-end">
                       {getStatusIcon(tx.status)}
-                      <span className="text-sm text-gray-500 capitalize">{tx.status}</span>
+                      <span className="text-sm text-slate-600 capitalize font-medium">{tx.status}</span>
                     </div>
                   </div>
                 </div>
