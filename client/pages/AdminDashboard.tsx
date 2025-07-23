@@ -40,25 +40,48 @@ export default function AdminDashboard() {
   const [timeRange, setTimeRange] = useState("7d");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Mock data - in real app would come from API
+  // Rich demo data for admin panel
   const [dashboardData, setDashboardData] = useState({
     overview: {
-      totalUsers: 1247,
-      activeUsers: 892,
-      totalBalance: 2847593.42,
-      todayVolume: 157829.33,
-      pendingWithdrawals: 12,
-      pendingDeposits: 7,
+      totalUsers: 12847,
+      activeUsers: 8923,
+      totalBalance: 28475934.82,
+      todayVolume: 1578293.67,
+      pendingWithdrawals: 24,
+      pendingDeposits: 11,
       platformStatus: "active"
     },
     revenueData: [
-      { date: "2024-01-01", revenue: 12000, trades: 89, users: 45 },
-      { date: "2024-01-02", revenue: 15000, trades: 125, users: 67 },
-      { date: "2024-01-03", revenue: 18000, trades: 156, users: 89 },
-      { date: "2024-01-04", revenue: 22000, trades: 189, users: 112 },
-      { date: "2024-01-05", revenue: 19000, trades: 167, users: 98 },
-      { date: "2024-01-06", revenue: 25000, trades: 234, users: 134 },
-      { date: "2024-01-07", revenue: 28000, trades: 267, users: 156 }
+      { date: "2024-12-01", revenue: 125000, trades: 892, users: 245 },
+      { date: "2024-12-02", revenue: 158000, trades: 1256, users: 367 },
+      { date: "2024-12-03", revenue: 189000, trades: 1567, users: 489 },
+      { date: "2024-12-04", revenue: 224000, trades: 1894, users: 612 },
+      { date: "2024-12-05", revenue: 267000, trades: 2123, users: 734 },
+      { date: "2024-12-06", revenue: 298000, trades: 2456, users: 856 },
+      { date: "2024-12-07", revenue: 334000, trades: 2789, users: 978 },
+      { date: "2024-12-08", revenue: 312000, trades: 2634, users: 923 },
+      { date: "2024-12-09", revenue: 367000, trades: 2912, users: 1045 },
+      { date: "2024-12-10", revenue: 389000, trades: 3123, users: 1178 },
+      { date: "2024-12-11", revenue: 423000, trades: 3456, users: 1289 },
+      { date: "2024-12-12", revenue: 445000, trades: 3678, users: 1356 },
+      { date: "2024-12-13", revenue: 467000, trades: 3834, users: 1423 },
+      { date: "2024-12-14", revenue: 512000, trades: 4123, users: 1567 },
+      { date: "2024-12-15", revenue: 534000, trades: 4289, users: 1634 },
+      { date: "2024-12-16", revenue: 567000, trades: 4567, users: 1723 },
+      { date: "2024-12-17", revenue: 589000, trades: 4734, users: 1812 },
+      { date: "2024-12-18", revenue: 612000, trades: 4923, users: 1889 },
+      { date: "2024-12-19", revenue: 634000, trades: 5123, users: 1967 },
+      { date: "2024-12-20", revenue: 678000, trades: 5456, users: 2045 },
+      { date: "2024-12-21", revenue: 689000, trades: 5567, users: 2123 },
+      { date: "2024-12-22", revenue: 723000, trades: 5834, users: 2234 },
+      { date: "2024-12-23", revenue: 756000, trades: 6123, users: 2345 },
+      { date: "2024-12-24", revenue: 734000, trades: 5923, users: 2278 },
+      { date: "2024-12-25", revenue: 645000, trades: 5234, users: 2123 },
+      { date: "2024-12-26", revenue: 712000, trades: 5734, users: 2189 },
+      { date: "2024-12-27", revenue: 789000, trades: 6234, users: 2345 },
+      { date: "2024-12-28", revenue: 823000, trades: 6567, users: 2456 },
+      { date: "2024-12-29", revenue: 867000, trades: 6834, users: 2567 },
+      { date: "2024-12-30", revenue: 912000, trades: 7123, users: 2678 }
     ],
     assetDistribution: [
       { name: "BTC", value: 35, amount: 995663.20, color: "#f7931a" },
