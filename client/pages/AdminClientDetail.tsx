@@ -293,13 +293,23 @@ export default function AdminClientDetail() {
       }
     ];
 
-    // Mock balance history
-    const mockBalanceHistory = Array.from({ length: 30 }, (_, i) => ({
-      date: new Date(Date.now() - (29 - i) * 24 * 60 * 60 * 1000).toISOString(),
-      balance: 3000 + Math.random() * 3000 + i * 50,
-      deposits: Math.random() * 1000,
-      withdrawals: Math.random() * 500
-    }));
+    // Rich balance history over 3 months
+    const mockBalanceHistory = Array.from({ length: 90 }, (_, i) => {
+      const daysSinceStart = 89 - i;
+      const baseBalance = 15000;
+      const trend = daysSinceStart * 120; // Upward trend
+      const volatility = Math.sin(daysSinceStart * 0.1) * 3000 + Math.random() * 2000;
+      const weeklyPattern = Math.sin(daysSinceStart * 0.9) * 1000; // Weekly trading pattern
+
+      const balance = Math.max(1000, baseBalance + trend + volatility + weeklyPattern);
+
+      return {
+        date: new Date(Date.now() - daysSinceStart * 24 * 60 * 60 * 1000).toISOString(),
+        balance: Math.round(balance * 100) / 100,
+        deposits: daysSinceStart % 7 === 0 ? Math.random() * 5000 + 2000 : Math.random() * 1000,
+        withdrawals: daysSinceStart % 10 === 0 ? Math.random() * 3000 + 1000 : Math.random() * 500
+      };
+    });
 
     setClient(mockClient);
     setTransactions(mockTransactions);
@@ -316,7 +326,7 @@ export default function AdminClientDetail() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // In real app, would send message via Telegram Bot API
-    alert(`Сообщение ��тправлено пользователю ${client?.username}:\n\n${messageText}`);
+    alert(`Сообщение отправлено пользователю ${client?.username}:\n\n${messageText}`);
     setMessageText("");
     setIsSendingMessage(false);
   };
@@ -431,7 +441,7 @@ export default function AdminClientDetail() {
                   <Label htmlFor="message">Сообщение для {client.username}</Label>
                   <Textarea
                     id="message"
-                    placeholder="Введите ваше сообщение..."
+                    placeholder="Введите ваше с��общение..."
                     value={messageText}
                     onChange={(e) => setMessageText(e.target.value)}
                     rows={4}
