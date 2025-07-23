@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { useTelegram } from "@/hooks/useTelegram";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useTelegramContextOptional } from "@/components/TelegramProvider";
 
 interface NavItem {
   path: string;
