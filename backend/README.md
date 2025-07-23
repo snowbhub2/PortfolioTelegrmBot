@@ -309,6 +309,7 @@ celery_app.conf.beat_schedule = {
 ## 🔄 Changelog
 
 ### v1.0.0
+
 - Начальная версия API
 - Telegram авторизация
 - Базовая торговая система

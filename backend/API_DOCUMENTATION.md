@@ -21,11 +21,13 @@ Professional crypto trading platform backend with comprehensive REST API, Telegr
 ## Authentication
 
 ### Telegram Authentication
+
 ```http
 POST /auth/telegram
 ```
 
 **Request Body:**
+
 ```json
 {
   "init_data": "telegram_web_app_init_data",
@@ -34,6 +36,7 @@ POST /auth/telegram
 ```
 
 **Response:**
+
 ```json
 {
   "access_token": "eyJ0eXAiOiJKV1QiLCJhbGci...",
@@ -54,12 +57,14 @@ POST /auth/telegram
 ## User Management
 
 ### Get Current User Info
+
 ```http
 GET /api/v1/users/me
 Authorization: Bearer {token}
 ```
 
 **Response:**
+
 ```json
 {
   "id": "user_uuid",
@@ -78,12 +83,14 @@ Authorization: Bearer {token}
 ```
 
 ### Update User Profile
+
 ```http
 PUT /api/v1/users/me
 Authorization: Bearer {token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "first_name": "John",
@@ -94,12 +101,14 @@ Authorization: Bearer {token}
 ```
 
 ### Get User Portfolio
+
 ```http
 GET /api/v1/users/portfolio
 Authorization: Bearer {token}
 ```
 
 **Response:**
+
 ```json
 {
   "total_value": "5000.00",
@@ -123,12 +132,14 @@ Authorization: Bearer {token}
 ```
 
 ### Get Transaction History
+
 ```http
 GET /api/v1/users/transactions?limit=50&offset=0&type=all
 Authorization: Bearer {token}
 ```
 
 **Response:**
+
 ```json
 {
   "transactions": [
@@ -155,11 +166,13 @@ Authorization: Bearer {token}
 ## Trading Operations
 
 ### Get Available Assets
+
 ```http
 GET /api/v1/trading/assets?limit=50&offset=0&search=BTC
 ```
 
 **Response:**
+
 ```json
 {
   "assets": [
@@ -183,11 +196,13 @@ GET /api/v1/trading/assets?limit=50&offset=0&search=BTC
 ```
 
 ### Get Asset Details
+
 ```http
 GET /api/v1/trading/assets/{asset_id}
 ```
 
 **Response:**
+
 ```json
 {
   "id": "btc",
@@ -208,12 +223,14 @@ GET /api/v1/trading/assets/{asset_id}
 ```
 
 ### Create Order
+
 ```http
 POST /api/v1/trading/orders
 Authorization: Bearer {token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "asset_id": "btc",
@@ -225,6 +242,7 @@ Authorization: Bearer {token}
 ```
 
 **Response:**
+
 ```json
 {
   "id": "order_uuid",
@@ -245,24 +263,28 @@ Authorization: Bearer {token}
 ```
 
 ### Get User Orders
+
 ```http
 GET /api/v1/trading/orders?status=all&limit=50&offset=0
 Authorization: Bearer {token}
 ```
 
 ### Cancel Order
+
 ```http
 DELETE /api/v1/trading/orders/{order_id}
 Authorization: Bearer {token}
 ```
 
 ### Create Deposit
+
 ```http
 POST /api/v1/trading/deposits
 Authorization: Bearer {token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "amount": "1000.00",
@@ -271,12 +293,14 @@ Authorization: Bearer {token}
 ```
 
 ### Create Withdrawal
+
 ```http
 POST /api/v1/trading/withdrawals
 Authorization: Bearer {token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "amount": "500.00",
@@ -286,11 +310,13 @@ Authorization: Bearer {token}
 ```
 
 ### Get Price History
+
 ```http
 GET /api/v1/trading/assets/{asset_id}/price-history?interval=1h&limit=24
 ```
 
 **Response:**
+
 ```json
 {
   "asset_id": "btc",
@@ -313,12 +339,14 @@ GET /api/v1/trading/assets/{asset_id}/price-history?interval=1h&limit=24
 ## Notifications
 
 ### Get User Notifications
+
 ```http
 GET /api/v1/notifications?limit=50&offset=0&unread_only=false
 Authorization: Bearer {token}
 ```
 
 **Response:**
+
 ```json
 {
   "notifications": [
@@ -343,30 +371,35 @@ Authorization: Bearer {token}
 ```
 
 ### Mark Notification as Read
+
 ```http
 PUT /api/v1/notifications/{notification_id}/read
 Authorization: Bearer {token}
 ```
 
 ### Mark All Notifications as Read
+
 ```http
 PUT /api/v1/notifications/read-all
 Authorization: Bearer {token}
 ```
 
 ### Delete Notification
+
 ```http
 DELETE /api/v1/notifications/{notification_id}
 Authorization: Bearer {token}
 ```
 
 ### Create Price Alert
+
 ```http
 POST /api/v1/notifications/price-alerts
 Authorization: Bearer {token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "asset_id": "btc",
@@ -380,18 +413,21 @@ Authorization: Bearer {token}
 ```
 
 ### Get Price Alerts
+
 ```http
 GET /api/v1/notifications/price-alerts?is_active=true
 Authorization: Bearer {token}
 ```
 
 ### Update Price Alert
+
 ```http
 PUT /api/v1/notifications/price-alerts/{alert_id}
 Authorization: Bearer {token}
 ```
 
 ### Delete Price Alert
+
 ```http
 DELETE /api/v1/notifications/price-alerts/{alert_id}
 Authorization: Bearer {token}
@@ -402,12 +438,14 @@ Authorization: Bearer {token}
 ## Admin Panel
 
 ### Admin Dashboard
+
 ```http
 GET /api/v1/admin/dashboard
 Authorization: Bearer {admin_token}
 ```
 
 **Response:**
+
 ```json
 {
   "total_users": 1500,
@@ -430,18 +468,21 @@ Authorization: Bearer {admin_token}
 ```
 
 ### Manage Users
+
 ```http
 GET /api/v1/admin/users?status=active&limit=50&offset=0&search=user123
 Authorization: Bearer {admin_token}
 ```
 
 ### Update User Status
+
 ```http
 PUT /api/v1/admin/users/{user_id}/status
 Authorization: Bearer {admin_token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "status": "suspended",
@@ -450,12 +491,14 @@ Authorization: Bearer {admin_token}
 ```
 
 ### Approve/Reject Withdrawal
+
 ```http
 PUT /api/v1/admin/withdrawals/{withdrawal_id}/approve
 Authorization: Bearer {admin_token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "action": "approve",
@@ -464,18 +507,21 @@ Authorization: Bearer {admin_token}
 ```
 
 ### Manage Assets
+
 ```http
 GET /api/v1/admin/assets
 Authorization: Bearer {admin_token}
 ```
 
 ### Update Asset
+
 ```http
 PUT /api/v1/admin/assets/{asset_id}
 Authorization: Bearer {admin_token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "is_active": true,
@@ -486,12 +532,14 @@ Authorization: Bearer {admin_token}
 ```
 
 ### Broadcast Notification
+
 ```http
 POST /api/v1/notifications/admin/broadcast
 Authorization: Bearer {admin_token}
 ```
 
 **Request Body:**
+
 ```json
 {
   "title": "System Maintenance",
@@ -503,6 +551,7 @@ Authorization: Bearer {admin_token}
 ```
 
 ### Get Admin Statistics
+
 ```http
 GET /api/v1/admin/stats
 Authorization: Bearer {admin_token}
@@ -546,6 +595,7 @@ All endpoints return standardized error responses:
 - Admin endpoints: 200 requests per minute
 
 Rate limit headers are included in responses:
+
 ```
 X-RateLimit-Limit: 60
 X-RateLimit-Remaining: 45
@@ -557,16 +607,19 @@ X-RateLimit-Reset: 1609459200
 ## WebSocket Endpoints (Future Implementation)
 
 ### Real-time Price Updates
+
 ```
 ws://localhost:8000/ws/prices
 ```
 
 ### User Notifications
+
 ```
 ws://localhost:8000/ws/notifications/{user_id}?token={jwt_token}
 ```
 
 ### Order Updates
+
 ```
 ws://localhost:8000/ws/orders/{user_id}?token={jwt_token}
 ```
@@ -678,5 +731,5 @@ For additional support or questions:
 
 ---
 
-*Last Updated: January 2024*
-*API Version: 1.0.0*
+_Last Updated: January 2024_
+_API Version: 1.0.0_

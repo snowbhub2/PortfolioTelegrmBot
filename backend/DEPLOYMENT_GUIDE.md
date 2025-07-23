@@ -116,12 +116,14 @@ FROM_EMAIL=noreply@your-domain.com
 ## Features Included
 
 ### ✅ User Management
+
 - Telegram authentication
 - User profiles and preferences
 - Portfolio tracking
 - Transaction history
 
 ### ✅ Trading System
+
 - Real-time asset prices (Alpha Vantage)
 - Market and limit orders
 - Buy/sell operations
@@ -129,6 +131,7 @@ FROM_EMAIL=noreply@your-domain.com
 - Balance management
 
 ### ✅ Notification System
+
 - In-app notifications
 - Telegram notifications
 - Price alerts
@@ -136,6 +139,7 @@ FROM_EMAIL=noreply@your-domain.com
 - Admin broadcasts
 
 ### ✅ Admin Panel
+
 - User management
 - Transaction approval
 - Asset management
@@ -143,6 +147,7 @@ FROM_EMAIL=noreply@your-domain.com
 - Audit logging
 
 ### ✅ Telegram Bot Integration
+
 - User registration via Telegram
 - Balance and portfolio checks
 - Real-time notifications
@@ -150,6 +155,7 @@ FROM_EMAIL=noreply@your-domain.com
 - Web app integration
 
 ### ✅ Security Features
+
 - JWT authentication
 - Rate limiting
 - Input validation
@@ -159,16 +165,16 @@ FROM_EMAIL=noreply@your-domain.com
 
 ## API Endpoints Summary
 
-| Endpoint | Method | Description |
-|----------|--------|-------------|
-| `/auth/telegram` | POST | Telegram authentication |
-| `/api/v1/users/me` | GET | Get current user |
-| `/api/v1/users/portfolio` | GET | Get user portfolio |
-| `/api/v1/trading/assets` | GET | List trading assets |
-| `/api/v1/trading/orders` | POST | Create trading order |
-| `/api/v1/notifications` | GET | Get notifications |
-| `/api/v1/notifications/price-alerts` | POST | Create price alert |
-| `/api/v1/admin/dashboard` | GET | Admin dashboard |
+| Endpoint                             | Method | Description             |
+| ------------------------------------ | ------ | ----------------------- |
+| `/auth/telegram`                     | POST   | Telegram authentication |
+| `/api/v1/users/me`                   | GET    | Get current user        |
+| `/api/v1/users/portfolio`            | GET    | Get user portfolio      |
+| `/api/v1/trading/assets`             | GET    | List trading assets     |
+| `/api/v1/trading/orders`             | POST   | Create trading order    |
+| `/api/v1/notifications`              | GET    | Get notifications       |
+| `/api/v1/notifications/price-alerts` | POST   | Create price alert      |
+| `/api/v1/admin/dashboard`            | GET    | Admin dashboard         |
 
 Full API documentation available at `/docs` when running in development mode.
 
@@ -200,6 +206,7 @@ The Telegram bot runs automatically when the backend starts. Features:
 ## Database Schema
 
 ### Core Tables
+
 - `users` - User accounts and profiles
 - `assets` - Trading assets (BTC, ETH, etc.)
 - `orders` - Trading orders
@@ -243,16 +250,19 @@ pytest tests/test_notifications.py
 ### Common Issues
 
 1. **Database Connection Error**
+
    - Check DATABASE_URL format
    - Verify database server is running
    - Ensure firewall allows connections
 
 2. **Telegram Bot Not Working**
+
    - Verify TELEGRAM_BOT_TOKEN is correct
    - Check bot is created via @BotFather
    - Ensure webhook URL is accessible (production)
 
 3. **Price Data Not Updating**
+
    - Verify ALPHA_VANTAGE_API_KEY is valid
    - Check API rate limits
    - Ensure internet connectivity

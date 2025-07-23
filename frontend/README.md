@@ -6,7 +6,7 @@
 
 - **React 18** с TypeScript
 - **Vite** для быстрой разработки
-- **Tailwind CSS** для стилизации  
+- **Tailwind CSS** для стилизации
 - **Radix UI** компоненты
 - **React Query** для работы с API
 - **Recharts** для графиков
@@ -74,7 +74,8 @@ VITE_APP_NAME=Crypto Trading Platform
 Обновите базовый URL API в `client/lib/api.ts`:
 
 ```typescript
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1';
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api/v1";
 ```
 
 ## 📱 Telegram Mini App
@@ -84,11 +85,11 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000
 Telegram Web App автоматически инициализируется в `client/telegram-init.ts`:
 
 ```typescript
-import { useTelegram } from '@/hooks/useTelegram';
+import { useTelegram } from "@/hooks/useTelegram";
 
 function App() {
   const { tg, user } = useTelegram();
-  
+
   useEffect(() => {
     tg.ready();
   }, []);
@@ -109,6 +110,7 @@ const { user, isLoading } = useUser();
 ### Дизайн система
 
 Используется собственная дизайн система на базе:
+
 - **Tailwind CSS** для стилей
 - **Radix UI** для интерактивных компонентов
 - **Lucide React** для иконок
@@ -125,6 +127,7 @@ const { theme, toggleTheme } = useTheme();
 ### Адаптивность
 
 Полностью адаптивный дизайн:
+
 - Mobile-first подход
 - Поддержка всех размеров экранов
 - Touch-friendly интерфейс
@@ -173,16 +176,16 @@ const { theme, toggleTheme } = useTheme();
 ```typescript
 // Получение данных
 const { data: assets, isLoading } = useQuery({
-  queryKey: ['assets'],
-  queryFn: () => api.getAssets()
+  queryKey: ["assets"],
+  queryFn: () => api.getAssets(),
 });
 
 // Мутации
 const buyAssetMutation = useMutation({
   mutationFn: api.buyAsset,
   onSuccess: () => {
-    queryClient.invalidateQueries(['portfolio']);
-  }
+    queryClient.invalidateQueries(["portfolio"]);
+  },
 });
 ```
 
@@ -192,7 +195,7 @@ const buyAssetMutation = useMutation({
 
 ```typescript
 // Подписка на обновления цен
-const { price } = useRealtimePrice('BTC');
+const { price } = useRealtimePrice("BTC");
 ```
 
 ## 📈 Графики
@@ -344,7 +347,7 @@ export function MyComponent({ title, data }: MyComponentProps) {
 
 ```typescript
 // Включите debug режим
-localStorage.setItem('debug', 'true');
+localStorage.setItem("debug", "true");
 ```
 
 ## 📄 Лицензия

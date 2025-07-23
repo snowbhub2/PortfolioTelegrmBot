@@ -97,7 +97,7 @@ ALPHA_VANTAGE_API_KEY=WXQQ5D56DW1XH92C
 Обновите `frontend/client/App.tsx` для подключения к backend API:
 
 ```typescript
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+const API_BASE_URL = "http://localhost:8000/api/v1";
 ```
 
 ## 🎯 Основные функции

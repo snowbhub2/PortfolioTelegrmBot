@@ -16,7 +16,7 @@ import {
   handleGetNotifications,
   handleMarkNotificationRead,
   handleAdminDashboard,
-  handleGetAdminUsers
+  handleGetAdminUsers,
 } from "./routes/api";
 
 export function createServer() {
@@ -30,7 +30,7 @@ export function createServer() {
   // Health check
   app.get("/health", handleHealth);
 
-  // Legacy API routes  
+  // Legacy API routes
   app.get("/api/ping", (_req, res) => {
     res.json({ message: "Hello from Express server v2!" });
   });
@@ -56,28 +56,38 @@ export function createServer() {
 
   // Notification routes
   app.get("/api/v1/notifications", handleGetNotifications);
-  app.put("/api/v1/notifications/:notification_id/read", handleMarkNotificationRead);
+  app.put(
+    "/api/v1/notifications/:notification_id/read",
+    handleMarkNotificationRead,
+  );
 
   // Admin routes
   app.get("/api/v1/admin/dashboard", handleAdminDashboard);
   app.get("/api/v1/admin/users", handleGetAdminUsers);
 
   // Error handling middleware
-  app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
-    console.error(err.stack);
-    res.status(500).json({
-      error: true,
-      message: "Internal server error",
-      status_code: 500
-    });
-  });
+  app.use(
+    (
+      err: any,
+      req: express.Request,
+      res: express.Response,
+      next: express.NextFunction,
+    ) => {
+      console.error(err.stack);
+      res.status(500).json({
+        error: true,
+        message: "Internal server error",
+        status_code: 500,
+      });
+    },
+  );
 
   // 404 handler
   app.use((req: express.Request, res: express.Response) => {
     res.status(404).json({
       error: true,
       message: "Endpoint not found",
-      status_code: 404
+      status_code: 404,
     });
   });
 
