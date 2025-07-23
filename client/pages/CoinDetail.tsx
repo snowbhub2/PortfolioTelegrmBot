@@ -362,7 +362,7 @@ export default function CoinDetail() {
           title: "ПРО АКТИВ",
           description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на нашій платформі.`,
           points: [
-            `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
+            `Ви можете купувати або про��авати ${asset.symbol} через платформу.`,
             "Пожалуйста, учитывайте риск�� при инвестировании."
           ]
         };
@@ -398,7 +398,7 @@ export default function CoinDetail() {
     hapticFeedback("medium");
 
     if (asset.id === "usd") {
-      // Для USD відкриваємо сторінку методів поповнення
+      // Для USD відкриваємо сторі��ку методів поповнення
       navigate("/deposit/method");
     } else {
       // Для других ак��ивов открываем Exchange с заполненными п��лями
@@ -625,7 +625,7 @@ export default function CoinDetail() {
           className="w-full bg-primary text-primary-foreground"
           onClick={handleBuy}
         >
-          {asset.id === "usd" ? "Поповнити" : "Купити"}
+          {asset.id === "usd" ? "Пополнить" : "Купить"}
         </Button>
         <Button
           variant="outline"
