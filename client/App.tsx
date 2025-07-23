@@ -97,6 +97,11 @@ const App = () => (
               <Route path="/transfer" element={<Transfer />} />
               <Route path="/deposit/stars" element={<DepositStars />} />
               <Route path="/cfd" element={<CFDPage />} />
+
+              {/* Admin Routes */}
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin/*" element={<AdminProtectedRoutes />} />
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
