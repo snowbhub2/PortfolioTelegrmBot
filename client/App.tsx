@@ -39,6 +39,8 @@ import { Layout } from "./components/Layout";
 import { AdminLayout } from "./components/AdminLayout";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminClients from "./pages/AdminClients";
+import AdminClientDetail from "./pages/AdminClientDetail";
 
 const queryClient = new QueryClient();
 
