@@ -40,6 +40,7 @@ import { AdminLayout } from "./components/AdminLayout";
 import { TelegramProvider } from "./components/TelegramProvider";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import AdminDashboardSimple from "./pages/AdminDashboardSimple";
 import AdminClients from "./pages/AdminClients";
 import AdminClientDetail from "./pages/AdminClientDetail";
 import AdminAssets from "./pages/AdminAssets";
