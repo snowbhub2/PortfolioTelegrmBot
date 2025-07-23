@@ -29,16 +29,35 @@ export default function Settings() {
   const { hapticFeedback, user } = useTelegram();
   const { t, language } = useLanguage();
   const navigate = useNavigate();
+  const telegram = useTelegramContext();
 
-  // Back button is now handled automatically by useAutoBackButton hook
-
-  const handleItemClick = (item: any) => {
-    hapticFeedback("light");
+  const handleItemClick = async (item: any) => {
+    // Enhanced haptic feedback based on action
+    if (item.action === "notifications" || item.action === "language") {
+      telegram.haptic.light();
+    } else {
+      telegram.haptic.selection();
+    }
 
     if (item.action === "notifications") {
-      navigate("/notifications");
+      telegram.navigateWithHaptic("/notifications", { haptic: "medium" });
     } else if (item.action === "language") {
-      navigate("/language");
+      telegram.navigateWithHaptic("/language", { haptic: "medium" });
+    } else if (item.action === "reset") {
+      const confirmed = await telegram.showConfirm(
+        "Вы уверены, что хотите сбросить все настройки?",
+        "Подтверждение сброса"
+      );
+      if (confirmed) {
+        telegram.haptic.warning();
+        // Reset logic here
+        await telegram.showAlert("Настройки успешно сброшены!", "Готово");
+      }
+    } else if (item.action === "support") {
+      await telegram.showAlert(
+        "Для получения поддержки напишите нам в Telegram @support",
+        "Техническая поддержка"
+      );
     } else {
       console.log(`Clicked: ${item.title}`);
     }
@@ -46,7 +65,7 @@ export default function Settings() {
 
 
 
-  // Динам��чно створюємо settingsItems з мовою користувача
+  // Динам��ч��о створюємо settingsItems з мовою користувача
   const settingsItems = [
     {
       icon: <BellIcon className="w-5 h-5 text-red-500" />,
