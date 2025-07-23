@@ -262,7 +262,7 @@ export const AdminLayout = () => {
 
         {/* Page content */}
         <main className="p-6">
-          {location.pathname === "/admin" ? <AdminDashboardSimple /> : <Outlet />}
+          <Outlet />
         </main>
       </div>
     </div>
