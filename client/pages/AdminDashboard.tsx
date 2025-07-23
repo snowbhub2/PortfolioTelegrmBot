@@ -233,9 +233,10 @@ export default function AdminDashboard() {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-          <p className="mt-4 text-gray-600">Загрузка данных дашборда...</p>
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-slate-200">
+          <div className="animate-spin rounded-full h-16 w-16 border-4 border-slate-200 border-t-blue-600 mx-auto"></div>
+          <p className="mt-6 text-slate-700 font-semibold text-lg">Загрузка данных дашборда...</p>
+          <p className="text-slate-500 text-sm mt-2">Пожалуйста, подождите</p>
         </div>
       </div>
     );
@@ -245,14 +246,19 @@ export default function AdminDashboard() {
   if (hasError) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <p className="text-red-600 text-lg font-medium">Ошибка загрузки данных</p>
-          <button
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg border border-red-200">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <AlertTriangle className="w-8 h-8 text-red-600" />
+          </div>
+          <p className="text-red-600 text-xl font-bold mb-2">Ошибка загрузки данных</p>
+          <p className="text-slate-600 text-sm mb-6">Не удалось загрузить данные дашборда</p>
+          <Button
             onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium"
           >
+            <RefreshCw className="w-4 h-4 mr-2" />
             Перезагрузить
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -267,7 +273,7 @@ export default function AdminDashboard() {
             <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
               <Activity className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-slate-800">Д��шборд</h1>
+            <h1 className="text-3xl font-bold text-slate-800">Дашборд</h1>
           </div>
           <p className="text-slate-600 ml-13">Обзор платформы и ключевые метрики</p>
         </div>
@@ -455,17 +461,17 @@ export default function AdminDashboard() {
                 </PieChart>
               </ResponsiveContainer>
               
-              <div className="space-y-2">
+              <div className="space-y-3">
                 {dashboardData.assetDistribution.map((asset) => (
-                  <div key={asset.name} className="flex items-center justify-between text-sm">
-                    <div className="flex items-center space-x-2">
+                  <div key={asset.name} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg border border-slate-200">
+                    <div className="flex items-center space-x-3">
                       <div
-                        className="w-3 h-3 rounded-full"
+                        className="w-4 h-4 rounded-full shadow-sm"
                         style={{ backgroundColor: asset.color }}
                       />
-                      <span className="font-medium">{asset.name}</span>
+                      <span className="font-semibold text-slate-800">{asset.name}</span>
                     </div>
-                    <span className="text-gray-600">${asset.amount.toLocaleString()}</span>
+                    <span className="text-slate-700 font-medium">${asset.amount.toLocaleString()}</span>
                   </div>
                 ))}
               </div>
@@ -477,30 +483,33 @@ export default function AdminDashboard() {
       {/* Bottom Section */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Top Assets */}
-        <Card>
-          <CardHeader>
-            <CardTitle>Топ активы по объему</CardTitle>
+        <Card className="bg-white border-slate-200 shadow-lg">
+          <CardHeader className="border-b border-slate-100">
+            <CardTitle className="text-xl font-bold text-slate-800 flex items-center gap-2">
+              <TrendingUp className="w-5 h-5 text-yellow-600" />
+              Топ активы по объему
+            </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <div className="space-y-4">
               {dashboardData.topAssets.map((asset, index) => (
-                <div key={asset.symbol} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">{index + 1}</span>
+                <div key={asset.symbol} className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl border border-slate-200 hover:shadow-md transition-all">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
+                      <span className="text-sm font-bold text-white">#{index + 1}</span>
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">{asset.symbol}</p>
-                      <p className="text-sm text-gray-500">{asset.trades} сделок</p>
+                      <p className="font-bold text-slate-800 text-lg">{asset.symbol}</p>
+                      <p className="text-sm text-slate-600 font-medium">{asset.trades} сделок</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-gray-900">${asset.volume24h.toLocaleString()}</p>
-                    <p className={`text-sm flex items-center ${asset.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                    <p className="font-bold text-slate-800 text-lg">${asset.volume24h.toLocaleString()}</p>
+                    <p className={`text-sm flex items-center font-semibold ${asset.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                       {asset.change24h >= 0 ? (
-                        <TrendingUp className="w-3 h-3 mr-1" />
+                        <TrendingUp className="w-4 h-4 mr-1" />
                       ) : (
-                        <TrendingDown className="w-3 h-3 mr-1" />
+                        <TrendingDown className="w-4 h-4 mr-1" />
                       )}
                       {Math.abs(asset.change24h)}%
                     </p>
@@ -512,39 +521,44 @@ export default function AdminDashboard() {
         </Card>
 
         {/* Recent Transactions */}
-        <Card>
-          <CardHeader>
+        <Card className="bg-white border-slate-200 shadow-lg">
+          <CardHeader className="border-b border-slate-100">
             <div className="flex items-center justify-between">
-              <CardTitle>Последние транзакции</CardTitle>
-              <Button variant="outline" size="sm">
+              <CardTitle className="text-xl font-bold text-slate-800 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-purple-600" />
+                Последние транзакции
+              </CardTitle>
+              <Button variant="outline" size="sm" className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50">
                 <Eye className="w-4 h-4 mr-2" />
                 Все
               </Button>
             </div>
           </CardHeader>
-          <CardContent>
+          <CardContent className="p-6">
             <div className="space-y-4">
               {dashboardData.recentTransactions.map((tx) => (
-                <div key={tx.id} className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50 transition-colors">
+                <div key={tx.id} className="flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:bg-slate-50 transition-all hover:shadow-sm">
                   <div className="flex items-center space-x-3">
-                    {getTransactionTypeIcon(tx.type)}
+                    <div className="p-2 rounded-lg bg-slate-100">
+                      {getTransactionTypeIcon(tx.type)}
+                    </div>
                     <div>
-                      <p className="font-medium text-gray-900">{tx.user}</p>
-                      <p className="text-sm text-gray-500">
-                        {tx.timestamp.toLocaleTimeString('ru-RU', { 
-                          hour: '2-digit', 
-                          minute: '2-digit' 
+                      <p className="font-semibold text-slate-800">{tx.user}</p>
+                      <p className="text-sm text-slate-600 font-medium">
+                        {tx.timestamp.toLocaleTimeString('ru-RU', {
+                          hour: '2-digit',
+                          minute: '2-digit'
                         })}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-gray-900">
+                    <p className="font-bold text-slate-800">
                       ${tx.amount.toFixed(2)} {tx.asset}
                     </p>
-                    <div className="flex items-center space-x-1">
+                    <div className="flex items-center space-x-2 justify-end">
                       {getStatusIcon(tx.status)}
-                      <span className="text-sm text-gray-500 capitalize">{tx.status}</span>
+                      <span className="text-sm text-slate-600 capitalize font-medium">{tx.status}</span>
                     </div>
                   </div>
                 </div>
