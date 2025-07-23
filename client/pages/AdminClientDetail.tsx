@@ -104,82 +104,192 @@ export default function AdminClientDetail() {
   const loadClientData = async () => {
     setIsLoading(true);
     
-    // Mock client data
+    // Rich demo client data
     const mockClient: ClientData = {
       id: clientId!,
-      telegramId: "1234567890",
-      username: "crypto_trader",
-      firstName: "Иван",
-      lastName: "Петров",
-      email: "ivan.petrov@example.com",
-      phone: "+380123456789",
-      registrationDate: new Date("2024-01-15"),
-      lastActive: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+      telegramId: "1567389204",
+      username: "crypto_whale_pro",
+      firstName: "Александр",
+      lastName: "Михайлов",
+      email: "alex.mikhaylov@proton.me",
+      phone: "+380671234567",
+      registrationDate: new Date("2024-08-15"),
+      lastActive: new Date(Date.now() - 45 * 60 * 1000), // 45 minutes ago
       status: "active",
-      balanceUSD: 5247.82,
-      totalDeposits: 15000,
-      totalWithdrawals: 3200,
-      tradesCount: 89,
-      totalVolume: 45230.50,
-      verificationLevel: "basic",
+      balanceUSD: 24847.82,
+      totalDeposits: 85000,
+      totalWithdrawals: 28500,
+      tradesCount: 347,
+      totalVolume: 156430.50,
+      verificationLevel: "advanced",
       country: "Ukraine",
       riskLevel: "medium",
-      notes: "Активный трейдер, регулярно пополняет счет"
+      notes: "VIP клиент. Крупный трейдер с многолетним опытом. Предпочитает краткосрочные позиции в BTC и ETH. Регулярно выводит прибыль."
     };
 
-    // Mock transactions
+    // Rich demo transactions
     const mockTransactions: Transaction[] = [
       {
-        id: "tx-1",
+        id: "tx-000847",
         type: "deposit",
-        amount: 1000,
-        timestamp: new Date(Date.now() - 3600000),
+        amount: 15000,
+        timestamp: new Date(Date.now() - 2 * 3600000),
         status: "completed",
-        description: "Пополнение через Telegram Stars"
+        description: "Банковский перевод"
       },
       {
-        id: "tx-2", 
+        id: "tx-000846",
         type: "buy",
         assetId: "btc",
-        amount: 500,
-        price: 45000,
-        timestamp: new Date(Date.now() - 7200000),
+        amount: 8500,
+        price: 46250,
+        timestamp: new Date(Date.now() - 4 * 3600000),
         status: "completed",
         description: "Покупка Bitcoin"
       },
       {
-        id: "tx-3",
+        id: "tx-000845",
+        type: "sell",
+        assetId: "eth",
+        amount: 3200,
+        price: 2980,
+        timestamp: new Date(Date.now() - 6 * 3600000),
+        status: "completed",
+        description: "Продажа Ethereum"
+      },
+      {
+        id: "tx-000844",
         type: "withdraw",
-        amount: 200,
-        timestamp: new Date(Date.now() - 10800000),
-        status: "pending",
+        amount: 5000,
+        timestamp: new Date(Date.now() - 8 * 3600000),
+        status: "completed",
+        description: "Вывод на внешний кошелек"
+      },
+      {
+        id: "tx-000843",
+        type: "buy",
+        assetId: "ton",
+        amount: 2500,
+        price: 2.85,
+        timestamp: new Date(Date.now() - 12 * 3600000),
+        status: "completed",
+        description: "Покупка Toncoin"
+      },
+      {
+        id: "tx-000842",
+        type: "deposit",
+        amount: 10000,
+        timestamp: new Date(Date.now() - 18 * 3600000),
+        status: "completed",
+        description: "P2P пополнение"
+      },
+      {
+        id: "tx-000841",
+        type: "sell",
+        assetId: "bnb",
+        amount: 1800,
+        price: 315,
+        timestamp: new Date(Date.now() - 24 * 3600000),
+        status: "completed",
+        description: "Продажа BNB"
+      },
+      {
+        id: "tx-000840",
+        type: "buy",
+        assetId: "sol",
+        amount: 4200,
+        price: 98.5,
+        timestamp: new Date(Date.now() - 36 * 3600000),
+        status: "completed",
+        description: "Покупка Solana"
+      },
+      {
+        id: "tx-000839",
+        type: "withdraw",
+        amount: 2000,
+        timestamp: new Date(Date.now() - 48 * 3600000),
+        status: "completed",
         description: "Вывод в Telegram Stars"
+      },
+      {
+        id: "tx-000838",
+        type: "buy",
+        assetId: "ada",
+        amount: 1500,
+        price: 0.485,
+        timestamp: new Date(Date.now() - 72 * 3600000),
+        status: "completed",
+        description: "Покупка Cardano"
       }
     ];
 
-    // Mock assets
+    // Rich demo assets portfolio
     const mockAssets: Asset[] = [
       {
         id: "btc",
         symbol: "BTC",
         name: "Bitcoin",
-        quantity: 0.0234,
-        avgPrice: 44500,
-        currentPrice: 46000,
-        value: 1076.40,
-        pnl: 35.10,
-        pnlPercentage: 3.37
+        quantity: 0.2847,
+        avgPrice: 43200,
+        currentPrice: 46250,
+        value: 13167.58,
+        pnl: 868.34,
+        pnlPercentage: 7.06
       },
       {
         id: "eth",
-        symbol: "ETH", 
+        symbol: "ETH",
         name: "Ethereum",
-        quantity: 1.5,
-        avgPrice: 2800,
+        quantity: 2.348,
+        avgPrice: 2750,
         currentPrice: 2950,
-        value: 4425.00,
-        pnl: 225.00,
-        pnlPercentage: 5.36
+        value: 6926.60,
+        pnl: 469.60,
+        pnlPercentage: 7.27
+      },
+      {
+        id: "ton",
+        symbol: "TON",
+        name: "Toncoin",
+        quantity: 1234.56,
+        avgPrice: 2.65,
+        currentPrice: 2.85,
+        value: 3518.50,
+        pnl: 246.91,
+        pnlPercentage: 7.55
+      },
+      {
+        id: "sol",
+        symbol: "SOL",
+        name: "Solana",
+        quantity: 45.67,
+        avgPrice: 95.20,
+        currentPrice: 98.45,
+        value: 4496.37,
+        pnl: 148.43,
+        pnlPercentage: 3.41
+      },
+      {
+        id: "ada",
+        symbol: "ADA",
+        name: "Cardano",
+        quantity: 3456.78,
+        avgPrice: 0.475,
+        currentPrice: 0.485,
+        value: 1676.54,
+        pnl: 34.57,
+        pnlPercentage: 2.11
+      },
+      {
+        id: "usdt",
+        symbol: "USDT",
+        name: "Tether",
+        quantity: 8234.50,
+        avgPrice: 1.00,
+        currentPrice: 1.00,
+        value: 8234.50,
+        pnl: 0.00,
+        pnlPercentage: 0.00
       }
     ];
 
@@ -206,7 +316,7 @@ export default function AdminClientDetail() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     
     // In real app, would send message via Telegram Bot API
-    alert(`Сообщение отправлено пользователю ${client?.username}:\n\n${messageText}`);
+    alert(`Сообщение ��тправлено пользователю ${client?.username}:\n\n${messageText}`);
     setMessageText("");
     setIsSendingMessage(false);
   };
