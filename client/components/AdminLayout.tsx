@@ -71,7 +71,7 @@ export const AdminLayout = () => {
       ]
     },
     {
-      name: "Транзакции",
+      name: "��ранзакции",
       href: "/admin/transactions",
       icon: ArrowRightLeft,
       current: location.pathname.startsWith("/admin/transactions"),
@@ -109,10 +109,10 @@ export const AdminLayout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Mobile sidebar backdrop */}
       {isSidebarOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-40 bg-black/50 lg:hidden"
           onClick={() => setIsSidebarOpen(false)}
         />
@@ -120,22 +120,25 @@ export const AdminLayout = () => {
 
       {/* Sidebar */}
       <div className={cn(
-        "fixed inset-y-0 left-0 z-50 w-64 bg-white shadow-lg transform transition-transform duration-200 ease-in-out lg:translate-x-0",
+        "fixed inset-y-0 left-0 z-50 w-72 bg-white/95 backdrop-blur-sm shadow-2xl transform transition-transform duration-300 ease-in-out lg:translate-x-0 border-r border-slate-200",
         isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       )}>
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="flex items-center justify-between h-16 px-4 border-b">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <BarChart3 className="w-5 h-5 text-white" />
+          <div className="flex items-center justify-between h-20 px-6 border-b border-slate-200 bg-gradient-to-r from-blue-600 to-indigo-600">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                <BarChart3 className="w-6 h-6 text-white" />
               </div>
-              <span className="font-semibold text-gray-900">Админ Панель</span>
+              <div>
+                <span className="font-bold text-white text-lg">Админ Панель</span>
+                <p className="text-xs text-blue-100">Управление платформой</p>
+              </div>
             </div>
             <Button
               variant="ghost"
               size="sm"
-              className="lg:hidden"
+              className="lg:hidden text-white hover:bg-white/20"
               onClick={() => setIsSidebarOpen(false)}
             >
               <X className="w-4 h-4" />
@@ -143,47 +146,56 @@ export const AdminLayout = () => {
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 px-4 py-4 space-y-2 overflow-y-auto">
+          <nav className="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
+            <div className="mb-4">
+              <h3 className="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3">Основное</h3>
+            </div>
             {navigation.map((item) => (
               <div key={item.name}>
                 <Link
                   to={item.href}
                   className={cn(
-                    "flex items-center justify-between px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                    "flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200 group",
                     item.current
-                      ? "bg-blue-100 text-blue-700"
-                      : "text-gray-700 hover:bg-gray-100"
+                      ? "bg-gradient-to-r from-blue-500 to-indigo-500 text-white shadow-lg transform scale-[1.02]"
+                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900 hover:transform hover:scale-[1.01]"
                   )}
                   onClick={() => setIsSidebarOpen(false)}
                 >
                   <div className="flex items-center space-x-3">
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.name}</span>
+                    <item.icon className={cn(
+                      "w-5 h-5 transition-colors",
+                      item.current ? "text-white" : "text-slate-500 group-hover:text-slate-700"
+                    )} />
+                    <span className="font-medium">{item.name}</span>
                   </div>
                   {item.badge && (
-                    <Badge variant="destructive" className="h-5 px-1.5 text-xs">
+                    <Badge
+                      variant="destructive"
+                      className="h-6 px-2 text-xs font-semibold bg-red-500 hover:bg-red-600 shadow-sm"
+                    >
                       {item.badge}
                     </Badge>
                   )}
                 </Link>
-                
+
                 {/* Sub-navigation */}
                 {item.children && item.current && (
-                  <div className="ml-8 mt-2 space-y-1">
+                  <div className="ml-6 mt-2 space-y-1 border-l-2 border-blue-200 pl-4">
                     {item.children.map((child) => (
                       <Link
                         key={child.href}
                         to={child.href}
                         className={cn(
-                          "flex items-center justify-between px-3 py-1.5 text-sm rounded-md transition-colors",
+                          "flex items-center justify-between px-3 py-2 text-sm rounded-lg transition-colors",
                           location.pathname === child.href
-                            ? "bg-blue-50 text-blue-600"
-                            : "text-gray-600 hover:bg-gray-50"
+                            ? "bg-blue-50 text-blue-700 font-medium border border-blue-200"
+                            : "text-slate-600 hover:bg-slate-50 hover:text-slate-800"
                         )}
                       >
                         <span>{child.name}</span>
                         {child.badge && (
-                          <Badge variant="destructive" className="h-4 px-1 text-xs">
+                          <Badge variant="destructive" className="h-5 px-1.5 text-xs font-semibold">
                             {child.badge}
                           </Badge>
                         )}
@@ -196,22 +208,22 @@ export const AdminLayout = () => {
           </nav>
 
           {/* Admin info */}
-          <div className="p-4 border-t">
-            <div className="flex items-center space-x-3 mb-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
-                <span className="text-xs font-semibold text-white">
+          <div className="p-4 border-t border-slate-200 bg-slate-50/50">
+            <div className="flex items-center space-x-3 mb-4 p-3 bg-white rounded-xl shadow-sm border border-slate-200">
+              <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
+                <span className="text-sm font-bold text-white">
                   {currentAdmin.name.charAt(0)}
                 </span>
               </div>
               <div className="flex-1">
-                <p className="text-sm font-medium text-gray-900">{currentAdmin.name}</p>
-                <p className="text-xs text-gray-500">{currentAdmin.role}</p>
+                <p className="text-sm font-semibold text-slate-800">{currentAdmin.name}</p>
+                <p className="text-xs text-slate-500 font-medium">{currentAdmin.role}</p>
               </div>
             </div>
             <Button
               variant="outline"
               size="sm"
-              className="w-full"
+              className="w-full bg-white hover:bg-red-50 hover:text-red-600 hover:border-red-200 border-slate-300 font-medium"
               onClick={handleLogout}
             >
               <LogOut className="w-4 h-4 mr-2" />
@@ -222,10 +234,10 @@ export const AdminLayout = () => {
       </div>
 
       {/* Main content */}
-      <div className="lg:ml-64">
+      <div className="lg:ml-72">
         {/* Top header */}
-        <header className="bg-white shadow-sm border-b">
-          <div className="flex items-center justify-between h-16 px-4">
+        <header className="bg-white/80 backdrop-blur-sm shadow-sm border-b border-slate-200 sticky top-0 z-30">
+          <div className="flex items-center justify-between h-20 px-8">
             <div className="flex items-center space-x-4">
               <Button
                 variant="ghost"
@@ -235,22 +247,29 @@ export const AdminLayout = () => {
               >
                 <Menu className="w-5 h-5" />
               </Button>
-              <h1 className="text-lg font-semibold text-gray-900">
-                {navigation.find(item => item.current)?.name || "Админ Панель"}
-              </h1>
+              <div>
+                <h1 className="text-2xl font-bold text-slate-800">
+                  {navigation.find(item => item.current)?.name || "Админ Панель"}
+                </h1>
+                <p className="text-sm text-slate-600 mt-0.5">Управление и мони��оринг платформы</p>
+              </div>
             </div>
 
             <div className="flex items-center space-x-4">
               {/* Platform status indicator */}
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm text-gray-600">Платформа активна</span>
+              <div className="flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full border border-green-200">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-green-700">Платформа активна</span>
               </div>
 
               {/* Urgent notifications */}
               {pendingCounts.withdrawals > 0 && (
                 <Link to="/admin/transactions/withdrawals">
-                  <Button variant="outline" size="sm" className="text-orange-600 border-orange-200">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="text-orange-700 border-orange-300 bg-orange-50 hover:bg-orange-100 font-medium shadow-sm"
+                  >
                     <AlertTriangle className="w-4 h-4 mr-2" />
                     {pendingCounts.withdrawals} выводов
                   </Button>
@@ -261,7 +280,7 @@ export const AdminLayout = () => {
         </header>
 
         {/* Page content */}
-        <main className="p-6">
+        <main className="p-8">
           <Outlet />
         </main>
       </div>
