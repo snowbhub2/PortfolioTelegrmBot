@@ -179,24 +179,38 @@ export default function AdminLogin() {
 
             {step === "2fa" && (
               <Button
-                type="button"
-                variant="outline"
-                className="w-full"
-                onClick={() => setStep("login")}
-                disabled={isLoading}
-              >
-                Назад к вводу пароля
-              </Button>
-            )}
-          </form>
+              type="button"
+              variant="outline"
+              className="w-full"
+              onClick={() => setStep("login")}
+              disabled={isLoading}
+            >
+              Назад к вводу пароля
+            </Button>
+          )}
+        </form>
 
-          {/* Demo credentials hint */}
-          <div className="mt-6 p-3 bg-gray-50 rounded-lg">
-            <p className="text-xs text-gray-600 font-medium mb-1">Демо-доступ:</p>
-            <p className="text-xs text-gray-500">Email: admin@platform.com</p>
-            <p className="text-xs text-gray-500">Пароль: admin123</p>
-            <p className="text-xs text-gray-500">2FA код: 123456</p>
-          </div>
+        {/* Quick Demo Access */}
+        <div className="mt-4">
+          <Button
+            type="button"
+            variant="secondary"
+            className="w-full"
+            onClick={handleQuickDemo}
+            disabled={isLoading}
+          >
+            🚀 Быстрый демо-вход
+          </Button>
+        </div>
+
+        {/* Demo credentials hint */}
+        <div className="mt-6 p-3 bg-gray-50 rounded-lg">
+          <p className="text-xs text-gray-600 font-medium mb-1">Демо-доступ:</p>
+          <p className="text-xs text-gray-500">Email: admin@platform.com</p>
+          <p className="text-xs text-gray-500">Пароль: admin123</p>
+          <p className="text-xs text-gray-500">2FA код: 123456</p>
+          <p className="text-xs text-orange-600 font-medium mt-2">Или используйте кнопку "Быстрый демо-вход" выше</p>
+        </div>
         </CardContent>
       </Card>
     </div>
