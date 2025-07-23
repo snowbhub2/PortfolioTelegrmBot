@@ -312,39 +312,48 @@ export default function AdminTransactions() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Управление транзакциями</h1>
-          <p className="text-gray-600">
-            Всего транзакций: {stats.total} • Ожидают: {stats.pending} • Общий объем: ${stats.totalVolume.toLocaleString()}
-          </p>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={exportTransactions}
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Экспорт
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={loadTransactions}
-            disabled={isLoading}
-          >
-            <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
-            Обновить
-          </Button>
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                <BarChart3 className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-800">Управление транзакциями</h1>
+            </div>
+            <p className="text-slate-600 ml-13 font-medium">
+              Всего транзакций: <span className="font-bold text-slate-800">{stats.total}</span> • Ожидают: <span className="font-bold text-orange-600">{stats.pending}</span> • Общий объем: <span className="font-bold text-green-600">${stats.totalVolume.toLocaleString()}</span>
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={exportTransactions}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Экспорт
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={loadTransactions}
+              disabled={isLoading}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
+              Обновить
+            </Button>
+          </div>
         </div>
       </div>
 
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card>
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
