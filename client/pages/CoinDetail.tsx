@@ -165,7 +165,7 @@ export default function CoinDetail() {
   const [showBuyModal, setShowBuyModal] = useState(false);
   const [showSellModal, setShowSellModal] = useState(false);
 
-  // Реальні ціни активів
+  // Реа��ьні ціни активів
   const priceUpdates = usePriceUpdates();
 
   // Find the asset based on coinId
@@ -271,7 +271,7 @@ export default function CoinDetail() {
         } else if (asset.id === "msft") {
           return {
             title: "ПРО АКЦІЮ",
-            description: "Microsoft Corporation — американська багатонаціональна технологічна корпорація, розробник програмного забезпечення та хмарних сервісів.",
+            description: "Microsoft Corporation — американська багатонаціональна технологічна корпорація, розробник прог��амного забезпечення та хмарних сервісів.",
             points: [
               "Ви можете купувати або продавати акції MSFT через платформу.",
               "Microsoft є провідним постачальником хмарних сервісів Azure."
@@ -291,7 +291,7 @@ export default function CoinDetail() {
             title: "ПРО АКЦІЮ",
             description: `${asset.name} — це публічна компанія, акції якої торгуються на фондовому ринку.`,
             points: [
-              `Ви можете купувати або продав��ти акції ${asset.symbol} через платформу.`,
+              `Ви можете купувати або продав���ти акції ${asset.symbol} через платформу.`,
               "Ціни на акції можуть коливатися залежно від ринкових умов."
             ]
           };
@@ -318,7 +318,7 @@ export default function CoinDetail() {
           };
         } else if (asset.id === "platinum") {
           return {
-            title: "О ДРАГОЦЕННОМ МЕТАЛЛЕ",
+            title: "О ДРА��ОЦЕННОМ МЕТАЛЛЕ",
             description: "Платина — это редкий драгоценный металл с уникальными свойствами, который широко используется в ювелирном деле и промышленности.",
             points: [
               "Вы можете покупать или продавать платину через платформу.",
@@ -363,7 +363,7 @@ export default function CoinDetail() {
           description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на нашій платформі.`,
           points: [
             `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
-            "Пожалуйста, учитывайте риски при инвестировании."
+            "Пожалуйста, учитывайте риск�� при инвестировании."
           ]
         };
     }
@@ -538,8 +538,8 @@ export default function CoinDetail() {
           <div className="bg-card rounded-lg p-4 border text-center">
             <p className="text-muted-foreground">
               {asset.id === 'usd'
-                ? 'Баланс доларів: $0.00'
-                : `У вас немає ${asset.name} в портфелі`
+                ? 'Баланс долларов: $0.00'
+                : `У вас нет ${asset.name} в портфеле`
               }
             </p>
           </div>
