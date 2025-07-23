@@ -36,6 +36,9 @@ import CFDPage from "./pages/CFDPage";
 import NotFound from "./pages/NotFound";
 import BottomNavigation from "./components/BottomNavigation";
 import { Layout } from "./components/Layout";
+import { AdminLayout } from "./components/AdminLayout";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
