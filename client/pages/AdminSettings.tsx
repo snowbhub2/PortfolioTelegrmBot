@@ -202,28 +202,36 @@ export default function AdminSettings() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Настройки платформы</h1>
-          <p className="text-gray-600">Конфигурация основных параметров системы</p>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Button
-            variant="outline"
-            onClick={resetToDefaults}
-          >
-            По умолчанию
-          </Button>
-          <Button
-            onClick={saveSettings}
-            disabled={!hasChanges || isSaving}
-            className="bg-blue-600 hover:bg-blue-700"
-          >
-            <Save className={`w-4 h-4 mr-2 ${isSaving ? "animate-spin" : ""}`} />
-            {isSaving ? "Сохранение..." : "Сохранить"}
-          </Button>
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center">
+                <Settings className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-800">Настройки платформы</h1>
+            </div>
+            <p className="text-slate-600 ml-13 font-medium">Конфигурация основных параметров системы</p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Button
+              variant="outline"
+              onClick={resetToDefaults}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              По умолчанию
+            </Button>
+            <Button
+              onClick={saveSettings}
+              disabled={!hasChanges || isSaving}
+              className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 font-medium"
+            >
+              <Save className={`w-4 h-4 mr-2 ${isSaving ? "animate-spin" : ""}`} />
+              {isSaving ? "Сохранение..." : "Сохранить"}
+            </Button>
+          </div>
         </div>
       </div>
 
@@ -383,7 +391,7 @@ export default function AdminSettings() {
                 <div>
                   <Label>Торговля включена</Label>
                   <p className="text-sm text-gray-500">
-                    Разре��ить пользователям покупать и продавать активы
+                    Разрешить пользователям покупать и продавать активы
                   </p>
                 </div>
                 <Switch
@@ -474,7 +482,7 @@ export default function AdminSettings() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Shield className="w-5 h-5 mr-2" />
-                Настройки безопасн��сти
+                Настройки безопасности
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -616,7 +624,7 @@ export default function AdminSettings() {
               <Alert>
                 <AlertTriangle className="w-4 h-4" />
                 <AlertDescription>
-                  Изменения комиссий вступают в силу для новых транзакций после сохранения настроек.
+                  Изменения комиссий вступают в силу для новых транза��ций после сохранения настроек.
                 </AlertDescription>
               </Alert>
             </CardContent>
