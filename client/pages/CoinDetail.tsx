@@ -319,7 +319,7 @@ export default function CoinDetail() {
         } else if (asset.id === "platinum") {
           return {
             title: "О ДРА��ОЦЕННОМ МЕТАЛЛЕ",
-            description: "Платина — это редкий драгоценный металл с уникальными свойствами, который широко используется в ювелирном деле и промышленности.",
+            description: "Платина — это р��дкий драгоценный металл с уникальными свойствами, который широко используется в ювелирном деле и промышленности.",
             points: [
               "Вы можете покупать или продавать платину через платформу.",
               "Платина реже золота и имеет высокую стойкость к коррозии."
@@ -340,7 +340,7 @@ export default function CoinDetail() {
         if (asset.id === "usd") {
           return {
             title: "ПРО ВАЛЮТУ",
-            description: "Доллар США — это основная резервная валюта мира и базовая валюта для торговли на нашей платформе.",
+            description: "Доллар ��ША — это основная резервная валюта мира и базовая валюта для торговли на нашей платформе.",
             points: [
               "Ви можете поповнювати баланс або виводити кошти.",
               "USD використовується для покупки інших активів на платформі."
@@ -362,7 +362,7 @@ export default function CoinDetail() {
           title: "ПРО АКТИВ",
           description: `${asset.name} — це фінансовий інструмент, доступний для торгівлі на нашій платформі.`,
           points: [
-            `Ви можете купувати або про��авати ${asset.symbol} через платформу.`,
+            `Ви можете купувати або про��ав��ти ${asset.symbol} через платформу.`,
             "Пожалуйста, учитывайте риск�� при инвестировании."
           ]
         };
@@ -401,7 +401,7 @@ export default function CoinDetail() {
       // Для USD відкриваємо сторі��ку методів поповнення
       navigate("/deposit/method");
     } else {
-      // Для других ак��ивов открываем Exchange с заполненными п��лями
+      // Для других ак��ивов открываем Exchange с заполненными п����лями
       navigate(`/exchange?from=usd&to=${asset.id}`);
     }
   };
@@ -564,7 +564,7 @@ export default function CoinDetail() {
                     <div className="flex items-center justify-between mb-1">
                       <p className="font-medium text-sm">
                         {transaction.type === 'buy' && (asset.id === 'usd' ? 'Покупка актива' : 'Покупка')}
-                        {transaction.type === 'sell' && (asset.id === 'usd' ? 'Продажа актива' : 'Продажа')}
+                        {transaction.type === 'sell' && (asset.id === 'usd' ? '��родажа актива' : 'Продажа')}
                         {transaction.type === 'deposit' && 'Пополнение'}
                         {transaction.type === 'withdraw' && 'Вывод'}
                       </p>
@@ -633,7 +633,7 @@ export default function CoinDetail() {
           onClick={handleSell}
           disabled={asset.id !== "usd" && !hasAsset}
         >
-          {asset.id === "usd" ? "Вивести" : "Продати"}
+          {asset.id === "usd" ? "Вывести" : "Продать"}
         </Button>
       </div>
 
