@@ -38,7 +38,8 @@ import {
 
 export default function AdminDashboard() {
   const [timeRange, setTimeRange] = useState("7d");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
 
   // Rich demo data for admin panel
   const [dashboardData, setDashboardData] = useState({
