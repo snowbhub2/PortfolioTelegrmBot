@@ -76,7 +76,7 @@ export default function AdminClients() {
       ["Виктор", "Орлов"], ["Галина", "Киселева"], ["Анатолий", "Макаров"], ["Вера", "Ильина"],
       ["Евгений", "Костин"], ["Любовь", "Гусева"], ["Валерий", "Титов"], ["Надежда", "Кузнецова"],
       ["Борис", "Кудрявцев"], ["Раиса", "Максимова"], ["Станислав", "Сергеев"], ["Зинаида", "Николаева"],
-      ["Петр", "Щербаков"], ["Лариса", "Степанова"], ["Виталий", "Романов"], ["Марина", "Понома��ева"],
+      ["Петр", "Щербаков"], ["Лариса", "Степанова"], ["Виталий", "Романов"], ["Марина", "Пономарева"],
       ["Олег", "Захаров"], ["Тамара", "Григорьева"], ["Роман", "Данилов"], ["Инна", "Савельева"],
       ["Юрий", "Жуков"], ["Елизавета", "Яковлева"], ["Павел", "Антонов"], ["Нина", "Арсеньева"],
       ["Валентин", "Демидов"], ["Лидия", "Крылова"], ["Максим", "Мамонтов"], ["Альбина", "Денисова"]
@@ -276,52 +276,61 @@ export default function AdminClients() {
   const currentClients = filteredClients.slice(startIndex, endIndex);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">Управление клиентами</h1>
-          <p className="text-gray-600">
-            Всего клиентов: {filteredClients.length} из {clients.length}
-          </p>
-        </div>
-        <div className="flex items-center space-x-3">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={exportData}
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Экспорт
-          </Button>
-          <Button
-            variant="outline" 
-            size="sm"
-            onClick={loadClients}
-            disabled={isLoading}
-          >
-            <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
-            Обновить
-          </Button>
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                <UserCheck className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-800">Управление клиентами</h1>
+            </div>
+            <p className="text-slate-600 ml-13 font-medium">
+              Всего клиентов: <span className="font-bold text-slate-800">{filteredClients.length}</span> из <span className="font-bold text-slate-800">{clients.length}</span>
+            </p>
+          </div>
+          <div className="flex items-center space-x-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={exportData}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              <Download className="w-4 h-4 mr-2" />
+              Экспорт
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={loadClients}
+              disabled={isLoading}
+              className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50 font-medium"
+            >
+              <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
+              Обновить
+            </Button>
+          </div>
         </div>
       </div>
 
       {/* Filters */}
-      <Card>
+      <Card className="bg-gradient-to-r from-white to-slate-50 border-slate-200 shadow-lg">
         <CardContent className="p-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
               <Input
                 placeholder="Поиск по имени, email, ID..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10"
+                className="pl-10 bg-white border-slate-300 text-slate-800 font-medium focus:border-blue-500"
               />
             </div>
-            
+
             <Select value={statusFilter} onValueChange={setStatusFilter}>
-              <SelectTrigger>
+              <SelectTrigger className="bg-white border-slate-300 text-slate-700 font-medium">
                 <SelectValue placeholder="Статус" />
               </SelectTrigger>
               <SelectContent>
@@ -334,7 +343,7 @@ export default function AdminClients() {
             </Select>
 
             <Select value={verificationFilter} onValueChange={setVerificationFilter}>
-              <SelectTrigger>
+              <SelectTrigger className="bg-white border-slate-300 text-slate-700 font-medium">
                 <SelectValue placeholder="Верификация" />
               </SelectTrigger>
               <SelectContent>
@@ -345,9 +354,9 @@ export default function AdminClients() {
               </SelectContent>
             </Select>
 
-            <div className="flex items-center space-x-2">
-              <Filter className="w-4 h-4 text-gray-400" />
-              <span className="text-sm text-gray-600">
+            <div className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+              <Filter className="w-4 h-4 text-blue-600" />
+              <span className="text-sm text-blue-700 font-semibold">
                 {filteredClients.length} результатов
               </span>
             </div>
@@ -356,13 +365,13 @@ export default function AdminClients() {
       </Card>
 
       {/* Clients Table */}
-      <Card>
+      <Card className="bg-white border-slate-200 shadow-xl">
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Клиент</TableHead>
+              <TableHeader className="bg-gradient-to-r from-slate-50 to-blue-50">
+                <TableRow className="border-slate-200">
+                  <TableHead className="font-bold text-slate-800">Клиент</TableHead>
                   <TableHead>
                     <Button
                       variant="ghost"
@@ -414,38 +423,38 @@ export default function AdminClients() {
               </TableHeader>
               <TableBody>
                 {currentClients.map((client) => (
-                  <TableRow key={client.id} className="hover:bg-gray-50">
-                    <TableCell>
-                      <div className="flex items-center space-x-3">
-                        <Avatar className="w-8 h-8">
-                          <AvatarFallback>
+                  <TableRow key={client.id} className="hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50 transition-all duration-200 border-slate-100">
+                    <TableCell className="py-4">
+                      <div className="flex items-center space-x-4">
+                        <Avatar className="w-10 h-10 ring-2 ring-slate-200">
+                          <AvatarFallback className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold">
                             {client.firstName.charAt(0)}{client.lastName.charAt(0)}
                           </AvatarFallback>
                         </Avatar>
                         <div>
-                          <p className="font-medium text-gray-900">
+                          <p className="font-bold text-slate-800 text-base">
                             {client.firstName} {client.lastName}
                           </p>
-                          <p className="text-sm text-gray-500">@{client.username}</p>
-                          <p className="text-xs text-gray-400">ID: {client.telegramId}</p>
+                          <p className="text-sm text-slate-600 font-medium">@{client.username}</p>
+                          <p className="text-xs text-slate-500 font-medium">ID: {client.telegramId}</p>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>
                       {getStatusBadge(client.status)}
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="py-4">
                       <div>
-                        <p className="font-medium">${client.balanceUSD.toFixed(2)}</p>
-                        <p className="text-sm text-gray-500">
+                        <p className="font-bold text-slate-800 text-base">${client.balanceUSD.toFixed(2)}</p>
+                        <p className="text-sm text-slate-600 font-medium">
                           Деп: ${client.totalDeposits.toFixed(0)}
                         </p>
                       </div>
                     </TableCell>
-                    <TableCell>
+                    <TableCell className="py-4">
                       <div>
-                        <p className="font-medium">${client.totalVolume.toFixed(0)}</p>
-                        <p className="text-sm text-gray-500">
+                        <p className="font-bold text-slate-800 text-base">${client.totalVolume.toFixed(0)}</p>
+                        <p className="text-sm text-slate-600 font-medium">
                           {client.tradesCount} сделок
                         </p>
                       </div>
