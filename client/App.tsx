@@ -141,7 +141,12 @@ const AdminProtectedRoutes = () => {
         <Route path="/dashboard" element={<AdminDashboard />} />
         <Route path="/clients" element={<AdminClients />} />
         <Route path="/clients/:clientId" element={<AdminClientDetail />} />
-        {/* More admin routes will be added here */}
+        <Route path="/assets" element={<AdminAssets />} />
+        <Route path="/assets/trending" element={<AdminAssets />} />
+        <Route path="/transactions" element={<AdminTransactions />} />
+        <Route path="/transactions/withdrawals" element={<AdminTransactions />} />
+        <Route path="/transactions/deposits" element={<AdminTransactions />} />
+        <Route path="/settings" element={<AdminSettings />} />
       </Routes>
     </AdminLayout>
   );
