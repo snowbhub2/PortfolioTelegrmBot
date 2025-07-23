@@ -110,92 +110,100 @@ export default function AdminDashboardSimple() {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900">📊 Дашборд</h1>
-          <p className="text-gray-600">Обзор платформы и ключевые метрики</p>
+      <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+        <div className="flex items-center justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                <Activity className="w-6 h-6 text-white" />
+              </div>
+              <h1 className="text-3xl font-bold text-slate-800">Дашборд</h1>
+            </div>
+            <p className="text-slate-600 ml-13">Обзор платформы и ключевые метрики</p>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={refreshData}
+            disabled={isLoading}
+            className="bg-white border-slate-300 text-slate-700 hover:bg-slate-50"
+          >
+            <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
+            Обновить
+          </Button>
         </div>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={refreshData}
-          disabled={isLoading}
-        >
-          <RefreshCw className={`w-4 h-4 mr-2 ${isLoading ? "animate-spin" : ""}`} />
-          Обновить
-        </Button>
       </div>
 
       {/* Key Metrics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card>
+        <Card className="bg-gradient-to-br from-blue-50 to-indigo-50 border-blue-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Всего пользователей</p>
-                <p className="text-2xl font-bold text-gray-900">{dashboardData.overview.totalUsers.toLocaleString()}</p>
-                <p className="text-sm text-green-600 flex items-center mt-1">
-                  <TrendingUp className="w-3 h-3 mr-1" />
+                <p className="text-sm font-semibold text-blue-700 mb-1">Всего пользователей</p>
+                <p className="text-3xl font-bold text-slate-800">{dashboardData.overview.totalUsers.toLocaleString()}</p>
+                <p className="text-sm text-green-700 flex items-center mt-2 font-medium">
+                  <TrendingUp className="w-4 h-4 mr-1" />
                   +12% за неделю
                 </p>
               </div>
-              <div className="p-3 bg-blue-100 rounded-full">
-                <Users className="w-6 h-6 text-blue-600" />
+              <div className="p-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-md">
+                <Users className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Общий баланс</p>
-                <p className="text-2xl font-bold text-gray-900">${dashboardData.overview.totalBalance.toLocaleString()}</p>
-                <p className="text-sm text-green-600 flex items-center mt-1">
-                  <TrendingUp className="w-3 h-3 mr-1" />
+                <p className="text-sm font-semibold text-green-700 mb-1">Общий баланс</p>
+                <p className="text-3xl font-bold text-slate-800">${dashboardData.overview.totalBalance.toLocaleString()}</p>
+                <p className="text-sm text-green-700 flex items-center mt-2 font-medium">
+                  <TrendingUp className="w-4 h-4 mr-1" />
                   +8.5% за месяц
                 </p>
               </div>
-              <div className="p-3 bg-green-100 rounded-full">
-                <DollarSign className="w-6 h-6 text-green-600" />
+              <div className="p-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl shadow-md">
+                <DollarSign className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-purple-50 to-violet-50 border-purple-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Объем за сегодня</p>
-                <p className="text-2xl font-bold text-gray-900">${dashboardData.overview.todayVolume.toLocaleString()}</p>
-                <p className="text-sm text-red-600 flex items-center mt-1">
-                  <TrendingDown className="w-3 h-3 mr-1" />
+                <p className="text-sm font-semibold text-purple-700 mb-1">Объем за сегодня</p>
+                <p className="text-3xl font-bold text-slate-800">${dashboardData.overview.todayVolume.toLocaleString()}</p>
+                <p className="text-sm text-red-600 flex items-center mt-2 font-medium">
+                  <TrendingDown className="w-4 h-4 mr-1" />
                   -3.2% от вчера
                 </p>
               </div>
-              <div className="p-3 bg-purple-100 rounded-full">
-                <Activity className="w-6 h-6 text-purple-600" />
+              <div className="p-4 bg-gradient-to-r from-purple-500 to-violet-600 rounded-2xl shadow-md">
+                <Activity className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-orange-50 to-red-50 border-orange-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Ожидающие выводы</p>
-                <p className="text-2xl font-bold text-gray-900">{dashboardData.overview.pendingWithdrawals}</p>
-                <Badge variant="destructive" className="mt-1">
+                <p className="text-sm font-semibold text-orange-700 mb-1">Ожидающие выводы</p>
+                <p className="text-3xl font-bold text-slate-800">{dashboardData.overview.pendingWithdrawals}</p>
+                <Badge className="mt-2 bg-red-100 text-red-700 hover:bg-red-200 border-red-300 font-medium">
                   Требует внимания
                 </Badge>
               </div>
-              <div className="p-3 bg-red-100 rounded-full">
-                <AlertTriangle className="w-6 h-6 text-red-600" />
+              <div className="p-4 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl shadow-md">
+                <AlertTriangle className="w-7 h-7 text-white" />
               </div>
             </div>
           </CardContent>
@@ -286,7 +294,7 @@ export default function AdminDashboardSimple() {
       <div className="mt-8 p-4 bg-green-100 rounded-lg">
         <p className="text-green-800 font-medium">✅ Админ панель успешно загружена!</p>
         <p className="text-green-700 text-sm mt-1">
-          Все данные отображаются корректно. Сис��ема работает стабильно.
+          Все данн��е отображаются корректно. Система работает стабильно.
         </p>
       </div>
     </div>
