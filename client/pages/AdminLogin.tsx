@@ -43,7 +43,7 @@ export default function AdminLogin() {
             email: formData.email,
             role: "super_admin"
           }));
-          
+
           navigate("/admin");
         } else {
           setError("Неверный код двухфакторной аутентификации");
@@ -54,6 +54,18 @@ export default function AdminLogin() {
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const handleQuickDemo = () => {
+    // Quick demo login
+    localStorage.setItem("admin_token", "demo_admin_token");
+    localStorage.setItem("admin_user", JSON.stringify({
+      id: "admin-1",
+      name: "Демо Админ",
+      email: "admin@platform.com",
+      role: "super_admin"
+    }));
+    navigate("/admin");
   };
 
   const handleInputChange = (field: string, value: string) => {
