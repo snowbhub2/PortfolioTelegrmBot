@@ -18,6 +18,7 @@ interface NavItem {
 export default function BottomNavigation() {
   const location = useLocation();
   const { hapticFeedback } = useTelegram();
+  const telegramContext = useTelegramContextOptional();
   const { t } = useLanguage();
 
   const navItems: NavItem[] = [
