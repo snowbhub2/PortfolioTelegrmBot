@@ -180,6 +180,24 @@ export default function AdminDashboard() {
     ]
   });
 
+  // Initialize dashboard on component mount
+  useEffect(() => {
+    const initializeDashboard = async () => {
+      try {
+        setIsLoading(true);
+        // Simulate data loading
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error loading dashboard:", error);
+        setHasError(true);
+        setIsLoading(false);
+      }
+    };
+
+    initializeDashboard();
+  }, []);
+
   const refreshData = async () => {
     setIsLoading(true);
     // Simulate API call
@@ -285,7 +303,7 @@ export default function AdminDashboard() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Объем за сегодня</p>
+                <p className="text-sm font-medium text-gray-600">Объем за сегодн��</p>
                 <p className="text-2xl font-bold text-gray-900">${dashboardData.overview.todayVolume.toLocaleString()}</p>
                 <p className="text-sm text-red-600 flex items-center mt-1">
                   <TrendingDown className="w-3 h-3 mr-1" />
