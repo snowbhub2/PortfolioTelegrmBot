@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTelegram } from "@/hooks/useTelegram";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useTelegramContext } from "@/components/TelegramProvider";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { CryptoAsset } from "@/types/crypto";
