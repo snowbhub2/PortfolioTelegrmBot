@@ -330,7 +330,7 @@ export default function CoinDetail() {
             title: "ПРО ДОРОГОЦІННИЙ МЕТАЛ",
             description: `${asset.name} — це дорогоцінний метал, що використовується для інвестицій та промислових цілей.`,
             points: [
-              `Ви можете купувати або продавати ${asset.symbol} через платформу.`,
+              `Ви можете купувати або прода��ати ${asset.symbol} через платформу.`,
               "Дорогоцінні метали можуть служити захистом від економічної нестабільності."
             ]
           };
@@ -549,45 +549,52 @@ export default function CoinDetail() {
       {/* Transaction History Section */}
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-3 text-muted-foreground">
-          ІСТОРІЯ ОПЕРАЦІЙ
+          ИСТОРИЯ ОПЕРАЦИЙ
         </h3>
         {assetTransactions.length > 0 ? (
           <div className="space-y-2">
             {assetTransactions.slice(0, 5).map((transaction) => (
-              <div key={transaction.id} className="bg-card rounded-lg p-3 border">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <p className="font-medium">
-                      {transaction.type === 'buy' && (asset.id === 'usd' ? '🔴 Покупка активу' : '🟢 Покупка')}
-                      {transaction.type === 'sell' && (asset.id === 'usd' ? '🟢 Продаж активу' : '🔴 Продаж')}
-                      {transaction.type === 'deposit' && '💵 Поповнення'}
-                      {transaction.type === 'withdraw' && '💸 Виведення'}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      {transaction.description}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {new Date(transaction.timestamp).toLocaleDateString()} {new Date(transaction.timestamp).toLocaleTimeString()}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <p className={`font-semibold ${
-                      // Для USD: поповнення і продажі - зелені, покупки і виведення - червоні
-                      asset.id === 'usd'
-                        ? (transaction.type === 'deposit' || transaction.type === 'sell' ? 'text-success' : 'text-destructive')
-                        : (transaction.type === 'buy' || transaction.type === 'deposit' ? 'text-success' : 'text-destructive')
-                    }`}>
-                      {asset.id === 'usd'
-                        ? (transaction.type === 'deposit' || transaction.type === 'sell' ? '+' : '-')
-                        : (transaction.type === 'buy' || transaction.type === 'deposit' ? '+' : '-')
-                      }
-                      ${transaction.amount.toFixed(2)}
-                    </p>
-                    {transaction.quantity && asset.id !== 'usd' && (
-                      <p className="text-sm text-muted-foreground">
-                        {transaction.quantity} {asset.symbol}
+              <div
+                key={transaction.id}
+                className="bg-card rounded-lg p-3 border cursor-pointer hover:bg-muted/50 transition-colors"
+                onClick={() => navigate(`/history?transaction=${transaction.id}`)}
+              >
+                <div className="flex justify-between items-center">
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="font-medium text-sm">
+                        {transaction.type === 'buy' && (asset.id === 'usd' ? 'Покупка актива' : 'Покупка')}
+                        {transaction.type === 'sell' && (asset.id === 'usd' ? 'Продажа актива' : 'Продажа')}
+                        {transaction.type === 'deposit' && 'Пополнение'}
+                        {transaction.type === 'withdraw' && 'Вывод'}
                       </p>
-                    )}
+                      <p className={`font-semibold text-sm ${
+                        asset.id === 'usd'
+                          ? (transaction.type === 'deposit' || transaction.type === 'sell' ? 'text-success' : 'text-destructive')
+                          : (transaction.type === 'buy' || transaction.type === 'deposit' ? 'text-success' : 'text-destructive')
+                      }`}>
+                        {asset.id === 'usd'
+                          ? (transaction.type === 'deposit' || transaction.type === 'sell' ? '+' : '-')
+                          : (transaction.type === 'buy' || transaction.type === 'deposit' ? '+' : '-')
+                        }
+                        ${transaction.amount.toFixed(2)}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <p className="text-xs text-muted-foreground">
+                        {new Date(transaction.timestamp).toLocaleDateString()} • {new Date(transaction.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      </p>
+                      {transaction.quantity && asset.id !== 'usd' && (
+                        <p className="text-xs text-muted-foreground">
+                          {transaction.quantity} {asset.symbol}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                  <div className="ml-2 text-muted-foreground">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -598,7 +605,7 @@ export default function CoinDetail() {
                   className="text-primary text-sm"
                   onClick={() => navigate("/history")}
                 >
-                  Показати всі операції
+                  Показать все операции
                 </button>
               </div>
             )}
@@ -606,7 +613,7 @@ export default function CoinDetail() {
         ) : (
           <div className="bg-card rounded-lg p-4 border text-center">
             <p className="text-muted-foreground">
-              Операцій з {asset.name} поки немає
+              Операций с {asset.name} пока нет
             </p>
           </div>
         )}
