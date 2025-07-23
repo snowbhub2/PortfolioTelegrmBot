@@ -120,4 +120,24 @@ const WalletWithNav = () => (
   </>
 );
 
+// Admin protected routes component
+const AdminProtectedRoutes = () => {
+  const adminToken = localStorage.getItem("admin_token");
+
+  if (!adminToken) {
+    window.location.href = "/admin/login";
+    return null;
+  }
+
+  return (
+    <AdminLayout>
+      <Routes>
+        <Route path="/" element={<AdminDashboard />} />
+        <Route path="/dashboard" element={<AdminDashboard />} />
+        {/* More admin routes will be added here */}
+      </Routes>
+    </AdminLayout>
+  );
+};
+
 createRoot(document.getElementById("root")!).render(<App />);
