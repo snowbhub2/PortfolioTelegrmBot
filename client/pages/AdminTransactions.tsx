@@ -357,46 +357,54 @@ export default function AdminTransactions() {
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Всего транзакций</p>
-                <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+                <p className="text-sm font-semibold text-blue-700 mb-1">Всего транзакций</p>
+                <p className="text-3xl font-bold text-slate-800">{stats.total}</p>
               </div>
-              <Activity className="w-8 h-8 text-blue-500" />
+              <div className="p-4 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl shadow-md">
+                <Activity className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-yellow-50 to-orange-50 border-yellow-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Ожидают подтверждения</p>
-                <p className="text-2xl font-bold text-yellow-600">{stats.pending}</p>
+                <p className="text-sm font-semibold text-yellow-700 mb-1">Ожидают подтверждения</p>
+                <p className="text-3xl font-bold text-slate-800">{stats.pending}</p>
               </div>
-              <Clock className="w-8 h-8 text-yellow-500" />
+              <div className="p-4 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-2xl shadow-md">
+                <Clock className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-red-50 to-pink-50 border-red-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Выводы на подтверждении</p>
-                <p className="text-2xl font-bold text-red-600">{stats.pendingWithdrawals}</p>
+                <p className="text-sm font-semibold text-red-700 mb-1">Выводы на подтверждении</p>
+                <p className="text-3xl font-bold text-slate-800">{stats.pendingWithdrawals}</p>
               </div>
-              <ArrowDownCircle className="w-8 h-8 text-red-500" />
+              <div className="p-4 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl shadow-md">
+                <ArrowDownCircle className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg hover:shadow-xl transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-gray-600">Общий объем</p>
-                <p className="text-2xl font-bold text-green-600">${stats.totalVolume.toFixed(0)}</p>
+                <p className="text-sm font-semibold text-green-700 mb-1">Общий объем</p>
+                <p className="text-3xl font-bold text-slate-800">${stats.totalVolume.toFixed(0)}</p>
               </div>
-              <DollarSign className="w-8 h-8 text-green-500" />
+              <div className="p-4 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl shadow-md">
+                <DollarSign className="w-7 h-7 text-white" />
+              </div>
             </div>
           </CardContent>
         </Card>
@@ -407,7 +415,7 @@ export default function AdminTransactions() {
         <Alert>
           <AlertTriangle className="w-4 h-4" />
           <AlertDescription>
-            У вас {stats.pendingWithdrawals} выводов ожидают подтверждения. Пожалуйста, проверьте их как можно скорее.
+            У вас {stats.pendingWithdrawals} выво��ов ожидают подтверждения. Пожалуйста, проверьте их как можно скорее.
           </AlertDescription>
         </Alert>
       )}
