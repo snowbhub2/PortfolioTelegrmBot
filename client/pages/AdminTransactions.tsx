@@ -70,31 +70,99 @@ export default function AdminTransactions() {
   const loadTransactions = async () => {
     setIsLoading(true);
     
-    // Mock transactions data
-    const mockTransactions: Transaction[] = Array.from({ length: 100 }, (_, i) => {
+    // Rich demo transactions data
+    const usernames = [
+      "crypto_king", "bitcoin_trader", "eth_holder", "moon_rider", "diamond_hands",
+      "whale_watcher", "alt_hunter", "hodl_master", "day_trader", "swing_pro",
+      "profit_seeker", "chart_master", "bull_runner", "bear_fighter", "trend_follower",
+      "risk_taker", "safe_player", "volume_tracker", "price_action", "technical_guru",
+      "fundamental_guy", "news_trader", "scalper_pro", "position_trader", "arbitrage_king",
+      "defi_lover", "nft_collector", "yield_farmer", "liquidity_provider", "staking_master"
+    ];
+
+    const assets = ["btc", "eth", "usdt", "ton", "bnb", "sol", "ada", "dot", "matic", "link"];
+    const networks = ["ETH", "BSC", "TRX", "TON", "SOL", "MATIC"];
+    const descriptions = {
+      deposit: [
+        "Пополнение через Telegram Stars",
+        "Банковский перевод",
+        "Криптовалютный депозит",
+        "P2P пополнение",
+        "Пополнение через карту"
+      ],
+      withdraw: [
+        "Вывод в Telegram Stars",
+        "Внешний кошелек",
+        "Банковский счет",
+        "P2P вывод",
+        "Обменник"
+      ],
+      buy: ["Покупка", "Рыночная покупка", "Лимитная покупка"],
+      sell: ["Продажа", "Рыночная продажа", "Лимитная продажа"],
+      transfer: ["Перевод в CFD", "Перевод из CFD", "Внутренний перевод"]
+    };
+
+    const mockTransactions: Transaction[] = Array.from({ length: 500 }, (_, i) => {
       const types = ["deposit", "withdraw", "buy", "sell", "transfer"];
-      const statuses = ["pending", "processing", "completed", "failed"];
       const type = types[Math.floor(Math.random() * types.length)] as any;
-      const status = statuses[Math.floor(Math.random() * statuses.length)] as any;
-      
-      // Increase pending withdrawals for demo
-      const finalStatus = (type === "withdraw" && Math.random() < 0.4) ? "pending" : status;
-      
+
+      // Higher chance of pending withdrawals for demo
+      let status: string;
+      if (type === "withdraw") {
+        const rand = Math.random();
+        if (rand < 0.25) status = "pending";
+        else if (rand < 0.35) status = "processing";
+        else if (rand < 0.95) status = "completed";
+        else status = "failed";
+      } else {
+        const rand = Math.random();
+        if (rand < 0.05) status = "pending";
+        else if (rand < 0.10) status = "processing";
+        else if (rand < 0.97) status = "completed";
+        else status = "failed";
+      }
+
+      const username = usernames[Math.floor(Math.random() * usernames.length)];
+      const userId = `user-${String(Math.floor(Math.random() * 150) + 1).padStart(4, '0')}`;
+      const asset = assets[Math.floor(Math.random() * assets.length)];
+
+      // More realistic amounts based on asset
+      let baseAmount;
+      if (asset === "btc") baseAmount = Math.random() * 5;
+      else if (asset === "eth") baseAmount = Math.random() * 50;
+      else if (asset === "usdt") baseAmount = Math.random() * 50000;
+      else baseAmount = Math.random() * 10000;
+
+      const amount = Math.max(1, baseAmount);
+      const fee = amount * (0.001 + Math.random() * 0.01);
+
+      const description = descriptions[type][Math.floor(Math.random() * descriptions[type].length)];
+      const finalDescription = type === "buy" || type === "sell" ?
+        `${description} ${asset.toUpperCase()}` : description;
+
       return {
-        id: `tx-${i + 1}`,
-        userId: `user-${Math.floor(Math.random() * 100)}`,
-        username: `user_${Math.floor(Math.random() * 1000)}`,
+        id: `tx-${String(i + 1).padStart(6, '0')}`,
+        userId,
+        username,
         type,
-        assetId: type === "buy" || type === "sell" ? ["btc", "eth", "usdt"][Math.floor(Math.random() * 3)] : undefined,
-        amount: Math.random() * 10000,
-        price: type === "buy" || type === "sell" ? Math.random() * 50000 : undefined,
-        fee: Math.random() * 50,
-        status: finalStatus,
-        timestamp: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000),
-        description: `${type.charAt(0).toUpperCase() + type.slice(1)} transaction`,
-        hash: Math.random().toString(36).substring(2, 15),
-        address: type === "withdraw" ? "0x" + Math.random().toString(36).substring(2, 42) : undefined,
-        network: type === "withdraw" ? ["ETH", "BSC", "TRX"][Math.floor(Math.random() * 3)] : undefined
+        assetId: (type === "buy" || type === "sell" || type === "withdraw") ? asset : undefined,
+        amount,
+        price: (type === "buy" || type === "sell") ?
+          (asset === "btc" ? 45000 + Math.random() * 10000 :
+           asset === "eth" ? 2500 + Math.random() * 1000 :
+           asset === "usdt" ? 1 : 100 + Math.random() * 1000) : undefined,
+        fee,
+        status: status as any,
+        timestamp: new Date(Date.now() - Math.random() * 90 * 24 * 60 * 60 * 1000),
+        description: finalDescription,
+        hash: type === "withdraw" || type === "deposit" ?
+          "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join('') :
+          undefined,
+        address: type === "withdraw" ?
+          "0x" + Array.from({length: 40}, () => Math.floor(Math.random()*16).toString(16)).join('') :
+          undefined,
+        network: type === "withdraw" ? networks[Math.floor(Math.random() * networks.length)] : undefined,
+        notes: Math.random() < 0.1 ? "Требует дополнительной проверки" : undefined
       };
     });
 
