@@ -81,105 +81,152 @@ export default function AdminAssets() {
   const loadAssets = async () => {
     setIsLoading(true);
     
-    // Mock assets data
+    // Comprehensive demo assets data
     const mockAssets: Asset[] = [
+      // Cryptocurrencies
       {
-        id: "btc",
-        symbol: "BTC",
-        name: "Bitcoin",
-        icon: "₿",
-        category: "crypto",
-        currentPrice: 46250.00,
-        change24h: 2.34,
-        volume24h: 28500000,
-        marketCap: 890000000000,
-        isActive: true,
-        isTrending: true,
-        isVisible: true,
-        minTradeAmount: 0.001,
-        maxTradeAmount: 10,
-        precision: 8,
-        description: "Первая и самая популярная криптовалюта",
-        addedDate: new Date("2024-01-01"),
-        lastUpdated: new Date()
+        id: "btc", symbol: "BTC", name: "Bitcoin", icon: "₿", category: "crypto",
+        currentPrice: 46250.00, change24h: 2.34, volume24h: 285000000, marketCap: 890000000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.001, maxTradeAmount: 10, precision: 8,
+        description: "Первая и самая популярная криптовалюта", addedDate: new Date("2024-01-01"), lastUpdated: new Date()
       },
       {
-        id: "eth",
-        symbol: "ETH", 
-        name: "Ethereum",
-        icon: "Ξ",
-        category: "crypto",
-        currentPrice: 2950.50,
-        change24h: -1.23,
-        volume24h: 15200000,
-        marketCap: 355000000000,
-        isActive: true,
-        isTrending: true,
-        isVisible: true,
-        minTradeAmount: 0.01,
-        maxTradeAmount: 100,
-        precision: 6,
-        description: "Платформа для смарт-контрактов",
-        addedDate: new Date("2024-01-01"),
-        lastUpdated: new Date()
+        id: "eth", symbol: "ETH", name: "Ethereum", icon: "Ξ", category: "crypto",
+        currentPrice: 2950.50, change24h: -1.23, volume24h: 152000000, marketCap: 355000000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.01, maxTradeAmount: 100, precision: 6,
+        description: "Платформа для смарт-контрактов и DeFi", addedDate: new Date("2024-01-01"), lastUpdated: new Date()
       },
       {
-        id: "usdt",
-        symbol: "USDT",
-        name: "Tether",
-        icon: "₮",
-        category: "crypto",
-        currentPrice: 1.00,
-        change24h: 0.01,
-        volume24h: 45600000,
-        marketCap: 95000000000,
-        isActive: true,
-        isTrending: false,
-        isVisible: true,
-        minTradeAmount: 1,
-        maxTradeAmount: 50000,
-        precision: 2,
-        description: "Стейблкоин привязанный к доллару США",
-        addedDate: new Date("2024-01-01"),
-        lastUpdated: new Date()
+        id: "usdt", symbol: "USDT", name: "Tether", icon: "₮", category: "crypto",
+        currentPrice: 1.00, change24h: 0.01, volume24h: 456000000, marketCap: 95000000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 1, maxTradeAmount: 50000, precision: 2,
+        description: "Стейблкоин привязанный к доллару США", addedDate: new Date("2024-01-01"), lastUpdated: new Date()
       },
       {
-        id: "aapl",
-        symbol: "AAPL",
-        name: "Apple Inc.",
-        icon: "🍎",
-        category: "stocks",
-        currentPrice: 185.64,
-        change24h: 1.87,
-        volume24h: 52000000,
-        isActive: true,
-        isTrending: false,
-        isVisible: true,
-        minTradeAmount: 0.1,
-        maxTradeAmount: 1000,
-        precision: 2,
-        description: "Акции компании Apple",
-        addedDate: new Date("2024-01-15"),
-        lastUpdated: new Date()
+        id: "ton", symbol: "TON", name: "Toncoin", icon: "💎", category: "crypto",
+        currentPrice: 2.85, change24h: 8.45, volume24h: 85600000, marketCap: 9850000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 1, maxTradeAmount: 10000, precision: 4,
+        description: "Криптовалюта экосистемы Telegram", addedDate: new Date("2024-02-01"), lastUpdated: new Date()
       },
       {
-        id: "gold",
-        symbol: "GOLD",
-        name: "Золото",
-        icon: "🥇",
-        category: "gold",
-        currentPrice: 2040.50,
-        change24h: 0.78,
-        volume24h: 8500000,
-        isActive: true,
-        isTrending: true,
-        isVisible: true,
-        minTradeAmount: 0.01,
-        maxTradeAmount: 100,
-        precision: 3,
-        description: "Драгоценный металл",
-        addedDate: new Date("2024-01-01"),
-        lastUpdated: new Date()
+        id: "bnb", symbol: "BNB", name: "BNB", icon: "🔶", category: "crypto",
+        currentPrice: 315.75, change24h: 2.34, volume24h: 63400000, marketCap: 47000000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 0.01, maxTradeAmount: 500, precision: 4,
+        description: "Токен биржи Binance", addedDate: new Date("2024-01-15"), lastUpdated: new Date()
+      },
+      {
+        id: "sol", symbol: "SOL", name: "Solana", icon: "🌞", category: "crypto",
+        currentPrice: 98.45, change24h: -2.15, volume24h: 42300000, marketCap: 43000000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 1000, precision: 4,
+        description: "Высокопроизводительный блокчейн", addedDate: new Date("2024-01-20"), lastUpdated: new Date()
+      },
+      {
+        id: "ada", symbol: "ADA", name: "Cardano", icon: "🔷", category: "crypto",
+        currentPrice: 0.485, change24h: 1.78, volume24h: 24500000, marketCap: 17000000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 10, maxTradeAmount: 100000, precision: 6,
+        description: "Научно обоснованный блокчейн", addedDate: new Date("2024-02-05"), lastUpdated: new Date()
+      },
+      {
+        id: "dot", symbol: "DOT", name: "Polkadot", icon: "🟣", category: "crypto",
+        currentPrice: 7.32, change24h: -0.56, volume24h: 18200000, marketCap: 9200000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 1, maxTradeAmount: 5000, precision: 4,
+        description: "Многоцепочечный блокчейн протокол", addedDate: new Date("2024-02-10"), lastUpdated: new Date()
+      },
+      {
+        id: "matic", symbol: "MATIC", name: "Polygon", icon: "🔮", category: "crypto",
+        currentPrice: 0.845, change24h: 3.21, volume24h: 15600000, marketCap: 8300000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 10, maxTradeAmount: 50000, precision: 6,
+        description: "Решение масштабирования Ethereum", addedDate: new Date("2024-02-15"), lastUpdated: new Date()
+      },
+      {
+        id: "link", symbol: "LINK", name: "Chainlink", icon: "🔗", category: "crypto",
+        currentPrice: 14.85, change24h: 1.23, volume24h: 12400000, marketCap: 8700000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 1, maxTradeAmount: 2000, precision: 4,
+        description: "Децентрализованная сеть оракулов", addedDate: new Date("2024-02-20"), lastUpdated: new Date()
+      },
+      {
+        id: "ltc", symbol: "LTC", name: "Litecoin", icon: "Ł", category: "crypto",
+        currentPrice: 73.45, change24h: -0.87, volume24h: 8500000, marketCap: 5400000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 1000, precision: 6,
+        description: "Серебро к золоту Bitcoin", addedDate: new Date("2024-01-05"), lastUpdated: new Date()
+      },
+      {
+        id: "xrp", symbol: "XRP", name: "XRP", icon: "💧", category: "crypto",
+        currentPrice: 0.635, change24h: 0.45, volume24h: 11200000, marketCap: 35000000000,
+        isActive: false, isTrending: false, isVisible: false, minTradeAmount: 10, maxTradeAmount: 100000, precision: 6,
+        description: "Цифровая валюта для платежей", addedDate: new Date("2024-01-10"), lastUpdated: new Date()
+      },
+
+      // Stocks
+      {
+        id: "aapl", symbol: "AAPL", name: "Apple Inc.", icon: "🍎", category: "stocks",
+        currentPrice: 185.64, change24h: 1.87, volume24h: 52000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 1000, precision: 2,
+        description: "Технологическая компания из Купертино", addedDate: new Date("2024-01-15"), lastUpdated: new Date()
+      },
+      {
+        id: "tsla", symbol: "TSLA", name: "Tesla Inc.", icon: "🚗", category: "stocks",
+        currentPrice: 248.92, change24h: -2.35, volume24h: 45000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 500, precision: 2,
+        description: "Производитель электромобилей", addedDate: new Date("2024-01-20"), lastUpdated: new Date()
+      },
+      {
+        id: "googl", symbol: "GOOGL", name: "Alphabet Inc.", icon: "🔍", category: "stocks",
+        currentPrice: 142.56, change24h: 0.89, volume24h: 28000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 1000, precision: 2,
+        description: "Материнская компания Google", addedDate: new Date("2024-01-25"), lastUpdated: new Date()
+      },
+      {
+        id: "msft", symbol: "MSFT", name: "Microsoft Corp.", icon: "💻", category: "stocks",
+        currentPrice: 378.85, change24h: 1.23, volume24h: 32000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 500, precision: 2,
+        description: "Технологический гигант", addedDate: new Date("2024-02-01"), lastUpdated: new Date()
+      },
+      {
+        id: "amzn", symbol: "AMZN", name: "Amazon.com Inc.", icon: "📦", category: "stocks",
+        currentPrice: 156.78, change24h: -0.45, volume24h: 38000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 1000, precision: 2,
+        description: "E-commerce и облачные технологии", addedDate: new Date("2024-02-05"), lastUpdated: new Date()
+      },
+
+      // Gold and commodities
+      {
+        id: "gold", symbol: "GOLD", name: "Золото", icon: "🥇", category: "gold",
+        currentPrice: 2040.50, change24h: 0.78, volume24h: 85000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.01, maxTradeAmount: 100, precision: 3,
+        description: "Драгоценный металл, защитный актив", addedDate: new Date("2024-01-01"), lastUpdated: new Date()
+      },
+      {
+        id: "silver", symbol: "SILVER", name: "Серебро", icon: "🥈", category: "gold",
+        currentPrice: 24.35, change24h: -0.34, volume24h: 35000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 1000, precision: 3,
+        description: "Промышленный драгоценный металл", addedDate: new Date("2024-01-10"), lastUpdated: new Date()
+      },
+      {
+        id: "oil", symbol: "OIL", name: "Нефть WTI", icon: "🛢️", category: "gold",
+        currentPrice: 73.25, change24h: 2.45, volume24h: 45000000,
+        isActive: true, isTrending: true, isVisible: true, minTradeAmount: 0.1, maxTradeAmount: 500, precision: 2,
+        description: "Сырая нефть West Texas Intermediate", addedDate: new Date("2024-02-15"), lastUpdated: new Date()
+      },
+
+      // Currencies
+      {
+        id: "usd", symbol: "USD", name: "Доллар США", icon: "💵", category: "currency",
+        currentPrice: 1.00, change24h: 0.00, volume24h: 0,
+        isActive: true, isTrending: false, isVisible: false, minTradeAmount: 1, maxTradeAmount: 1000000, precision: 2,
+        description: "Базовая валюта платформы", addedDate: new Date("2024-01-01"), lastUpdated: new Date()
+      },
+      {
+        id: "eur", symbol: "EUR", name: "Евро", icon: "💶", category: "currency",
+        currentPrice: 1.0845, change24h: -0.12, volume24h: 15000000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 1, maxTradeAmount: 100000, precision: 4,
+        description: "Единая европейская валюта", addedDate: new Date("2024-01-05"), lastUpdated: new Date()
+      },
+      {
+        id: "gbp", symbol: "GBP", name: "Фунт стерлингов", icon: "💷", category: "currency",
+        currentPrice: 1.2735, change24h: 0.23, volume24h: 8500000,
+        isActive: true, isTrending: false, isVisible: true, minTradeAmount: 1, maxTradeAmount: 50000, precision: 4,
+        description: "Валюта Великобритании", addedDate: new Date("2024-01-10"), lastUpdated: new Date()
       }
     ];
 
@@ -510,7 +557,7 @@ export default function AdminAssets() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">Все статусы</SelectItem>
-                <SelectItem value="active">Активны��</SelectItem>
+                <SelectItem value="active">Активные</SelectItem>
                 <SelectItem value="inactive">Неактивные</SelectItem>
                 <SelectItem value="trending">В тренде</SelectItem>
                 <SelectItem value="hidden">Скрытые</SelectItem>
@@ -648,7 +695,7 @@ export default function AdminAssets() {
         <Alert>
           <AlertTriangle className="w-4 h-4" />
           <AlertDescription>
-            У вас более 5 активов в тренде. Рекомендуется ограничить количество трендинговых активов для лучшего пользовательского опыта.
+            У вас более 5 активов в тренде. Рекомендуется ограничить количество т��ендинговых активов для лучшего пользовательского опыта.
           </AlertDescription>
         </Alert>
       )}
