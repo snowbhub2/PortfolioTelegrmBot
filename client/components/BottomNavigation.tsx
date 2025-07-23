@@ -62,7 +62,7 @@ export default function BottomNavigation() {
             <Link
               key={item.path}
               to={item.path}
-              onClick={handleNavClick}
+              onClick={() => handleNavClick(item.path)}
               className={`flex flex-col items-center py-2 px-4 rounded-lg transition-colors ${
                 isActive
                   ? "text-primary"
