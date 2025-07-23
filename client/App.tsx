@@ -55,10 +55,11 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-        <Layout>
-          <div className="min-h-screen bg-background text-foreground">
-            <Routes>
-              <Route path="/" element={<WalletWithNav />} />
+          <TelegramProvider>
+            <Layout>
+              <div className="min-h-screen bg-background text-foreground">
+                <Routes>
+                  <Route path="/" element={<WalletWithNav />} />
               <Route path="/history" element={<History />} />
               <Route path="/bonuses" element={<Bonuses />} />
               <Route path="/market" element={<Market />} />
@@ -108,10 +109,11 @@ const App = () => (
               <Route path="/admin/login" element={<AdminLogin />} />
               <Route path="/admin/*" element={<AdminProtectedRoutes />} />
 
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </div>
-        </Layout>
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+            </Layout>
+          </TelegramProvider>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
