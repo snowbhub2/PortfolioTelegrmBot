@@ -44,8 +44,13 @@ export default function BottomNavigation() {
     },
   ];
 
-  const handleNavClick = () => {
-    hapticFeedback("light");
+  const handleNavClick = (path: string) => {
+    // Use enhanced Telegram haptic feedback if available
+    if (telegramContext) {
+      telegramContext.haptic.selection();
+    } else {
+      hapticFeedback("light");
+    }
   };
 
   return (
