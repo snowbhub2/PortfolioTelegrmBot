@@ -136,6 +136,8 @@ const AdminProtectedRoutes = () => {
       <Routes>
         <Route path="/" element={<AdminDashboard />} />
         <Route path="/dashboard" element={<AdminDashboard />} />
+        <Route path="/clients" element={<AdminClients />} />
+        <Route path="/clients/:clientId" element={<AdminClientDetail />} />
         {/* More admin routes will be added here */}
       </Routes>
     </AdminLayout>
