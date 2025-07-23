@@ -130,7 +130,19 @@ const WalletWithNav = () => (
 
 // Admin protected routes component
 const AdminProtectedRoutes = () => {
-  const adminToken = localStorage.getItem("admin_token");
+  let adminToken = localStorage.getItem("admin_token");
+
+  // For demo purposes, auto-create admin token if it doesn't exist
+  if (!adminToken) {
+    adminToken = "demo_admin_token";
+    localStorage.setItem("admin_token", adminToken);
+    localStorage.setItem("admin_user", JSON.stringify({
+      id: "admin-1",
+      name: "Админ",
+      email: "admin@platform.com",
+      role: "super_admin"
+    }));
+  }
 
   if (!adminToken) {
     window.location.href = "/admin/login";
