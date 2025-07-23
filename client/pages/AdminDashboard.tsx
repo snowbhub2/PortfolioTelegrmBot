@@ -84,17 +84,24 @@ export default function AdminDashboard() {
       { date: "2024-12-30", revenue: 912000, trades: 7123, users: 2678 }
     ],
     assetDistribution: [
-      { name: "BTC", value: 35, amount: 995663.20, color: "#f7931a" },
-      { name: "ETH", value: 28, amount: 797126.16, color: "#627eea" },
-      { name: "USD", value: 20, amount: 569518.68, color: "#22c55e" },
-      { name: "USDT", value: 12, amount: 341711.21, color: "#26a69a" },
-      { name: "Другие", value: 5, amount: 142573.17, color: "#94a3b8" }
+      { name: "BTC", value: 32, amount: 9123663.20, color: "#f7931a" },
+      { name: "ETH", value: 25, amount: 7123526.16, color: "#627eea" },
+      { name: "USDT", value: 18, amount: 5123518.68, color: "#26a69a" },
+      { name: "USD", value: 12, amount: 3416711.21, color: "#22c55e" },
+      { name: "TON", value: 6, amount: 1708573.17, color: "#0098ea" },
+      { name: "BNB", value: 4, amount: 1139582.34, color: "#f3ba2f" },
+      { name: "SOL", value: 2, amount: 569791.23, color: "#9945ff" },
+      { name: "Другие", value: 1, amount: 284895.62, color: "#94a3b8" }
     ],
     topAssets: [
-      { symbol: "BTC", name: "Bitcoin", volume24h: 425823.45, change24h: 2.34, trades: 1247 },
-      { symbol: "ETH", name: "Ethereum", volume24h: 287654.32, change24h: -1.23, trades: 892 },
-      { symbol: "USDT", name: "Tether", volume24h: 198456.78, change24h: 0.02, trades: 567 },
-      { symbol: "BNB", name: "Binance Coin", volume24h: 156789.12, change24h: 4.56, trades: 423 }
+      { symbol: "BTC", name: "Bitcoin", volume24h: 4258234.45, change24h: 3.67, trades: 12471 },
+      { symbol: "ETH", name: "Ethereum", volume24h: 2876543.32, change24h: -0.89, trades: 8923 },
+      { symbol: "USDT", name: "Tether", volume24h: 1984567.78, change24h: 0.12, trades: 15674 },
+      { symbol: "TON", name: "Toncoin", volume24h: 856789.12, change24h: 8.45, trades: 5231 },
+      { symbol: "BNB", name: "BNB", volume24h: 634521.67, change24h: 2.34, trades: 3456 },
+      { symbol: "SOL", name: "Solana", volume24h: 523487.23, change24h: -2.15, trades: 2789 },
+      { symbol: "ADA", name: "Cardano", volume24h: 412356.89, change24h: 1.78, trades: 2134 },
+      { symbol: "DOT", name: "Polkadot", volume24h: 345678.12, change24h: -0.56, trades: 1823 }
     ],
     recentTransactions: [
       {
@@ -200,7 +207,7 @@ export default function AdminDashboard() {
                 <p className="text-2xl font-bold text-gray-900">{dashboardData.overview.totalUsers.toLocaleString()}</p>
                 <p className="text-sm text-green-600 flex items-center mt-1">
                   <TrendingUp className="w-3 h-3 mr-1" />
-                  +12% за неделю
+                  +12% за не��елю
                 </p>
               </div>
               <div className="p-3 bg-blue-100 rounded-full">
