@@ -145,17 +145,17 @@ const AdminProtectedRoutes = () => {
   return (
     <AdminLayout>
       <Routes>
-        <Route path="/" element={<AdminDashboardSimple />} />
-        <Route path="/dashboard" element={<AdminDashboardSimple />} />
-        <Route path="/clients" element={<AdminClients />} />
-        <Route path="/clients/:clientId" element={<AdminClientDetail />} />
-        <Route path="/assets" element={<AdminAssets />} />
-        <Route path="/assets/trending" element={<AdminAssets />} />
-        <Route path="/transactions" element={<AdminTransactions />} />
-        <Route path="/transactions/withdrawals" element={<AdminTransactions />} />
-        <Route path="/transactions/deposits" element={<AdminTransactions />} />
-        <Route path="/settings" element={<AdminSettings />} />
-        <Route path="/test" element={<AdminTest />} />
+        <Route index element={<AdminDashboardSimple />} />
+        <Route path="dashboard" element={<AdminDashboardSimple />} />
+        <Route path="clients" element={<AdminClients />} />
+        <Route path="clients/:clientId" element={<AdminClientDetail />} />
+        <Route path="assets" element={<AdminAssets />} />
+        <Route path="assets/trending" element={<AdminAssets />} />
+        <Route path="transactions" element={<AdminTransactions />} />
+        <Route path="transactions/withdrawals" element={<AdminTransactions />} />
+        <Route path="transactions/deposits" element={<AdminTransactions />} />
+        <Route path="settings" element={<AdminSettings />} />
+        <Route path="test" element={<AdminTest />} />
       </Routes>
     </AdminLayout>
   );
